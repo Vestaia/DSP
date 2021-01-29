@@ -1,0 +1,136 @@
+/*
+
+Xilinx Vivado v2019.2 (64-bit) [Major: 2019, Minor: 2]
+SW Build: 2708876 on Wed Nov  6 21:39:14 MST 2019
+IP Build: 2700528 on Thu Nov  7 00:09:20 MST 2019
+
+Process ID (PID): 21439
+License: Customer
+
+Current time: 	Fri Jun 05 22:03:37 EDT 2020
+Time zone: 	Eastern Standard Time (America/New_York)
+
+OS: Ubuntu
+OS Version: 5.3.0-53-generic
+OS Architecture: amd64
+Available processors (cores): 6
+
+Display: :0
+Screen size: 1920x1200
+Screen resolution (DPI): 100
+Available screens: 1
+Available disk space: 124 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	9.0.4 64-bit
+Java home: 	/tools/Xilinx/Vivado/2019.2/tps/lnx64/jre9.0.4
+Java executable location: 	/tools/Xilinx/Vivado/2019.2/tps/lnx64/jre9.0.4/bin/java
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	ywang
+User home directory: /home/ywang
+User working directory: /home/ywang/Code/filters/cores/axis/DMA
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: /tools/Xilinx/Vivado
+HDI_APPROOT: /tools/Xilinx/Vivado/2019.2
+RDI_DATADIR: /tools/Xilinx/Vivado/2019.2/data
+RDI_BINDIR: /tools/Xilinx/Vivado/2019.2/bin
+
+Vivado preferences file location: /home/ywang/.Xilinx/Vivado/2019.2/vivado.xml
+Vivado preferences directory: /home/ywang/.Xilinx/Vivado/2019.2/
+Vivado layouts directory: /home/ywang/.Xilinx/Vivado/2019.2/layouts
+PlanAhead jar file location: 	/tools/Xilinx/Vivado/2019.2/lib/classes/planAhead.jar
+Vivado log file location: 	/home/ywang/Code/filters/cores/axis/DMA/vivado.log
+Vivado journal file location: 	/home/ywang/Code/filters/cores/axis/DMA/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-21439-evermist
+
+Xilinx Environment Variables
+----------------------------
+XILINX: /tools/Xilinx/Vivado/2019.2/ids_lite/ISE
+XILINX_DSP: /tools/Xilinx/Vivado/2019.2/ids_lite/ISE
+XILINX_PLANAHEAD: /tools/Xilinx/Vivado/2019.2
+XILINX_SDK: /tools/Xilinx/Vitis/2019.2
+XILINX_VITIS: /tools/Xilinx/Vitis/2019.2
+XILINX_VIVADO: /tools/Xilinx/Vivado/2019.2
+XILINX_VIVADO_HLS: /tools/Xilinx/Vivado/2019.2
+
+
+GUI allocated memory:	285 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 1,104 MB
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// TclEventType: PROJECT_OPEN_DIALOG
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bB (cr):  Open Project : addNotify
+// Opening Vivado Project: tmp_edit_project.xpr. Version: Vivado v2019.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project tmp_edit_project.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project tmp_edit_project.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,099 MB. GUI used memory: 50 MB. Current time: 6/5/20, 10:03:39 PM EDT
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 86 MB (+87237kb) [00:00:11]
+// [Engine Memory]: 1,106 MB (+1008495kb) [00:00:11]
+// [GUI Memory]: 94 MB (+4398kb) [00:00:11]
+// [GUI Memory]: 104 MB (+5099kb) [00:00:12]
+// WARNING: HEventQueue.dispatchEvent() is taking  1772 ms.
+// Tcl Message: INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2019.2/data/ip'. 
+// Project name: tmp_edit_project; location: /home/ywang/Code/filters/cores/axis/DMA; part: xc7vx485tffg1157-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:06 . Memory (MB): peak = 6715.453 ; gain = 298.512 ; free physical = 633 ; free virtual = 5099 
+dismissDialog("Open Project"); // bB (cr)
+// [Engine Memory]: 1,173 MB (+12004kb) [00:00:16]
+// Tcl Message: update_compile_order -fileset sources_1 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, dma_controller (dma_controller.v)]", 1, false); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, dma_controller (dma_controller.v)]", 1, false, false, false, false, false, true); // B (F, cr) - Double Click
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // i (h, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "dma_controller.v", 1); // i (h, cr)
+// [GUI Memory]: 111 MB (+2257kb) [00:00:28]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, IP-XACT]", 2, true); // B (F, cr) - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, IP-XACT]", 2); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, IP-XACT, component.xml]", 3, false); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, IP-XACT, component.xml]", 3, false, false, false, false, false, true); // B (F, cr) - Double Click
+// bB (cr):  Open IP-XACT File : addNotify
+// TclEventType: LOAD_FEATURE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: LOAD_FEATURE
+// TclEventType: PACKAGER_CURRENT_CORE
+// Run Command: PAResourceCommand.PACommandNames_IP_PACKAGER
+// WARNING: HEventQueue.dispatchEvent() is taking  1026 ms.
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// Tcl Message: ipx::open_ipxact_file /home/ywang/Code/filters/cores/axis/DMA/component.xml 
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: PACKAGER_OBJECT_CHANGE
+dismissDialog("Open IP-XACT File"); // bB (cr)
+// [GUI Memory]: 118 MB (+1120kb) [00:00:32]
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "Ports and Interfaces", 4); // ar (O, cr)

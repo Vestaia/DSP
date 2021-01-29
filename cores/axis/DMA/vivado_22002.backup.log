@@ -1,0 +1,27 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Fri Jun  5 22:05:04 2020
+# Process ID: 22002
+# Current directory: /home/ywang/Code/filters/cores/axis/DMA
+# Command line: vivado tmp_edit_project.xpr
+# Log file: /home/ywang/Code/filters/cores/axis/DMA/vivado.log
+# Journal file: /home/ywang/Code/filters/cores/axis/DMA/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project tmp_edit_project.xpr
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/ywang/Code/filters/cores/axis/DMA/src/dma_controller.v:]
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2019.2/data/ip'.
+open_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:05 . Memory (MB): peak = 6705.520 ; gain = 288.582 ; free physical = 516 ; free virtual = 4983
+update_compile_order -fileset sources_1
+ipx::open_ipxact_file /home/ywang/Code/filters/cores/axis/DMA/component.xml
+WARNING: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+WARNING: [IP_Flow 19-5226] Project source file '/home/ywang/Code/filters/cores/axis/DMA/component.xml' ignored by IP packager.
+ipx::merge_project_changes ports [ipx::current_core]
+WARNING: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+WARNING: [IP_Flow 19-5226] Project source file '/home/ywang/Code/filters/cores/axis/DMA/component.xml' ignored by IP packager.
