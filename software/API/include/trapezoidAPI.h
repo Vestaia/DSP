@@ -18,18 +18,18 @@
 //Configuration Register Structure
 #pragma pack(push, 1) //Disable padding
 struct fpga_cfg {                     
-    volatile uint8_t  reset;                  //0x0
-    volatile uint32_t reserved0;
-    volatile uint16_t reserved1;
-    volatile uint8_t  reserved2;
-    volatile uint16_t k_delay;               //0x40
-    volatile uint16_t l_delay;               //0x50
-    volatile uint16_t m_shape;               //0x60
-    volatile uint16_t reserved3;
-    volatile uint16_t trigger_threshhold;    //0x80
-    volatile uint16_t reserved4;             //0x90
-    volatile uint32_t reserved5;             //0xA0
-    volatile uint64_t reserved6;             //0xC0
+    volatile uint8_t  reset;                    //0x00
+    volatile uint32_t reserved0;                //0x01
+    volatile uint16_t reserved1;                //0x05
+    volatile uint8_t  led_setting;              //0x07
+    volatile uint16_t k_delay;                  //0x08
+    volatile uint16_t l_delay;                  //0x0A
+    volatile uint16_t m_shape;                  //0x0C
+    volatile uint16_t reserved3;                //0x0E
+    volatile uint16_t trigger_threshhold;       //0x10
+    volatile uint16_t reserved4;                //0x12
+    volatile uint32_t reserved5;                //0x14
+    volatile uint64_t reserved6;                //0x18
 };
 #pragma pack(pop)
 
