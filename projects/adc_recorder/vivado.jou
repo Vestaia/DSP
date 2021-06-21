@@ -1,0 +1,21 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Mon Jun 21 11:26:38 2021
+# Process ID: 25899
+# Current directory: /home/lars/Documents/Github/DSP/project/adc_recorder
+# Command line: vivado adc_recorder.xpr
+# Log file: /home/lars/Documents/Github/DSP/project/adc_recorder/vivado.log
+# Journal file: /home/lars/Documents/Github/DSP/project/adc_recorder/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project adc_recorder.xpr
+update_compile_order -fileset sources_1
+set_property is_enabled false [get_files  /home/lars/Documents/Github/red-pitaya-notes/cfg/ports.xdc]
+set_property is_enabled true [get_files  /home/lars/Documents/Github/red-pitaya-notes/cfg/ports.xdc]
+export_ip_user_files -of_objects  [get_files /home/lars/Documents/Github/red-pitaya-notes/cfg/ports.xdc] -no_script -reset -force -quiet
+remove_files  -fileset constrs_1 /home/lars/Documents/Github/red-pitaya-notes/cfg/ports.xdc
+export_ip_user_files -of_objects  [get_files /home/lars/Documents/Github/red-pitaya-notes/cfg/clocks.xdc] -no_script -reset -force -quiet
+remove_files  -fileset constrs_1 /home/lars/Documents/Github/red-pitaya-notes/cfg/clocks.xdc
+add_files -fileset constrs_1 -norecurse {/home/lars/Documents/Github/DSP/cfg/clocks.xdc /home/lars/Documents/Github/DSP/cfg/ports.xdc}

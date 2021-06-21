@@ -1,0 +1,72 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Mon Jun 21 11:26:38 2021
+# Process ID: 25899
+# Current directory: /home/lars/Documents/Github/DSP/project/adc_recorder
+# Command line: vivado adc_recorder.xpr
+# Log file: /home/lars/Documents/Github/DSP/project/adc_recorder/vivado.log
+# Journal file: /home/lars/Documents/Github/DSP/project/adc_recorder/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project adc_recorder.xpr
+INFO: [Project 1-313] Project file moved from '/home/ywang/Code/filters/project/adc_recorder' since last save.
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-2] Board Part Repository Path: Could not find the directory '/home/lars/Documents/.Xilinx/Vivado/2019.2/xhub/board_store', nor could it be found using path '/home/ywang/.Xilinx/Vivado/2019.2/xhub/board_store'.
+WARNING: [filemgmt 56-2] IP Repository Path: Could not find the directory '/home/lars/Documents/Github/filters', nor could it be found using path '/home/ywang/Code/filters'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository '/home/lars/Documents/Github/filters'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2019.2/data/ip'.
+WARNING: [BD 41-1661] One or more IPs have been locked in the design 'system.bd'. Please run report_ip_status for more details and recommendations on how to fix this issue.
+List of locked IPs:
+system_writer_0_2
+system_port_slicer_5_0
+system_slice_3_2
+system_trap_0_2
+system_slice_2_2
+system_sig_exp_decay_0_2
+system_port_slicer_4_2
+system_port_slicer_3_2
+system_axis_ram_writer_0_1
+system_pulse_gen_0_2
+system_axis_red_pitaya_dac_0_2
+system_cfg_0_2
+system_adc_0_2
+system_port_slicer_0_2
+system_trigger_0_1
+system_port_slicer_2_2
+
+WARNING: [BD 41-1661] One or more IPs have been locked in the design 'design_2.bd'. Please run report_ip_status for more details and recommendations on how to fix this issue.
+List of locked IPs:
+design_2_axis_ram_writer_0_0
+design_2_port_slicer_2_0
+design_2_trigger_0_0
+design_2_port_slicer_0_0
+design_2_port_slicer_1_0
+design_2_writer_0_0
+design_2_adc_0_0
+design_2_axis_red_pitaya_dac_0_0
+design_2_cfg_0_0
+design_2_port_slicer_3_0
+design_2_slice_2_0
+design_2_port_slicer_4_0
+design_2_slice_3_0
+design_2_pulse_gen_0_0
+design_2_slice_4_0
+design_2_sig_exp_decay_0_0
+design_2_trap_0_0
+
+open_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:10 . Memory (MB): peak = 6486.324 ; gain = 126.410 ; free physical = 110 ; free virtual = 4119
+update_compile_order -fileset sources_1
+set_property is_enabled false [get_files  /home/lars/Documents/Github/red-pitaya-notes/cfg/ports.xdc]
+set_property is_enabled true [get_files  /home/lars/Documents/Github/red-pitaya-notes/cfg/ports.xdc]
+export_ip_user_files -of_objects  [get_files /home/lars/Documents/Github/red-pitaya-notes/cfg/ports.xdc] -no_script -reset -force -quiet
+remove_files  -fileset constrs_1 /home/lars/Documents/Github/red-pitaya-notes/cfg/ports.xdc
+export_ip_user_files -of_objects  [get_files /home/lars/Documents/Github/red-pitaya-notes/cfg/clocks.xdc] -no_script -reset -force -quiet
+remove_files  -fileset constrs_1 /home/lars/Documents/Github/red-pitaya-notes/cfg/clocks.xdc
+add_files -fileset constrs_1 -norecurse {/home/lars/Documents/Github/DSP/cfg/clocks.xdc /home/lars/Documents/Github/DSP/cfg/ports.xdc}
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Jun 21 11:30:35 2021...
