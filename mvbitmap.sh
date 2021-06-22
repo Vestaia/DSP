@@ -59,6 +59,6 @@ fi
 
 echo "$0: Transfer starting"
 
-lftp sftp://"$login":"$password"@"$ip" -e "cd $remote_dir; put $source_file; rm $remote_dir/program.bit; mv $remote_dir/system_wrapper.bit $remote_dir/program.bit; bye"
+lftp sftp://"$login":"$password"@"$ip" -e "cd $remote_dir; put $source_file; rm $remote_dir/$program.bit; mv $remote_dir/system_wrapper.bit $remote_dir/$program.bit; bye"
 
 echo "$0: Transfer finished"
