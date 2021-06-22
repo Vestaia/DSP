@@ -10,10 +10,10 @@ password="changeme"
 # Which program folder to search in locally
 program="$1"
 
-# where to put the bitmap
+# Where to put the bitmap
 remote_dir="/fpga/bitmaps"
 
-# where to find the bitmap
+# Where to find the bitmap
 source_file="./projects/$program/$program.runs/impl_1/system_wrapper.bit"
 
 helpFunction()
@@ -29,12 +29,14 @@ helpFunction()
    exit 1 # Exit script after printing help
 }
 
-while getopts "i:l:p:" opt
+while getopts "i:l:p:r:s:" opt
 do
    case "$opt" in
       i ) ip="$OPTARG" ;;
       l ) login="$OPTARG" ;;
       p ) password="$OPTARG" ;;
+      r ) remote_dir="$OPTARG" ;;
+      s ) source_file="$OPTARG" ;;
       ? ) helpFunction ;; # Print helpFunction in case parameter is non-existent
    esac
 done
