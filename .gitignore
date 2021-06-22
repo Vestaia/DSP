@@ -1,2 +1,6 @@
+# Vivado log files
 *.log
 *.jou
+
+# Folder Lars keeps the red-pitaya disk image in to reflash the device
+os/
