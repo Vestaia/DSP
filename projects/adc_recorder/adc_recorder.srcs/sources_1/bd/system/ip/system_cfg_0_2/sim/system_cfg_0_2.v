@@ -83,7 +83,7 @@ input wire aclk;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME aresetn, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 aresetn RST" *)
 input wire aresetn;
-output wire [255 : 0] cfg_data;
+output wire [511 : 0] cfg_data;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI AWADDR" *)
 input wire [31 : 0] s_axi_awaddr;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI AWVALID" *)
@@ -122,7 +122,7 @@ DS 4, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *)
 input wire s_axi_rready;
 
   axi_cfg_register #(
-    .CFG_DATA_WIDTH(256),
+    .CFG_DATA_WIDTH(512),
     .AXI_DATA_WIDTH(32),
     .AXI_ADDR_WIDTH(32)
   ) inst (

@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date         : Wed Jan 27 02:58:55 2021
+| Date         : Wed Jun 23 15:27:35 2021
 | Host         : evermist running 64-bit Ubuntu 18.04.4 LTS
 | Command      : report_methodology -file system_wrapper_methodology_drc_routed.rpt -pb system_wrapper_methodology_drc_routed.pb -rpx system_wrapper_methodology_drc_routed.rpx
 | Design       : system_wrapper
@@ -23,11 +23,11 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 50
+             Violations found: 42
 +-----------+----------+-------------------------------------------------+------------+
 | Rule      | Severity | Description                                     | Violations |
 +-----------+----------+-------------------------------------------------+------------+
-| TIMING-18 | Warning  | Missing input or output delay                   | 46         |
+| TIMING-18 | Warning  | Missing input or output delay                   | 38         |
 | XDCC-5    | Warning  | User Non-Timing constraint/property overwritten | 4          |
 +-----------+----------+-------------------------------------------------+------------+
 
@@ -223,72 +223,32 @@ Missing input or output delay
 An output delay is missing on exp_p_tri_io[7] relative to clock(s) adc_clk_p_i
 Related violations: <none>
 
-TIMING-18#39 Warning
-Missing input or output delay  
-An output delay is missing on led_o[0] relative to clock(s) adc_clk_p_i
-Related violations: <none>
-
-TIMING-18#40 Warning
-Missing input or output delay  
-An output delay is missing on led_o[1] relative to clock(s) adc_clk_p_i
-Related violations: <none>
-
-TIMING-18#41 Warning
-Missing input or output delay  
-An output delay is missing on led_o[2] relative to clock(s) adc_clk_p_i
-Related violations: <none>
-
-TIMING-18#42 Warning
-Missing input or output delay  
-An output delay is missing on led_o[3] relative to clock(s) adc_clk_p_i
-Related violations: <none>
-
-TIMING-18#43 Warning
-Missing input or output delay  
-An output delay is missing on led_o[4] relative to clock(s) adc_clk_p_i
-Related violations: <none>
-
-TIMING-18#44 Warning
-Missing input or output delay  
-An output delay is missing on led_o[5] relative to clock(s) adc_clk_p_i
-Related violations: <none>
-
-TIMING-18#45 Warning
-Missing input or output delay  
-An output delay is missing on led_o[6] relative to clock(s) adc_clk_p_i
-Related violations: <none>
-
-TIMING-18#46 Warning
-Missing input or output delay  
-An output delay is missing on led_o[7] relative to clock(s) adc_clk_p_i
-Related violations: <none>
-
 XDCC-5#1 Warning
 User Non-Timing constraint/property overwritten  
 A new XDC property IOSTANDARD on dac_pwm_o[0] overrides a previous user property.
-New Source: /home/ywang/Code/red-pitaya-notes/cfg/ports.xdc (Line: 111)
-Previous Source: /home/ywang/Code/red-pitaya-notes/cfg/ports.xdc (Line: 99)
+New Source: /home/ywang/git/DSP/cfg/ports.xdc (Line: 115)
+Previous Source: /home/ywang/git/DSP/cfg/ports.xdc (Line: 103)
 Related violations: <none>
 
 XDCC-5#2 Warning
 User Non-Timing constraint/property overwritten  
 A new XDC property IOSTANDARD on dac_pwm_o[1] overrides a previous user property.
-New Source: /home/ywang/Code/red-pitaya-notes/cfg/ports.xdc (Line: 111)
-Previous Source: /home/ywang/Code/red-pitaya-notes/cfg/ports.xdc (Line: 99)
+New Source: /home/ywang/git/DSP/cfg/ports.xdc (Line: 115)
+Previous Source: /home/ywang/git/DSP/cfg/ports.xdc (Line: 103)
 Related violations: <none>
 
 XDCC-5#3 Warning
 User Non-Timing constraint/property overwritten  
 A new XDC property IOSTANDARD on dac_pwm_o[2] overrides a previous user property.
-New Source: /home/ywang/Code/red-pitaya-notes/cfg/ports.xdc (Line: 111)
-Previous Source: /home/ywang/Code/red-pitaya-notes/cfg/ports.xdc (Line: 99)
+New Source: /home/ywang/git/DSP/cfg/ports.xdc (Line: 115)
+Previous Source: /home/ywang/git/DSP/cfg/ports.xdc (Line: 103)
 Related violations: <none>
 
 XDCC-5#4 Warning
 User Non-Timing constraint/property overwritten  
 A new XDC property IOSTANDARD on dac_pwm_o[3] overrides a previous user property.
-New Source: /home/ywang/Code/red-pitaya-notes/cfg/ports.xdc (Line: 111)
-Previous Source: /home/ywang/Code/red-pitaya-notes/cfg/ports.xdc (Line: 99)
+New Source: /home/ywang/git/DSP/cfg/ports.xdc (Line: 115)
+Previous Source: /home/ywang/git/DSP/cfg/ports.xdc (Line: 103)
 Related violations: <none>
 
 

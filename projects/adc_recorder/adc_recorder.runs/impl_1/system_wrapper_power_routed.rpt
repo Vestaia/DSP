@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date             : Wed Jan 27 02:58:57 2021
+| Date             : Wed Jun 23 15:27:36 2021
 | Host             : evermist running 64-bit Ubuntu 18.04.4 LTS
 | Command          : report_power -file system_wrapper_power_routed.rpt -pb system_wrapper_power_summary_routed.pb -rpx system_wrapper_power_routed.rpx
 | Design           : system_wrapper
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.807        |
+| Total On-Chip Power (W)  | 1.791        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.679        |
-| Device Static (W)        | 0.128        |
+| Dynamic (W)              | 1.665        |
+| Device Static (W)        | 0.126        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 64.2         |
-| Junction Temperature (C) | 45.8         |
+| Max Ambient (C)          | 64.3         |
+| Junction Temperature (C) | 45.7         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -49,26 +49,27 @@ Table of Contents
 1.1 On-Chip Components
 ----------------------
 
-+-------------------------+-----------+----------+-----------+-----------------+
-| On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
-+-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.009 |        7 |       --- |             --- |
-| Slice Logic             |     0.007 |     2790 |       --- |             --- |
-|   LUT as Logic          |     0.006 |     1043 |     17600 |            5.93 |
-|   CARRY4                |    <0.001 |      119 |      4400 |            2.70 |
-|   Register              |    <0.001 |     1202 |     35200 |            3.41 |
-|   F7/F8 Muxes           |    <0.001 |       32 |     17600 |            0.18 |
-|   LUT as Shift Register |    <0.001 |       46 |      6000 |            0.77 |
-|   Others                |     0.000 |      239 |       --- |             --- |
-| Signals                 |     0.009 |     2366 |       --- |             --- |
-| Block RAM               |     0.088 |       18 |        60 |           30.00 |
-| PLL                     |     0.107 |        1 |         2 |           50.00 |
-| DSPs                    |     0.001 |        2 |        80 |            2.50 |
-| I/O                     |     0.172 |       57 |       100 |           57.00 |
-| PS7                     |     1.285 |        1 |       --- |             --- |
-| Static Power            |     0.128 |          |           |                 |
-| Total                   |     1.807 |          |           |                 |
-+-------------------------+-----------+----------+-----------+-----------------+
++--------------------------+-----------+----------+-----------+-----------------+
+| On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
++--------------------------+-----------+----------+-----------+-----------------+
+| Clocks                   |     0.010 |        7 |       --- |             --- |
+| Slice Logic              |     0.006 |     3310 |       --- |             --- |
+|   LUT as Logic           |     0.005 |     1129 |     17600 |            6.41 |
+|   CARRY4                 |    <0.001 |      136 |      4400 |            3.09 |
+|   Register               |    <0.001 |     1585 |     35200 |            4.50 |
+|   LUT as Distributed RAM |    <0.001 |       12 |      6000 |            0.20 |
+|   F7/F8 Muxes            |    <0.001 |       96 |     17600 |            0.55 |
+|   LUT as Shift Register  |    <0.001 |       46 |      6000 |            0.77 |
+|   Others                 |     0.000 |      241 |       --- |             --- |
+| Signals                  |     0.010 |     2753 |       --- |             --- |
+| Block RAM                |     0.002 |        1 |        60 |            1.67 |
+| PLL                      |     0.107 |        1 |         2 |           50.00 |
+| DSPs                     |     0.010 |        9 |        80 |           11.25 |
+| I/O                      |     0.235 |       57 |       100 |           57.00 |
+| PS7                      |     1.285 |        1 |       --- |             --- |
+| Static Power             |     0.126 |          |           |                 |
+| Total                    |     1.791 |          |           |                 |
++--------------------------+-----------+----------+-----------+-----------------+
 
 
 1.2 Power Supply Summary
@@ -77,20 +78,20 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.129 |       0.121 |      0.008 |
-| Vccaux    |       1.800 |     0.065 |       0.057 |      0.008 |
-| Vcco33    |       3.300 |     0.051 |       0.050 |      0.001 |
+| Vccint    |       1.000 |     0.059 |       0.051 |      0.007 |
+| Vccaux    |       1.800 |     0.066 |       0.058 |      0.008 |
+| Vcco33    |       3.300 |     0.069 |       0.068 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.008 |       0.007 |      0.002 |
+| Vccbram   |       1.000 |     0.001 |       0.000 |      0.001 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccpint   |       1.000 |     0.705 |       0.674 |      0.032 |
+| Vccpint   |       1.000 |     0.705 |       0.674 |      0.031 |
 | Vccpaux   |       1.800 |     0.037 |       0.027 |      0.010 |
 | Vccpll    |       1.800 |     0.017 |       0.014 |      0.003 |
 | Vcco_ddr  |       1.500 |     0.356 |       0.354 |      0.002 |
@@ -156,24 +157,22 @@ Table of Contents
 +---------------------------+-----------+
 | Name                      | Power (W) |
 +---------------------------+-----------+
-| system_wrapper            |     1.679 |
-|   system_i                |     1.508 |
-|     axis_ram_writer_0     |     0.001 |
-|       inst                |     0.001 |
-|     axis_red_pitaya_dac_0 |     0.002 |
-|       inst                |     0.002 |
-|     cfg_0                 |     0.004 |
-|       inst                |     0.004 |
+| system_wrapper            |     1.665 |
+|   system_i                |     1.432 |
+|     axis_red_pitaya_dac_0 |     0.003 |
+|       inst                |     0.003 |
+|     config_interconnect   |     0.006 |
+|       cfg_0               |     0.006 |
+|     fir_poly_0            |     0.019 |
+|       inst                |     0.019 |
 |     pll_0                 |     0.108 |
 |       inst                |     0.108 |
 |     ps_0                  |     1.285 |
 |       inst                |     1.285 |
-|     ps_0_axi_periph       |     0.008 |
-|       s00_couplers        |     0.008 |
+|     ps_0_axi_periph       |     0.007 |
+|       s00_couplers        |     0.007 |
 |     sig_exp_decay_0       |     0.002 |
 |       inst                |     0.002 |
-|     trap_0                |     0.095 |
-|       inst                |     0.095 |
 |     writer_0              |     0.002 |
 |       inst                |     0.002 |
 +---------------------------+-----------+
