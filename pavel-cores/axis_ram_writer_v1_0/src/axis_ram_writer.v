@@ -7,6 +7,7 @@ module axis_ram_writer #
   parameter integer AXI_ID_WIDTH = 6,
   parameter integer AXI_ADDR_WIDTH = 32,
   parameter integer AXI_DATA_WIDTH = 64,
+  // Always use a power of 2. If you don't it will pad to the next power of 2.
   parameter integer AXIS_TDATA_WIDTH = 64
 )
 (
@@ -41,11 +42,12 @@ module axis_ram_writer #
   input  wire                        s_axis_tvalid
 );
 
+  // counts how many times to right shift `value` until it becomes 0
   function integer clogb2 (input integer value);
     for(clogb2 = 0; value > 0; clogb2 = clogb2 + 1) value = value >> 1;
   endfunction
 
-  localparam integer ADDR_SIZE = clogb2((AXI_DATA_WIDTH/8)-1);
+  localparam integer ADDR_SIZE = clogb2((AXI_DATA_WIDTH/8) - 1);
 
   reg int_awvalid_reg, int_awvalid_next;
   reg int_wvalid_reg, int_wvalid_next;
