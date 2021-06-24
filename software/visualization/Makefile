@@ -7,14 +7,14 @@
 
 TARGET_EXEC := main
 
-LOCAL_SRC_DIRS := src
+LOCAL_SRC_DIRS := src libs/imgui/impl libs/imgui/src
 EXT_SRC_DIRS := 
 SRC_DIRS := $(LOCAL_SRC_DIRS) $(EXT_SRC_DIRS)
 BUILD_DIR := bin
 
 VPATH := $(SRC_DIRS)
 
-LOCAL_INC_DIRS := include
+LOCAL_INC_DIRS := include libs/imgui/include libs/imgui/impl
 EXT_INC_DIRS := 
 INC_DIRS := $(LOCAL_INC_DIRS) $(EXT_INC_DIRS)
 INC_FLAGS := $(addprefix -I ,$(INC_DIRS))
@@ -22,7 +22,7 @@ INC_FLAGS := $(addprefix -I ,$(INC_DIRS))
 # possibly need for mingw to be able to std::thread : -static-libgcc -static-libstdc++
 # I don't want to do static linking necessarily, but mingw doesn't behave itself with threads :( -Lars
 LIB_DIRS := 
-LINK_FLAGS := $(addprefix -L , $(LIB_DIRS))
+LINK_FLAGS := $(addprefix -L , $(LIB_DIRS)) -lglfw -lvulkan
 
 WARNING_FLAGS := -Wall -Wextra -Wno-unused-parameter
 # WARNING_FLAGS += -Wdouble-promotion
@@ -54,21 +54,6 @@ endif
 OBJS := $(SRCS:%.cpp=%.o)
 OBJS := $(OBJS:%.c=%.o)
 
-# #
-# # Dependency calculations
-# # Possibly TODO in future
-# #
-# DEP_DIR := $(BUILD_DIR)/depend
-
-#
-# Debug build settings
-#
-DBG_DIR := $(BUILD_DIR)/debug
-DBG_EXE := $(DBG_DIR)/$(TARGET_EXEC)
-DBG_OBJS := $(addprefix $(DBG_DIR)/objs/, $(OBJS))
-DBG_FLAGS = -g -O0
-DBG_DEPS = $(DBG_OBJS:.o=.d)
-
 #
 # Release build settings
 #
@@ -84,22 +69,6 @@ REL_DEPS = $(REL_OBJS:.o=.d)
 all:
 	$(MAKE) prep
 	$(MAKE) release
-
-#
-# Debug rules
-#
-debug: $(DBG_EXE)
-
-$(DBG_EXE): $(DBG_OBJS)
-	$(CXX) -o $(DBG_EXE) $^ $(CPPFLAGS) $(DBG_FLAGS)
-
-$(DBG_DIR)/objs/%.o: %.cpp
-	$(call MKDIR_P, $(dir $@))
-	$(CXX) -c -o $@ $< $(CPPFLAGS) $(DBG_FLAGS)
-
-$(DBG_DIR)/objs/%.o: %.c
-	$(call MKDIR_P, $(dir $@))
-	$(CXX) -c -o $@ $< $(CPPFLAGS) $(DBG_FLAGS)
 
 #
 # Release rules

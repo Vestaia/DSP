@@ -1,1 +1,5 @@
-libs/glfw/**
+# Imgui local data file
+imgui.ini
+
+# Build directory
+bin/**
