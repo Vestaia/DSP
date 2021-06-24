@@ -19,8 +19,9 @@ EXT_INC_DIRS :=
 INC_DIRS := $(LOCAL_INC_DIRS) $(EXT_INC_DIRS)
 INC_FLAGS := $(addprefix -I ,$(INC_DIRS))
 
-# possibly need for mingw to be able to std::thread : -static-libgcc -static-libstdc++
+# Possibly needed for mingw to be able to std::thread : -static-libgcc -static-libstdc++
 # I don't want to do static linking necessarily, but mingw doesn't behave itself with threads :( -Lars
+
 LIB_DIRS := 
 LINK_FLAGS := $(addprefix -L , $(LIB_DIRS)) -lglfw -lvulkan
 
