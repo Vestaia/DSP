@@ -14,14 +14,13 @@ BUILD_DIR := bin
 
 VPATH := $(SRC_DIRS)
 
-LOCAL_INC_DIRS := src libs/imgui/include libs/imgui/impl libs/implot/include
+LOCAL_INC_DIRS := src src/core libs/imgui/include libs/imgui/impl libs/implot/include
 EXT_INC_DIRS := 
 INC_DIRS := $(LOCAL_INC_DIRS) $(EXT_INC_DIRS)
 INC_FLAGS := $(addprefix -I ,$(INC_DIRS))
 
 # Possibly needed for mingw to be able to std::thread : -static-libgcc -static-libstdc++
 # I dont want to do static linking necessarily, but mingw does not behave itself with threads :( -Lars
-
 LIB_DIRS := 
 LINK_FLAGS := $(addprefix -L , $(LIB_DIRS)) -lglfw -lvulkan
 
