@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/ywang/Code/filters/project/adc_recorder/adc_recorder.runs/synth_1'
+HD_PWD='/home/lars/Documents/Github/DSP/projects/ram_reader_test/ram_reader_test.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

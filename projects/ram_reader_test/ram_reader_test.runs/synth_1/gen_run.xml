@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1611734081">
-  <File Type="PA-TCL" Name="system_wrapper.tcl"/>
-  <File Type="REPORTS-TCL" Name="system_wrapper_reports.tcl"/>
+<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1624556184">
+  <File Type="VDS-TIMING-PB" Name="system_wrapper_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="system_wrapper_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="system_wrapper.dcp"/>
   <File Type="RDS-UTIL-PB" Name="system_wrapper_utilization_synth.pb"/>
   <File Type="RDS-UTIL" Name="system_wrapper_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="system_wrapper_drc_synth.rpt"/>
   <File Type="RDS-RDS" Name="system_wrapper.vds"/>
+  <File Type="REPORTS-TCL" Name="system_wrapper_reports.tcl"/>
+  <File Type="PA-TCL" Name="system_wrapper.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/bd/system/system.bd">
@@ -35,16 +38,14 @@
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
-    <File Path="$PPRDIR/../../../red-pitaya-notes/cfg/ports.xdc">
+    <File Path="$PPRDIR/../../cfg/clocks.xdc">
       <FileInfo>
-        <Attr Name="Library" Val="xil_defaultlib"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../../red-pitaya-notes/cfg/clocks.xdc">
+    <File Path="$PPRDIR/../../cfg/ports.xdc">
       <FileInfo>
-        <Attr Name="Library" Val="xil_defaultlib"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
       </FileInfo>
@@ -62,13 +63,13 @@
   <Strategy Version="1" Minor="2">
     <StratHandle Name="Flow_PerfOptimized_high" Flow="Vivado Synthesis 2019"/>
     <Step Id="synth_design">
-      <Option Id="Directive">7</Option>
+      <Option Id="ShregMinSize">5</Option>
+      <Option Id="FsmExtraction">1</Option>
       <Option Id="KeepEquivalentRegisters">1</Option>
       <Option Id="NoCombineLuts">1</Option>
       <Option Id="ResourceSharing">2</Option>
-      <Option Id="ShregMinSize">5</Option>
-      <Option Id="FsmExtraction">1</Option>
       <Option Id="RepFanoutThreshold">400</Option>
+      <Option Id="Directive">7</Option>
     </Step>
   </Strategy>
 </GenRun>
