@@ -1,5 +1,5 @@
 SRC_DIR:=.
-OBJ_DIR:=build
+OBJ_DIR:=$(if $(OBJ_DIR),$(OBJ_DIR),build)
 COMPILER:=$(if $(COMPILER),$(COMPILER),arm-linux-gnueabihf-g++)
 INCLUDE:=.
 CFLAGS:=-I$(INCLUDE) -I$(SRC_DIR)

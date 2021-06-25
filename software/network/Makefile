@@ -1,5 +1,5 @@
 SRC_DIR:=src
-OBJ_DIR:=build
+OBJ_DIR := $(if $(OBJ_DIR),$(OBJ_DIR),build)
 COMPILER:=$(if $(COMPILER),$(COMPILER),g++)
 INCLUDE:=include
 CFLAGS:=-I$(INCLUDE) -I$(SRC_DIR) --std=c++17
