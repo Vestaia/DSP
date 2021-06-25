@@ -1,4 +1,5 @@
 #include "windowmanager.h"
+#include "stringformat.h"
 
 void WindowManager::renderImGui() {
     // Our state variables
@@ -35,7 +36,31 @@ void WindowManager::renderImGui() {
     
     ImGui::Begin("Controls", nullptr, window_flags);
     
-    ImGui::Text("Funky text inside here");
+    ImGui::PushTextWrapPos();
+    ImGui::Text("Application average %.3f ms/frame\n(%.1f FPS) Vsync: %s", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate, vsync ? "On" : "Off");
+    ImGui::PopTextWrapPos();
+    
+    if (ImGui::CollapsingHeader("Connection", ImGuiTreeNodeFlags_DefaultOpen)) {
+        static char ip[15];
+        ImGui::Text("Target IP: ");
+        ImGui::SameLine();
+        ImGui::PushItemWidth(-1.0f);
+        ImGui::InputText("##target ip", ip, IM_ARRAYSIZE(ip));
+        ImGui::PushItemWidth(0.0f);
+        
+        static char port[5];
+        ImGui::Text("Target Port: ");
+        ImGui::SameLine();
+        ImGui::PushItemWidth(-1.0f);
+        ImGui::InputText("#target port", port, IM_ARRAYSIZE(port));
+        ImGui::PushItemWidth(0.0f);
+        
+        if (ImGui::Button(string_format("Connect to %s:%s", (strcmp(ip, "") == 0) ? "xxx.xxx.xxx.xxx" : ip, (strcmp(port, "") == 0) ? "xxxxx" : port).c_str())) {
+            if (strcmp(ip, "") == 0) {
+                
+            }
+        }
+    }
     
     ImGui::End();
     
@@ -49,6 +74,7 @@ void WindowManager::renderImGui() {
         ImPlot::EndPlot();
     }
     ImGui::End();
+
 
     // Rendering
     ImGui::Render();

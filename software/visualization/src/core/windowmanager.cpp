@@ -27,6 +27,7 @@ int WindowManager::initialize(const char* windowName, int windowWidth, int windo
     glfwSetWindowUserPointer(this->window, this);
     
     glfwSetFramebufferSizeCallback(window, glfw_framebuffer_size_callback);
+    glfwSetKeyCallback(window, glfw_key_callback);
 
     // Setup Vulkan
     if (!glfwVulkanSupported())
@@ -321,8 +322,30 @@ void WindowManager::glfw_key_callback(GLFWwindow* window, int key, int scancode,
     obj->glfw_key_callback(key, scancode, actions, mods);
 }
 
-void WindowManager::glfw_key_callback(int key, int scancode, int actions, int mods) {
-    //TODO: this
+void WindowManager::glfw_key_callback(int key, int scancode, int action, int mods) {
+    // A lot of this is from the documentation example to make sure that ImGui handles everything properly
+    
+    ImGuiIO& io = ImGui::GetIO();
+    if (key >= 0 && key < IM_ARRAYSIZE(io.KeysDown))
+    {
+        if (action == GLFW_PRESS)
+            io.KeysDown[key] = true;
+        if (action == GLFW_RELEASE)
+            io.KeysDown[key] = false;
+    }
+
+    // Modifiers are not reliable across systems
+    io.KeyCtrl = io.KeysDown[GLFW_KEY_LEFT_CONTROL] || io.KeysDown[GLFW_KEY_RIGHT_CONTROL];
+    io.KeyShift = io.KeysDown[GLFW_KEY_LEFT_SHIFT] || io.KeysDown[GLFW_KEY_RIGHT_SHIFT];
+    io.KeyAlt = io.KeysDown[GLFW_KEY_LEFT_ALT] || io.KeysDown[GLFW_KEY_RIGHT_ALT];
+#ifdef _WIN32
+    io.KeySuper = false;
+#else
+    io.KeySuper = io.KeysDown[GLFW_KEY_LEFT_SUPER] || io.KeysDown[GLFW_KEY_RIGHT_SUPER];
+#endif
+    if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS) {
+        glfwSetWindowShouldClose(window, GLFW_TRUE);
+    } 
 }
 
 void WindowManager::glfw_error_callback(int error, const char* description) {

@@ -7,7 +7,8 @@ int main(int, char**)
     const int windowHeight = 720;
 
     WindowManager window;
-    window.initialize("Red-Pitaya Oscilloscope", windowWidth, windowHeight);
+    bool vsync = true;
+    window.initialize("Red-Pitaya Oscilloscope", windowWidth, windowHeight, vsync);
 
     // Main loop
     while (!window.shouldClose())

@@ -14,7 +14,7 @@ BUILD_DIR := bin
 
 VPATH := $(SRC_DIRS)
 
-LOCAL_INC_DIRS := src src/core libs/imgui/include libs/imgui/impl libs/implot/include
+LOCAL_INC_DIRS := src src/core src/utils libs/imgui/include libs/imgui/impl libs/implot/include
 EXT_INC_DIRS := 
 INC_DIRS := $(LOCAL_INC_DIRS) $(EXT_INC_DIRS)
 INC_FLAGS := $(addprefix -I ,$(INC_DIRS))
