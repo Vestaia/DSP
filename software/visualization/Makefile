@@ -7,14 +7,14 @@
 
 TARGET_EXEC := main
 
-LOCAL_SRC_DIRS := src libs/imgui/impl libs/imgui/src
+LOCAL_SRC_DIRS := src libs/imgui/impl libs/imgui/src libs/implot/src
 EXT_SRC_DIRS := 
 SRC_DIRS := $(LOCAL_SRC_DIRS) $(EXT_SRC_DIRS)
 BUILD_DIR := bin
 
 VPATH := $(SRC_DIRS)
 
-LOCAL_INC_DIRS := include libs/imgui/include libs/imgui/impl
+LOCAL_INC_DIRS := src libs/imgui/include libs/imgui/impl libs/implot/include
 EXT_INC_DIRS := 
 INC_DIRS := $(LOCAL_INC_DIRS) $(EXT_INC_DIRS)
 INC_FLAGS := $(addprefix -I ,$(INC_DIRS))

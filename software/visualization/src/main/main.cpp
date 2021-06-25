@@ -9,15 +9,29 @@
 //   the backend itself (imgui_impl_vulkan.cpp), but should PROBABLY NOT be used by your own engine/app code.
 // Read comments in imgui_impl_vulkan.h.
 
+// ImGui
 #include "imgui.h"
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_vulkan.h"
-#include <stdio.h>          // printf, fprintf
-#include <stdlib.h>         // abort
+
+// ImPlot
+#include "implot.h"
+
+// GLFW
 #define GLFW_INCLUDE_NONE
 #define GLFW_INCLUDE_VULKAN
 #include <GLFW/glfw3.h>
+
+// Vulkan
 #include <vulkan/vulkan.h>
+
+// Project
+#include <windowmanager.h>
+
+// C++ 
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 
 // [Win32] Our example includes a copy of glfw3.lib pre-compiled with VS2010 to maximize ease of testing and compatibility with old VS compilers.
 // To link with VS2010-era libraries, VS2015+ requires linking with legacy_stdio_definitions.lib, which we do using this pragma.
@@ -54,15 +68,6 @@ static void check_vk_result(VkResult err)
         abort();
 }
 
-#ifdef IMGUI_VULKAN_DEBUG_REPORT
-static VKAPI_ATTR VkBool32 VKAPI_CALL debug_report(VkDebugReportFlagsEXT flags, VkDebugReportObjectTypeEXT objectType, uint64_t object, size_t location, int32_t messageCode, const char* pLayerPrefix, const char* pMessage, void* pUserData)
-{
-    (void)flags; (void)object; (void)location; (void)messageCode; (void)pUserData; (void)pLayerPrefix; // Unused arguments
-    fprintf(stderr, "[vulkan] Debug report from ObjectType: %i\nMessage: %s\n\n", objectType, pMessage);
-    return VK_FALSE;
-}
-#endif // IMGUI_VULKAN_DEBUG_REPORT
-
 static void SetupVulkan(const char** extensions, uint32_t extensions_count)
 {
     VkResult err;
@@ -73,42 +78,11 @@ static void SetupVulkan(const char** extensions, uint32_t extensions_count)
         create_info.sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO;
         create_info.enabledExtensionCount = extensions_count;
         create_info.ppEnabledExtensionNames = extensions;
-#ifdef IMGUI_VULKAN_DEBUG_REPORT
-        // Enabling validation layers
-        const char* layers[] = { "VK_LAYER_KHRONOS_validation" };
-        create_info.enabledLayerCount = 1;
-        create_info.ppEnabledLayerNames = layers;
 
-        // Enable debug report extension (we need additional storage, so we duplicate the user array to add our new extension to it)
-        const char** extensions_ext = (const char**)malloc(sizeof(const char*) * (extensions_count + 1));
-        memcpy(extensions_ext, extensions, extensions_count * sizeof(const char*));
-        extensions_ext[extensions_count] = "VK_EXT_debug_report";
-        create_info.enabledExtensionCount = extensions_count + 1;
-        create_info.ppEnabledExtensionNames = extensions_ext;
-
-        // Create Vulkan Instance
-        err = vkCreateInstance(&create_info, g_Allocator, &g_Instance);
-        check_vk_result(err);
-        free(extensions_ext);
-
-        // Get the function pointer (required for any extensions)
-        auto vkCreateDebugReportCallbackEXT = (PFN_vkCreateDebugReportCallbackEXT)vkGetInstanceProcAddr(g_Instance, "vkCreateDebugReportCallbackEXT");
-        IM_ASSERT(vkCreateDebugReportCallbackEXT != NULL);
-
-        // Setup the debug report callback
-        VkDebugReportCallbackCreateInfoEXT debug_report_ci = {};
-        debug_report_ci.sType = VK_STRUCTURE_TYPE_DEBUG_REPORT_CALLBACK_CREATE_INFO_EXT;
-        debug_report_ci.flags = VK_DEBUG_REPORT_ERROR_BIT_EXT | VK_DEBUG_REPORT_WARNING_BIT_EXT | VK_DEBUG_REPORT_PERFORMANCE_WARNING_BIT_EXT;
-        debug_report_ci.pfnCallback = debug_report;
-        debug_report_ci.pUserData = NULL;
-        err = vkCreateDebugReportCallbackEXT(g_Instance, &debug_report_ci, g_Allocator, &g_DebugReport);
-        check_vk_result(err);
-#else
         // Create Vulkan Instance without any debug feature
         err = vkCreateInstance(&create_info, g_Allocator, &g_Instance);
         check_vk_result(err);
         IM_UNUSED(g_DebugReport);
-#endif
     }
 
     // Select GPU
@@ -123,7 +97,7 @@ static void SetupVulkan(const char** extensions, uint32_t extensions_count)
         check_vk_result(err);
 
         // If a number >1 of GPUs got reported, find discrete GPU if present, or use first one available. This covers
-        // most common cases (multi-gpu/integrated+dedicated graphics). Handling more complicated setups (multiple
+        // most common cases (multi-gpu/integrated + dedicated graphics). Handling more complicated setups (multiple
         // dedicated GPUs) is out of scope of this sample.
         int use_gpu = 0;
         for (int i = 0; i < (int)gpu_count; i++)
@@ -353,7 +327,13 @@ static void glfw_error_callback(int error, const char* description)
 }
 
 int main(int, char**)
-{
+{   
+    const int windowWidth = 1280;
+    const int windowHeight = 720;
+
+    //WindowManager window;
+    //window.initialize(windowWidth, windowHeight);
+
     // Setup GLFW window
     glfwSetErrorCallback(glfw_error_callback);
     if (!glfwInit())
@@ -386,6 +366,7 @@ int main(int, char**)
     // Setup Dear ImGui context
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
+    ImPlot::CreateContext();
     ImGuiIO& io = ImGui::GetIO(); (void)io;
     //io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
     //io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
@@ -498,9 +479,7 @@ int main(int, char**)
             static float f = 0.0f;
             static int counter = 0;
 
-            ImGui::Begin("Hello, world!");            
-            
-            ImGui::SetWindowPos(ImVec2(0, 0));              // Create a window called "Hello, world!" and append into it.
+            ImGui::Begin("Hello, world!");                          // Create a window called "Hello, world!" and append into it.
 
             ImGui::Text("This is some useful text.");               // Display some text (you can use a format strings too)
             ImGui::Checkbox("Demo Window", &show_demo_window);      // Edit bools storing our window open/close state
@@ -528,6 +507,27 @@ int main(int, char**)
             ImGui::End();
         }
 
+        static int   bar_data[11];
+        static float x_data[1000];
+        static float y_data[1000];
+
+        for (int i = 0; i < 11; i++) {
+            bar_data[i] = i + 1;
+        }
+
+        for (int i = 0; i < 1000; i++) {
+            x_data[i] = 0.0f + 0.01f * i;
+            y_data[i] = sinf(x_data[i]) + x_data[i];
+        }
+
+        ImGui::Begin("My Window");
+        if (ImPlot::BeginPlot("My Plot", 0, 0, ImVec2(-1.0f, 0.0f), 0, ImPlotAxisFlags_AutoFit, ImPlotAxisFlags_AutoFit)) {
+            ImPlot::PlotBars("My Bar Plot", bar_data, 11);
+            ImPlot::PlotLine("My Line Plot", x_data, y_data, 1000);
+            ImPlot::EndPlot();
+        }
+        ImGui::End();
+
         // Rendering
         ImGui::Render();
         ImDrawData* draw_data = ImGui::GetDrawData();
@@ -548,6 +548,7 @@ int main(int, char**)
     check_vk_result(err);
     ImGui_ImplVulkan_Shutdown();
     ImGui_ImplGlfw_Shutdown();
+    ImPlot::DestroyContext();
     ImGui::DestroyContext();
 
     CleanupVulkanWindow();
