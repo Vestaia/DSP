@@ -114,6 +114,9 @@ REL_OBJS = $(addprefix $(REL_DIR)/objs/, $(OBJS))
 REL_FLAGS := -Ofast
 REL_DEPS = $(REL_OBJS:.o=.d)
 
+# For high DPI screens:
+REL_FLAGS := -D DPI_SCALE_FACTOR=2
+
 .PHONY: all test clean debug prep release remake
 
 # Default build

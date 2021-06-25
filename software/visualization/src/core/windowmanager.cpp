@@ -1,5 +1,9 @@
 #include "windowmanager.h"
 
+#ifndef DPI_SCALE_FACTOR
+    #define DPI_SCALE_FACTOR 1
+#endif
+
 static void check_vk_result(VkResult err)
 {
     if (err == 0)
@@ -9,15 +13,20 @@ static void check_vk_result(VkResult err)
         abort();
 }
 
-int WindowManager::initialize(const char* windowName, int windowWidth, int windowHeight)
+int WindowManager::initialize(const char* windowName, int windowWidth, int windowHeight, bool vsync)
 {
     glfwSetErrorCallback(glfw_error_callback);
     
-    // Check error of window initialization
     int setupStatus = initializeWindow(windowName,  windowWidth, windowHeight);
     if (setupStatus != 0) return setupStatus;
-
+    
+    this->windowWidth = windowWidth;
+    this->windowHeight= windowHeight;
+    this->vsync = vsync;
+    
     glfwSetWindowUserPointer(this->window, this);
+    
+    glfwSetFramebufferSizeCallback(window, glfw_framebuffer_size_callback);
 
     // Setup Vulkan
     if (!glfwVulkanSupported())
@@ -114,7 +123,14 @@ int WindowManager::initialize(const char* windowName, int windowWidth, int windo
         check_vk_result(err);
         ImGui_ImplVulkan_DestroyFontUploadObjects();
     }
-
+    
+    // set background color
+    ImVec4 clear_color(0.4f, 0.4f, 0.4f, 1.0f);
+    wd->ClearValue.color.float32[0] = clear_color.x * clear_color.w;
+    wd->ClearValue.color.float32[1] = clear_color.y * clear_color.w;
+    wd->ClearValue.color.float32[2] = clear_color.z * clear_color.w;
+    wd->ClearValue.color.float32[3] = clear_color.w;
+    
     return 0;
 }
 
@@ -296,7 +312,8 @@ void WindowManager::glfw_framebuffer_size_callback(GLFWwindow* window, int width
 }
 
 void WindowManager::glfw_framebuffer_size_callback(int width, int height) {
-    //TODO: this
+    this->windowWidth = width / DPI_SCALE_FACTOR;
+    this->windowHeight = height / DPI_SCALE_FACTOR;
 }
 
 void WindowManager::glfw_key_callback(GLFWwindow* window, int key, int scancode, int actions, int mods) {
@@ -408,86 +425,6 @@ void WindowManager::drawFrame() {
     }
     check_vk_result(err);
     wd->SemaphoreIndex = (wd->SemaphoreIndex + 1) % wd->ImageCount; // Now we can use the next set of semaphores
-}
-
-void WindowManager::renderImGui() {
-    // Our state
-    static bool show_demo_window = true;
-    static bool show_another_window = false;
-    static ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
-
-    // Start the Dear ImGui frame
-    ImGui_ImplVulkan_NewFrame();
-    ImGui_ImplGlfw_NewFrame();
-    ImGui::NewFrame();
-
-    // 1. Show the big demo window (Most of the sample code is in ImGui::ShowDemoWindow()! You can browse its code to learn more about Dear ImGui!).
-    if (show_demo_window)
-        ImGui::ShowDemoWindow(&show_demo_window);
-
-    // 2. Show a simple window that we create ourselves. We use a Begin/End pair to created a named window.
-    {
-        static float f = 0.0f;
-        static int counter = 0;
-
-        ImGui::Begin("Hello, world!");                          // Create a window called "Hello, world!" and append into it.
-
-        ImGui::Text("This is some useful text.");               // Display some text (you can use a format strings too)
-        ImGui::Checkbox("Demo Window", &show_demo_window);      // Edit bools storing our window open/close state
-        ImGui::Checkbox("Another Window", &show_another_window);
-
-        ImGui::SliderFloat("float", &f, 0.0f, 1.0f);            // Edit 1 float using a slider from 0.0f to 1.0f
-        ImGui::ColorEdit3("clear color", (float*)&clear_color); // Edit 3 floats representing a color
-
-        if (ImGui::Button("Button"))                            // Buttons return true when clicked (most widgets return true when edited/activated)
-            counter++;
-        ImGui::SameLine();
-        ImGui::Text("counter = %d", counter);
-
-        ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
-        ImGui::End();
-    }
-
-    // 3. Show another simple window.
-    if (show_another_window)
-    {
-        ImGui::Begin("Another Window", &show_another_window);   // Pass a pointer to our bool variable (the window will have a closing button that will clear the bool when clicked)
-        ImGui::Text("Hello from another window!");
-        if (ImGui::Button("Close Me"))
-            show_another_window = false;
-        ImGui::End();
-    }
-
-    static int   bar_data[11];
-    static float x_data[1000];
-    static float y_data[1000];
-
-    for (int i = 0; i < 11; i++) {
-        bar_data[i] = i + 1;
-    }
-
-    for (int i = 0; i < 1000; i++) {
-        x_data[i] = 0.0f + 0.01f * i;
-        y_data[i] = sinf(x_data[i]) + x_data[i];
-    }
-
-    ImGui::Begin("My Window");
-    if (ImPlot::BeginPlot("My Plot", 0, 0, ImVec2(-1.0f, 0.0f), 0, ImPlotAxisFlags_AutoFit, ImPlotAxisFlags_AutoFit)) {
-        ImPlot::PlotBars("My Bar Plot", bar_data, 11);
-        ImPlot::PlotLine("My Line Plot", x_data, y_data, 1000);
-        ImPlot::EndPlot();
-    }
-    ImGui::End();
-
-    // Rendering
-    ImGui::Render();
-    draw_data = ImGui::GetDrawData();
-
-    // Update clear color based on ImGui controls
-    // wd->ClearValue.color.float32[0] = clear_color.x * clear_color.w;
-    // wd->ClearValue.color.float32[1] = clear_color.y * clear_color.w;
-    // wd->ClearValue.color.float32[2] = clear_color.z * clear_color.w;
-    // wd->ClearValue.color.float32[3] = clear_color.w;
 }
 
 bool WindowManager::isMinimized() {

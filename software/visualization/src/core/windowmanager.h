@@ -26,7 +26,7 @@ class WindowManager {
     public:
         GLFWwindow* window;
         int windowWidth, windowHeight;
-        bool vsync = true;
+        bool vsync;
 
         // Vulkan Variables
         ImGui_ImplVulkanH_Window* wd;
@@ -48,43 +48,43 @@ class WindowManager {
         int                      g_MinImageCount = 2;
         bool                     g_SwapChainRebuild = false;
 
-        int initialize(const char* windowName, int windowWidth, int windowHeight); //done
+        int initialize(const char* windowName, int windowWidth, int windowHeight, bool vsync = true);
 
-        void destroy(); //done
+        void destroy();
+        
+        bool shouldClose();
 
-        bool shouldClose(); //done
+        void pollEvents();
 
-        void pollEvents(); //done
+        bool isMinimized();
 
-        bool isMinimized(); //done
+        void checkSwapChainRebuild();
 
-        void checkSwapChainRebuild(); //done
+        void renderImGui();
 
-        void renderImGui(); //done
+        void renderFrame();
 
-        void renderFrame(); //done
+        void drawFrame();
 
-        void drawFrame(); //done
-
-        void glfw_key_callback(int key, int scancode, int actions, int mods); //done
+        void glfw_key_callback(int key, int scancode, int actions, int mods);
 
         void glfw_framebuffer_size_callback(int width, int height); //todo
 
     private:
         // Returns no error, or ERR_CODE
-        int initializeWindow(const char* windowName, int windowWidth, int windowHeight); //done
+        int initializeWindow(const char* windowName, int windowWidth, int windowHeight);
 
-        static void glfw_key_callback(GLFWwindow* window, int key, int scancode, int actions, int mods); //done
+        static void glfw_key_callback(GLFWwindow* window, int key, int scancode, int actions, int mods);
 
-        static void glfw_framebuffer_size_callback(GLFWwindow* window, int width, int height); //done
+        static void glfw_framebuffer_size_callback(GLFWwindow* window, int width, int height);
 
-        static void glfw_error_callback(int error, const char* description); //done
+        static void glfw_error_callback(int error, const char* description);
 
-        void setupVulkan(const char** extensions, uint32_t extensions_count); //done
+        void setupVulkan(const char** extensions, uint32_t extensions_count);
 
-        void setupVulkanWindow(VkSurfaceKHR surface, int width, int height); // done
+        void setupVulkanWindow(VkSurfaceKHR surface, int width, int height);
 
-        void cleanupVulkan(); // done
+        void cleanupVulkan();
 
-        void cleanupVulkanWindow(); //done
+        void cleanupVulkanWindow();
 };
