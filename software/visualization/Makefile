@@ -26,7 +26,7 @@ LINK_FLAGS := $(addprefix -L , $(LIB_DIRS)) -lglfw -lvulkan
 
 WARNING_FLAGS := -Wall -Wextra -Wno-unused-parameter
 # WARNING_FLAGS += -Wdouble-promotion
-CPPFLAGS := $(WARNING_FLAGS) -std=c++17 $(INC_FLAGS) $(LINK_FLAGS) -MMD -MP
+COMPILE_FLAGS := $(WARNING_FLAGS) -std=c++17 $(INC_FLAGS) -MMD -MP
 CXX := g++
 
 ########################################################################################
@@ -128,19 +128,19 @@ release: $(REL_EXE)
 
 $(REL_EXE): $(REL_OBJS)
 	@printf "${BPURPLE}Compiling final executable:${BWHITE} $@${NC}\n"
-	$(CXX) -o $(REL_EXE) $^ $(CPPFLAGS) $(REL_FLAGS)
+	$(CXX) -o $(REL_EXE) $^ $(COMPILE_FLAGS) $(LINK_FLAGS) $(REL_FLAGS)
 	@printf "${BPURPLE}Compilation complete:${BWHITE} $@${NC}\n"
 
 $(REL_DIR)/objs/%.o: %.cpp
 	$(call MKDIR_P, $(dir $@))
 	@printf "${BPURPLE}Compiling object:${BWHITE} $@${NC}\n"
-	$(CXX) -c -o $@ $< $(CPPFLAGS) $(REL_FLAGS)
+	$(CXX) -c -o $@ $< $(COMPILE_FLAGS) $(REL_FLAGS)
 	@printf "${BPURPLE}Compilation complete:${BWHITE} $@${NC}\n"
 
 $(REL_DIR)/objs/%.o: %.c
 	$(call MKDIR_P, $(dir $@))
 	@printf "${BPURPLE}Compiling object:${BWHITE} $@${NC}\n"
-	$(CXX) -c -o $@ $< $(CPPFLAGS) $(REL_FLAGS)
+	$(CXX) -c -o $@ $< $(COMPILE_FLAGS) $(REL_FLAGS)
 	@printf "${BPURPLE}Compilation complete:${BWHITE} $@${NC}\n"
 
 
