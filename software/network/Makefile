@@ -1,7 +1,6 @@
-SRC_DIR:=src
+SRC_DIR:=.
 OBJ_DIR := $(if $(OBJ_DIR),$(OBJ_DIR),build)
 COMPILER:=$(if $(COMPILER),$(COMPILER),g++)
-INCLUDE:=include
 CFLAGS:=-I$(INCLUDE) -I$(SRC_DIR) --std=c++17
 LDLIBS:=
 SRC:=$(wildcard $(SRC_DIR)/*.cpp)

@@ -11,8 +11,8 @@
 #define DATA_RING_SIZE (1<<25)
 #define EVENT_RING_ADDR 0x1F676980
 #define CONFIG_ADDR 0x40000000
-#define RESET_WRITER 1<<2
-#define RESET_DAQ 1<<1
+#define RESET_WRITER (1<<2)
+#define RESET_DAQ (1<<1)
 #define CLOCK_FREQ 125000000
 
 //Configuration Register Structure

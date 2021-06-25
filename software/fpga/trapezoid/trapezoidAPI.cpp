@@ -58,7 +58,7 @@ sample* fpga::capture_n_events(unsigned int n){
 }
 
 sample* fpga::capture_t_events(float t){
-    fpga::capture_n_events(t * CLOCK_FREQ);
+    return fpga::capture_n_events(t * CLOCK_FREQ);
 }
 
 int fpga::reset(){
