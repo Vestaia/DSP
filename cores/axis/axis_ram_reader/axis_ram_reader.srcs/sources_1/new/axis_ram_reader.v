@@ -59,7 +59,8 @@ module axis_ram_reader #
   begin
     if (~aresetn)
     begin
-      //TODO: reset logic
+      int_addr_reg <= {(ADDR_WIDTH){1'b0}}
+      int_rid_reg <= {(AXI_ID_WIDTH){1'b0}}
     end
     else
     begin
@@ -82,7 +83,7 @@ module axis_ram_reader #
   assign m_axi_arid = int_rid_reg;
   
   // Calculate the appropriate address to read from
-  assign m_axi_araddr = cfg_data + {int_addr_reg, {(ADDR_SIZE){1'b0}}};
+  assign m_axi_araddr = cfg_data// + {int_addr_reg, {(ADDR_SIZE){1'b0}}};
   
   // 0 corresponds to 1 read beats in the burst
   assign m_axi_arlen = 4'd0;

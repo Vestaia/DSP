@@ -41,14 +41,14 @@ void WindowManager::renderImGui() {
     ImGui::PopTextWrapPos();
     
     if (ImGui::CollapsingHeader("Connection", ImGuiTreeNodeFlags_DefaultOpen)) {
-        static char ip[15];
+        static char ip[16];
         ImGui::Text("Target IP: ");
         ImGui::SameLine();
         ImGui::PushItemWidth(-1.0f);
         ImGui::InputText("##target ip", ip, IM_ARRAYSIZE(ip));
         ImGui::PushItemWidth(0.0f);
         
-        static char port[5];
+        static char port[6];
         ImGui::Text("Target Port: ");
         ImGui::SameLine();
         ImGui::PushItemWidth(-1.0f);
