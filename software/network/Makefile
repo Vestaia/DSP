@@ -1,19 +1,18 @@
 SRC_DIR:=src
 OBJ_DIR:=build
-CC:=arm-linux-gnueabihf-g++
+COMPILER:=$(if $(COMPILER),$(COMPILER),g++)
 INCLUDE:=include
-CFLAGS:=-I$(INCLUDE) -I$(SRC_DIR)
+CFLAGS:=-I$(INCLUDE) -I$(SRC_DIR) --std=c++17
 LDLIBS:=
 SRC:=$(wildcard $(SRC_DIR)/*.cpp)
 OBJ:=$(SRC:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 
-all: example
+.PHONY: all clean
 
-example: $(OBJ)
-	$(CC) $^ $(LDLIBS) -o $@
+all: $(OBJ)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp | $(OBJ_DIR)
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(COMPILER) $(CFLAGS) -c $< -o $@
 
 $(OBJ_DIR):
 	mkdir $@
@@ -21,4 +20,3 @@ $(OBJ_DIR):
 clean:
 	$(RM) -r $(OBJ_DIR)
 
-.PHONY: all clean

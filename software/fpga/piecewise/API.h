@@ -6,13 +6,12 @@
 #include <sys/mman.h>
 #include <fcntl.h>
 #include <math.h>
+#include "common.h"
 
 #define DATA_RING_ADDR 0x10000000
 #define DATA_RING_SIZE (1<<25)
-#define CONFIG_ADDR 0x40000000
-#define RESET_WRITER 1<<2
-#define RESET_DAQ 1<<1
-#define CLOCK_FREQ 125000000
+#define RESET_WRITER (1<<2)
+#define RESET_DAQ (1<<1)
 #define PIECES 2
 #define ORDER 3
 
@@ -34,34 +33,17 @@ struct sample {
 };
 #pragma pack(pop)
 
-class fpga {
-    int fd;
-    volatile uint8_t* ram;
-    volatile uint32_t *slcr, *hp0;
-    volatile fpga_cfg* cfg;
-
+class pwp_fpga : public fpga<fpga_cfg, sample> {
+    
     public:
-    fpga();
-
-    ~fpga();
+    pwp_fpga();
+    ~pwp_fpga();
 
     //Set coefficients of polynomial filter
     int set_coef(uint32_t *coef);
 
     //Set coefficients using polynomial coeffients
     int set_poly_coef(uint32_t *coef);
-
-    //Obtain n raw samples starting now
-    sample* capture_n_raw(unsigned int n);
-    
-    //Obtain raw samples for t seconds
-    sample* capture_t_raw(float t);
-
-    //Obtain n events starting now
-    sample* capture_n_events(unsigned int n);
-
-    //Obtain events for t seconds
-    sample* capture_t_events(float t);
 
     int reset();
 };
