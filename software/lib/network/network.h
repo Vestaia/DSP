@@ -7,7 +7,7 @@
 struct request{
     uint8_t flags; // Valid | Trigger | ...
     uint32_t t_offset;
-    uint32_t samples;
+    uint32_t nsamples;
     uint32_t rate;
 };
 
@@ -46,7 +46,7 @@ class client{
     int send(T *data, size_t size);
     template <class T>
     int recieve(T *data, size_t size);
-    int get_frame(int16_t* data, uint8_t flags, uint32_t samples_offset, uint32_t samples, uint32_t rate);
+    int get_frame(int16_t* data, uint8_t flags, uint32_t samples_offset, uint32_t nsamples, uint32_t rate);
 
 };
 

@@ -13,16 +13,16 @@ class fpga {
     ~fpga();
 
     //Obtain n raw samples starting now
-    sample* capture_n_raw(unsigned int n);
+    void capture_n_raw(sample* data, unsigned int n);
     
     //Obtain raw samples for t seconds
-    sample* capture_t_raw(float t);
+    void capture_t_raw(sample* data, float t);
 
     //Obtain n events starting now
-    sample* capture_n_events(unsigned int n);
+    void capture_n_events(sample* data, unsigned int n);
 
     //Obtain events for t seconds
-    sample* capture_t_events(float t);
+    void capture_t_events(sample* data, float t);
 
     int reset();
 };
@@ -52,25 +52,21 @@ fpga<fpga_cfg,sample>::~fpga(){
 
 //TODO: Make this actually work std::memcpy()
 template <class fpga_cfg, class sample>
-sample* fpga<fpga_cfg,sample>::capture_n_raw(unsigned int n){
-    sample* data = (sample*)malloc(n * sizeof(sample));
+void fpga<fpga_cfg,sample>::capture_n_raw(sample* data, unsigned int n){
     for (int i = 0; i < n; i++)
         data[i] = *((sample *)(ring_buf + sizeof(sample) * i));
-    return data;
 }
 template <class fpga_cfg, class sample>
-sample* fpga<fpga_cfg,sample>::capture_t_raw(float t){
-    return fpga::capture_n_raw(t * CLOCK_FREQ);
+void fpga<fpga_cfg,sample>::capture_t_raw(sample* data, float t){
+    fpga::capture_n_raw(data, t * CLOCK_FREQ);
 }
 
 //TODO: Implement this
 template <class fpga_cfg, class sample>
-sample* fpga<fpga_cfg,sample>::capture_n_events(unsigned int n){
-    sample* data = (sample*)malloc(n * sizeof(sample));
-    return data;
+void fpga<fpga_cfg,sample>::capture_n_events(sample* data, unsigned int n){
 }
 
 template <class fpga_cfg, class sample>
-sample* fpga<fpga_cfg,sample>::capture_t_events(float t){
-    fpga::capture_n_events(t * CLOCK_FREQ);
+void fpga<fpga_cfg,sample>::capture_t_events(sample* data, float t){
+    fpga::capture_n_events(data, t * CLOCK_FREQ);
 }

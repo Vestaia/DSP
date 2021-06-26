@@ -33,13 +33,13 @@ int client::get_frame(
         int16_t*    data,
         uint8_t     flags,
         uint32_t    t_offset,
-        uint32_t    samples,
+        uint32_t    nsamples,
         uint32_t    rate
     ){
     request req;
     req.flags = flags;
     req.t_offset = t_offset;
-    req.samples = samples;
+    req.nsamples = nsamples;
     req.rate = rate;
-    return -(send(&req, sizeof(req)) || recieve(data, sizeof(int16_t) * samples));
+    return -(send(&req, sizeof(req)) || recieve(data, sizeof(int16_t) * nsamples));
 }

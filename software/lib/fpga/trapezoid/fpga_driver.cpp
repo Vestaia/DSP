@@ -1,4 +1,4 @@
-#include "trapezoidAPI.h"
+#include "fpga_driver.h"
 
 fpga::fpga(){
     if((fd = open("/dev/mem", O_RDWR)) < 0){
