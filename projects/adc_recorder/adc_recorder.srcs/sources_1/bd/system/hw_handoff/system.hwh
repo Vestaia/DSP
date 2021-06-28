@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Jun 23 15:22:34 2021" VIVADOVERSION="2019.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Jun 28 14:40:13 2021" VIVADOVERSION="2019.2">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z010" NAME="system" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -63,35 +63,9 @@
         <CONNECTION INSTANCE="concat_0" PORT="dout"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="7" NAME="led_o" RIGHT="0" SIGIS="undef"/>
-    <PORT DIR="IO" LEFT="53" NAME="FIXED_IO_mio" RIGHT="0" SIGIS="undef" SIGNAME="ps_0_MIO">
+    <PORT DIR="O" LEFT="7" NAME="led_o" RIGHT="0" SIGIS="undef" SIGNAME="xlconcat_2_dout">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="ps_0" PORT="MIO"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="IO" NAME="FIXED_IO_ddr_vrn" SIGIS="undef" SIGNAME="ps_0_DDR_VRN">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="ps_0" PORT="DDR_VRN"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="IO" NAME="FIXED_IO_ddr_vrp" SIGIS="undef" SIGNAME="ps_0_DDR_VRP">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="ps_0" PORT="DDR_VRP"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="IO" NAME="FIXED_IO_ps_srstb" SIGIS="undef" SIGNAME="ps_0_PS_SRSTB">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="ps_0" PORT="PS_SRSTB"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="IO" NAME="FIXED_IO_ps_clk" SIGIS="undef" SIGNAME="ps_0_PS_CLK">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="ps_0" PORT="PS_CLK"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="IO" NAME="FIXED_IO_ps_porb" SIGIS="undef" SIGNAME="ps_0_PS_PORB">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="ps_0" PORT="PS_PORB"/>
+        <CONNECTION INSTANCE="xlconcat_2" PORT="dout"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="IO" NAME="DDR_cas_n" SIGIS="undef" SIGNAME="ps_0_DDR_CAS_n">
@@ -169,6 +143,36 @@
         <CONNECTION INSTANCE="ps_0" PORT="DDR_DQS"/>
       </CONNECTIONS>
     </PORT>
+    <PORT DIR="IO" LEFT="53" NAME="FIXED_IO_mio" RIGHT="0" SIGIS="undef" SIGNAME="ps_0_MIO">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ps_0" PORT="MIO"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="FIXED_IO_ddr_vrn" SIGIS="undef" SIGNAME="ps_0_DDR_VRN">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ps_0" PORT="DDR_VRN"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="FIXED_IO_ddr_vrp" SIGIS="undef" SIGNAME="ps_0_DDR_VRP">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ps_0" PORT="DDR_VRP"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="FIXED_IO_ps_srstb" SIGIS="undef" SIGNAME="ps_0_PS_SRSTB">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ps_0" PORT="PS_SRSTB"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="FIXED_IO_ps_clk" SIGIS="undef" SIGNAME="ps_0_PS_CLK">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ps_0" PORT="PS_CLK"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="FIXED_IO_ps_porb" SIGIS="undef" SIGNAME="ps_0_PS_PORB">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ps_0" PORT="PS_PORB"/>
+      </CONNECTIONS>
+    </PORT>
   </EXTERNALPORTS>
 
   <EXTERNALINTERFACES>
@@ -234,6 +238,23 @@
   </EXTERNALINTERFACES>
 
   <MODULES>
+    <MODULE COREREVISION="6" FULLNAME="/Waveform_Offset_Addr" HWVERSION="1.1" INSTANCE="Waveform_Offset_Addr" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconstant" VLNV="xilinx.com:ip:xlconstant:1.1">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="CONST_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="CONST_VAL" VALUE="0x10000000"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_Waveform_Offset_Addr_1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="O" LEFT="31" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="Waveform_Offset_Addr_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="writer_0" PORT="cfg_data"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
     <MODULE COREREVISION="1" FULLNAME="/adc_0" HWVERSION="2.0" INSTANCE="adc_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axis_red_pitaya_adc" VLNV="pavel-demin:user:axis_red_pitaya_adc:2.0">
       <DOCUMENTS/>
       <PARAMETERS>
@@ -265,12 +286,15 @@
         </PORT>
         <PORT DIR="O" NAME="m_axis_tvalid" SIGIS="undef" SIGNAME="adc_0_m_axis_tvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axis_broadcaster_0" PORT="s_axis_tvalid"/>
+            <CONNECTION INSTANCE="writer_0" PORT="s_axis_tvalid"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="m_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="adc_0_m_axis_tdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axis_broadcaster_0" PORT="s_axis_tdata"/>
+            <CONNECTION INSTANCE="xlconcat_0" PORT="In1"/>
+          </CONNECTIONS>
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="writer_0" PORT="s_axis_tdata"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -292,302 +316,6 @@
           <PORTMAPS>
             <PORTMAP LOGICAL="TDATA" PHYSICAL="m_axis_tdata"/>
             <PORTMAP LOGICAL="TVALID" PHYSICAL="m_axis_tvalid"/>
-          </PORTMAPS>
-        </BUSINTERFACE>
-      </BUSINTERFACES>
-    </MODULE>
-    <MODULE COREREVISION="19" FULLNAME="/axis_broadcaster_0" HWVERSION="1.1" INSTANCE="axis_broadcaster_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axis_broadcaster" VLNV="xilinx.com:ip:axis_broadcaster:1.1">
-      <DOCUMENTS>
-        <DOCUMENT SOURCE="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=axis_broadcaster;v=v1_1;d=pg085-axi4stream-infrastructure.pdf"/>
-      </DOCUMENTS>
-      <PARAMETERS>
-        <PARAMETER NAME="C_FAMILY" VALUE="zynq"/>
-        <PARAMETER NAME="C_NUM_MI_SLOTS" VALUE="2"/>
-        <PARAMETER NAME="C_S_AXIS_TDATA_WIDTH" VALUE="32"/>
-        <PARAMETER NAME="C_M_AXIS_TDATA_WIDTH" VALUE="16"/>
-        <PARAMETER NAME="C_AXIS_TID_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="C_AXIS_TDEST_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="C_S_AXIS_TUSER_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="C_M_AXIS_TUSER_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="C_AXIS_SIGNAL_SET" VALUE="0b00000000000000000000000000000010"/>
-        <PARAMETER NAME="NUM_MI" VALUE="2"/>
-        <PARAMETER NAME="M_TDATA_NUM_BYTES" VALUE="2"/>
-        <PARAMETER NAME="S_TDATA_NUM_BYTES" VALUE="4"/>
-        <PARAMETER NAME="HAS_SPLITTER" VALUE="0"/>
-        <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
-        <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
-        <PARAMETER NAME="M_TUSER_WIDTH" VALUE="0"/>
-        <PARAMETER NAME="S_TUSER_WIDTH" VALUE="0"/>
-        <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
-        <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
-        <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
-        <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
-        <PARAMETER NAME="HAS_ACLKEN" VALUE="0"/>
-        <PARAMETER NAME="M00_TDATA_REMAP" VALUE="tdata[15:0]"/>
-        <PARAMETER NAME="M01_TDATA_REMAP" VALUE="tdata[15:0]"/>
-        <PARAMETER NAME="M02_TDATA_REMAP" VALUE="TDATA[7:0]"/>
-        <PARAMETER NAME="M03_TDATA_REMAP" VALUE="TDATA[7:0]"/>
-        <PARAMETER NAME="M04_TDATA_REMAP" VALUE="TDATA[7:0]"/>
-        <PARAMETER NAME="M05_TDATA_REMAP" VALUE="TDATA[7:0]"/>
-        <PARAMETER NAME="M06_TDATA_REMAP" VALUE="TDATA[7:0]"/>
-        <PARAMETER NAME="M07_TDATA_REMAP" VALUE="TDATA[7:0]"/>
-        <PARAMETER NAME="M08_TDATA_REMAP" VALUE="TDATA[7:0]"/>
-        <PARAMETER NAME="M09_TDATA_REMAP" VALUE="TDATA[7:0]"/>
-        <PARAMETER NAME="M10_TDATA_REMAP" VALUE="TDATA[7:0]"/>
-        <PARAMETER NAME="M11_TDATA_REMAP" VALUE="TDATA[7:0]"/>
-        <PARAMETER NAME="M12_TDATA_REMAP" VALUE="TDATA[7:0]"/>
-        <PARAMETER NAME="M13_TDATA_REMAP" VALUE="TDATA[7:0]"/>
-        <PARAMETER NAME="M14_TDATA_REMAP" VALUE="TDATA[7:0]"/>
-        <PARAMETER NAME="M15_TDATA_REMAP" VALUE="TDATA[7:0]"/>
-        <PARAMETER NAME="M16_TDATA_REMAP" VALUE="TDATA[7:0]"/>
-        <PARAMETER NAME="M00_TUSER_REMAP" VALUE="1'b0"/>
-        <PARAMETER NAME="M01_TUSER_REMAP" VALUE="1'b0"/>
-        <PARAMETER NAME="M02_TUSER_REMAP" VALUE="1'b0"/>
-        <PARAMETER NAME="M03_TUSER_REMAP" VALUE="1'b0"/>
-        <PARAMETER NAME="M04_TUSER_REMAP" VALUE="1'b0"/>
-        <PARAMETER NAME="M05_TUSER_REMAP" VALUE="1'b0"/>
-        <PARAMETER NAME="M06_TUSER_REMAP" VALUE="1'b0"/>
-        <PARAMETER NAME="M07_TUSER_REMAP" VALUE="1'b0"/>
-        <PARAMETER NAME="M08_TUSER_REMAP" VALUE="1'b0"/>
-        <PARAMETER NAME="M09_TUSER_REMAP" VALUE="1'b0"/>
-        <PARAMETER NAME="M10_TUSER_REMAP" VALUE="1'b0"/>
-        <PARAMETER NAME="M11_TUSER_REMAP" VALUE="1'b0"/>
-        <PARAMETER NAME="M12_TUSER_REMAP" VALUE="1'b0"/>
-        <PARAMETER NAME="M13_TUSER_REMAP" VALUE="1'b0"/>
-        <PARAMETER NAME="M14_TUSER_REMAP" VALUE="1'b0"/>
-        <PARAMETER NAME="M15_TUSER_REMAP" VALUE="1'b0"/>
-        <PARAMETER NAME="M16_TUSER_REMAP" VALUE="1'b0"/>
-        <PARAMETER NAME="Component_Name" VALUE="system_axis_broadcaster_0_2"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT CLKFREQUENCY="125000000" DIR="I" NAME="aclk" SIGIS="clk" SIGNAME="pll_0_clk_out1">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="pll_0" PORT="clk_out1"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="aresetn" SIGIS="rst" SIGNAME="config_interconnect_filter_rst_dout">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="config_interconnect_filter_rst" PORT="dout"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="s_axis_tvalid" SIGIS="undef" SIGNAME="adc_0_m_axis_tvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="adc_0" PORT="m_axis_tvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="31" NAME="s_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="adc_0_m_axis_tdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="adc_0" PORT="m_axis_tdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="1" NAME="m_axis_tvalid" RIGHT="0" SIGIS="undef" SIGNAME="axis_broadcaster_0_m_axis_tvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axis_combiner_0" PORT="s_axis_tvalid"/>
-          </CONNECTIONS>
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="fir_poly_0" PORT="s_axis_tvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="m_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="axis_broadcaster_0_m_axis_tdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axis_combiner_0" PORT="s_axis_tdata"/>
-          </CONNECTIONS>
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="fir_poly_0" PORT="s_axis_tdata"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES>
-        <BUSINTERFACE BUSNAME="adc_0_M_AXIS" NAME="S_AXIS" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
-          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
-          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
-          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
-          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
-          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
-          <PARAMETER NAME="PHASE" VALUE="0.0"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="system_pll_0_2_clk_out1"/>
-          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
-          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
-          <PORTMAPS>
-            <PORTMAP LOGICAL="TDATA" PHYSICAL="s_axis_tdata"/>
-            <PORTMAP LOGICAL="TVALID" PHYSICAL="s_axis_tvalid"/>
-          </PORTMAPS>
-        </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="axis_broadcaster_0_M00_AXIS" NAME="M00_AXIS" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
-          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="2"/>
-          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
-          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
-          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
-          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
-          <PARAMETER NAME="PHASE" VALUE="0.0"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="system_pll_0_2_clk_out1"/>
-          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
-          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
-          <PORTMAPS>
-            <PORTMAP LOGICAL="TDATA" PHYSICAL="m_axis_tdata"/>
-            <PORTMAP LOGICAL="TVALID" PHYSICAL="m_axis_tvalid"/>
-          </PORTMAPS>
-        </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="axis_broadcaster_0_M01_AXIS" NAME="M01_AXIS" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
-          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="2"/>
-          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
-          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
-          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
-          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
-          <PARAMETER NAME="PHASE" VALUE="0.0"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="system_pll_0_2_clk_out1"/>
-          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
-          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
-          <PORTMAPS>
-            <PORTMAP LOGICAL="TDATA" PHYSICAL="m_axis_tdata"/>
-            <PORTMAP LOGICAL="TVALID" PHYSICAL="m_axis_tvalid"/>
-          </PORTMAPS>
-        </BUSINTERFACE>
-      </BUSINTERFACES>
-    </MODULE>
-    <MODULE COREREVISION="18" FULLNAME="/axis_combiner_0" HWVERSION="1.1" INSTANCE="axis_combiner_0" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="axis_combiner" VLNV="xilinx.com:ip:axis_combiner:1.1">
-      <DOCUMENTS>
-        <DOCUMENT SOURCE="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=axis_combiner;v=v1_1;d=pg085-axi4stream-infrastructure.pdf"/>
-      </DOCUMENTS>
-      <PARAMETERS>
-        <PARAMETER NAME="C_FAMILY" VALUE="zynq"/>
-        <PARAMETER NAME="C_AXIS_TDATA_WIDTH" VALUE="16"/>
-        <PARAMETER NAME="C_AXIS_TID_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="C_AXIS_TDEST_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="C_AXIS_TUSER_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="C_AXIS_SIGNAL_SET" VALUE="0b00000000000000000000000000000011"/>
-        <PARAMETER NAME="C_MASTER_PORT_NUM" VALUE="0"/>
-        <PARAMETER NAME="C_NUM_SI_SLOTS" VALUE="2"/>
-        <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="2"/>
-        <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
-        <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
-        <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
-        <PARAMETER NAME="NUM_SI" VALUE="2"/>
-        <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
-        <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
-        <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
-        <PARAMETER NAME="MASTER_PORT_NUM" VALUE="0"/>
-        <PARAMETER NAME="HAS_CMD_ERR" VALUE="0"/>
-        <PARAMETER NAME="HAS_ACLKEN" VALUE="0"/>
-        <PARAMETER NAME="Component_Name" VALUE="system_axis_combiner_0_3"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="BUS"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT CLKFREQUENCY="125000000" DIR="I" NAME="aclk" SIGIS="clk" SIGNAME="pll_0_clk_out1">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="pll_0" PORT="clk_out1"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="aresetn" SIGIS="rst" SIGNAME="config_interconnect_filter_rst_dout">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="config_interconnect_filter_rst" PORT="dout"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="s_axis_tvalid" RIGHT="0" SIGIS="undef" SIGNAME="axis_combiner_0_s_axis_tvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axis_broadcaster_0" PORT="m_axis_tvalid"/>
-          </CONNECTIONS>
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="fir_poly_0" PORT="m_axis_tvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="1" NAME="s_axis_tready" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="31" NAME="s_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="axis_combiner_0_s_axis_tdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axis_broadcaster_0" PORT="m_axis_tdata"/>
-          </CONNECTIONS>
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="fir_poly_0" PORT="m_axis_tdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="m_axis_tvalid" SIGIS="undef" SIGNAME="axis_combiner_0_m_axis_tvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="writer_0" PORT="s_axis_tvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="m_axis_tready" SIGIS="undef" SIGNAME="axis_combiner_0_m_axis_tready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="writer_0" PORT="s_axis_tready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="m_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="axis_combiner_0_m_axis_tdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="writer_0" PORT="s_axis_tdata"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES>
-        <BUSINTERFACE BUSNAME="axis_combiner_0_M_AXIS" NAME="M_AXIS" TYPE="MASTER" VLNV="xilinx.com:interface:axis:1.0">
-          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
-          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
-          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
-          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
-          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
-          <PARAMETER NAME="PHASE" VALUE="0.0"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="system_pll_0_2_clk_out1"/>
-          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
-          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
-          <PORTMAPS>
-            <PORTMAP LOGICAL="TVALID" PHYSICAL="m_axis_tvalid"/>
-            <PORTMAP LOGICAL="TREADY" PHYSICAL="m_axis_tready"/>
-            <PORTMAP LOGICAL="TDATA" PHYSICAL="m_axis_tdata"/>
-          </PORTMAPS>
-        </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="axis_broadcaster_0_M00_AXIS" NAME="S00_AXIS" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
-          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="2"/>
-          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
-          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
-          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
-          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
-          <PARAMETER NAME="PHASE" VALUE="0.0"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="system_pll_0_2_clk_out1"/>
-          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
-          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
-          <PORTMAPS>
-            <PORTMAP LOGICAL="TVALID" PHYSICAL="s_axis_tvalid"/>
-            <PORTMAP LOGICAL="TREADY" PHYSICAL="s_axis_tready"/>
-            <PORTMAP LOGICAL="TDATA" PHYSICAL="s_axis_tdata"/>
-          </PORTMAPS>
-        </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="fir_poly_0_m_axis" NAME="S01_AXIS" TYPE="SLAVE" VLNV="xilinx.com:interface:axis:1.0">
-          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="2"/>
-          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
-          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
-          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
-          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
-          <PARAMETER NAME="PHASE" VALUE="0.0"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="system_pll_0_2_clk_out1"/>
-          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
-          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
-          <PORTMAPS>
-            <PORTMAP LOGICAL="TVALID" PHYSICAL="s_axis_tvalid"/>
-            <PORTMAP LOGICAL="TREADY" PHYSICAL="s_axis_tready"/>
-            <PORTMAP LOGICAL="TDATA" PHYSICAL="s_axis_tdata"/>
           </PORTMAPS>
         </BUSINTERFACE>
       </BUSINTERFACES>
@@ -737,73 +465,19 @@
         <PORT DIR="O" LEFT="47" NAME="Q" RIGHT="0" SIGIS="data" SIGNAME="c_counter_binary_0_Q">
           <CONNECTIONS>
             <CONNECTION INSTANCE="port_slicer_4" PORT="din"/>
+            <CONNECTION INSTANCE="xlconcat_0" PORT="In0"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="3" FULLNAME="/concat_0" HWVERSION="2.1" INSTANCE="concat_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconcat" VLNV="xilinx.com:ip:xlconcat:2.1">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="IN0_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN1_WIDTH" VALUE="7"/>
-        <PARAMETER NAME="IN2_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN3_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN4_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN5_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN6_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN7_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN8_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN9_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN10_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN11_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN12_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN13_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN14_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN15_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN16_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN17_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN18_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN19_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN20_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN21_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN22_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN23_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN24_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN25_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN26_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN27_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN28_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN29_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN30_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN31_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="dout_width" VALUE="8"/>
-        <PARAMETER NAME="NUM_PORTS" VALUE="2"/>
-        <PARAMETER NAME="Component_Name" VALUE="system_concat_0_2"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT DIR="I" LEFT="0" NAME="In0" RIGHT="0" SIGIS="undef" SIGNAME="not_0_Res">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="not_0" PORT="Res"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="6" NAME="In1" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="7" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="concat_0_dout">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="exp_p_tri_io"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES/>
-    </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/config_interconnect/cfg_0" HWVERSION="1.0" INSTANCE="config_interconnect_cfg_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axi_cfg_register" VLNV="pavel-demin:user:axi_cfg_register:1.0">
+    <MODULE COREREVISION="2" FULLNAME="/cfg_0" HWVERSION="1.0" INSTANCE="cfg_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axi_cfg_register" VLNV="pavel-demin:user:axi_cfg_register:1.0">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="" INTERFACE="s_axi" NAME="reg0" RANGE="4294967296" USAGE="register"/>
       </ADDRESSBLOCKS>
       <PARAMETERS>
-        <PARAMETER NAME="CFG_DATA_WIDTH" VALUE="512"/>
+        <PARAMETER NAME="CFG_DATA_WIDTH" VALUE="256"/>
         <PARAMETER NAME="AXI_DATA_WIDTH" VALUE="32"/>
         <PARAMETER NAME="AXI_ADDR_WIDTH" VALUE="32"/>
         <PARAMETER NAME="Component_Name" VALUE="system_cfg_0_2"/>
@@ -822,95 +496,93 @@
             <CONNECTION INSTANCE="rst_0" PORT="peripheral_aresetn"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="511" NAME="cfg_data" RIGHT="0" SIGIS="undef" SIGNAME="config_interconnect_cfg_0_cfg_data">
+        <PORT DIR="O" LEFT="255" NAME="cfg_data" RIGHT="0" SIGIS="undef" SIGNAME="cfg_0_cfg_data">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="config_interconnect_filter_rst" PORT="din"/>
-            <CONNECTION INSTANCE="config_interconnect_writer_rst" PORT="din"/>
-            <CONNECTION INSTANCE="config_interconnect_coef" PORT="din"/>
-            <CONNECTION INSTANCE="config_interconnect_delay_conf" PORT="din"/>
+            <CONNECTION INSTANCE="slice_2" PORT="din"/>
+            <CONNECTION INSTANCE="slice_3" PORT="din"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="s_axi_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="config_interconnect_cfg_0_s_axi_awaddr">
+        <PORT DIR="I" LEFT="31" NAME="s_axi_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="cfg_0_s_axi_awaddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps_0_axi_periph" PORT="M00_AXI_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_awvalid" SIGIS="undef" SIGNAME="config_interconnect_cfg_0_s_axi_awvalid">
+        <PORT DIR="I" NAME="s_axi_awvalid" SIGIS="undef" SIGNAME="cfg_0_s_axi_awvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps_0_axi_periph" PORT="M00_AXI_awvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_awready" SIGIS="undef" SIGNAME="config_interconnect_cfg_0_s_axi_awready">
+        <PORT DIR="O" NAME="s_axi_awready" SIGIS="undef" SIGNAME="cfg_0_s_axi_awready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps_0_axi_periph" PORT="M00_AXI_awready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="s_axi_wdata" RIGHT="0" SIGIS="undef" SIGNAME="config_interconnect_cfg_0_s_axi_wdata">
+        <PORT DIR="I" LEFT="31" NAME="s_axi_wdata" RIGHT="0" SIGIS="undef" SIGNAME="cfg_0_s_axi_wdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps_0_axi_periph" PORT="M00_AXI_wdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="s_axi_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="config_interconnect_cfg_0_s_axi_wstrb">
+        <PORT DIR="I" LEFT="3" NAME="s_axi_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="cfg_0_s_axi_wstrb">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps_0_axi_periph" PORT="M00_AXI_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_wvalid" SIGIS="undef" SIGNAME="config_interconnect_cfg_0_s_axi_wvalid">
+        <PORT DIR="I" NAME="s_axi_wvalid" SIGIS="undef" SIGNAME="cfg_0_s_axi_wvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps_0_axi_periph" PORT="M00_AXI_wvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_wready" SIGIS="undef" SIGNAME="config_interconnect_cfg_0_s_axi_wready">
+        <PORT DIR="O" NAME="s_axi_wready" SIGIS="undef" SIGNAME="cfg_0_s_axi_wready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps_0_axi_periph" PORT="M00_AXI_wready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="s_axi_bresp" RIGHT="0" SIGIS="undef" SIGNAME="config_interconnect_cfg_0_s_axi_bresp">
+        <PORT DIR="O" LEFT="1" NAME="s_axi_bresp" RIGHT="0" SIGIS="undef" SIGNAME="cfg_0_s_axi_bresp">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps_0_axi_periph" PORT="M00_AXI_bresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_bvalid" SIGIS="undef" SIGNAME="config_interconnect_cfg_0_s_axi_bvalid">
+        <PORT DIR="O" NAME="s_axi_bvalid" SIGIS="undef" SIGNAME="cfg_0_s_axi_bvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps_0_axi_periph" PORT="M00_AXI_bvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_bready" SIGIS="undef" SIGNAME="config_interconnect_cfg_0_s_axi_bready">
+        <PORT DIR="I" NAME="s_axi_bready" SIGIS="undef" SIGNAME="cfg_0_s_axi_bready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps_0_axi_periph" PORT="M00_AXI_bready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="s_axi_araddr" RIGHT="0" SIGIS="undef" SIGNAME="config_interconnect_cfg_0_s_axi_araddr">
+        <PORT DIR="I" LEFT="31" NAME="s_axi_araddr" RIGHT="0" SIGIS="undef" SIGNAME="cfg_0_s_axi_araddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps_0_axi_periph" PORT="M00_AXI_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_arvalid" SIGIS="undef" SIGNAME="config_interconnect_cfg_0_s_axi_arvalid">
+        <PORT DIR="I" NAME="s_axi_arvalid" SIGIS="undef" SIGNAME="cfg_0_s_axi_arvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps_0_axi_periph" PORT="M00_AXI_arvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_arready" SIGIS="undef" SIGNAME="config_interconnect_cfg_0_s_axi_arready">
+        <PORT DIR="O" NAME="s_axi_arready" SIGIS="undef" SIGNAME="cfg_0_s_axi_arready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps_0_axi_periph" PORT="M00_AXI_arready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="s_axi_rdata" RIGHT="0" SIGIS="undef" SIGNAME="config_interconnect_cfg_0_s_axi_rdata">
+        <PORT DIR="O" LEFT="31" NAME="s_axi_rdata" RIGHT="0" SIGIS="undef" SIGNAME="cfg_0_s_axi_rdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps_0_axi_periph" PORT="M00_AXI_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="s_axi_rresp" RIGHT="0" SIGIS="undef" SIGNAME="config_interconnect_cfg_0_s_axi_rresp">
+        <PORT DIR="O" LEFT="1" NAME="s_axi_rresp" RIGHT="0" SIGIS="undef" SIGNAME="cfg_0_s_axi_rresp">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps_0_axi_periph" PORT="M00_AXI_rresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_rvalid" SIGIS="undef" SIGNAME="config_interconnect_cfg_0_s_axi_rvalid">
+        <PORT DIR="O" NAME="s_axi_rvalid" SIGIS="undef" SIGNAME="cfg_0_s_axi_rvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps_0_axi_periph" PORT="M00_AXI_rvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_rready" SIGIS="undef" SIGNAME="config_interconnect_cfg_0_s_axi_rready">
+        <PORT DIR="I" NAME="s_axi_rready" SIGIS="undef" SIGNAME="cfg_0_s_axi_rready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps_0_axi_periph" PORT="M00_AXI_rready"/>
           </CONNECTIONS>
@@ -971,97 +643,56 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="3" FULLNAME="/config_interconnect/coef" HWVERSION="1.0" INSTANCE="config_interconnect_coef" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="port_slicer" VLNV="pavel-demin:user:port_slicer:1.0">
+    <MODULE COREREVISION="3" FULLNAME="/concat_0" HWVERSION="2.1" INSTANCE="concat_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconcat" VLNV="xilinx.com:ip:xlconcat:2.1">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="DIN_WIDTH" VALUE="512"/>
-        <PARAMETER NAME="DIN_FROM" VALUE="263"/>
-        <PARAMETER NAME="DIN_TO" VALUE="8"/>
-        <PARAMETER NAME="Component_Name" VALUE="system_port_slicer_0_4"/>
+        <PARAMETER NAME="IN0_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN1_WIDTH" VALUE="7"/>
+        <PARAMETER NAME="IN2_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN3_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN4_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN5_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN6_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN7_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN8_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN9_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN10_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN11_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN12_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN13_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN14_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN15_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN16_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN17_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN18_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN19_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN20_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN21_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN22_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN23_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN24_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN25_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN26_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN27_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN28_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN29_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN30_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN31_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="dout_width" VALUE="8"/>
+        <PARAMETER NAME="NUM_PORTS" VALUE="2"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_concat_0_2"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="511" NAME="din" RIGHT="0" SIGIS="undef" SIGNAME="config_interconnect_cfg_0_cfg_data">
+        <PORT DIR="I" LEFT="0" NAME="In0" RIGHT="0" SIGIS="undef" SIGNAME="not_0_Res">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="config_interconnect_cfg_0" PORT="cfg_data"/>
+            <CONNECTION INSTANCE="not_0" PORT="Res"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="255" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="config_interconnect_coef_dout">
+        <PORT DIR="I" LEFT="6" NAME="In1" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="7" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="concat_0_dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="fir_poly_0" PORT="coef_flat"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES/>
-    </MODULE>
-    <MODULE COREREVISION="3" FULLNAME="/config_interconnect/delay_conf" HWVERSION="1.0" INSTANCE="config_interconnect_delay_conf" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="port_slicer" VLNV="pavel-demin:user:port_slicer:1.0">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="DIN_WIDTH" VALUE="512"/>
-        <PARAMETER NAME="DIN_FROM" VALUE="279"/>
-        <PARAMETER NAME="DIN_TO" VALUE="264"/>
-        <PARAMETER NAME="Component_Name" VALUE="system_port_slicer_0_5"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT DIR="I" LEFT="511" NAME="din" RIGHT="0" SIGIS="undef" SIGNAME="config_interconnect_cfg_0_cfg_data">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="config_interconnect_cfg_0" PORT="cfg_data"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="15" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="config_interconnect_delay_conf_dout">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="fir_poly_0" PORT="delay_flat"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES/>
-    </MODULE>
-    <MODULE COREREVISION="3" FULLNAME="/config_interconnect/filter_rst" HWVERSION="1.0" INSTANCE="config_interconnect_filter_rst" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="port_slicer" VLNV="pavel-demin:user:port_slicer:1.0">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="DIN_WIDTH" VALUE="512"/>
-        <PARAMETER NAME="DIN_FROM" VALUE="1"/>
-        <PARAMETER NAME="DIN_TO" VALUE="1"/>
-        <PARAMETER NAME="Component_Name" VALUE="system_slice_2_2"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT DIR="I" LEFT="511" NAME="din" RIGHT="0" SIGIS="undef" SIGNAME="config_interconnect_cfg_0_cfg_data">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="config_interconnect_cfg_0" PORT="cfg_data"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="config_interconnect_filter_rst_dout">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axis_broadcaster_0" PORT="aresetn"/>
-            <CONNECTION INSTANCE="not_0" PORT="Op1"/>
-            <CONNECTION INSTANCE="sig_exp_decay_0" PORT="rst"/>
-            <CONNECTION INSTANCE="fir_poly_0" PORT="aresetn"/>
-            <CONNECTION INSTANCE="axis_combiner_0" PORT="aresetn"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES/>
-    </MODULE>
-    <MODULE COREREVISION="3" FULLNAME="/config_interconnect/writer_rst" HWVERSION="1.0" INSTANCE="config_interconnect_writer_rst" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="port_slicer" VLNV="pavel-demin:user:port_slicer:1.0">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="DIN_WIDTH" VALUE="512"/>
-        <PARAMETER NAME="DIN_FROM" VALUE="2"/>
-        <PARAMETER NAME="DIN_TO" VALUE="2"/>
-        <PARAMETER NAME="Component_Name" VALUE="system_slice_3_2"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT DIR="I" LEFT="511" NAME="din" RIGHT="0" SIGIS="undef" SIGNAME="config_interconnect_cfg_0_cfg_data">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="config_interconnect_cfg_0" PORT="cfg_data"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="config_interconnect_writer_rst_dout">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="writer_0" PORT="aresetn"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="exp_p_tri_io"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -1084,101 +715,6 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="7" FULLNAME="/fir_poly_0" HWVERSION="1.0" INSTANCE="fir_poly_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="fir_poly" VLNV="user.org:user:fir_poly:1.0">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="AXIS_TDATA_WIDTH" VALUE="16"/>
-        <PARAMETER NAME="BUFFER_LENGTH" VALUE="4"/>
-        <PARAMETER NAME="COEF_WIDTH" VALUE="16"/>
-        <PARAMETER NAME="ORDER" VALUE="3"/>
-        <PARAMETER NAME="PIECES" VALUE="2"/>
-        <PARAMETER NAME="OUTPUT_WIDTH" VALUE="16"/>
-        <PARAMETER NAME="Component_Name" VALUE="system_fir_poly_0_0"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT CLKFREQUENCY="125000000" DIR="I" NAME="aclk" SIGIS="clk" SIGNAME="pll_0_clk_out1">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="pll_0" PORT="clk_out1"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="aresetn" SIGIS="rst" SIGNAME="config_interconnect_filter_rst_dout">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="config_interconnect_filter_rst" PORT="dout"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="15" NAME="s_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="axis_broadcaster_0_m_axis_tdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axis_broadcaster_0" PORT="m_axis_tdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="s_axis_tvalid" SIGIS="undef" SIGNAME="axis_broadcaster_0_m_axis_tvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axis_broadcaster_0" PORT="m_axis_tvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="255" NAME="coef_flat" RIGHT="0" SIGIS="undef" SIGNAME="config_interconnect_coef_dout">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="config_interconnect_coef" PORT="dout"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="15" NAME="delay_flat" RIGHT="0" SIGIS="undef" SIGNAME="config_interconnect_delay_conf_dout">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="config_interconnect_delay_conf" PORT="dout"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="m_axis_tvalid" SIGIS="undef" SIGNAME="axis_combiner_0_s_axis_tvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axis_combiner_0" PORT="s_axis_tvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="15" NAME="m_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="axis_combiner_0_s_axis_tdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axis_combiner_0" PORT="s_axis_tdata"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES>
-        <BUSINTERFACE BUSNAME="fir_poly_0_m_axis" NAME="m_axis" TYPE="MASTER" VLNV="xilinx.com:interface:axis:1.0">
-          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="2"/>
-          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
-          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
-          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
-          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
-          <PARAMETER NAME="PHASE" VALUE="0.0"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="system_pll_0_2_clk_out1"/>
-          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
-          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
-          <PORTMAPS>
-            <PORTMAP LOGICAL="TDATA" PHYSICAL="m_axis_tdata"/>
-            <PORTMAP LOGICAL="TVALID" PHYSICAL="m_axis_tvalid"/>
-          </PORTMAPS>
-        </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="axis_broadcaster_0_M01_AXIS" NAME="s_axis" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
-          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="2"/>
-          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
-          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
-          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
-          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
-          <PARAMETER NAME="PHASE" VALUE="0.0"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="system_pll_0_2_clk_out1"/>
-          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
-          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
-          <PORTMAPS>
-            <PORTMAP LOGICAL="TDATA" PHYSICAL="s_axis_tdata"/>
-            <PORTMAP LOGICAL="TVALID" PHYSICAL="s_axis_tvalid"/>
-          </PORTMAPS>
-        </BUSINTERFACE>
-      </BUSINTERFACES>
-    </MODULE>
     <MODULE COREREVISION="1" FULLNAME="/not_0" HWVERSION="2.0" INSTANCE="not_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="util_vector_logic" VLNV="xilinx.com:ip:util_vector_logic:2.0">
       <DOCUMENTS/>
       <PARAMETERS>
@@ -1189,9 +725,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="config_interconnect_filter_rst_dout">
+        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="slice_2_dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="config_interconnect_filter_rst" PORT="dout"/>
+            <CONNECTION INSTANCE="slice_2" PORT="dout"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="Res" RIGHT="0" SIGIS="undef" SIGNAME="not_0_Res">
@@ -1793,7 +1329,6 @@
         <PORT CLKFREQUENCY="125000000" DIR="O" NAME="clk_out1" SIGIS="clk" SIGNAME="pll_0_clk_out1">
           <CONNECTIONS>
             <CONNECTION INSTANCE="adc_0" PORT="aclk"/>
-            <CONNECTION INSTANCE="axis_broadcaster_0" PORT="aclk"/>
             <CONNECTION INSTANCE="axis_red_pitaya_dac_0" PORT="aclk"/>
             <CONNECTION INSTANCE="c_counter_binary_0" PORT="CLK"/>
             <CONNECTION INSTANCE="ps_0" PORT="M_AXI_GP0_ACLK"/>
@@ -1804,11 +1339,8 @@
             <CONNECTION INSTANCE="rst_0" PORT="slowest_sync_clk"/>
             <CONNECTION INSTANCE="writer_0" PORT="aclk"/>
             <CONNECTION INSTANCE="sig_exp_decay_0" PORT="clk"/>
+            <CONNECTION INSTANCE="cfg_0" PORT="aclk"/>
             <CONNECTION INSTANCE="pulse_gen_0" PORT="clk"/>
-            <CONNECTION INSTANCE="ps_0" PORT="S_AXI_HP1_ACLK"/>
-            <CONNECTION INSTANCE="fir_poly_0" PORT="aclk"/>
-            <CONNECTION INSTANCE="axis_combiner_0" PORT="aclk"/>
-            <CONNECTION INSTANCE="config_interconnect_cfg_0" PORT="aclk"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="250000000" DIR="O" NAME="clk_out2" SIGIS="clk" SIGNAME="pll_0_clk_out2">
@@ -1837,14 +1369,14 @@
     <MODULE COREREVISION="3" FULLNAME="/port_slicer_4" HWVERSION="1.0" INSTANCE="port_slicer_4" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="port_slicer" VLNV="pavel-demin:user:port_slicer:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="DIN_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="DIN_WIDTH" VALUE="48"/>
         <PARAMETER NAME="DIN_FROM" VALUE="16"/>
         <PARAMETER NAME="DIN_TO" VALUE="16"/>
         <PARAMETER NAME="Component_Name" VALUE="system_port_slicer_4_2"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="31" NAME="din" RIGHT="0" SIGIS="undef" SIGNAME="c_counter_binary_0_Q">
+        <PORT DIR="I" LEFT="47" NAME="din" RIGHT="0" SIGIS="undef" SIGNAME="c_counter_binary_0_Q">
           <CONNECTIONS>
             <CONNECTION INSTANCE="c_counter_binary_0" PORT="Q"/>
           </CONNECTIONS>
@@ -1909,7 +1441,7 @@
         <PARAMETER NAME="C_USE_S_AXI_GP0" VALUE="0"/>
         <PARAMETER NAME="C_USE_S_AXI_GP1" VALUE="0"/>
         <PARAMETER NAME="C_USE_S_AXI_HP0" VALUE="1"/>
-        <PARAMETER NAME="C_USE_S_AXI_HP1" VALUE="1"/>
+        <PARAMETER NAME="C_USE_S_AXI_HP1" VALUE="0"/>
         <PARAMETER NAME="C_USE_S_AXI_HP2" VALUE="0"/>
         <PARAMETER NAME="C_USE_S_AXI_HP3" VALUE="0"/>
         <PARAMETER NAME="C_USE_S_AXI_ACP" VALUE="0"/>
@@ -2165,7 +1697,7 @@
         <PARAMETER NAME="PCW_USE_S_AXI_GP1" VALUE="0"/>
         <PARAMETER NAME="PCW_USE_S_AXI_ACP" VALUE="0"/>
         <PARAMETER NAME="PCW_USE_S_AXI_HP0" VALUE="1"/>
-        <PARAMETER NAME="PCW_USE_S_AXI_HP1" VALUE="1"/>
+        <PARAMETER NAME="PCW_USE_S_AXI_HP1" VALUE="0"/>
         <PARAMETER NAME="PCW_USE_S_AXI_HP2" VALUE="0"/>
         <PARAMETER NAME="PCW_USE_S_AXI_HP3" VALUE="0"/>
         <PARAMETER NAME="PCW_M_AXI_GP0_FREQMHZ" VALUE="125"/>
@@ -3132,56 +2664,7 @@
             <CONNECTION INSTANCE="writer_0" PORT="m_axi_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="S_AXI_HP1_ARREADY" SIGIS="undef"/>
-        <PORT DIR="O" NAME="S_AXI_HP1_AWREADY" SIGIS="undef"/>
-        <PORT DIR="O" NAME="S_AXI_HP1_BVALID" SIGIS="undef"/>
-        <PORT DIR="O" NAME="S_AXI_HP1_RLAST" SIGIS="undef"/>
-        <PORT DIR="O" NAME="S_AXI_HP1_RVALID" SIGIS="undef"/>
-        <PORT DIR="O" NAME="S_AXI_HP1_WREADY" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="1" NAME="S_AXI_HP1_BRESP" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="1" NAME="S_AXI_HP1_RRESP" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="5" NAME="S_AXI_HP1_BID" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="5" NAME="S_AXI_HP1_RID" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="63" NAME="S_AXI_HP1_RDATA" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="7" NAME="S_AXI_HP1_RCOUNT" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="7" NAME="S_AXI_HP1_WCOUNT" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="2" NAME="S_AXI_HP1_RACOUNT" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="5" NAME="S_AXI_HP1_WACOUNT" RIGHT="0" SIGIS="undef"/>
-        <PORT CLKFREQUENCY="125000000" DIR="I" NAME="S_AXI_HP1_ACLK" SIGIS="clk" SIGNAME="pll_0_clk_out1">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="pll_0" PORT="clk_out1"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="S_AXI_HP1_ARVALID" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S_AXI_HP1_AWVALID" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S_AXI_HP1_BREADY" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S_AXI_HP1_RDISSUECAP1_EN" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S_AXI_HP1_RREADY" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S_AXI_HP1_WLAST" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S_AXI_HP1_WRISSUECAP1_EN" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S_AXI_HP1_WVALID" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="1" NAME="S_AXI_HP1_ARBURST" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="1" NAME="S_AXI_HP1_ARLOCK" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="2" NAME="S_AXI_HP1_ARSIZE" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="1" NAME="S_AXI_HP1_AWBURST" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="1" NAME="S_AXI_HP1_AWLOCK" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="2" NAME="S_AXI_HP1_AWSIZE" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="2" NAME="S_AXI_HP1_ARPROT" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="2" NAME="S_AXI_HP1_AWPROT" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="31" NAME="S_AXI_HP1_ARADDR" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="31" NAME="S_AXI_HP1_AWADDR" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="3" NAME="S_AXI_HP1_ARCACHE" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="3" NAME="S_AXI_HP1_ARLEN" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="3" NAME="S_AXI_HP1_ARQOS" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="3" NAME="S_AXI_HP1_AWCACHE" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="3" NAME="S_AXI_HP1_AWLEN" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="3" NAME="S_AXI_HP1_AWQOS" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="5" NAME="S_AXI_HP1_ARID" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="5" NAME="S_AXI_HP1_AWID" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="5" NAME="S_AXI_HP1_WID" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="63" NAME="S_AXI_HP1_WDATA" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="7" NAME="S_AXI_HP1_WSTRB" RIGHT="0" SIGIS="undef"/>
-        <PORT CLKFREQUENCY="5e+07" DIR="O" NAME="FCLK_CLK0" SIGIS="clk"/>
+        <PORT CLKFREQUENCY="50000000" DIR="O" NAME="FCLK_CLK0" SIGIS="clk"/>
         <PORT DIR="O" NAME="FCLK_RESET0_N" SIGIS="rst"/>
         <PORT DIR="IO" LEFT="53" NAME="MIO" RIGHT="0" SIGIS="undef" SIGNAME="ps_0_MIO">
           <CONNECTIONS>
@@ -3376,16 +2859,6 @@
             <PORTMAP LOGICAL="WRISSUECAPEN" PHYSICAL="S_AXI_HP0_WRISSUECAP1_EN"/>
           </PORTMAPS>
         </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="__NOC__" NAME="S_AXI_HP1_FIFO_CTRL" TYPE="TARGET" VLNV="xilinx.com:display_processing_system7:hpstatusctrl:1.0">
-          <PORTMAPS>
-            <PORTMAP LOGICAL="RCOUNT" PHYSICAL="S_AXI_HP1_RCOUNT"/>
-            <PORTMAP LOGICAL="WCOUNT" PHYSICAL="S_AXI_HP1_WCOUNT"/>
-            <PORTMAP LOGICAL="RACOUNT" PHYSICAL="S_AXI_HP1_RACOUNT"/>
-            <PORTMAP LOGICAL="WACOUNT" PHYSICAL="S_AXI_HP1_WACOUNT"/>
-            <PORTMAP LOGICAL="RDISSUECAPEN" PHYSICAL="S_AXI_HP1_RDISSUECAP1_EN"/>
-            <PORTMAP LOGICAL="WRISSUECAPEN" PHYSICAL="S_AXI_HP1_WRISSUECAP1_EN"/>
-          </PORTMAPS>
-        </BUSINTERFACE>
         <BUSINTERFACE BUSNAME="ps_0_M_AXI_GP0" DATAWIDTH="32" NAME="M_AXI_GP0" TYPE="MASTER" VLNV="xilinx.com:interface:aximm:1.0">
           <PARAMETER NAME="SUPPORTS_NARROW_BURST" VALUE="0"/>
           <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="8"/>
@@ -3532,85 +3005,12 @@
             <PORTMAP LOGICAL="WSTRB" PHYSICAL="S_AXI_HP0_WSTRB"/>
           </PORTMAPS>
         </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="__NOC__" DATAWIDTH="64" NAME="S_AXI_HP1" TYPE="SLAVE" VLNV="xilinx.com:interface:aximm:1.0">
-          <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="8"/>
-          <PARAMETER NAME="NUM_READ_OUTSTANDING" VALUE="8"/>
-          <PARAMETER NAME="DATA_WIDTH" VALUE="64"/>
-          <PARAMETER NAME="PROTOCOL" VALUE="AXI3"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
-          <PARAMETER NAME="ID_WIDTH" VALUE="6"/>
-          <PARAMETER NAME="ADDR_WIDTH" VALUE="32"/>
-          <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="ARUSER_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="WUSER_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="RUSER_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="BUSER_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
-          <PARAMETER NAME="HAS_BURST" VALUE="1"/>
-          <PARAMETER NAME="HAS_LOCK" VALUE="1"/>
-          <PARAMETER NAME="HAS_PROT" VALUE="1"/>
-          <PARAMETER NAME="HAS_CACHE" VALUE="1"/>
-          <PARAMETER NAME="HAS_QOS" VALUE="1"/>
-          <PARAMETER NAME="HAS_REGION" VALUE="0"/>
-          <PARAMETER NAME="HAS_WSTRB" VALUE="1"/>
-          <PARAMETER NAME="HAS_BRESP" VALUE="1"/>
-          <PARAMETER NAME="HAS_RRESP" VALUE="1"/>
-          <PARAMETER NAME="SUPPORTS_NARROW_BURST" VALUE="1"/>
-          <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="16"/>
-          <PARAMETER NAME="PHASE" VALUE="0.0"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="system_pll_0_2_clk_out1"/>
-          <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
-          <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
-          <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
-          <PARAMETER NAME="WUSER_BITS_PER_BYTE" VALUE="0"/>
-          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
-          <PORTMAPS>
-            <PORTMAP LOGICAL="ARREADY" PHYSICAL="S_AXI_HP1_ARREADY"/>
-            <PORTMAP LOGICAL="AWREADY" PHYSICAL="S_AXI_HP1_AWREADY"/>
-            <PORTMAP LOGICAL="BVALID" PHYSICAL="S_AXI_HP1_BVALID"/>
-            <PORTMAP LOGICAL="RLAST" PHYSICAL="S_AXI_HP1_RLAST"/>
-            <PORTMAP LOGICAL="RVALID" PHYSICAL="S_AXI_HP1_RVALID"/>
-            <PORTMAP LOGICAL="WREADY" PHYSICAL="S_AXI_HP1_WREADY"/>
-            <PORTMAP LOGICAL="BRESP" PHYSICAL="S_AXI_HP1_BRESP"/>
-            <PORTMAP LOGICAL="RRESP" PHYSICAL="S_AXI_HP1_RRESP"/>
-            <PORTMAP LOGICAL="BID" PHYSICAL="S_AXI_HP1_BID"/>
-            <PORTMAP LOGICAL="RID" PHYSICAL="S_AXI_HP1_RID"/>
-            <PORTMAP LOGICAL="RDATA" PHYSICAL="S_AXI_HP1_RDATA"/>
-            <PORTMAP LOGICAL="ARVALID" PHYSICAL="S_AXI_HP1_ARVALID"/>
-            <PORTMAP LOGICAL="AWVALID" PHYSICAL="S_AXI_HP1_AWVALID"/>
-            <PORTMAP LOGICAL="BREADY" PHYSICAL="S_AXI_HP1_BREADY"/>
-            <PORTMAP LOGICAL="RREADY" PHYSICAL="S_AXI_HP1_RREADY"/>
-            <PORTMAP LOGICAL="WLAST" PHYSICAL="S_AXI_HP1_WLAST"/>
-            <PORTMAP LOGICAL="WVALID" PHYSICAL="S_AXI_HP1_WVALID"/>
-            <PORTMAP LOGICAL="ARBURST" PHYSICAL="S_AXI_HP1_ARBURST"/>
-            <PORTMAP LOGICAL="ARLOCK" PHYSICAL="S_AXI_HP1_ARLOCK"/>
-            <PORTMAP LOGICAL="ARSIZE" PHYSICAL="S_AXI_HP1_ARSIZE"/>
-            <PORTMAP LOGICAL="AWBURST" PHYSICAL="S_AXI_HP1_AWBURST"/>
-            <PORTMAP LOGICAL="AWLOCK" PHYSICAL="S_AXI_HP1_AWLOCK"/>
-            <PORTMAP LOGICAL="AWSIZE" PHYSICAL="S_AXI_HP1_AWSIZE"/>
-            <PORTMAP LOGICAL="ARPROT" PHYSICAL="S_AXI_HP1_ARPROT"/>
-            <PORTMAP LOGICAL="AWPROT" PHYSICAL="S_AXI_HP1_AWPROT"/>
-            <PORTMAP LOGICAL="ARADDR" PHYSICAL="S_AXI_HP1_ARADDR"/>
-            <PORTMAP LOGICAL="AWADDR" PHYSICAL="S_AXI_HP1_AWADDR"/>
-            <PORTMAP LOGICAL="ARCACHE" PHYSICAL="S_AXI_HP1_ARCACHE"/>
-            <PORTMAP LOGICAL="ARLEN" PHYSICAL="S_AXI_HP1_ARLEN"/>
-            <PORTMAP LOGICAL="ARQOS" PHYSICAL="S_AXI_HP1_ARQOS"/>
-            <PORTMAP LOGICAL="AWCACHE" PHYSICAL="S_AXI_HP1_AWCACHE"/>
-            <PORTMAP LOGICAL="AWLEN" PHYSICAL="S_AXI_HP1_AWLEN"/>
-            <PORTMAP LOGICAL="AWQOS" PHYSICAL="S_AXI_HP1_AWQOS"/>
-            <PORTMAP LOGICAL="ARID" PHYSICAL="S_AXI_HP1_ARID"/>
-            <PORTMAP LOGICAL="AWID" PHYSICAL="S_AXI_HP1_AWID"/>
-            <PORTMAP LOGICAL="WID" PHYSICAL="S_AXI_HP1_WID"/>
-            <PORTMAP LOGICAL="WDATA" PHYSICAL="S_AXI_HP1_WDATA"/>
-            <PORTMAP LOGICAL="WSTRB" PHYSICAL="S_AXI_HP1_WSTRB"/>
-          </PORTMAPS>
-        </BUSINTERFACE>
       </BUSINTERFACES>
       <MEMORYMAP>
-        <MEMRANGE ADDRESSBLOCK="reg0" BASENAME="C_BASEADDR" BASEVALUE="0x40000000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x40000FFF" INSTANCE="config_interconnect_cfg_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI"/>
+        <MEMRANGE ADDRESSBLOCK="reg0" BASENAME="C_BASEADDR" BASEVALUE="0x40000000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x40000FFF" INSTANCE="cfg_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI"/>
       </MEMORYMAP>
       <PERIPHERALS>
-        <PERIPHERAL INSTANCE="config_interconnect_cfg_0"/>
+        <PERIPHERAL INSTANCE="cfg_0"/>
       </PERIPHERALS>
     </MODULE>
     <MODULE COREREVISION="21" FULLNAME="/ps_0_axi_periph" HWVERSION="2.1" INSTANCE="ps_0_axi_periph" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="axi_interconnect" VLNV="xilinx.com:ip:axi_interconnect:2.1">
@@ -3966,91 +3366,91 @@
             <CONNECTION INSTANCE="rst_0" PORT="peripheral_aresetn"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M00_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="config_interconnect_cfg_0_s_axi_awaddr">
+        <PORT DIR="O" LEFT="31" NAME="M00_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="cfg_0_s_axi_awaddr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="config_interconnect_cfg_0" PORT="s_axi_awaddr"/>
+            <CONNECTION INSTANCE="cfg_0" PORT="s_axi_awaddr"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="M00_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M00_AXI_awvalid" SIGIS="undef" SIGNAME="config_interconnect_cfg_0_s_axi_awvalid">
+        <PORT DIR="O" NAME="M00_AXI_awvalid" SIGIS="undef" SIGNAME="cfg_0_s_axi_awvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="config_interconnect_cfg_0" PORT="s_axi_awvalid"/>
+            <CONNECTION INSTANCE="cfg_0" PORT="s_axi_awvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M00_AXI_awready" SIGIS="undef" SIGNAME="config_interconnect_cfg_0_s_axi_awready">
+        <PORT DIR="I" NAME="M00_AXI_awready" SIGIS="undef" SIGNAME="cfg_0_s_axi_awready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="config_interconnect_cfg_0" PORT="s_axi_awready"/>
+            <CONNECTION INSTANCE="cfg_0" PORT="s_axi_awready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M00_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="config_interconnect_cfg_0_s_axi_wdata">
+        <PORT DIR="O" LEFT="31" NAME="M00_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="cfg_0_s_axi_wdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="config_interconnect_cfg_0" PORT="s_axi_wdata"/>
+            <CONNECTION INSTANCE="cfg_0" PORT="s_axi_wdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M00_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="config_interconnect_cfg_0_s_axi_wstrb">
+        <PORT DIR="O" LEFT="3" NAME="M00_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="cfg_0_s_axi_wstrb">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="config_interconnect_cfg_0" PORT="s_axi_wstrb"/>
+            <CONNECTION INSTANCE="cfg_0" PORT="s_axi_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M00_AXI_wvalid" SIGIS="undef" SIGNAME="config_interconnect_cfg_0_s_axi_wvalid">
+        <PORT DIR="O" NAME="M00_AXI_wvalid" SIGIS="undef" SIGNAME="cfg_0_s_axi_wvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="config_interconnect_cfg_0" PORT="s_axi_wvalid"/>
+            <CONNECTION INSTANCE="cfg_0" PORT="s_axi_wvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M00_AXI_wready" SIGIS="undef" SIGNAME="config_interconnect_cfg_0_s_axi_wready">
+        <PORT DIR="I" NAME="M00_AXI_wready" SIGIS="undef" SIGNAME="cfg_0_s_axi_wready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="config_interconnect_cfg_0" PORT="s_axi_wready"/>
+            <CONNECTION INSTANCE="cfg_0" PORT="s_axi_wready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M00_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="config_interconnect_cfg_0_s_axi_bresp">
+        <PORT DIR="I" LEFT="1" NAME="M00_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="cfg_0_s_axi_bresp">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="config_interconnect_cfg_0" PORT="s_axi_bresp"/>
+            <CONNECTION INSTANCE="cfg_0" PORT="s_axi_bresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M00_AXI_bvalid" SIGIS="undef" SIGNAME="config_interconnect_cfg_0_s_axi_bvalid">
+        <PORT DIR="I" NAME="M00_AXI_bvalid" SIGIS="undef" SIGNAME="cfg_0_s_axi_bvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="config_interconnect_cfg_0" PORT="s_axi_bvalid"/>
+            <CONNECTION INSTANCE="cfg_0" PORT="s_axi_bvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M00_AXI_bready" SIGIS="undef" SIGNAME="config_interconnect_cfg_0_s_axi_bready">
+        <PORT DIR="O" NAME="M00_AXI_bready" SIGIS="undef" SIGNAME="cfg_0_s_axi_bready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="config_interconnect_cfg_0" PORT="s_axi_bready"/>
+            <CONNECTION INSTANCE="cfg_0" PORT="s_axi_bready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M00_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="config_interconnect_cfg_0_s_axi_araddr">
+        <PORT DIR="O" LEFT="31" NAME="M00_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="cfg_0_s_axi_araddr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="config_interconnect_cfg_0" PORT="s_axi_araddr"/>
+            <CONNECTION INSTANCE="cfg_0" PORT="s_axi_araddr"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="M00_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M00_AXI_arvalid" SIGIS="undef" SIGNAME="config_interconnect_cfg_0_s_axi_arvalid">
+        <PORT DIR="O" NAME="M00_AXI_arvalid" SIGIS="undef" SIGNAME="cfg_0_s_axi_arvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="config_interconnect_cfg_0" PORT="s_axi_arvalid"/>
+            <CONNECTION INSTANCE="cfg_0" PORT="s_axi_arvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M00_AXI_arready" SIGIS="undef" SIGNAME="config_interconnect_cfg_0_s_axi_arready">
+        <PORT DIR="I" NAME="M00_AXI_arready" SIGIS="undef" SIGNAME="cfg_0_s_axi_arready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="config_interconnect_cfg_0" PORT="s_axi_arready"/>
+            <CONNECTION INSTANCE="cfg_0" PORT="s_axi_arready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M00_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="config_interconnect_cfg_0_s_axi_rdata">
+        <PORT DIR="I" LEFT="31" NAME="M00_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="cfg_0_s_axi_rdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="config_interconnect_cfg_0" PORT="s_axi_rdata"/>
+            <CONNECTION INSTANCE="cfg_0" PORT="s_axi_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M00_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="config_interconnect_cfg_0_s_axi_rresp">
+        <PORT DIR="I" LEFT="1" NAME="M00_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="cfg_0_s_axi_rresp">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="config_interconnect_cfg_0" PORT="s_axi_rresp"/>
+            <CONNECTION INSTANCE="cfg_0" PORT="s_axi_rresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M00_AXI_rvalid" SIGIS="undef" SIGNAME="config_interconnect_cfg_0_s_axi_rvalid">
+        <PORT DIR="I" NAME="M00_AXI_rvalid" SIGIS="undef" SIGNAME="cfg_0_s_axi_rvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="config_interconnect_cfg_0" PORT="s_axi_rvalid"/>
+            <CONNECTION INSTANCE="cfg_0" PORT="s_axi_rvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M00_AXI_rready" SIGIS="undef" SIGNAME="config_interconnect_cfg_0_s_axi_rready">
+        <PORT DIR="O" NAME="M00_AXI_rready" SIGIS="undef" SIGNAME="cfg_0_s_axi_rready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="config_interconnect_cfg_0" PORT="s_axi_rready"/>
+            <CONNECTION INSTANCE="cfg_0" PORT="s_axi_rready"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="11" NAME="S00_AXI_awid" RIGHT="0" SIGIS="undef" SIGNAME="ps_0_M_AXI_GP0_AWID">
@@ -4384,7 +3784,7 @@
             <CONNECTION INSTANCE="ps_0_axi_periph" PORT="ARESETN"/>
             <CONNECTION INSTANCE="ps_0_axi_periph" PORT="M00_ARESETN"/>
             <CONNECTION INSTANCE="ps_0_axi_periph" PORT="S00_ARESETN"/>
-            <CONNECTION INSTANCE="config_interconnect_cfg_0" PORT="aresetn"/>
+            <CONNECTION INSTANCE="cfg_0" PORT="aresetn"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -4403,9 +3803,9 @@
             <CONNECTION INSTANCE="pll_0" PORT="clk_out1"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="rst" SIGIS="rst" SIGNAME="config_interconnect_filter_rst_dout">
+        <PORT DIR="I" NAME="rst" SIGIS="rst" SIGNAME="slice_2_dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="config_interconnect_filter_rst" PORT="dout"/>
+            <CONNECTION INSTANCE="slice_2" PORT="dout"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="trigger" SIGIS="undef" SIGNAME="pulse_gen_0_pulse">
@@ -4446,6 +3846,55 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
+    <MODULE COREREVISION="3" FULLNAME="/slice_2" HWVERSION="1.0" INSTANCE="slice_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="port_slicer" VLNV="pavel-demin:user:port_slicer:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DIN_WIDTH" VALUE="256"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="1"/>
+        <PARAMETER NAME="DIN_TO" VALUE="1"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_slice_2_2"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="255" NAME="din" RIGHT="0" SIGIS="undef" SIGNAME="cfg_0_cfg_data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="cfg_0" PORT="cfg_data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="slice_2_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="not_0" PORT="Op1"/>
+            <CONNECTION INSTANCE="sig_exp_decay_0" PORT="rst"/>
+            <CONNECTION INSTANCE="xlconcat_2" PORT="In1"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="3" FULLNAME="/slice_3" HWVERSION="1.0" INSTANCE="slice_3" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="port_slicer" VLNV="pavel-demin:user:port_slicer:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DIN_WIDTH" VALUE="256"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="2"/>
+        <PARAMETER NAME="DIN_TO" VALUE="2"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_slice_3_2"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="255" NAME="din" RIGHT="0" SIGIS="undef" SIGNAME="cfg_0_cfg_data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="cfg_0" PORT="cfg_data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="slice_3_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="writer_0" PORT="aresetn"/>
+            <CONNECTION INSTANCE="xlconcat_2" PORT="In2"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
     <MODULE COREREVISION="2" FULLNAME="/writer_0" HWVERSION="1.0" INSTANCE="writer_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axis_ram_writer" VLNV="pavel-demin:user:axis_ram_writer:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
@@ -4463,12 +3912,16 @@
             <CONNECTION INSTANCE="pll_0" PORT="clk_out1"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="aresetn" SIGIS="rst" SIGNAME="config_interconnect_writer_rst_dout">
+        <PORT DIR="I" NAME="aresetn" SIGIS="rst" SIGNAME="slice_3_dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="config_interconnect_writer_rst" PORT="dout"/>
+            <CONNECTION INSTANCE="slice_3" PORT="dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="cfg_data" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="31" NAME="cfg_data" RIGHT="0" SIGIS="undef" SIGNAME="Waveform_Offset_Addr_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Waveform_Offset_Addr" PORT="dout"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="O" LEFT="24" NAME="sts_data" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="O" LEFT="5" NAME="m_axi_awid" RIGHT="0" SIGIS="undef" SIGNAME="ps_0_S_AXI_HP0_AWID">
           <CONNECTIONS>
@@ -4550,24 +4003,21 @@
             <CONNECTION INSTANCE="ps_0" PORT="S_AXI_HP0_BREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axis_tready" SIGIS="undef" SIGNAME="axis_combiner_0_m_axis_tready">
+        <PORT DIR="O" NAME="s_axis_tready" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="63" NAME="s_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="xlconcat_0_dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axis_combiner_0" PORT="m_axis_tready"/>
+            <CONNECTION INSTANCE="adc_0" PORT="m_axis_tdata"/>
+            <CONNECTION INSTANCE="xlconcat_0" PORT="dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="63" NAME="s_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="axis_combiner_0_m_axis_tdata">
+        <PORT DIR="I" NAME="s_axis_tvalid" SIGIS="undef" SIGNAME="adc_0_m_axis_tvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axis_combiner_0" PORT="m_axis_tdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="s_axis_tvalid" SIGIS="undef" SIGNAME="axis_combiner_0_m_axis_tvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axis_combiner_0" PORT="m_axis_tvalid"/>
+            <CONNECTION INSTANCE="adc_0" PORT="m_axis_tvalid"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
       <BUSINTERFACES>
-        <BUSINTERFACE BUSNAME="axis_combiner_0_M_AXIS" NAME="S_AXIS" TYPE="SLAVE" VLNV="xilinx.com:interface:axis:1.0">
+        <BUSINTERFACE BUSNAME="adc_0_M_AXIS" NAME="S_AXIS" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
           <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="8"/>
           <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
           <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
@@ -4645,6 +4095,130 @@
       <PERIPHERALS>
         <PERIPHERAL INSTANCE="ps_0"/>
       </PERIPHERALS>
+    </MODULE>
+    <MODULE COREREVISION="3" FULLNAME="/xlconcat_0" HWVERSION="2.1" INSTANCE="xlconcat_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconcat" VLNV="xilinx.com:ip:xlconcat:2.1">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="IN0_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="IN1_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="IN2_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN3_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN4_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN5_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN6_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN7_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN8_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN9_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN10_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN11_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN12_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN13_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN14_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN15_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN16_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN17_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN18_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN19_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN20_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN21_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN22_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN23_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN24_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN25_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN26_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN27_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN28_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN29_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN30_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN31_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="dout_width" VALUE="64"/>
+        <PARAMETER NAME="NUM_PORTS" VALUE="2"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_xlconcat_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="31" NAME="In0" RIGHT="0" SIGIS="undef" SIGNAME="c_counter_binary_0_Q">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="c_counter_binary_0" PORT="Q"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="In1" RIGHT="0" SIGIS="undef" SIGNAME="adc_0_m_axis_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adc_0" PORT="m_axis_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="63" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconcat_0_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="writer_0" PORT="s_axis_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="3" FULLNAME="/xlconcat_2" HWVERSION="2.1" INSTANCE="xlconcat_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconcat" VLNV="xilinx.com:ip:xlconcat:2.1">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="IN0_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN1_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN2_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN3_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN4_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN5_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN6_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN7_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN8_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN9_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN10_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN11_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN12_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN13_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN14_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN15_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN16_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN17_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN18_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN19_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN20_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN21_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN22_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN23_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN24_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN25_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN26_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN27_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN28_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN29_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN30_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN31_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="dout_width" VALUE="8"/>
+        <PARAMETER NAME="NUM_PORTS" VALUE="8"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_xlconcat_2_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="0" NAME="In0" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="0" NAME="In1" RIGHT="0" SIGIS="undef" SIGNAME="slice_2_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="slice_2" PORT="dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="In2" RIGHT="0" SIGIS="undef" SIGNAME="slice_3_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="slice_3" PORT="dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="In3" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="0" NAME="In4" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="0" NAME="In5" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="0" NAME="In6" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="0" NAME="In7" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="7" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconcat_2_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="led_o"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
     </MODULE>
   </MODULES>
 

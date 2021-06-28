@@ -3,10 +3,10 @@
 <!--                                                         -->
 <!-- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="44" Path="/home/ywang/git/DSP/projects/adc_recorder/adc_recorder.tmp/fir_poly_v1_0_project/fir_poly_v1_0_project.xpr">
+<Project Version="7" Minor="44" Path="/home/ywang/Code/filters/project/adc_recorder/adc_recorder.tmp/fir_poly_v1_0_project/fir_poly_v1_0_project.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="ad1b5391239b49be8ee14ed10e8990a4"/>
+    <Option Name="Id" Val="6ea43b888f9045ca8e51f7fcd5a8e18a"/>
     <Option Name="Part" Val="xc7z010clg400-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -22,8 +22,7 @@
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../pavel-cores"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../cores"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../filters"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
     <Option Name="IPCachePermission" Val="read"/>
     <Option Name="IPCachePermission" Val="write"/>
