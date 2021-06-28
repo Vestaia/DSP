@@ -16,7 +16,7 @@ void WindowManager::renderImGui() {
     if (!init) {
         init = true;
         
-        c.connect_to("127.0.0.1", 42069);
+        c.connect_to("192.168.1.10", 42069);
         
         for (int i = 0; i < 1000; i++) {
             x_data[i] = 0.0f + 0.01f * i;
