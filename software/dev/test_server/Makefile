@@ -22,12 +22,12 @@ INC_FLAGS := $(addprefix -I ,$(INC_DIRS))
 # Possibly needed for mingw to be able to std::thread : -static-libgcc -static-libstdc++
 # I dont want to do static linking necessarily, but mingw does not behave itself with threads :( -Lars
 LIB_DIRS := 
-LINK_FLAGS := $(addprefix -L , $(LIB_DIRS)) -lglfw -lvulkan
+LINK_FLAGS := $(addprefix -L , $(LIB_DIRS)) 
 
 WARNING_FLAGS := -Wall -Wextra -Wno-unused-parameter
 # WARNING_FLAGS += -Wdouble-promotion
 COMPILE_FLAGS := $(WARNING_FLAGS) -std=c++17 $(INC_FLAGS) -MMD -MP
-COMPILER := g++
+COMPILER := arm-linux-gnueabihf-g++
 
 ########################################################################################
 

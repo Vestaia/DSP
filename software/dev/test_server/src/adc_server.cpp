@@ -1,8 +1,8 @@
 #include "network.h"
 #include "fpga_driver.h"
-
+#include <stdio.h>
 int main(){
-    //pwp_fpga rp = pwp_fpga();
+    pwp_fpga rp = pwp_fpga();
     server s = server();
     request req;
     s.attach(INADDR_ANY, 42069);
@@ -14,9 +14,10 @@ int main(){
         }
         uint16_t* data = new uint16_t[req.nsamples];
         sample* samples = new sample[req.nsamples];
-        //rp.capture_n_raw(samples, req.nsamples);
+        rp.capture_n_raw(samples, req.nsamples);
         for (int i = 0; i < req.nsamples; i++){
-            data[i] = i + j;
+            data[i] = samples[i].ch_a;
+            printf("%d\n", data[i]);
         }
         s.send(data, req.nsamples * sizeof(data[0]));
         delete[] data;
