@@ -9,6 +9,7 @@ class fpga {
     volatile uint32_t *slcr, *hp0;
     volatile fpga_cfg* cfg;
     volatile uint8_t* ring_buf;
+    volatile uint32_t* ring_wptr; 
     fpga();
     ~fpga();
 
@@ -54,7 +55,8 @@ fpga<fpga_cfg,sample>::~fpga(){
 template <class fpga_cfg, class sample>
 void fpga<fpga_cfg,sample>::capture_n_raw(sample* data, unsigned int n){
     for (int i = 0; i < n; i++)
-        data[i] = *((sample *)(ring_buf + sizeof(sample) * i));
+        uint32_t offset = ((*ring_wptr + i) * sizeof(sample)) % DATA_RING_SIZE;
+        data[i] = *((sample *)((ring_buf + offset));
 }
 template <class fpga_cfg, class sample>
 void fpga<fpga_cfg,sample>::capture_t_raw(sample* data, float t){

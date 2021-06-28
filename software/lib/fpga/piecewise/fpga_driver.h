@@ -9,6 +9,7 @@
 #include "common.h"
 
 #define DATA_RING_ADDR 0x10000000
+#define DATA_RING_WPTR 0x18000000
 #define DATA_RING_SIZE (1<<25)
 #define RESET_WRITER (1<<2)
 #define RESET_DAQ (1<<1)
