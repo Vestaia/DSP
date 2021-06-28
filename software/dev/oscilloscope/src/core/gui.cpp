@@ -1,27 +1,34 @@
 #include "windowmanager.h"
 #include "stringformat.h"
 
+#include "network.h"
+
 void WindowManager::renderImGui() {
     // Our state variables
-    static int   bar_data[11];
     static float x_data[1000];
     static float y_data[1000];
+    static int16_t data[1000];
+    
+    static client c = client();
 
     static bool init = false;
 
     if (!init) {
         init = true;
-
-        for (int i = 0; i < 11; i++) {
-            bar_data[i] = i + 1;
-        }
-
+        
+        c.connect_to("127.0.0.1", 42069);
+        
         for (int i = 0; i < 1000; i++) {
             x_data[i] = 0.0f + 0.01f * i;
-            y_data[i] = sinf(x_data[i]) + x_data[i];
         }
     }
     
+    c.get_frame(data, 0, 0, 1000, 1);
+    
+    for (int i = 0; i < 1000; i++) {
+        y_data[i] = (float) data[i];
+    }   
+     
     static ImGuiWindowFlags window_flags = ImGuiWindowFlags_NoMove | 
                                            ImGuiWindowFlags_NoResize | 
                                            ImGuiWindowFlags_NoCollapse;
@@ -69,7 +76,6 @@ void WindowManager::renderImGui() {
     
     ImGui::Begin("Plot", nullptr, window_flags);
     if (ImPlot::BeginPlot("My Plot", 0, 0, ImVec2(-1.0f, -1.0f), 0, ImPlotAxisFlags_AutoFit, ImPlotAxisFlags_AutoFit)) {
-        ImPlot::PlotBars("My Bar Plot", bar_data, 11);
         ImPlot::PlotLine("My Line Plot", x_data, y_data, 1000);
         ImPlot::EndPlot();
     }

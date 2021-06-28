@@ -1,0 +1,26 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "intelliSenseMode": "linux-gcc-x64",
+            "compilerPath": "/usr/bin/g++",
+            "cppStandard": "c++17",
+            "includePath": [
+                "${default}",
+                "${workspaceFolder}/**"
+            ]
+        }
+        ,
+        {
+            "name": "MacOS",
+            "intelliSenseMode": "macos-clang-x64",
+            "compilerPath": "/usr/bin/g++",
+            "cppStandard": "c++17",
+            "includePath": [
+                "${default}",
+                "${workspaceFolder}/**"
+            ]
+        }
+    ],
+    "version": 4
+}

@@ -4,7 +4,6 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdio.h>
-
 struct request{
     uint8_t flags; // Valid | Trigger | ...
     uint32_t t_offset;
