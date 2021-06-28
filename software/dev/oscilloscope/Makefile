@@ -7,15 +7,15 @@
 
 TARGET_EXEC := main
 
-LOCAL_SRC_DIRS := src libs/imgui/impl libs/imgui/src libs/implot/src
-EXT_SRC_DIRS := 
+LOCAL_SRC_DIRS := src
+EXT_SRC_DIRS := libs/imgui/impl libs/imgui/src libs/implot/src libs/network libs/fpga/piecewise
 SRC_DIRS := $(LOCAL_SRC_DIRS) $(EXT_SRC_DIRS)
-BUILD_DIR := $(if $(OBJ_DIR),$(OBJ_DIR),build)
+BUILD_DIR := bin
 
 VPATH := $(SRC_DIRS)
 
-LOCAL_INC_DIRS := src src/core src/utils libs/imgui/include libs/imgui/impl libs/implot/include
-EXT_INC_DIRS := 
+LOCAL_INC_DIRS := src src/core src/utils
+EXT_INC_DIRS := libs/imgui/include libs/imgui/impl libs/implot/include libs/fpga libs/fpga/piecewise libs/network
 INC_DIRS := $(LOCAL_INC_DIRS) $(EXT_INC_DIRS)
 INC_FLAGS := $(addprefix -I ,$(INC_DIRS))
 
@@ -27,7 +27,7 @@ LINK_FLAGS := $(addprefix -L , $(LIB_DIRS)) -lglfw -lvulkan
 WARNING_FLAGS := -Wall -Wextra -Wno-unused-parameter
 # WARNING_FLAGS += -Wdouble-promotion
 COMPILE_FLAGS := $(WARNING_FLAGS) -std=c++17 $(INC_FLAGS) -MMD -MP
-COMPILER := $(if $(COMPILER),$(COMPILER),g++)
+COMPILER := g++
 
 ########################################################################################
 
