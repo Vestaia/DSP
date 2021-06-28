@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z010clg400-1" LaunchTime="1624476164">
+<GenRun Id="impl_1" LaunchPart="xc7z010clg400-1" LaunchTime="1624905615">
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <File Type="BG-DRC" Name="system_wrapper.drc"/>
   <File Type="BG-BGN" Name="system_wrapper.bgn"/>
@@ -102,14 +102,16 @@
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
-    <File Path="$PPRDIR/../../cfg/clocks.xdc">
+    <File Path="$PPRDIR/../../../red-pitaya-notes/cfg/ports.xdc">
       <FileInfo>
+        <Attr Name="Library" Val="xil_defaultlib"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../cfg/ports.xdc">
+    <File Path="$PPRDIR/../../../red-pitaya-notes/cfg/clocks.xdc">
       <FileInfo>
+        <Attr Name="Library" Val="xil_defaultlib"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
       </FileInfo>
@@ -125,7 +127,9 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Performance_NetDelay_high" Flow="Vivado Implementation 2019"/>
+    <StratHandle Name="Performance_NetDelay_high" Flow="Vivado Implementation 2019">
+      <Desc>To compensate for optimistic delay estimation, add extra delay cost to long distance and high fanout connections. (high setting, most pessimistic)</Desc>
+    </StratHandle>
     <Step Id="init_design"/>
     <Step Id="opt_design"/>
     <Step Id="power_opt_design"/>
