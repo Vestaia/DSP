@@ -2,6 +2,7 @@
 #define CONFIG_ADDR 0x40000000
 #define CLOCK_FREQ 125000000
 #include <stdio.h>
+#include <cstring> //For memcpy
 
 template <class fpga_cfg, class sample>
 class fpga {
@@ -54,16 +55,17 @@ fpga<fpga_cfg,sample>::~fpga(){
     close(fd);
 }
 
-//TODO: Make this actually work std::memcpy()
 template <class fpga_cfg, class sample>
 void fpga<fpga_cfg,sample>::capture_n_raw(sample* data, unsigned int n){
-    uint32_t wptr_pos = *ring_wptr - n;
-    if (wptr_pos < 0)
-        wptr_pos += ring_size / sizeof(sample);
-    printf("0x%08x\n", wptr_pos);
-    for (int i = 0; i < n; i++){
-        uint32_t offset = ((wptr_pos + i) * sizeof(sample)) % ring_size;
-        data[i] = *((sample *)((ring_buf + offset)));
+    if ((n * sizoeof(sample)) > ring_size) return;
+    void* dest = data;
+    int32_t end_pos = (int)(*ring_wptr * sizeof(sample));
+    int32_t start_pos = (int)(end_pos - (n * sizeof(sample)));
+    if (start_pos < 0){
+        std::memcpy(dest, ring_buf + ring_size + start_pos, 0 - start_pos);
+        std::memcpy(dest - start_pos, ring_buf, end_pos);
+    } else {
+        std::memcpy(dest, start_pos, end_pos);
     }
 }
 template <class fpga_cfg, class sample>
