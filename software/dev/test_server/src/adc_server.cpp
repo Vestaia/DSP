@@ -4,6 +4,7 @@
 int main(){
     pwp_fpga rp = pwp_fpga();
     server s = server();
+    rp.reset();
     request req;
     s.attach(INADDR_ANY, 42069);
     int j = 0;
@@ -17,7 +18,6 @@ int main(){
         rp.capture_n_raw(samples, req.nsamples);
         for (int i = 0; i < req.nsamples; i++){
             data[i] = samples[i].ch_a;
-            printf("%d\n", data[i]);
         }
         s.send(data, req.nsamples * sizeof(data[0]));
         delete[] data;

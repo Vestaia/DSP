@@ -3,6 +3,8 @@
 
 pwp_fpga::pwp_fpga(){
     ring_buf  = (volatile uint8_t*)  mmap(NULL, DATA_RING_SIZE, PROT_READ|PROT_WRITE, MAP_SHARED, fd, DATA_RING_ADDR);
+    ring_wptr = (volatile uint32_t*)  mmap(NULL, 4, PROT_READ|PROT_WRITE, MAP_SHARED, fd, DATA_RING_WPTR);
+    ring_size = DATA_RING_SIZE;
 }
 
 pwp_fpga::~pwp_fpga(){
