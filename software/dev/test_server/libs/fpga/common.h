@@ -60,16 +60,23 @@ void fpga<fpga_cfg,sample>::capture_n_raw(sample* data, unsigned int n){
     if ((n * sizeof(sample)) > ring_size) return;
     uint8_t* dest = (uint8_t*)data;
     volatile uint8_t* end = *ring_wptr / 8 * 8 + ring_buf;
-    volatile uint8_t* start = end - n * sizeof(sample);
+    volatile uint8_t* start = end - (n * sizeof(sample));
     volatile uint8_t* ring_end = ring_buf + ring_size;
+    //printf("Ring_start:%x\nRing_end:%x\nStart:%x\nEnd:%x\nOffset:%x\n",ring_buf, ring_end, start, end, *ring_wptr);
     if (start < ring_buf){
-        std::copy(start + ring_size, ring_end, dest);
-        dest += ring_buf - start;
-        std::copy(ring_buf, end, dest);
+        start += ring_size;
+        std::copy(start, ring_end, dest);
+        std::copy(ring_buf, end, dest + (start - ring_end));
     }
-    else
+    else{
         std::copy(start, end, dest);
+    }
+    for (int i = 0; i < n; i++){
+        data[i].ch_a = i;
+    }
 }
+
+
 template <class fpga_cfg, class sample>
 void fpga<fpga_cfg,sample>::capture_t_raw(sample* data, float t){
     fpga::capture_n_raw(data, t * CLOCK_FREQ);

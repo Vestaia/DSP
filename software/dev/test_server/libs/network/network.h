@@ -63,7 +63,9 @@ int client::recieve(
         T *data, 
         size_t size
     ){
-    return read(server_fd, data, size);
+    int status = read(server_fd, data, size);
+    printf("%d", status);
+    return status;
 }
 
 
