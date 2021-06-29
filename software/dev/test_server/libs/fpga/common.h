@@ -2,7 +2,7 @@
 #define CONFIG_ADDR 0x40000000
 #define CLOCK_FREQ 125000000
 #include <stdio.h>
-#include <cstring> //For memcpy
+#include <algorithm>
 
 template <class fpga_cfg, class sample>
 class fpga {
@@ -57,16 +57,18 @@ fpga<fpga_cfg,sample>::~fpga(){
 
 template <class fpga_cfg, class sample>
 void fpga<fpga_cfg,sample>::capture_n_raw(sample* data, unsigned int n){
-    if ((n * sizoeof(sample)) > ring_size) return;
-    void* dest = data;
-    int32_t end_pos = (int)(*ring_wptr * sizeof(sample));
-    int32_t start_pos = (int)(end_pos - (n * sizeof(sample)));
-    if (start_pos < 0){
-        std::memcpy(dest, ring_buf + ring_size + start_pos, 0 - start_pos);
-        std::memcpy(dest - start_pos, ring_buf, end_pos);
-    } else {
-        std::memcpy(dest, start_pos, end_pos);
+    if ((n * sizeof(sample)) > ring_size) return;
+    uint8_t* dest = (uint8_t*)data;
+    volatile uint8_t* end = *ring_wptr / 8 * 8 + ring_buf;
+    volatile uint8_t* start = end - n * sizeof(sample);
+    volatile uint8_t* ring_end = ring_buf + ring_size;
+    if (start < ring_buf){
+        std::copy(start + ring_size, ring_end, dest);
+        dest += ring_buf - start;
+        std::copy(ring_buf, end, dest);
     }
+    else
+        std::copy(start, end, dest);
 }
 template <class fpga_cfg, class sample>
 void fpga<fpga_cfg,sample>::capture_t_raw(sample* data, float t){
