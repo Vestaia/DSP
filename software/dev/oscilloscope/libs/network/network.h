@@ -4,7 +4,6 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdio.h>
-
 struct request{
     uint8_t flags; // Valid | Trigger | ...
     uint32_t t_offset;
@@ -64,7 +63,14 @@ int client::recieve(
         T *data, 
         size_t size
     ){
-    return read(server_fd, data, size);
+    size_t status;
+    size_t recd = 0;
+
+    while (recd < size && (status = read(server_fd, (uint8_t*)data + recd, size)) >= 0){
+        recd += status;
+        printf("Bytes Recieved: %d \t Bytes Remaining: %d\n", recd, size - recd);
+    }
+    return (recd == size) - 1;
 }
 
 
