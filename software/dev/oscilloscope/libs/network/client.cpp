@@ -17,7 +17,13 @@ int client::connect_to(
     s.sin_family = AF_INET;
     s.sin_addr.s_addr = ipv4_remote_addr;
     s.sin_port = htons(ipv4_remote_port);
-    return connect(server_fd, (struct sockaddr *)&s, sockaddr_size);
+    if (connect(server_fd, (struct sockaddr *)&s, sockaddr_size) != 0){
+        perror("connect"); 
+        close(server_fd);
+        server_fd = socket(AF_INET, SOCK_STREAM, 0);
+        return -1;
+    }
+    return 0;
 }
 
 int client::connect_to(
@@ -25,7 +31,7 @@ int client::connect_to(
         ushort ipv4_remote_port
     ){
         uint ip;
-        if (inet_pton(AF_INET, ipv4_remote_addr, &ip) != 1) return -1;
+        if (inet_pton(AF_INET, ipv4_remote_addr, &ip) != 1) {perror("pton"); return -1;}
         return connect_to(ip, ipv4_remote_port);
     }
 
@@ -41,5 +47,10 @@ int client::get_frame(
     req.t_offset = t_offset;
     req.nsamples = nsamples;
     req.rate = rate;
-    return -(send(&req, sizeof(req)) || recieve(data, sizeof(int16_t) * nsamples));
+    if (send(&req, sizeof(req)) < 0){
+        perror("Send request:");
+        return -1;
+    }
+    if (recieve(data, sizeof(int16_t) * nsamples) < 0);
+    return 0;
 }

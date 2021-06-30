@@ -81,6 +81,7 @@ void fpga<fpga_cfg,sample>::capture_n_raw(sample* data, unsigned int n){
     // }
 
 }
+//Implement averaging
 template <class fpga_cfg, class sample>
 void fpga<fpga_cfg,sample>::capture_n_raw(sample* data, unsigned int n, unsigned int rate){
     float period = CLOCK_FREQ / rate;

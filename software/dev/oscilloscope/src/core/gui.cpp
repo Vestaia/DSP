@@ -13,23 +13,25 @@ void WindowManager::renderImGui() {
     static client c = client();
 
     static bool init = false;
-
+    static bool connected = false;
     if (!init) {
         init = true;
-        
-        c.connect_to("192.168.1.10", 42069);
         
         for (int i = 0; i < n; i++) {
             x_data[i] = 0.0f + 0.01f * i;
         }
     }
-    
-    c.get_frame(data, 0, 0, n, 1);
-    
-    for (int i = 0; i < n; i++) {
-        y_data[i] = (float) data[i];
-    }   
-     
+    if (connected){
+        c.get_frame(data, 0, 0, n, 1);
+        for (int i = 0; i < n; i++) 
+            y_data[i] = (float) data[i];
+    }
+    //Make logic to connect on button click
+    else{
+        connected = c.connect_to("192.168.1.10", 42069) == 0;
+    }
+
+
     static ImGuiWindowFlags window_flags = ImGuiWindowFlags_NoMove | 
                                            ImGuiWindowFlags_NoResize | 
                                            ImGuiWindowFlags_NoCollapse;
