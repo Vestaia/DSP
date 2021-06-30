@@ -63,7 +63,14 @@ int client::recieve(
         T *data, 
         size_t size
     ){
-    return read(server_fd, data, size);
+    size_t status;
+    size_t recd = 0;
+
+    while (recd < size && (status = read(server_fd, (uint8_t*)data + recd, size)) >= 0){
+        recd += status;
+        printf("Bytes Recieved: %d \t Bytes Remaining: %d\n", recd, size - recd);
+    }
+    return (recd == size) - 1;
 }
 
 
@@ -72,9 +79,7 @@ int server::send(
         T *data, 
         size_t size
     ){
-    int status = write(client_fd, data, size);
-    printf("%d\n", status);
-    return (status == size) - 1;
+    return (write(client_fd, data, size) == size) - 1;
 }
 
 template <class T>
