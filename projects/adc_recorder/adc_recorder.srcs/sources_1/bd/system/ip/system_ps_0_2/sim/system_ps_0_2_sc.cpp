@@ -84,7 +84,7 @@ system_ps_0_2_sc::system_ps_0_2_sc(const sc_core::sc_module_name& nm) : sc_core:
   model_param_props.addLong("C_S_AXI_HP0_ID_WIDTH", "6");
   model_param_props.addLong("C_S_AXI_HP0_DATA_WIDTH", "64");
   model_param_props.addLong("C_S_AXI_HP1_ID_WIDTH", "6");
-  model_param_props.addLong("C_S_AXI_HP1_DATA_WIDTH", "64");
+  model_param_props.addLong("C_S_AXI_HP1_DATA_WIDTH", "32");
   model_param_props.addLong("C_S_AXI_HP2_ID_WIDTH", "6");
   model_param_props.addLong("C_S_AXI_HP2_DATA_WIDTH", "64");
   model_param_props.addLong("C_S_AXI_HP3_ID_WIDTH", "6");
@@ -103,7 +103,7 @@ system_ps_0_2_sc::system_ps_0_2_sc(const sc_core::sc_module_name& nm) : sc_core:
   model_param_props.addLong("C_USE_S_AXI_GP0", "0");
   model_param_props.addLong("C_USE_S_AXI_GP1", "0");
   model_param_props.addLong("C_USE_S_AXI_HP0", "1");
-  model_param_props.addLong("C_USE_S_AXI_HP1", "0");
+  model_param_props.addLong("C_USE_S_AXI_HP1", "1");
   model_param_props.addLong("C_USE_S_AXI_HP2", "0");
   model_param_props.addLong("C_USE_S_AXI_HP3", "0");
   model_param_props.addLong("C_USE_S_AXI_ACP", "0");
@@ -123,6 +123,8 @@ system_ps_0_2_sc::system_ps_0_2_sc(const sc_core::sc_module_name& nm) : sc_core:
   M_AXI_GP0_wr_socket = mp_impl->M_AXI_GP0_wr_socket;
   S_AXI_HP0_rd_socket = mp_impl->S_AXI_HP0_rd_socket;
   S_AXI_HP0_wr_socket = mp_impl->S_AXI_HP0_wr_socket;
+  S_AXI_HP1_rd_socket = mp_impl->S_AXI_HP1_rd_socket;
+  S_AXI_HP1_wr_socket = mp_impl->S_AXI_HP1_wr_socket;
 }
 
 system_ps_0_2_sc::~system_ps_0_2_sc()

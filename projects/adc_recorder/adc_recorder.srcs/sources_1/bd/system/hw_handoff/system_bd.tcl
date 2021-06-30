@@ -191,9 +191,16 @@ proc create_root_design { parentCell } {
   # Create instance: Waveform_Offset_Addr, and set properties
   set Waveform_Offset_Addr [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 Waveform_Offset_Addr ]
   set_property -dict [ list \
-   CONFIG.CONST_VAL {268435456} \
+   CONFIG.CONST_VAL {402653184} \
    CONFIG.CONST_WIDTH {32} \
  ] $Waveform_Offset_Addr
+
+  # Create instance: Waveform_Offset_Addr1, and set properties
+  set Waveform_Offset_Addr1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 Waveform_Offset_Addr1 ]
+  set_property -dict [ list \
+   CONFIG.CONST_VAL {268435456} \
+   CONFIG.CONST_WIDTH {32} \
+ ] $Waveform_Offset_Addr1
 
   # Create instance: adc_0, and set properties
   set adc_0 [ create_bd_cell -type ip -vlnv pavel-demin:user:axis_red_pitaya_adc:2.0 adc_0 ]
@@ -887,7 +894,7 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_S_AXI_GP1_ID_WIDTH {6} \
    CONFIG.PCW_S_AXI_HP0_DATA_WIDTH {64} \
    CONFIG.PCW_S_AXI_HP0_ID_WIDTH {6} \
-   CONFIG.PCW_S_AXI_HP1_DATA_WIDTH {64} \
+   CONFIG.PCW_S_AXI_HP1_DATA_WIDTH {32} \
    CONFIG.PCW_S_AXI_HP1_ID_WIDTH {6} \
    CONFIG.PCW_S_AXI_HP2_DATA_WIDTH {64} \
    CONFIG.PCW_S_AXI_HP2_ID_WIDTH {6} \
@@ -1060,7 +1067,7 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_USE_S_AXI_GP0 {0} \
    CONFIG.PCW_USE_S_AXI_GP1 {0} \
    CONFIG.PCW_USE_S_AXI_HP0 {1} \
-   CONFIG.PCW_USE_S_AXI_HP1 {0} \
+   CONFIG.PCW_USE_S_AXI_HP1 {1} \
    CONFIG.PCW_USE_S_AXI_HP2 {0} \
    CONFIG.PCW_USE_S_AXI_HP3 {0} \
    CONFIG.PCW_USE_TRACE {0} \
@@ -1106,9 +1113,17 @@ proc create_root_design { parentCell } {
   # Create instance: writer_0, and set properties
   set writer_0 [ create_bd_cell -type ip -vlnv pavel-demin:user:axis_ram_writer:1.0 writer_0 ]
   set_property -dict [ list \
-   CONFIG.ADDR_WIDTH {25} \
+   CONFIG.ADDR_WIDTH {24} \
    CONFIG.AXIS_TDATA_WIDTH {64} \
  ] $writer_0
+
+  # Create instance: writer_1, and set properties
+  set writer_1 [ create_bd_cell -type ip -vlnv pavel-demin:user:axis_ram_writer:1.0 writer_1 ]
+  set_property -dict [ list \
+   CONFIG.ADDR_WIDTH {4} \
+   CONFIG.AXIS_TDATA_WIDTH {32} \
+   CONFIG.AXI_DATA_WIDTH {32} \
+ ] $writer_1
 
   # Create instance: xlconcat_0, and set properties
   set xlconcat_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_0 ]
@@ -1131,8 +1146,10 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net ps_0_axi_periph_M00_AXI [get_bd_intf_pins cfg_0/S_AXI] [get_bd_intf_pins ps_0_axi_periph/M00_AXI]
   connect_bd_intf_net -intf_net sig_exp_decay_0_M_AXIS [get_bd_intf_pins axis_red_pitaya_dac_0/S_AXIS] [get_bd_intf_pins sig_exp_decay_0/M_AXIS]
   connect_bd_intf_net -intf_net writer_0_M_AXI [get_bd_intf_pins ps_0/S_AXI_HP0] [get_bd_intf_pins writer_0/M_AXI]
+  connect_bd_intf_net -intf_net writer_1_M_AXI [get_bd_intf_pins ps_0/S_AXI_HP1] [get_bd_intf_pins writer_1/M_AXI]
 
   # Create port connections
+  connect_bd_net -net Waveform_Offset_Addr1_dout [get_bd_pins Waveform_Offset_Addr1/dout] [get_bd_pins writer_0/cfg_data]
   connect_bd_net -net adc_0_adc_csn [get_bd_ports adc_csn_o] [get_bd_pins adc_0/adc_csn]
   connect_bd_net -net adc_0_m_axis_tdata [get_bd_pins adc_0/m_axis_tdata] [get_bd_pins xlconcat_0/In1]
   connect_bd_net -net adc_clk_n_i_1 [get_bd_ports adc_clk_n_i] [get_bd_pins pll_0/clk_in1_n]
@@ -1148,22 +1165,24 @@ proc create_root_design { parentCell } {
   connect_bd_net -net cfg_0_cfg_data [get_bd_pins cfg_0/cfg_data] [get_bd_pins slice_2/din] [get_bd_pins slice_3/din]
   connect_bd_net -net concat_0_dout [get_bd_ports exp_p_tri_io] [get_bd_pins concat_0/dout]
   connect_bd_net -net const_0_dout [get_bd_pins const_0/dout] [get_bd_pins rst_0/ext_reset_in]
-  connect_bd_net -net const_1_dout [get_bd_pins Waveform_Offset_Addr/dout] [get_bd_pins writer_0/cfg_data]
+  connect_bd_net -net const_1_dout [get_bd_pins Waveform_Offset_Addr/dout] [get_bd_pins writer_1/cfg_data]
   connect_bd_net -net not_0_Res [get_bd_pins concat_0/In0] [get_bd_pins not_0/Res]
-  connect_bd_net -net pll_0_clk_out1 [get_bd_pins adc_0/aclk] [get_bd_pins axis_red_pitaya_dac_0/aclk] [get_bd_pins c_counter_binary_0/CLK] [get_bd_pins cfg_0/aclk] [get_bd_pins pll_0/clk_out1] [get_bd_pins ps_0/M_AXI_GP0_ACLK] [get_bd_pins ps_0/S_AXI_HP0_ACLK] [get_bd_pins ps_0_axi_periph/ACLK] [get_bd_pins ps_0_axi_periph/M00_ACLK] [get_bd_pins ps_0_axi_periph/S00_ACLK] [get_bd_pins pulse_gen_0/clk] [get_bd_pins rst_0/slowest_sync_clk] [get_bd_pins sig_exp_decay_0/clk] [get_bd_pins writer_0/aclk]
+  connect_bd_net -net pll_0_clk_out1 [get_bd_pins adc_0/aclk] [get_bd_pins axis_red_pitaya_dac_0/aclk] [get_bd_pins c_counter_binary_0/CLK] [get_bd_pins cfg_0/aclk] [get_bd_pins pll_0/clk_out1] [get_bd_pins ps_0/M_AXI_GP0_ACLK] [get_bd_pins ps_0/S_AXI_HP0_ACLK] [get_bd_pins ps_0/S_AXI_HP1_ACLK] [get_bd_pins ps_0_axi_periph/ACLK] [get_bd_pins ps_0_axi_periph/M00_ACLK] [get_bd_pins ps_0_axi_periph/S00_ACLK] [get_bd_pins pulse_gen_0/clk] [get_bd_pins rst_0/slowest_sync_clk] [get_bd_pins sig_exp_decay_0/clk] [get_bd_pins writer_0/aclk] [get_bd_pins writer_1/aclk]
   connect_bd_net -net pll_0_clk_out2 [get_bd_pins axis_red_pitaya_dac_0/ddr_clk] [get_bd_pins pll_0/clk_out2]
   connect_bd_net -net pll_0_locked [get_bd_pins axis_red_pitaya_dac_0/locked] [get_bd_pins pll_0/locked] [get_bd_pins rst_0/dcm_locked]
   connect_bd_net -net port_slicer_4_dout [get_bd_pins port_slicer_4/dout] [get_bd_pins pulse_gen_0/trigger]
   connect_bd_net -net pulse_gen_0_pulse [get_bd_pins pulse_gen_0/pulse] [get_bd_pins sig_exp_decay_0/trigger]
   connect_bd_net -net rst_0_peripheral_aresetn [get_bd_pins cfg_0/aresetn] [get_bd_pins ps_0_axi_periph/ARESETN] [get_bd_pins ps_0_axi_periph/M00_ARESETN] [get_bd_pins ps_0_axi_periph/S00_ARESETN] [get_bd_pins rst_0/peripheral_aresetn]
-  connect_bd_net -net slice_2_dout [get_bd_pins not_0/Op1] [get_bd_pins sig_exp_decay_0/rst] [get_bd_pins slice_2/dout] [get_bd_pins xlconcat_2/In1]
-  connect_bd_net -net slice_3_dout [get_bd_pins slice_3/dout] [get_bd_pins writer_0/aresetn] [get_bd_pins xlconcat_2/In2]
+  connect_bd_net -net slice_2_dout [get_bd_pins not_0/Op1] [get_bd_pins sig_exp_decay_0/rst] [get_bd_pins slice_2/dout] [get_bd_pins writer_0/s_axis_tvalid] [get_bd_pins writer_1/s_axis_tvalid] [get_bd_pins xlconcat_2/In1]
+  connect_bd_net -net slice_3_dout [get_bd_pins slice_3/dout] [get_bd_pins writer_0/aresetn] [get_bd_pins writer_1/aresetn] [get_bd_pins xlconcat_2/In2]
+  connect_bd_net -net writer_0_sts_data [get_bd_pins writer_0/sts_data] [get_bd_pins writer_1/s_axis_tdata]
   connect_bd_net -net xlconcat_0_dout [get_bd_pins writer_0/s_axis_tdata] [get_bd_pins xlconcat_0/dout]
   connect_bd_net -net xlconcat_2_dout [get_bd_ports led_o] [get_bd_pins xlconcat_2/dout]
 
   # Create address segments
   assign_bd_address -offset 0x40000000 -range 0x00001000 -target_address_space [get_bd_addr_spaces ps_0/Data] [get_bd_addr_segs cfg_0/s_axi/reg0] -force
   assign_bd_address -offset 0x00000000 -range 0x20000000 -target_address_space [get_bd_addr_spaces writer_0/M_AXI] [get_bd_addr_segs ps_0/S_AXI_HP0/HP0_DDR_LOWOCM] -force
+  assign_bd_address -offset 0x00000000 -range 0x20000000 -target_address_space [get_bd_addr_spaces writer_1/M_AXI] [get_bd_addr_segs ps_0/S_AXI_HP1/HP1_DDR_LOWOCM] -force
 
 
   # Restore current instance

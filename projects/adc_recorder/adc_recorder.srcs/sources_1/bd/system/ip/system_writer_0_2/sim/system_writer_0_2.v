@@ -87,7 +87,7 @@ input wire aclk;
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 aresetn RST" *)
 input wire aresetn;
 input wire [31 : 0] cfg_data;
-output wire [24 : 0] sts_data;
+output wire [23 : 0] sts_data;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI AWID" *)
 output wire [5 : 0] m_axi_awid;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI AWADDR" *)
@@ -131,7 +131,7 @@ input wire [63 : 0] s_axis_tdata;
 input wire s_axis_tvalid;
 
   axis_ram_writer #(
-    .ADDR_WIDTH(25),
+    .ADDR_WIDTH(24),
     .AXI_ID_WIDTH(6),
     .AXI_ADDR_WIDTH(32),
     .AXI_DATA_WIDTH(64),

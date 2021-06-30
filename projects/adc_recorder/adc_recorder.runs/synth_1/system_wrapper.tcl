@@ -34,16 +34,16 @@ update_ip_catalog
 set_property ip_output_repo /home/ywang/Code/DSP/project/adc_recorder/adc_recorder.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 set_property verilog_define TOOL_VIVADO [current_fileset]
-read_verilog -library xil_defaultlib /home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/imports/hdl/system_wrapper.v
+read_verilog -library xil_defaultlib /home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/hdl/system_wrapper.v
 add_files /home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/system.bd
-set_property used_in_implementation false [get_files -all /home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_c_counter_binary_0_2/system_c_counter_binary_0_2_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_2/system_pll_0_2_board.xdc]
-set_property used_in_implementation false [get_files -all /home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_2/system_pll_0_2.xdc]
-set_property used_in_implementation false [get_files -all /home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_2/system_pll_0_2_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/system_ps_0_2.xdc]
-set_property used_in_implementation false [get_files -all /home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_rst_0_2/system_rst_0_2_board.xdc]
-set_property used_in_implementation false [get_files -all /home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_rst_0_2/system_rst_0_2.xdc]
-set_property used_in_implementation false [get_files -all /home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_rst_0_2/system_rst_0_2_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_c_counter_binary_0_0/system_c_counter_binary_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0_board.xdc]
+set_property used_in_implementation false [get_files -all /home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0.xdc]
+set_property used_in_implementation false [get_files -all /home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_rst_0_0/system_rst_0_0_board.xdc]
+set_property used_in_implementation false [get_files -all /home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_rst_0_0/system_rst_0_0.xdc]
+set_property used_in_implementation false [get_files -all /home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_rst_0_0/system_rst_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/system_ooc.xdc]
 

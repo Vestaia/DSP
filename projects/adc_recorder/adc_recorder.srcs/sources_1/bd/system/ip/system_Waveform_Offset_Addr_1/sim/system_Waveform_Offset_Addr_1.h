@@ -57,7 +57,7 @@
 #include "systemc.h"
 class system_Waveform_Offset_Addr_1 : public sc_module {
   public:
-xlconstant_v1_1_6<32,268435456> mod;
+xlconstant_v1_1_6<32,402653184> mod;
   sc_out< sc_bv<32> > dout;
 system_Waveform_Offset_Addr_1 (sc_core::sc_module_name name) :sc_module(name), mod("mod") {
     mod.dout(dout);

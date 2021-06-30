@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Jun 28 14:40:13 2021" VIVADOVERSION="2019.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Jun 28 17:22:02 2021" VIVADOVERSION="2019.2">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z010" NAME="system" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -66,6 +66,36 @@
     <PORT DIR="O" LEFT="7" NAME="led_o" RIGHT="0" SIGIS="undef" SIGNAME="xlconcat_2_dout">
       <CONNECTIONS>
         <CONNECTION INSTANCE="xlconcat_2" PORT="dout"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" LEFT="53" NAME="FIXED_IO_mio" RIGHT="0" SIGIS="undef" SIGNAME="ps_0_MIO">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ps_0" PORT="MIO"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="FIXED_IO_ddr_vrn" SIGIS="undef" SIGNAME="ps_0_DDR_VRN">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ps_0" PORT="DDR_VRN"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="FIXED_IO_ddr_vrp" SIGIS="undef" SIGNAME="ps_0_DDR_VRP">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ps_0" PORT="DDR_VRP"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="FIXED_IO_ps_srstb" SIGIS="undef" SIGNAME="ps_0_PS_SRSTB">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ps_0" PORT="PS_SRSTB"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="FIXED_IO_ps_clk" SIGIS="undef" SIGNAME="ps_0_PS_CLK">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ps_0" PORT="PS_CLK"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="FIXED_IO_ps_porb" SIGIS="undef" SIGNAME="ps_0_PS_PORB">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ps_0" PORT="PS_PORB"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="IO" NAME="DDR_cas_n" SIGIS="undef" SIGNAME="ps_0_DDR_CAS_n">
@@ -143,36 +173,6 @@
         <CONNECTION INSTANCE="ps_0" PORT="DDR_DQS"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="IO" LEFT="53" NAME="FIXED_IO_mio" RIGHT="0" SIGIS="undef" SIGNAME="ps_0_MIO">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="ps_0" PORT="MIO"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="IO" NAME="FIXED_IO_ddr_vrn" SIGIS="undef" SIGNAME="ps_0_DDR_VRN">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="ps_0" PORT="DDR_VRN"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="IO" NAME="FIXED_IO_ddr_vrp" SIGIS="undef" SIGNAME="ps_0_DDR_VRP">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="ps_0" PORT="DDR_VRP"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="IO" NAME="FIXED_IO_ps_srstb" SIGIS="undef" SIGNAME="ps_0_PS_SRSTB">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="ps_0" PORT="PS_SRSTB"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="IO" NAME="FIXED_IO_ps_clk" SIGIS="undef" SIGNAME="ps_0_PS_CLK">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="ps_0" PORT="PS_CLK"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="IO" NAME="FIXED_IO_ps_porb" SIGIS="undef" SIGNAME="ps_0_PS_PORB">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="ps_0" PORT="PS_PORB"/>
-      </CONNECTIONS>
-    </PORT>
   </EXTERNALPORTS>
 
   <EXTERNALINTERFACES>
@@ -242,12 +242,29 @@
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="CONST_WIDTH" VALUE="32"/>
-        <PARAMETER NAME="CONST_VAL" VALUE="0x10000000"/>
+        <PARAMETER NAME="CONST_VAL" VALUE="0x18000000"/>
         <PARAMETER NAME="Component_Name" VALUE="system_Waveform_Offset_Addr_1"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
         <PORT DIR="O" LEFT="31" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="Waveform_Offset_Addr_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="writer_1" PORT="cfg_data"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="6" FULLNAME="/Waveform_Offset_Addr1" HWVERSION="1.1" INSTANCE="Waveform_Offset_Addr1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconstant" VLNV="xilinx.com:ip:xlconstant:1.1">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="CONST_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="CONST_VAL" VALUE="0x10000000"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_Waveform_Offset_Addr_2"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="O" LEFT="31" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="Waveform_Offset_Addr1_dout">
           <CONNECTIONS>
             <CONNECTION INSTANCE="writer_0" PORT="cfg_data"/>
           </CONNECTIONS>
@@ -260,7 +277,7 @@
       <PARAMETERS>
         <PARAMETER NAME="ADC_DATA_WIDTH" VALUE="14"/>
         <PARAMETER NAME="AXIS_TDATA_WIDTH" VALUE="32"/>
-        <PARAMETER NAME="Component_Name" VALUE="system_adc_0_2"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_adc_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -310,7 +327,7 @@
           <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
           <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
           <PARAMETER NAME="PHASE" VALUE="0.0"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="system_pll_0_2_clk_out1"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="system_pll_0_0_clk_out1"/>
           <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
           <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
           <PORTMAPS>
@@ -325,7 +342,7 @@
       <PARAMETERS>
         <PARAMETER NAME="DAC_DATA_WIDTH" VALUE="14"/>
         <PARAMETER NAME="AXIS_TDATA_WIDTH" VALUE="32"/>
-        <PARAMETER NAME="Component_Name" VALUE="system_axis_red_pitaya_dac_0_2"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_axis_red_pitaya_dac_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -393,7 +410,7 @@
           <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
           <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
           <PARAMETER NAME="PHASE" VALUE="0.0"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="system_pll_0_2_clk_out1"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="system_pll_0_0_clk_out1"/>
           <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
           <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
           <PORTMAPS>
@@ -431,7 +448,7 @@
         <PARAMETER NAME="C_SCLR_OVERRIDES_SSET" VALUE="1"/>
         <PARAMETER NAME="C_HAS_SSET" VALUE="0"/>
         <PARAMETER NAME="C_HAS_SINIT" VALUE="0"/>
-        <PARAMETER NAME="Component_Name" VALUE="system_c_counter_binary_0_2"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_c_counter_binary_0_0"/>
         <PARAMETER NAME="Implementation" VALUE="DSP48"/>
         <PARAMETER NAME="Output_Width" VALUE="48"/>
         <PARAMETER NAME="Increment_Value" VALUE="1"/>
@@ -480,7 +497,7 @@
         <PARAMETER NAME="CFG_DATA_WIDTH" VALUE="256"/>
         <PARAMETER NAME="AXI_DATA_WIDTH" VALUE="32"/>
         <PARAMETER NAME="AXI_ADDR_WIDTH" VALUE="32"/>
-        <PARAMETER NAME="Component_Name" VALUE="system_cfg_0_2"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_cfg_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
         <PARAMETER NAME="C_BASEADDR" VALUE="0x40000000"/>
         <PARAMETER NAME="C_HIGHADDR" VALUE="0x40000FFF"/>
@@ -615,7 +632,7 @@
           <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="1"/>
           <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
           <PARAMETER NAME="PHASE" VALUE="0.0"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="system_pll_0_2_clk_out1"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="system_pll_0_0_clk_out1"/>
           <PARAMETER NAME="NUM_READ_THREADS" VALUE="4"/>
           <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="4"/>
           <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
@@ -680,7 +697,7 @@
         <PARAMETER NAME="IN31_WIDTH" VALUE="1"/>
         <PARAMETER NAME="dout_width" VALUE="8"/>
         <PARAMETER NAME="NUM_PORTS" VALUE="2"/>
-        <PARAMETER NAME="Component_Name" VALUE="system_concat_0_2"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_concat_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -703,7 +720,7 @@
       <PARAMETERS>
         <PARAMETER NAME="CONST_WIDTH" VALUE="1"/>
         <PARAMETER NAME="CONST_VAL" VALUE="0x1"/>
-        <PARAMETER NAME="Component_Name" VALUE="system_const_0_2"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_const_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -720,7 +737,7 @@
       <PARAMETERS>
         <PARAMETER NAME="C_OPERATION" VALUE="not"/>
         <PARAMETER NAME="C_SIZE" VALUE="1"/>
-        <PARAMETER NAME="Component_Name" VALUE="system_not_0_2"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_not_0_0"/>
         <PARAMETER NAME="LOGO_FILE" VALUE="data/sym_notgate.png"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
@@ -767,7 +784,7 @@
         <PARAMETER NAME="C_USE_CLKOUT2_BAR" VALUE="0"/>
         <PARAMETER NAME="C_USE_CLKOUT3_BAR" VALUE="0"/>
         <PARAMETER NAME="C_USE_CLKOUT4_BAR" VALUE="0"/>
-        <PARAMETER NAME="c_component_name" VALUE="system_pll_0_2"/>
+        <PARAMETER NAME="c_component_name" VALUE="system_pll_0_0"/>
         <PARAMETER NAME="C_PLATFORM" VALUE="UNKNOWN"/>
         <PARAMETER NAME="C_USE_FREQ_SYNTH" VALUE="1"/>
         <PARAMETER NAME="C_USE_PHASE_ALIGNMENT" VALUE="1"/>
@@ -1058,7 +1075,7 @@
         <PARAMETER NAME="C_O_MIN" VALUE="1.000"/>
         <PARAMETER NAME="C_VCO_MIN" VALUE="800.000"/>
         <PARAMETER NAME="C_VCO_MAX" VALUE="1600.000"/>
-        <PARAMETER NAME="Component_Name" VALUE="system_pll_0_2"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_pll_0_0"/>
         <PARAMETER NAME="USER_CLK_FREQ0" VALUE="100.0"/>
         <PARAMETER NAME="USER_CLK_FREQ1" VALUE="100.0"/>
         <PARAMETER NAME="USER_CLK_FREQ2" VALUE="100.0"/>
@@ -1341,6 +1358,8 @@
             <CONNECTION INSTANCE="sig_exp_decay_0" PORT="clk"/>
             <CONNECTION INSTANCE="cfg_0" PORT="aclk"/>
             <CONNECTION INSTANCE="pulse_gen_0" PORT="clk"/>
+            <CONNECTION INSTANCE="writer_1" PORT="aclk"/>
+            <CONNECTION INSTANCE="ps_0" PORT="S_AXI_HP1_ACLK"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="250000000" DIR="O" NAME="clk_out2" SIGIS="clk" SIGNAME="pll_0_clk_out2">
@@ -1372,7 +1391,7 @@
         <PARAMETER NAME="DIN_WIDTH" VALUE="48"/>
         <PARAMETER NAME="DIN_FROM" VALUE="16"/>
         <PARAMETER NAME="DIN_TO" VALUE="16"/>
-        <PARAMETER NAME="Component_Name" VALUE="system_port_slicer_4_2"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_port_slicer_4_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -1395,6 +1414,9 @@
       </DOCUMENTS>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="" INTERFACE="S_AXI_HP0" NAME="HP0_DDR_LOWOCM" RANGE="536870912" USAGE="memory"/>
+      </ADDRESSBLOCKS>
+      <ADDRESSBLOCKS>
+        <ADDRESSBLOCK ACCESS="" INTERFACE="S_AXI_HP1" NAME="HP1_DDR_LOWOCM" RANGE="536870912" USAGE="memory"/>
       </ADDRESSBLOCKS>
       <PARAMETERS>
         <PARAMETER NAME="C_EN_EMIO_PJTAG" VALUE="0"/>
@@ -1421,7 +1443,7 @@
         <PARAMETER NAME="C_S_AXI_HP0_ID_WIDTH" VALUE="6"/>
         <PARAMETER NAME="C_S_AXI_HP0_DATA_WIDTH" VALUE="64"/>
         <PARAMETER NAME="C_S_AXI_HP1_ID_WIDTH" VALUE="6"/>
-        <PARAMETER NAME="C_S_AXI_HP1_DATA_WIDTH" VALUE="64"/>
+        <PARAMETER NAME="C_S_AXI_HP1_DATA_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_S_AXI_HP2_ID_WIDTH" VALUE="6"/>
         <PARAMETER NAME="C_S_AXI_HP2_DATA_WIDTH" VALUE="64"/>
         <PARAMETER NAME="C_S_AXI_HP3_ID_WIDTH" VALUE="6"/>
@@ -1441,7 +1463,7 @@
         <PARAMETER NAME="C_USE_S_AXI_GP0" VALUE="0"/>
         <PARAMETER NAME="C_USE_S_AXI_GP1" VALUE="0"/>
         <PARAMETER NAME="C_USE_S_AXI_HP0" VALUE="1"/>
-        <PARAMETER NAME="C_USE_S_AXI_HP1" VALUE="0"/>
+        <PARAMETER NAME="C_USE_S_AXI_HP1" VALUE="1"/>
         <PARAMETER NAME="C_USE_S_AXI_HP2" VALUE="0"/>
         <PARAMETER NAME="C_USE_S_AXI_HP3" VALUE="0"/>
         <PARAMETER NAME="C_USE_S_AXI_ACP" VALUE="0"/>
@@ -1697,12 +1719,12 @@
         <PARAMETER NAME="PCW_USE_S_AXI_GP1" VALUE="0"/>
         <PARAMETER NAME="PCW_USE_S_AXI_ACP" VALUE="0"/>
         <PARAMETER NAME="PCW_USE_S_AXI_HP0" VALUE="1"/>
-        <PARAMETER NAME="PCW_USE_S_AXI_HP1" VALUE="0"/>
+        <PARAMETER NAME="PCW_USE_S_AXI_HP1" VALUE="1"/>
         <PARAMETER NAME="PCW_USE_S_AXI_HP2" VALUE="0"/>
         <PARAMETER NAME="PCW_USE_S_AXI_HP3" VALUE="0"/>
         <PARAMETER NAME="PCW_M_AXI_GP0_FREQMHZ" VALUE="125"/>
         <PARAMETER NAME="PCW_M_AXI_GP1_FREQMHZ" VALUE="10"/>
-        <PARAMETER NAME="PCW_S_AXI_GP0_FREQMHZ" VALUE="10"/>
+        <PARAMETER NAME="PCW_S_AXI_GP0_FREQMHZ" VALUE="125"/>
         <PARAMETER NAME="PCW_S_AXI_GP1_FREQMHZ" VALUE="10"/>
         <PARAMETER NAME="PCW_S_AXI_ACP_FREQMHZ" VALUE="10"/>
         <PARAMETER NAME="PCW_S_AXI_HP0_FREQMHZ" VALUE="125"/>
@@ -1766,7 +1788,7 @@
         <PARAMETER NAME="PCW_S_AXI_HP0_ID_WIDTH" VALUE="6"/>
         <PARAMETER NAME="PCW_S_AXI_HP0_DATA_WIDTH" VALUE="64"/>
         <PARAMETER NAME="PCW_S_AXI_HP1_ID_WIDTH" VALUE="6"/>
-        <PARAMETER NAME="PCW_S_AXI_HP1_DATA_WIDTH" VALUE="64"/>
+        <PARAMETER NAME="PCW_S_AXI_HP1_DATA_WIDTH" VALUE="32"/>
         <PARAMETER NAME="PCW_S_AXI_HP2_ID_WIDTH" VALUE="6"/>
         <PARAMETER NAME="PCW_S_AXI_HP2_DATA_WIDTH" VALUE="64"/>
         <PARAMETER NAME="PCW_S_AXI_HP3_ID_WIDTH" VALUE="6"/>
@@ -2664,6 +2686,119 @@
             <CONNECTION INSTANCE="writer_0" PORT="m_axi_wstrb"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="O" NAME="S_AXI_HP1_ARREADY" SIGIS="undef"/>
+        <PORT DIR="O" NAME="S_AXI_HP1_AWREADY" SIGIS="undef" SIGNAME="ps_0_S_AXI_HP1_AWREADY">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="writer_1" PORT="m_axi_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="S_AXI_HP1_BVALID" SIGIS="undef" SIGNAME="ps_0_S_AXI_HP1_BVALID">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="writer_1" PORT="m_axi_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="S_AXI_HP1_RLAST" SIGIS="undef"/>
+        <PORT DIR="O" NAME="S_AXI_HP1_RVALID" SIGIS="undef"/>
+        <PORT DIR="O" NAME="S_AXI_HP1_WREADY" SIGIS="undef" SIGNAME="ps_0_S_AXI_HP1_WREADY">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="writer_1" PORT="m_axi_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="1" NAME="S_AXI_HP1_BRESP" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="1" NAME="S_AXI_HP1_RRESP" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="5" NAME="S_AXI_HP1_BID" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="5" NAME="S_AXI_HP1_RID" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="31" NAME="S_AXI_HP1_RDATA" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="7" NAME="S_AXI_HP1_RCOUNT" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="7" NAME="S_AXI_HP1_WCOUNT" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="2" NAME="S_AXI_HP1_RACOUNT" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="5" NAME="S_AXI_HP1_WACOUNT" RIGHT="0" SIGIS="undef"/>
+        <PORT CLKFREQUENCY="125000000" DIR="I" NAME="S_AXI_HP1_ACLK" SIGIS="clk" SIGNAME="pll_0_clk_out1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pll_0" PORT="clk_out1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="S_AXI_HP1_ARVALID" SIGIS="undef"/>
+        <PORT DIR="I" NAME="S_AXI_HP1_AWVALID" SIGIS="undef" SIGNAME="ps_0_S_AXI_HP1_AWVALID">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="writer_1" PORT="m_axi_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="S_AXI_HP1_BREADY" SIGIS="undef" SIGNAME="ps_0_S_AXI_HP1_BREADY">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="writer_1" PORT="m_axi_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="S_AXI_HP1_RDISSUECAP1_EN" SIGIS="undef"/>
+        <PORT DIR="I" NAME="S_AXI_HP1_RREADY" SIGIS="undef"/>
+        <PORT DIR="I" NAME="S_AXI_HP1_WLAST" SIGIS="undef" SIGNAME="ps_0_S_AXI_HP1_WLAST">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="writer_1" PORT="m_axi_wlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="S_AXI_HP1_WRISSUECAP1_EN" SIGIS="undef"/>
+        <PORT DIR="I" NAME="S_AXI_HP1_WVALID" SIGIS="undef" SIGNAME="ps_0_S_AXI_HP1_WVALID">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="writer_1" PORT="m_axi_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="S_AXI_HP1_ARBURST" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="1" NAME="S_AXI_HP1_ARLOCK" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="2" NAME="S_AXI_HP1_ARSIZE" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="1" NAME="S_AXI_HP1_AWBURST" RIGHT="0" SIGIS="undef" SIGNAME="ps_0_S_AXI_HP1_AWBURST">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="writer_1" PORT="m_axi_awburst"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="S_AXI_HP1_AWLOCK" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="2" NAME="S_AXI_HP1_AWSIZE" RIGHT="0" SIGIS="undef" SIGNAME="ps_0_S_AXI_HP1_AWSIZE">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="writer_1" PORT="m_axi_awsize"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="2" NAME="S_AXI_HP1_ARPROT" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="2" NAME="S_AXI_HP1_AWPROT" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="31" NAME="S_AXI_HP1_ARADDR" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="31" NAME="S_AXI_HP1_AWADDR" RIGHT="0" SIGIS="undef" SIGNAME="ps_0_S_AXI_HP1_AWADDR">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="writer_1" PORT="m_axi_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="S_AXI_HP1_ARCACHE" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="3" NAME="S_AXI_HP1_ARLEN" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="3" NAME="S_AXI_HP1_ARQOS" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="3" NAME="S_AXI_HP1_AWCACHE" RIGHT="0" SIGIS="undef" SIGNAME="ps_0_S_AXI_HP1_AWCACHE">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="writer_1" PORT="m_axi_awcache"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="S_AXI_HP1_AWLEN" RIGHT="0" SIGIS="undef" SIGNAME="ps_0_S_AXI_HP1_AWLEN">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="writer_1" PORT="m_axi_awlen"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="S_AXI_HP1_AWQOS" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="5" NAME="S_AXI_HP1_ARID" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="5" NAME="S_AXI_HP1_AWID" RIGHT="0" SIGIS="undef" SIGNAME="ps_0_S_AXI_HP1_AWID">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="writer_1" PORT="m_axi_awid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="5" NAME="S_AXI_HP1_WID" RIGHT="0" SIGIS="undef" SIGNAME="ps_0_S_AXI_HP1_WID">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="writer_1" PORT="m_axi_wid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="S_AXI_HP1_WDATA" RIGHT="0" SIGIS="undef" SIGNAME="ps_0_S_AXI_HP1_WDATA">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="writer_1" PORT="m_axi_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="S_AXI_HP1_WSTRB" RIGHT="0" SIGIS="undef" SIGNAME="ps_0_S_AXI_HP1_WSTRB">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="writer_1" PORT="m_axi_wstrb"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT CLKFREQUENCY="50000000" DIR="O" NAME="FCLK_CLK0" SIGIS="clk"/>
         <PORT DIR="O" NAME="FCLK_RESET0_N" SIGIS="rst"/>
         <PORT DIR="IO" LEFT="53" NAME="MIO" RIGHT="0" SIGIS="undef" SIGNAME="ps_0_MIO">
@@ -2859,6 +2994,16 @@
             <PORTMAP LOGICAL="WRISSUECAPEN" PHYSICAL="S_AXI_HP0_WRISSUECAP1_EN"/>
           </PORTMAPS>
         </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="__NOC__" NAME="S_AXI_HP1_FIFO_CTRL" TYPE="TARGET" VLNV="xilinx.com:display_processing_system7:hpstatusctrl:1.0">
+          <PORTMAPS>
+            <PORTMAP LOGICAL="RCOUNT" PHYSICAL="S_AXI_HP1_RCOUNT"/>
+            <PORTMAP LOGICAL="WCOUNT" PHYSICAL="S_AXI_HP1_WCOUNT"/>
+            <PORTMAP LOGICAL="RACOUNT" PHYSICAL="S_AXI_HP1_RACOUNT"/>
+            <PORTMAP LOGICAL="WACOUNT" PHYSICAL="S_AXI_HP1_WACOUNT"/>
+            <PORTMAP LOGICAL="RDISSUECAPEN" PHYSICAL="S_AXI_HP1_RDISSUECAP1_EN"/>
+            <PORTMAP LOGICAL="WRISSUECAPEN" PHYSICAL="S_AXI_HP1_WRISSUECAP1_EN"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
         <BUSINTERFACE BUSNAME="ps_0_M_AXI_GP0" DATAWIDTH="32" NAME="M_AXI_GP0" TYPE="MASTER" VLNV="xilinx.com:interface:aximm:1.0">
           <PARAMETER NAME="SUPPORTS_NARROW_BURST" VALUE="0"/>
           <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="8"/>
@@ -2885,7 +3030,7 @@
           <PARAMETER NAME="HAS_RRESP" VALUE="1"/>
           <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="16"/>
           <PARAMETER NAME="PHASE" VALUE="0.0"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="system_pll_0_2_clk_out1"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="system_pll_0_0_clk_out1"/>
           <PARAMETER NAME="NUM_READ_THREADS" VALUE="4"/>
           <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="4"/>
           <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
@@ -2958,7 +3103,7 @@
           <PARAMETER NAME="SUPPORTS_NARROW_BURST" VALUE="1"/>
           <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="16"/>
           <PARAMETER NAME="PHASE" VALUE="0.0"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="system_pll_0_2_clk_out1"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="system_pll_0_0_clk_out1"/>
           <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
           <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
           <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
@@ -3003,6 +3148,79 @@
             <PORTMAP LOGICAL="WID" PHYSICAL="S_AXI_HP0_WID"/>
             <PORTMAP LOGICAL="WDATA" PHYSICAL="S_AXI_HP0_WDATA"/>
             <PORTMAP LOGICAL="WSTRB" PHYSICAL="S_AXI_HP0_WSTRB"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="writer_1_M_AXI" DATAWIDTH="32" NAME="S_AXI_HP1" TYPE="SLAVE" VLNV="xilinx.com:interface:aximm:1.0">
+          <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="8"/>
+          <PARAMETER NAME="NUM_READ_OUTSTANDING" VALUE="8"/>
+          <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
+          <PARAMETER NAME="PROTOCOL" VALUE="AXI3"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
+          <PARAMETER NAME="ID_WIDTH" VALUE="6"/>
+          <PARAMETER NAME="ADDR_WIDTH" VALUE="32"/>
+          <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="ARUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="WUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="RUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="BUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
+          <PARAMETER NAME="HAS_BURST" VALUE="1"/>
+          <PARAMETER NAME="HAS_LOCK" VALUE="1"/>
+          <PARAMETER NAME="HAS_PROT" VALUE="1"/>
+          <PARAMETER NAME="HAS_CACHE" VALUE="1"/>
+          <PARAMETER NAME="HAS_QOS" VALUE="1"/>
+          <PARAMETER NAME="HAS_REGION" VALUE="0"/>
+          <PARAMETER NAME="HAS_WSTRB" VALUE="1"/>
+          <PARAMETER NAME="HAS_BRESP" VALUE="1"/>
+          <PARAMETER NAME="HAS_RRESP" VALUE="1"/>
+          <PARAMETER NAME="SUPPORTS_NARROW_BURST" VALUE="1"/>
+          <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="16"/>
+          <PARAMETER NAME="PHASE" VALUE="0.0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="system_pll_0_0_clk_out1"/>
+          <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
+          <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
+          <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
+          <PARAMETER NAME="WUSER_BITS_PER_BYTE" VALUE="0"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="ARREADY" PHYSICAL="S_AXI_HP1_ARREADY"/>
+            <PORTMAP LOGICAL="AWREADY" PHYSICAL="S_AXI_HP1_AWREADY"/>
+            <PORTMAP LOGICAL="BVALID" PHYSICAL="S_AXI_HP1_BVALID"/>
+            <PORTMAP LOGICAL="RLAST" PHYSICAL="S_AXI_HP1_RLAST"/>
+            <PORTMAP LOGICAL="RVALID" PHYSICAL="S_AXI_HP1_RVALID"/>
+            <PORTMAP LOGICAL="WREADY" PHYSICAL="S_AXI_HP1_WREADY"/>
+            <PORTMAP LOGICAL="BRESP" PHYSICAL="S_AXI_HP1_BRESP"/>
+            <PORTMAP LOGICAL="RRESP" PHYSICAL="S_AXI_HP1_RRESP"/>
+            <PORTMAP LOGICAL="BID" PHYSICAL="S_AXI_HP1_BID"/>
+            <PORTMAP LOGICAL="RID" PHYSICAL="S_AXI_HP1_RID"/>
+            <PORTMAP LOGICAL="RDATA" PHYSICAL="S_AXI_HP1_RDATA"/>
+            <PORTMAP LOGICAL="ARVALID" PHYSICAL="S_AXI_HP1_ARVALID"/>
+            <PORTMAP LOGICAL="AWVALID" PHYSICAL="S_AXI_HP1_AWVALID"/>
+            <PORTMAP LOGICAL="BREADY" PHYSICAL="S_AXI_HP1_BREADY"/>
+            <PORTMAP LOGICAL="RREADY" PHYSICAL="S_AXI_HP1_RREADY"/>
+            <PORTMAP LOGICAL="WLAST" PHYSICAL="S_AXI_HP1_WLAST"/>
+            <PORTMAP LOGICAL="WVALID" PHYSICAL="S_AXI_HP1_WVALID"/>
+            <PORTMAP LOGICAL="ARBURST" PHYSICAL="S_AXI_HP1_ARBURST"/>
+            <PORTMAP LOGICAL="ARLOCK" PHYSICAL="S_AXI_HP1_ARLOCK"/>
+            <PORTMAP LOGICAL="ARSIZE" PHYSICAL="S_AXI_HP1_ARSIZE"/>
+            <PORTMAP LOGICAL="AWBURST" PHYSICAL="S_AXI_HP1_AWBURST"/>
+            <PORTMAP LOGICAL="AWLOCK" PHYSICAL="S_AXI_HP1_AWLOCK"/>
+            <PORTMAP LOGICAL="AWSIZE" PHYSICAL="S_AXI_HP1_AWSIZE"/>
+            <PORTMAP LOGICAL="ARPROT" PHYSICAL="S_AXI_HP1_ARPROT"/>
+            <PORTMAP LOGICAL="AWPROT" PHYSICAL="S_AXI_HP1_AWPROT"/>
+            <PORTMAP LOGICAL="ARADDR" PHYSICAL="S_AXI_HP1_ARADDR"/>
+            <PORTMAP LOGICAL="AWADDR" PHYSICAL="S_AXI_HP1_AWADDR"/>
+            <PORTMAP LOGICAL="ARCACHE" PHYSICAL="S_AXI_HP1_ARCACHE"/>
+            <PORTMAP LOGICAL="ARLEN" PHYSICAL="S_AXI_HP1_ARLEN"/>
+            <PORTMAP LOGICAL="ARQOS" PHYSICAL="S_AXI_HP1_ARQOS"/>
+            <PORTMAP LOGICAL="AWCACHE" PHYSICAL="S_AXI_HP1_AWCACHE"/>
+            <PORTMAP LOGICAL="AWLEN" PHYSICAL="S_AXI_HP1_AWLEN"/>
+            <PORTMAP LOGICAL="AWQOS" PHYSICAL="S_AXI_HP1_AWQOS"/>
+            <PORTMAP LOGICAL="ARID" PHYSICAL="S_AXI_HP1_ARID"/>
+            <PORTMAP LOGICAL="AWID" PHYSICAL="S_AXI_HP1_AWID"/>
+            <PORTMAP LOGICAL="WID" PHYSICAL="S_AXI_HP1_WID"/>
+            <PORTMAP LOGICAL="WDATA" PHYSICAL="S_AXI_HP1_WDATA"/>
+            <PORTMAP LOGICAL="WSTRB" PHYSICAL="S_AXI_HP1_WSTRB"/>
           </PORTMAPS>
         </BUSINTERFACE>
       </BUSINTERFACES>
@@ -3332,7 +3550,7 @@
         <PARAMETER NAME="S13_ARB_PRIORITY" VALUE="0"/>
         <PARAMETER NAME="S14_ARB_PRIORITY" VALUE="0"/>
         <PARAMETER NAME="S15_ARB_PRIORITY" VALUE="0"/>
-        <PARAMETER NAME="Component_Name" VALUE="system_ps_0_axi_periph_2"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_ps_0_axi_periph_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="BUS"/>
       </PARAMETERS>
       <PORTS>
@@ -3716,7 +3934,7 @@
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="OUTPUT_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="Component_Name" VALUE="system_pulse_gen_0_2"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_pulse_gen_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -3752,7 +3970,7 @@
         <PARAMETER NAME="C_NUM_PERP_RST" VALUE="1"/>
         <PARAMETER NAME="C_NUM_INTERCONNECT_ARESETN" VALUE="1"/>
         <PARAMETER NAME="C_NUM_PERP_ARESETN" VALUE="1"/>
-        <PARAMETER NAME="Component_Name" VALUE="system_rst_0_2"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_rst_0_0"/>
         <PARAMETER NAME="USE_BOARD_FLOW" VALUE="false"/>
         <PARAMETER NAME="RESET_BOARD_INTERFACE" VALUE="Custom"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
@@ -3794,7 +4012,7 @@
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="DAC_WIDTH" VALUE="14"/>
-        <PARAMETER NAME="Component_Name" VALUE="system_sig_exp_decay_0_2"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_sig_exp_decay_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -3836,7 +4054,7 @@
           <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
           <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
           <PARAMETER NAME="PHASE" VALUE="0.0"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="system_pll_0_2_clk_out1"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="system_pll_0_0_clk_out1"/>
           <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
           <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
           <PORTMAPS>
@@ -3852,7 +4070,7 @@
         <PARAMETER NAME="DIN_WIDTH" VALUE="256"/>
         <PARAMETER NAME="DIN_FROM" VALUE="1"/>
         <PARAMETER NAME="DIN_TO" VALUE="1"/>
-        <PARAMETER NAME="Component_Name" VALUE="system_slice_2_2"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_slice_2_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -3866,6 +4084,8 @@
             <CONNECTION INSTANCE="not_0" PORT="Op1"/>
             <CONNECTION INSTANCE="sig_exp_decay_0" PORT="rst"/>
             <CONNECTION INSTANCE="xlconcat_2" PORT="In1"/>
+            <CONNECTION INSTANCE="writer_0" PORT="s_axis_tvalid"/>
+            <CONNECTION INSTANCE="writer_1" PORT="s_axis_tvalid"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -3877,7 +4097,7 @@
         <PARAMETER NAME="DIN_WIDTH" VALUE="256"/>
         <PARAMETER NAME="DIN_FROM" VALUE="2"/>
         <PARAMETER NAME="DIN_TO" VALUE="2"/>
-        <PARAMETER NAME="Component_Name" VALUE="system_slice_3_2"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_slice_3_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -3890,6 +4110,7 @@
           <CONNECTIONS>
             <CONNECTION INSTANCE="writer_0" PORT="aresetn"/>
             <CONNECTION INSTANCE="xlconcat_2" PORT="In2"/>
+            <CONNECTION INSTANCE="writer_1" PORT="aresetn"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -3898,7 +4119,7 @@
     <MODULE COREREVISION="2" FULLNAME="/writer_0" HWVERSION="1.0" INSTANCE="writer_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axis_ram_writer" VLNV="pavel-demin:user:axis_ram_writer:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="ADDR_WIDTH" VALUE="25"/>
+        <PARAMETER NAME="ADDR_WIDTH" VALUE="24"/>
         <PARAMETER NAME="AXI_ID_WIDTH" VALUE="6"/>
         <PARAMETER NAME="AXI_ADDR_WIDTH" VALUE="32"/>
         <PARAMETER NAME="AXI_DATA_WIDTH" VALUE="64"/>
@@ -3917,12 +4138,16 @@
             <CONNECTION INSTANCE="slice_3" PORT="dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="cfg_data" RIGHT="0" SIGIS="undef" SIGNAME="Waveform_Offset_Addr_dout">
+        <PORT DIR="I" LEFT="31" NAME="cfg_data" RIGHT="0" SIGIS="undef" SIGNAME="Waveform_Offset_Addr1_dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="Waveform_Offset_Addr" PORT="dout"/>
+            <CONNECTION INSTANCE="Waveform_Offset_Addr1" PORT="dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="24" NAME="sts_data" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="23" NAME="sts_data" RIGHT="0" SIGIS="undef" SIGNAME="writer_0_sts_data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="writer_1" PORT="s_axis_tdata"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="O" LEFT="5" NAME="m_axi_awid" RIGHT="0" SIGIS="undef" SIGNAME="ps_0_S_AXI_HP0_AWID">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps_0" PORT="S_AXI_HP0_AWID"/>
@@ -4010,9 +4235,10 @@
             <CONNECTION INSTANCE="xlconcat_0" PORT="dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axis_tvalid" SIGIS="undef" SIGNAME="adc_0_m_axis_tvalid">
+        <PORT DIR="I" NAME="s_axis_tvalid" SIGIS="undef" SIGNAME="slice_2_dout">
           <CONNECTIONS>
             <CONNECTION INSTANCE="adc_0" PORT="m_axis_tvalid"/>
+            <CONNECTION INSTANCE="slice_2" PORT="dout"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -4028,7 +4254,7 @@
           <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
           <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
           <PARAMETER NAME="PHASE" VALUE="0.0"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="system_pll_0_2_clk_out1"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="system_pll_0_0_clk_out1"/>
           <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
           <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
           <PORTMAPS>
@@ -4063,7 +4289,7 @@
           <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="2"/>
           <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="16"/>
           <PARAMETER NAME="PHASE" VALUE="0.0"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="system_pll_0_2_clk_out1"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="system_pll_0_0_clk_out1"/>
           <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
           <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
           <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
@@ -4091,6 +4317,206 @@
       </BUSINTERFACES>
       <MEMORYMAP>
         <MEMRANGE ADDRESSBLOCK="HP0_DDR_LOWOCM" BASENAME="C_BASEADDR" BASEVALUE="0x00000000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x1FFFFFFF" INSTANCE="ps_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI" MEMTYPE="MEMORY" SLAVEBUSINTERFACE="S_AXI_HP0"/>
+      </MEMORYMAP>
+      <PERIPHERALS>
+        <PERIPHERAL INSTANCE="ps_0"/>
+      </PERIPHERALS>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/writer_1" HWVERSION="1.0" INSTANCE="writer_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axis_ram_writer" VLNV="pavel-demin:user:axis_ram_writer:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="ADDR_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="AXI_ID_WIDTH" VALUE="6"/>
+        <PARAMETER NAME="AXI_ADDR_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="AXI_DATA_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="AXIS_TDATA_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_writer_0_3"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="125000000" DIR="I" NAME="aclk" SIGIS="clk" SIGNAME="pll_0_clk_out1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pll_0" PORT="clk_out1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="aresetn" SIGIS="rst" SIGNAME="slice_3_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="slice_3" PORT="dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="cfg_data" RIGHT="0" SIGIS="undef" SIGNAME="Waveform_Offset_Addr_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Waveform_Offset_Addr" PORT="dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="sts_data" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="5" NAME="m_axi_awid" RIGHT="0" SIGIS="undef" SIGNAME="ps_0_S_AXI_HP1_AWID">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ps_0" PORT="S_AXI_HP1_AWID"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="m_axi_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="ps_0_S_AXI_HP1_AWADDR">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ps_0" PORT="S_AXI_HP1_AWADDR"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="m_axi_awlen" RIGHT="0" SIGIS="undef" SIGNAME="ps_0_S_AXI_HP1_AWLEN">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ps_0" PORT="S_AXI_HP1_AWLEN"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="2" NAME="m_axi_awsize" RIGHT="0" SIGIS="undef" SIGNAME="ps_0_S_AXI_HP1_AWSIZE">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ps_0" PORT="S_AXI_HP1_AWSIZE"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="1" NAME="m_axi_awburst" RIGHT="0" SIGIS="undef" SIGNAME="ps_0_S_AXI_HP1_AWBURST">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ps_0" PORT="S_AXI_HP1_AWBURST"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="m_axi_awcache" RIGHT="0" SIGIS="undef" SIGNAME="ps_0_S_AXI_HP1_AWCACHE">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ps_0" PORT="S_AXI_HP1_AWCACHE"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axi_awvalid" SIGIS="undef" SIGNAME="ps_0_S_AXI_HP1_AWVALID">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ps_0" PORT="S_AXI_HP1_AWVALID"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="m_axi_awready" SIGIS="undef" SIGNAME="ps_0_S_AXI_HP1_AWREADY">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ps_0" PORT="S_AXI_HP1_AWREADY"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="5" NAME="m_axi_wid" RIGHT="0" SIGIS="undef" SIGNAME="ps_0_S_AXI_HP1_WID">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ps_0" PORT="S_AXI_HP1_WID"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="m_axi_wdata" RIGHT="0" SIGIS="undef" SIGNAME="ps_0_S_AXI_HP1_WDATA">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ps_0" PORT="S_AXI_HP1_WDATA"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="m_axi_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="ps_0_S_AXI_HP1_WSTRB">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ps_0" PORT="S_AXI_HP1_WSTRB"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axi_wlast" SIGIS="undef" SIGNAME="ps_0_S_AXI_HP1_WLAST">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ps_0" PORT="S_AXI_HP1_WLAST"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axi_wvalid" SIGIS="undef" SIGNAME="ps_0_S_AXI_HP1_WVALID">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ps_0" PORT="S_AXI_HP1_WVALID"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="m_axi_wready" SIGIS="undef" SIGNAME="ps_0_S_AXI_HP1_WREADY">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ps_0" PORT="S_AXI_HP1_WREADY"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="m_axi_bvalid" SIGIS="undef" SIGNAME="ps_0_S_AXI_HP1_BVALID">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ps_0" PORT="S_AXI_HP1_BVALID"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axi_bready" SIGIS="undef" SIGNAME="ps_0_S_AXI_HP1_BREADY">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ps_0" PORT="S_AXI_HP1_BREADY"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="s_axis_tready" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="31" NAME="s_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="writer_0_sts_data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="writer_0" PORT="sts_data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_tvalid" SIGIS="undef" SIGNAME="slice_2_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="slice_2" PORT="dout"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="__NOC__" NAME="S_AXIS" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="system_pll_0_0_clk_out1"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="s_axis_tdata"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="s_axis_tvalid"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="s_axis_tready"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="writer_1_M_AXI" DATAWIDTH="32" NAME="M_AXI" TYPE="MASTER" VLNV="xilinx.com:interface:aximm:1.0">
+          <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
+          <PARAMETER NAME="PROTOCOL" VALUE="AXI3"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
+          <PARAMETER NAME="ID_WIDTH" VALUE="6"/>
+          <PARAMETER NAME="ADDR_WIDTH" VALUE="32"/>
+          <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="ARUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="WUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="RUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="BUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="READ_WRITE_MODE" VALUE="WRITE_ONLY"/>
+          <PARAMETER NAME="HAS_BURST" VALUE="1"/>
+          <PARAMETER NAME="HAS_LOCK" VALUE="0"/>
+          <PARAMETER NAME="HAS_PROT" VALUE="0"/>
+          <PARAMETER NAME="HAS_CACHE" VALUE="1"/>
+          <PARAMETER NAME="HAS_QOS" VALUE="0"/>
+          <PARAMETER NAME="HAS_REGION" VALUE="0"/>
+          <PARAMETER NAME="HAS_WSTRB" VALUE="1"/>
+          <PARAMETER NAME="HAS_BRESP" VALUE="0"/>
+          <PARAMETER NAME="HAS_RRESP" VALUE="0"/>
+          <PARAMETER NAME="SUPPORTS_NARROW_BURST" VALUE="1"/>
+          <PARAMETER NAME="NUM_READ_OUTSTANDING" VALUE="2"/>
+          <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="2"/>
+          <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="16"/>
+          <PARAMETER NAME="PHASE" VALUE="0.0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="system_pll_0_0_clk_out1"/>
+          <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
+          <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
+          <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
+          <PARAMETER NAME="WUSER_BITS_PER_BYTE" VALUE="0"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="AWID" PHYSICAL="m_axi_awid"/>
+            <PORTMAP LOGICAL="AWADDR" PHYSICAL="m_axi_awaddr"/>
+            <PORTMAP LOGICAL="AWLEN" PHYSICAL="m_axi_awlen"/>
+            <PORTMAP LOGICAL="AWSIZE" PHYSICAL="m_axi_awsize"/>
+            <PORTMAP LOGICAL="AWBURST" PHYSICAL="m_axi_awburst"/>
+            <PORTMAP LOGICAL="AWCACHE" PHYSICAL="m_axi_awcache"/>
+            <PORTMAP LOGICAL="AWVALID" PHYSICAL="m_axi_awvalid"/>
+            <PORTMAP LOGICAL="AWREADY" PHYSICAL="m_axi_awready"/>
+            <PORTMAP LOGICAL="WID" PHYSICAL="m_axi_wid"/>
+            <PORTMAP LOGICAL="WDATA" PHYSICAL="m_axi_wdata"/>
+            <PORTMAP LOGICAL="WSTRB" PHYSICAL="m_axi_wstrb"/>
+            <PORTMAP LOGICAL="WLAST" PHYSICAL="m_axi_wlast"/>
+            <PORTMAP LOGICAL="WVALID" PHYSICAL="m_axi_wvalid"/>
+            <PORTMAP LOGICAL="WREADY" PHYSICAL="m_axi_wready"/>
+            <PORTMAP LOGICAL="BVALID" PHYSICAL="m_axi_bvalid"/>
+            <PORTMAP LOGICAL="BREADY" PHYSICAL="m_axi_bready"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+      <MEMORYMAP>
+        <MEMRANGE ADDRESSBLOCK="HP1_DDR_LOWOCM" BASENAME="C_BASEADDR" BASEVALUE="0x00000000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x1FFFFFFF" INSTANCE="ps_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI" MEMTYPE="MEMORY" SLAVEBUSINTERFACE="S_AXI_HP1"/>
       </MEMORYMAP>
       <PERIPHERALS>
         <PERIPHERAL INSTANCE="ps_0"/>

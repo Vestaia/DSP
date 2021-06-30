@@ -52,7 +52,7 @@
 
 (* X_CORE_INFO = "xlconstant_v1_1_6_xlconstant,Vivado 2019.2" *)
 (* CHECK_LICENSE_TYPE = "system_Waveform_Offset_Addr_1,xlconstant_v1_1_6_xlconstant,{}" *)
-(* CORE_GENERATION_INFO = "system_Waveform_Offset_Addr_1,xlconstant_v1_1_6_xlconstant,{x_ipProduct=Vivado 2019.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=xlconstant,x_ipVersion=1.1,x_ipCoreRevision=6,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,CONST_WIDTH=32,CONST_VAL=0x10000000}" *)
+(* CORE_GENERATION_INFO = "system_Waveform_Offset_Addr_1,xlconstant_v1_1_6_xlconstant,{x_ipProduct=Vivado 2019.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=xlconstant,x_ipVersion=1.1,x_ipCoreRevision=6,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,CONST_WIDTH=32,CONST_VAL=0x18000000}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module system_Waveform_Offset_Addr_1 (
   dout
@@ -62,7 +62,7 @@ output wire [31 : 0] dout;
 
   xlconstant_v1_1_6_xlconstant #(
     .CONST_WIDTH(32),
-    .CONST_VAL('H10000000)
+    .CONST_VAL('H18000000)
   ) inst (
     .dout(dout)
   );

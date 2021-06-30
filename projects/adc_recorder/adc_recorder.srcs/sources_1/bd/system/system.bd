@@ -32,7 +32,9 @@
       "slice_3": "",
       "writer_0": "",
       "xlconcat_2": "",
-      "xlconcat_0": ""
+      "xlconcat_0": "",
+      "writer_1": "",
+      "Waveform_Offset_Addr1": ""
     },
     "interface_ports": {
       "DDR": {
@@ -150,7 +152,7 @@
         "direction": "O",
         "parameters": {
           "CLK_DOMAIN": {
-            "value": "system_axis_red_pitaya_dac_0_2_dac_clk",
+            "value": "system_axis_red_pitaya_dac_0_0_dac_clk",
             "value_src": "default_prop"
           },
           "FREQ_HZ": {
@@ -222,7 +224,7 @@
         "xci_name": "system_Waveform_Offset_Addr_1",
         "parameters": {
           "CONST_VAL": {
-            "value": "268435456"
+            "value": "402653184"
           },
           "CONST_WIDTH": {
             "value": "32"
@@ -231,7 +233,7 @@
       },
       "adc_0": {
         "vlnv": "pavel-demin:user:axis_red_pitaya_adc:2.0",
-        "xci_name": "system_adc_0_2",
+        "xci_name": "system_adc_0_0",
         "parameters": {
           "ADC_DATA_WIDTH": {
             "value": "14"
@@ -240,11 +242,11 @@
       },
       "axis_red_pitaya_dac_0": {
         "vlnv": "pavel-demin:user:axis_red_pitaya_dac:1.0",
-        "xci_name": "system_axis_red_pitaya_dac_0_2"
+        "xci_name": "system_axis_red_pitaya_dac_0_0"
       },
       "c_counter_binary_0": {
         "vlnv": "xilinx.com:ip:c_counter_binary:12.0",
-        "xci_name": "system_c_counter_binary_0_2",
+        "xci_name": "system_c_counter_binary_0_0",
         "parameters": {
           "Implementation": {
             "value": "DSP48"
@@ -256,7 +258,7 @@
       },
       "cfg_0": {
         "vlnv": "pavel-demin:user:axi_cfg_register:1.0",
-        "xci_name": "system_cfg_0_2",
+        "xci_name": "system_cfg_0_0",
         "parameters": {
           "AXI_ADDR_WIDTH": {
             "value": "32"
@@ -271,7 +273,7 @@
       },
       "concat_0": {
         "vlnv": "xilinx.com:ip:xlconcat:2.1",
-        "xci_name": "system_concat_0_2",
+        "xci_name": "system_concat_0_0",
         "parameters": {
           "IN0_WIDTH": {
             "value": "1"
@@ -286,11 +288,11 @@
       },
       "const_0": {
         "vlnv": "xilinx.com:ip:xlconstant:1.1",
-        "xci_name": "system_const_0_2"
+        "xci_name": "system_const_0_0"
       },
       "not_0": {
         "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
-        "xci_name": "system_not_0_2",
+        "xci_name": "system_not_0_0",
         "parameters": {
           "C_OPERATION": {
             "value": "not"
@@ -302,7 +304,7 @@
       },
       "pll_0": {
         "vlnv": "xilinx.com:ip:clk_wiz:6.0",
-        "xci_name": "system_pll_0_2",
+        "xci_name": "system_pll_0_0",
         "parameters": {
           "CLKOUT1_JITTER": {
             "value": "119.348"
@@ -362,7 +364,7 @@
       },
       "port_slicer_4": {
         "vlnv": "pavel-demin:user:port_slicer:1.0",
-        "xci_name": "system_port_slicer_4_2",
+        "xci_name": "system_port_slicer_4_0",
         "parameters": {
           "DIN_FROM": {
             "value": "16"
@@ -1657,6 +1659,12 @@
           "PCW_S_AXI_HP0_ID_WIDTH": {
             "value": "6"
           },
+          "PCW_S_AXI_HP1_DATA_WIDTH": {
+            "value": "32"
+          },
+          "PCW_S_AXI_HP1_ID_WIDTH": {
+            "value": "6"
+          },
           "PCW_S_AXI_HP2_DATA_WIDTH": {
             "value": "64"
           },
@@ -2039,7 +2047,7 @@
             "value": "1"
           },
           "PCW_USE_S_AXI_HP1": {
-            "value": "0"
+            "value": "1"
           },
           "PCW_USE_S_AXI_HP2": {
             "value": "0"
@@ -2066,7 +2074,7 @@
       },
       "ps_0_axi_periph": {
         "vlnv": "xilinx.com:ip:axi_interconnect:2.1",
-        "xci_name": "system_ps_0_axi_periph_2",
+        "xci_name": "system_ps_0_axi_periph_0",
         "parameters": {
           "NUM_MI": {
             "value": "1"
@@ -2262,19 +2270,19 @@
       },
       "pulse_gen_0": {
         "vlnv": "user.org:user:pulse_gen:1.0",
-        "xci_name": "system_pulse_gen_0_2"
+        "xci_name": "system_pulse_gen_0_0"
       },
       "rst_0": {
         "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
-        "xci_name": "system_rst_0_2"
+        "xci_name": "system_rst_0_0"
       },
       "sig_exp_decay_0": {
         "vlnv": "user.org:user:sig_exp_decay:1.0",
-        "xci_name": "system_sig_exp_decay_0_2"
+        "xci_name": "system_sig_exp_decay_0_0"
       },
       "slice_2": {
         "vlnv": "pavel-demin:user:port_slicer:1.0",
-        "xci_name": "system_slice_2_2",
+        "xci_name": "system_slice_2_0",
         "parameters": {
           "DIN_FROM": {
             "value": "1"
@@ -2289,7 +2297,7 @@
       },
       "slice_3": {
         "vlnv": "pavel-demin:user:port_slicer:1.0",
-        "xci_name": "system_slice_3_2",
+        "xci_name": "system_slice_3_0",
         "parameters": {
           "DIN_FROM": {
             "value": "2"
@@ -2307,7 +2315,7 @@
         "xci_name": "system_writer_0_2",
         "parameters": {
           "ADDR_WIDTH": {
-            "value": "25"
+            "value": "24"
           },
           "AXIS_TDATA_WIDTH": {
             "value": "64"
@@ -2331,6 +2339,33 @@
             "value": "32"
           },
           "IN1_WIDTH": {
+            "value": "32"
+          }
+        }
+      },
+      "writer_1": {
+        "vlnv": "pavel-demin:user:axis_ram_writer:1.0",
+        "xci_name": "system_writer_0_3",
+        "parameters": {
+          "ADDR_WIDTH": {
+            "value": "4"
+          },
+          "AXIS_TDATA_WIDTH": {
+            "value": "32"
+          },
+          "AXI_DATA_WIDTH": {
+            "value": "32"
+          }
+        }
+      },
+      "Waveform_Offset_Addr1": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "system_Waveform_Offset_Addr_2",
+        "parameters": {
+          "CONST_VAL": {
+            "value": "268435456"
+          },
+          "CONST_WIDTH": {
             "value": "32"
           }
         }
@@ -2377,6 +2412,12 @@
         "interface_ports": [
           "DDR",
           "ps_0/DDR"
+        ]
+      },
+      "writer_1_M_AXI": {
+        "interface_ports": [
+          "ps_0/S_AXI_HP1",
+          "writer_1/M_AXI"
         ]
       }
     },
@@ -2470,7 +2511,7 @@
       "const_1_dout": {
         "ports": [
           "Waveform_Offset_Addr/dout",
-          "writer_0/cfg_data"
+          "writer_1/cfg_data"
         ]
       },
       "not_0_Res": {
@@ -2494,7 +2535,9 @@
           "writer_0/aclk",
           "sig_exp_decay_0/clk",
           "cfg_0/aclk",
-          "pulse_gen_0/clk"
+          "pulse_gen_0/clk",
+          "writer_1/aclk",
+          "ps_0/S_AXI_HP1_ACLK"
         ]
       },
       "pll_0_clk_out2": {
@@ -2536,14 +2579,17 @@
           "slice_2/dout",
           "not_0/Op1",
           "sig_exp_decay_0/rst",
-          "xlconcat_2/In1"
+          "xlconcat_2/In1",
+          "writer_0/s_axis_tvalid",
+          "writer_1/s_axis_tvalid"
         ]
       },
       "slice_3_dout": {
         "ports": [
           "slice_3/dout",
           "writer_0/aresetn",
-          "xlconcat_2/In2"
+          "xlconcat_2/In2",
+          "writer_1/aresetn"
         ]
       },
       "xlconcat_2_dout": {
@@ -2562,6 +2608,18 @@
         "ports": [
           "adc_0/m_axis_tdata",
           "xlconcat_0/In1"
+        ]
+      },
+      "writer_0_sts_data": {
+        "ports": [
+          "writer_0/sts_data",
+          "writer_1/s_axis_tdata"
+        ]
+      },
+      "Waveform_Offset_Addr1_dout": {
+        "ports": [
+          "Waveform_Offset_Addr1/dout",
+          "writer_0/cfg_data"
         ]
       }
     },
@@ -2589,6 +2647,21 @@
             "segments": {
               "SEG_ps_0_HP0_DDR_LOWOCM": {
                 "address_block": "/ps_0/S_AXI_HP0/HP0_DDR_LOWOCM",
+                "offset": "0x00000000",
+                "range": "512M"
+              }
+            }
+          }
+        }
+      },
+      "/writer_1": {
+        "address_spaces": {
+          "M_AXI": {
+            "range": "4G",
+            "width": "32",
+            "segments": {
+              "SEG_ps_0_HP1_DDR_LOWOCM": {
+                "address_block": "/ps_0/S_AXI_HP1/HP1_DDR_LOWOCM",
                 "offset": "0x00000000",
                 "range": "512M"
               }
