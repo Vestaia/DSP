@@ -15,7 +15,7 @@ int main(){
         }
         uint16_t* data = new uint16_t[req.nsamples];
         sample* samples = new sample[req.nsamples];
-        rp.capture_n_raw(samples, req.nsamples);
+        rp.capture_n_raw(samples, req.nsamples, 125000000/100);
         for (int i = 0; i < req.nsamples; i++){
             data[i] = samples[i].ch_a;
         }

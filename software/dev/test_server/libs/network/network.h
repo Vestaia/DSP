@@ -63,9 +63,7 @@ int client::recieve(
         T *data, 
         size_t size
     ){
-    int status = read(server_fd, data, size);
-    printf("%d", status);
-    return status;
+    return read(server_fd, data, size);
 }
 
 
@@ -74,7 +72,9 @@ int server::send(
         T *data, 
         size_t size
     ){
-    return (write(client_fd, data, size) == size) - 1;
+    int status = write(client_fd, data, size);
+    printf("%d\n", status);
+    return (status == size) - 1;
 }
 
 template <class T>
