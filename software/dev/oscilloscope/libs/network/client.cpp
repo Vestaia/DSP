@@ -4,9 +4,7 @@ client::client(){
     server_fd = socket(AF_INET, SOCK_STREAM, 0);
 }
 client::~client(){
-    printf("Destroying Client\n");
     close(server_fd);
-    printf("Client Exited\n");
 }
 
 

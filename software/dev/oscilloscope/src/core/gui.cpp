@@ -6,23 +6,34 @@
 #include <string>
 
 void WindowManager::renderImGui() {
-    static const int n = 10000;
-    // Our state variables
+    // State variables
+    static bool init = false;
+    
+    // Data variables
+    static const int n = 2000;
     static float x_data[n];
     static float y_data[n];
     static int32_t data[n];
     
+    // Client variables
     static client c = client();
     static char ip[16] = "192.168.1.10";
     static char port[6] = "42069";
-
-    static bool init = false;
     static bool connected = false;
+    
+    // DAQ variables
+    static float ring_buffer_samples = (1 << 23);
+    static float acquisition_rate = 125000000;
+    
+    static float clock_cycle_period = ring_buffer_samples / n;
+    static float rate = acquisition_rate / clock_cycle_period;
+    static float real_period = 1 / rate;
+    
     if (!init) {
         init = true;
         
         for (int i = 0; i < n; i++) {
-            x_data[i] = i;
+            x_data[i] = i * real_period;
         }
         
         // try once to connect upon initialization
@@ -31,7 +42,7 @@ void WindowManager::renderImGui() {
     
     // retrieve data from FPGA
     if (connected){
-        c.get_frame(data, 0, 0, n, 125000000/1000);
+        c.get_frame(data, 0, 0, n, rate);
         for (int i = 0; i < n; i++) 
             y_data[i] = (float) data[i];
     }
@@ -87,7 +98,7 @@ void WindowManager::renderImGui() {
     ImGui::SetNextWindowSize(ImVec2(windowWidth - 0.25f * windowWidth, windowHeight), ImGuiCond_Always);
     
     ImGui::Begin("Plot", nullptr, window_flags);
-    if (ImPlot::BeginPlot("My Plot", 0, 0, ImVec2(-1.0f, -1.0f), 0)) {
+    if (ImPlot::BeginPlot("Red Pitaya Data", "Time (s)", "Reading (Some Unit)", ImVec2(-1.0f, -1.0f), 0)) {
         ImPlot::PlotLine("My Line Plot", x_data, y_data, n);
         ImPlot::EndPlot();
     }
