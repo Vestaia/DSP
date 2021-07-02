@@ -74,6 +74,21 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_xlconcat
 # IP: bd/system/ip/system_xlconcat_0_0/system_xlconcat_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_xlconcat_0_0 || ORIG_REF_NAME==system_xlconcat_0_0} -quiet] -quiet
 
+# IP: bd/system/ip/system_fir_poly_0_0/system_fir_poly_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_fir_poly_0_0 || ORIG_REF_NAME==system_fir_poly_0_0} -quiet] -quiet
+
+# IP: bd/system/ip/system_port_slicer_0_0/system_port_slicer_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_port_slicer_0_0 || ORIG_REF_NAME==system_port_slicer_0_0} -quiet] -quiet
+
+# IP: bd/system/ip/system_port_slicer_0_1/system_port_slicer_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_port_slicer_0_1 || ORIG_REF_NAME==system_port_slicer_0_1} -quiet] -quiet
+
+# IP: bd/system/ip/system_axis_broadcaster_0_0/system_axis_broadcaster_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_axis_broadcaster_0_0 || ORIG_REF_NAME==system_axis_broadcaster_0_0} -quiet] -quiet
+
+# IP: bd/system/ip/system_axis_combiner_0_0/system_axis_combiner_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_axis_combiner_0_0 || ORIG_REF_NAME==system_axis_combiner_0_0} -quiet] -quiet
+
 # IP: bd/system/ip/system_auto_pc_0/system_auto_pc_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_auto_pc_0 || ORIG_REF_NAME==system_auto_pc_0} -quiet] -quiet
 
@@ -97,6 +112,10 @@ set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {R
 #dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==system_rst_0_0 || ORIG_REF_NAME==system_rst_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
 # XDC: bd/system/ip/system_rst_0_0/system_rst_0_0_ooc.xdc
+
+# XDC: bd/system/ip/system_axis_broadcaster_0_0/system_axis_broadcaster_0_0_ooc.xdc
+
+# XDC: bd/system/ip/system_axis_combiner_0_0/system_axis_combiner_0_0_ooc.xdc
 
 # XDC: bd/system/ip/system_auto_pc_0/system_auto_pc_0_ooc.xdc
 

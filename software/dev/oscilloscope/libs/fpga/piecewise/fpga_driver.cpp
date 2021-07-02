@@ -11,10 +11,15 @@ pwp_fpga::~pwp_fpga(){
     munmap((void*)ring_buf, DATA_RING_SIZE);
 }
 
-int pwp_fpga::set_coef(uint32_t *coef){
-    for (int i = 0; i < sizeof(cfg->coef)/sizeof(cfg->coef[0]); i++){
+int pwp_fpga::set_coef(int32_t *coef, size_t size){
+    for (int i = 0; i < size/sizeof(coef); i++)
         cfg->coef[i] = coef[i];
-    }
+    return 0;
+}
+
+int pwp_fpga::set_delay(uint16_t *delay, size_t size){
+    for (int i = 0; i < size/sizeof(delay); i++)
+        cfg->delay[i] = delay[i];
     return 0;
 }
 

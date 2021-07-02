@@ -24,28 +24,30 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir /home/ywang/Code/DSP/project/adc_recorder/adc_recorder.cache/wt [current_project]
-set_property parent.project_path /home/ywang/Code/DSP/project/adc_recorder/adc_recorder.xpr [current_project]
+set_property webtalk.parent_dir /home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.cache/wt [current_project]
+set_property parent.project_path /home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_repo_paths /home/ywang/Code/filters [current_project]
 update_ip_catalog
-set_property ip_output_repo /home/ywang/Code/DSP/project/adc_recorder/adc_recorder.cache/ip [current_project]
+set_property ip_output_repo /home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 set_property verilog_define TOOL_VIVADO [current_fileset]
-read_verilog -library xil_defaultlib /home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/hdl/system_wrapper.v
-add_files /home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/system.bd
-set_property used_in_implementation false [get_files -all /home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/system_ps_0_2.xdc]
-set_property used_in_implementation false [get_files -all /home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_c_counter_binary_0_0/system_c_counter_binary_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0_board.xdc]
-set_property used_in_implementation false [get_files -all /home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0.xdc]
-set_property used_in_implementation false [get_files -all /home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_rst_0_0/system_rst_0_0_board.xdc]
-set_property used_in_implementation false [get_files -all /home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_rst_0_0/system_rst_0_0.xdc]
-set_property used_in_implementation false [get_files -all /home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_rst_0_0/system_rst_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/system_ooc.xdc]
+read_verilog -library xil_defaultlib /home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/hdl/system_wrapper.v
+add_files /home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/system.bd
+set_property used_in_implementation false [get_files -all /home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/system_ps_0_2.xdc]
+set_property used_in_implementation false [get_files -all /home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_c_counter_binary_0_0/system_c_counter_binary_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0_board.xdc]
+set_property used_in_implementation false [get_files -all /home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0.xdc]
+set_property used_in_implementation false [get_files -all /home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_rst_0_0/system_rst_0_0_board.xdc]
+set_property used_in_implementation false [get_files -all /home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_rst_0_0/system_rst_0_0.xdc]
+set_property used_in_implementation false [get_files -all /home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_rst_0_0/system_rst_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_broadcaster_0_0/system_axis_broadcaster_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_combiner_0_0/system_axis_combiner_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/system_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

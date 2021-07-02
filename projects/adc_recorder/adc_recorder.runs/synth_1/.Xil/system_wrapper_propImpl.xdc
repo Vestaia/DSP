@@ -1,5 +1,5 @@
-set_property SRC_FILE_INFO {cfile:/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/system_ps_0_2.xdc rfile:../../../adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/system_ps_0_2.xdc id:1 order:EARLY scoped_inst:system_i/ps_0/inst} [current_design]
-set_property SRC_FILE_INFO {cfile:/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0.xdc rfile:../../../adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0.xdc id:2 order:EARLY scoped_inst:system_i/pll_0/inst} [current_design]
+set_property SRC_FILE_INFO {cfile:/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/system_ps_0_2.xdc rfile:../../../adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/system_ps_0_2.xdc id:1 order:EARLY scoped_inst:system_i/ps_0/inst} [current_design]
+set_property SRC_FILE_INFO {cfile:/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0.xdc rfile:../../../adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0.xdc id:2 order:EARLY scoped_inst:system_i/pll_0/inst} [current_design]
 set_property SRC_FILE_INFO {cfile:/home/ywang/Code/red-pitaya-notes/cfg/ports.xdc rfile:../../../../../../red-pitaya-notes/cfg/ports.xdc id:3} [current_design]
 current_instance system_i/ps_0/inst
 set_property src_info {type:SCOPED_XDC file:1 line:21 export:INPUT save:INPUT read:READ} [current_design]

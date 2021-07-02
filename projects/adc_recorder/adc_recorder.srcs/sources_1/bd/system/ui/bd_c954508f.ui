@@ -4,8 +4,8 @@
    "Color Coded_Layers":"/pll_0_clk_out1:true|/axis_red_pitaya_dac_0_dac_clk:true|/axis_red_pitaya_dac_0_dac_rst:true|/pll_0_clk_out2:true|/c_counter_binary_0_Q:true|/rst_0_peripheral_aresetn:true|",
    "Color Coded_Layout":"# # String gsaved with Nlview 7.0.21  2019-05-29 bk=1.5064 VDI=41 GEI=36 GUI=JA:9.0 TLS
 #  -string -flagsOSRD
-preplace port DDR -pg 1 -lvl 8 -x 2480 -y 80 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -lvl 8 -x 2480 -y 100 -defaultsOSRD
+preplace port DDR -pg 1 -lvl 9 -x 3900 -y 80 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 9 -x 3900 -y 100 -defaultsOSRD
 preplace port Vaux0 -pg 1 -lvl 0 -x -30 -y 20 -defaultsOSRD
 preplace port Vaux1 -pg 1 -lvl 0 -x -30 -y 40 -defaultsOSRD
 preplace port Vaux8 -pg 1 -lvl 0 -x -30 -y 60 -defaultsOSRD
@@ -13,84 +13,105 @@ preplace port Vaux9 -pg 1 -lvl 0 -x -30 -y 80 -defaultsOSRD
 preplace port Vp_Vn -pg 1 -lvl 0 -x -30 -y 100 -defaultsOSRD
 preplace port adc_clk_n_i -pg 1 -lvl 0 -x -30 -y 280 -defaultsOSRD
 preplace port adc_clk_p_i -pg 1 -lvl 0 -x -30 -y 300 -defaultsOSRD
-preplace port adc_csn_o -pg 1 -lvl 8 -x 2480 -y 740 -defaultsOSRD
-preplace port adc_enc_n_o -pg 1 -lvl 8 -x 2480 -y 20 -defaultsOSRD
-preplace port adc_enc_p_o -pg 1 -lvl 8 -x 2480 -y 40 -defaultsOSRD
-preplace port dac_clk_o -pg 1 -lvl 8 -x 2480 -y 160 -defaultsOSRD
-preplace port dac_rst_o -pg 1 -lvl 8 -x 2480 -y 180 -defaultsOSRD
-preplace port dac_sel_o -pg 1 -lvl 8 -x 2480 -y 200 -defaultsOSRD
-preplace port dac_wrt_o -pg 1 -lvl 8 -x 2480 -y 220 -defaultsOSRD
+preplace port adc_csn_o -pg 1 -lvl 9 -x 3900 -y 740 -defaultsOSRD
+preplace port adc_enc_n_o -pg 1 -lvl 9 -x 3900 -y 20 -defaultsOSRD
+preplace port adc_enc_p_o -pg 1 -lvl 9 -x 3900 -y 40 -defaultsOSRD
+preplace port dac_clk_o -pg 1 -lvl 9 -x 3900 -y 160 -defaultsOSRD
+preplace port dac_rst_o -pg 1 -lvl 9 -x 3900 -y 180 -defaultsOSRD
+preplace port dac_sel_o -pg 1 -lvl 9 -x 3900 -y 200 -defaultsOSRD
+preplace port dac_wrt_o -pg 1 -lvl 9 -x 3900 -y 220 -defaultsOSRD
 preplace portBus adc_dat_a_i -pg 1 -lvl 0 -x -30 -y 710 -defaultsOSRD
 preplace portBus adc_dat_b_i -pg 1 -lvl 0 -x -30 -y 730 -defaultsOSRD
-preplace portBus dac_dat_o -pg 1 -lvl 8 -x 2480 -y 240 -defaultsOSRD
-preplace portBus dac_pwm_o -pg 1 -lvl 8 -x 2480 -y 60 -defaultsOSRD
-preplace portBus exp_n_tri_io -pg 1 -lvl 8 -x 2480 -y 120 -defaultsOSRD
-preplace portBus exp_p_tri_io -pg 1 -lvl 8 -x 2480 -y 670 -defaultsOSRD
-preplace portBus led_o -pg 1 -lvl 8 -x 2480 -y 880 -defaultsOSRD
-preplace inst Waveform_Offset_Addr -pg 1 -lvl 3 -x 700 -y 1080 -defaultsOSRD
-preplace inst adc_0 -pg 1 -lvl 3 -x 700 -y 730 -swap {0 1 2 6 4 3 5} -defaultsOSRD
-preplace inst axis_red_pitaya_dac_0 -pg 1 -lvl 7 -x 2340 -y 200 -defaultsOSRD
-preplace inst c_counter_binary_0 -pg 1 -lvl 2 -x 400 -y 320 -defaultsOSRD
-preplace inst cfg_0 -pg 1 -lvl 7 -x 2340 -y 370 -defaultsOSRD
-preplace inst concat_0 -pg 1 -lvl 7 -x 2340 -y 670 -swap {1 0 2} -defaultsOSRD
-preplace inst const_0 -pg 1 -lvl 4 -x 1100 -y 350 -defaultsOSRD
-preplace inst not_0 -pg 1 -lvl 6 -x 2040 -y 680 -defaultsOSRD
+preplace portBus dac_dat_o -pg 1 -lvl 9 -x 3900 -y 240 -defaultsOSRD
+preplace portBus dac_pwm_o -pg 1 -lvl 9 -x 3900 -y 60 -defaultsOSRD
+preplace portBus exp_n_tri_io -pg 1 -lvl 9 -x 3900 -y 120 -defaultsOSRD
+preplace portBus exp_p_tri_io -pg 1 -lvl 9 -x 3900 -y 670 -defaultsOSRD
+preplace portBus led_o -pg 1 -lvl 9 -x 3900 -y 880 -defaultsOSRD
+preplace inst Waveform_Offset_Addr -pg 1 -lvl 3 -x 840 -y 1080 -defaultsOSRD
+preplace inst adc_0 -pg 1 -lvl 3 -x 840 -y 730 -swap {0 1 2 6 4 3 5} -defaultsOSRD
+preplace inst axis_red_pitaya_dac_0 -pg 1 -lvl 8 -x 3070 -y 200 -defaultsOSRD
+preplace inst c_counter_binary_0 -pg 1 -lvl 2 -x 410 -y 320 -defaultsOSRD
+preplace inst concat_0 -pg 1 -lvl 8 -x 3070 -y 560 -swap {1 0 2} -defaultsOSRD
+preplace inst const_0 -pg 1 -lvl 5 -x 1670 -y 350 -defaultsOSRD
+preplace inst not_0 -pg 1 -lvl 7 -x 2560 -y 680 -defaultsOSRD
 preplace inst pll_0 -pg 1 -lvl 1 -x 110 -y 280 -swap {0 1 2 4 3 5} -defaultsOSRD
-preplace inst port_slicer_4 -pg 1 -lvl 4 -x 1100 -y 470 -defaultsOSRD
-preplace inst ps_0 -pg 1 -lvl 5 -x 1570 -y 130 -defaultsOSRD
-preplace inst ps_0_axi_periph -pg 1 -lvl 6 -x 2040 -y 350 -defaultsOSRD
-preplace inst pulse_gen_0 -pg 1 -lvl 5 -x 1570 -y 560 -defaultsOSRD
-preplace inst rst_0 -pg 1 -lvl 5 -x 1570 -y 370 -swap {0 1 2 3 4 5 6 7 9 8} -defaultsOSRD
-preplace inst sig_exp_decay_0 -pg 1 -lvl 6 -x 2040 -y 560 -swap {0 1 2 3 5 4} -defaultsOSRD
-preplace inst slice_2 -pg 1 -lvl 3 -x 700 -y 860 -defaultsOSRD
-preplace inst slice_3 -pg 1 -lvl 3 -x 700 -y 980 -defaultsOSRD
-preplace inst writer_0 -pg 1 -lvl 4 -x 1100 -y 970 -defaultsOSRD
-preplace inst xlconcat_2 -pg 1 -lvl 7 -x 2340 -y 880 -swap {0 2 4 1 3 5 6 7 8} -defaultsOSRD
-preplace inst xlconcat_0 -pg 1 -lvl 3 -x 700 -y 540 -defaultsOSRD
-preplace inst writer_1 -pg 1 -lvl 4 -x 1100 -y 760 -defaultsOSRD
-preplace inst Waveform_Offset_Addr1 -pg 1 -lvl 4 -x 1100 -y 600 -defaultsOSRD
-preplace netloc adc_0_adc_csn 1 3 5 880J 410 1320J 470 NJ 470 NJ 470 2460J
+preplace inst port_slicer_4 -pg 1 -lvl 5 -x 1670 -y 470 -defaultsOSRD
+preplace inst ps_0 -pg 1 -lvl 6 -x 2150 -y 130 -defaultsOSRD
+preplace inst ps_0_axi_periph -pg 1 -lvl 7 -x 2560 -y 350 -defaultsOSRD
+preplace inst pulse_gen_0 -pg 1 -lvl 6 -x 2150 -y 560 -defaultsOSRD
+preplace inst rst_0 -pg 1 -lvl 6 -x 2150 -y 370 -swap {0 1 2 3 4 5 6 7 9 8} -defaultsOSRD
+preplace inst sig_exp_decay_0 -pg 1 -lvl 7 -x 2560 -y 560 -swap {0 1 2 3 5 4} -defaultsOSRD
+preplace inst writer_0 -pg 1 -lvl 5 -x 1670 -y 970 -defaultsOSRD
+preplace inst xlconcat_2 -pg 1 -lvl 8 -x 3070 -y 1150 -swap {0 2 4 1 3 5 6 7 8} -defaultsOSRD
+preplace inst xlconcat_0 -pg 1 -lvl 3 -x 840 -y 540 -defaultsOSRD
+preplace inst writer_1 -pg 1 -lvl 5 -x 1670 -y 760 -defaultsOSRD
+preplace inst Waveform_Offset_Addr1 -pg 1 -lvl 5 -x 1670 -y 600 -defaultsOSRD
+preplace inst fir_poly_0 -pg 1 -lvl 6 -x 2150 -y 760 -defaultsOSRD
+preplace inst system_configuration -pg 1 -lvl 8 -x 3070 -y 700 -defaultsOSRD
+preplace inst axis_broadcaster_0 -pg 1 -lvl 3 -x 840 -y 880 -defaultsOSRD
+preplace inst axis_combiner_0 -pg 1 -lvl 4 -x 1240 -y 1150 -defaultsOSRD
+preplace inst system_configuration|writer_reset -pg 1 -lvl 3 -x 3550 -y 710 -defaultsOSRD
+preplace inst system_configuration|filter_reset -pg 1 -lvl 3 -x 3550 -y 810 -defaultsOSRD
+preplace inst system_configuration|cfg_0 -pg 1 -lvl 1 -x 3010 -y 730 -defaultsOSRD
+preplace inst system_configuration|port_slicer_0 -pg 1 -lvl 2 -x 3280 -y 890 -defaultsOSRD
+preplace inst system_configuration|port_slicer_1 -pg 1 -lvl 3 -x 3550 -y 910 -defaultsOSRD
+preplace netloc adc_0_adc_csn 1 3 6 1030J 450 1440 410 1890J 470 NJ 470 NJ 470 3880J
 preplace netloc adc_clk_n_i_1 1 0 1 NJ 280
 preplace netloc adc_clk_p_i_1 1 0 1 NJ 300
 preplace netloc adc_dat_a_i_1 1 0 3 NJ 710 NJ 710 NJ
 preplace netloc adc_dat_b_i_1 1 0 3 NJ 730 NJ 730 NJ
-preplace netloc axis_red_pitaya_dac_0_dac_clk 1 7 1 NJ 160
-preplace netloc axis_red_pitaya_dac_0_dac_dat 1 7 1 NJ 240
-preplace netloc axis_red_pitaya_dac_0_dac_rst 1 7 1 NJ 180
-preplace netloc axis_red_pitaya_dac_0_dac_sel 1 7 1 NJ 200
-preplace netloc axis_red_pitaya_dac_0_dac_wrt 1 7 1 NJ 220
-preplace netloc c_counter_binary_0_Q 1 2 2 500 470 NJ
-preplace netloc cfg_0_cfg_data 1 2 6 520 -10 NJ -10 NJ -10 NJ -10 NJ -10 2460
-preplace netloc concat_0_dout 1 7 1 NJ 670
-preplace netloc const_0_dout 1 4 1 NJ 350
-preplace netloc const_1_dout 1 3 1 870J 810n
-preplace netloc not_0_Res 1 6 1 NJ 680
-preplace netloc pll_0_clk_out1 1 1 6 240 390 510 390 890 250 1330 0 1810 190 2220
-preplace netloc pll_0_clk_out2 1 1 6 NJ 260 NJ 260 NJ 260 NJ 260 1790J 210 N
-preplace netloc pll_0_locked 1 1 6 230J 380 510J 280 NJ 280 1340 270 1820J 220 2210
-preplace netloc port_slicer_4_dout 1 4 1 1290 470n
-preplace netloc pulse_gen_0_pulse 1 5 1 N 560
-preplace netloc rst_0_peripheral_aresetn 1 5 2 1800 230 2190
-preplace netloc slice_2_dout 1 3 4 920 540 1280J 630 1820 850 NJ
-preplace netloc slice_3_dout 1 3 4 880 1080 1340J 890 NJ 890 NJ
-preplace netloc xlconcat_2_dout 1 7 1 NJ 880
-preplace netloc xlconcat_0_dout 1 3 1 910 540n
-preplace netloc adc_0_m_axis_tdata 1 2 2 530 610 870
-preplace netloc writer_0_sts_data 1 3 2 930 290 1270
-preplace netloc Waveform_Offset_Addr1_dout 1 3 2 940 530 1260
-preplace netloc adc_0_M_AXIS 1 3 1 900 710n
-preplace netloc sig_exp_decay_0_M_AXIS 1 6 1 2200 170n
-preplace netloc writer_0_M_AXI 1 4 1 1300 110n
-preplace netloc ps_0_axi_periph_M00_AXI 1 6 1 N 350
-preplace netloc ps_0_M_AXI_GP0 1 5 1 1830 160n
-preplace netloc ps_0_FIXED_IO 1 5 3 NJ 100 NJ 100 NJ
-preplace netloc ps_0_DDR 1 5 3 NJ 80 NJ 80 NJ
-preplace netloc writer_1_M_AXI 1 4 1 1310 130n
-levelinfo -pg 1 -30 110 400 700 1100 1570 2040 2340 2480
-pagesize -pg 1 -db -bbox -sgen -210 -90 2650 1870
+preplace netloc axis_red_pitaya_dac_0_dac_clk 1 8 1 NJ 160
+preplace netloc axis_red_pitaya_dac_0_dac_dat 1 8 1 NJ 240
+preplace netloc axis_red_pitaya_dac_0_dac_rst 1 8 1 NJ 180
+preplace netloc axis_red_pitaya_dac_0_dac_sel 1 8 1 NJ 200
+preplace netloc axis_red_pitaya_dac_0_dac_wrt 1 8 1 NJ 220
+preplace netloc c_counter_binary_0_Q 1 2 3 510 460 NJ 460 1450
+preplace netloc concat_0_dout 1 8 1 3870J 560n
+preplace netloc const_0_dout 1 5 1 NJ 350
+preplace netloc const_1_dout 1 3 2 1030J 960 1470
+preplace netloc not_0_Res 1 7 1 2740J 570n
+preplace netloc pll_0_clk_out1 1 1 7 250 260 520 980 1020 980 1460 260 1900 260 2410 230 2750
+preplace netloc pll_0_clk_out2 1 1 7 230J 240 NJ 240 NJ 240 1460 -10 NJ -10 NJ -10 2770
+preplace netloc pll_0_locked 1 1 7 240J 250 NJ 250 NJ 250 N 250 1920 0 2400J 110 2760
+preplace netloc port_slicer_4_dout 1 5 1 1850 470n
+preplace netloc pulse_gen_0_pulse 1 6 1 N 560
+preplace netloc rst_0_peripheral_aresetn 1 6 2 2400 750 N
+preplace netloc slice_2_dout 1 2 7 530 960 1000 970 1480 530 1910J 490 2380 760 2760J 490 3830
+preplace netloc slice_3_dout 1 4 5 1510 1080 NJ 1080 NJ 1080 2770J 1020 3840
+preplace netloc xlconcat_2_dout 1 8 1 3880J 880n
+preplace netloc xlconcat_0_dout 1 3 2 N 540 1450
+preplace netloc writer_0_sts_data 1 4 2 1490 290 1840
+preplace netloc Waveform_Offset_Addr1_dout 1 4 2 1500 540 1830
+preplace netloc system_configuration_dout2 1 5 4 1920 480 NJ 480 NJ 480 3850
+preplace netloc system_configuration_dout3 1 5 4 1930 660 2390J 740 2730J 460 3860
+preplace netloc axis_combiner_0_m_axis_tdata 1 2 3 530 470 NJ 470 1440
+preplace netloc sig_exp_decay_0_M_AXIS 1 7 1 2710 170n
+preplace netloc writer_0_M_AXI 1 5 1 1860 110n
+preplace netloc ps_0_axi_periph_M00_AXI 1 7 1 2720 350n
+preplace netloc ps_0_M_AXI_GP0 1 6 1 2400 160n
+preplace netloc ps_0_FIXED_IO 1 6 3 NJ 100 NJ 100 NJ
+preplace netloc ps_0_DDR 1 6 3 NJ 80 NJ 80 NJ
+preplace netloc writer_1_M_AXI 1 5 1 1870 130n
+preplace netloc adc_0_M_AXIS 1 2 2 530 650 1000
+preplace netloc axis_broadcaster_0_M00_AXIS 1 3 3 1010 270 N 270 1880J
+preplace netloc axis_broadcaster_0_M01_AXIS 1 3 1 1010 890n
+preplace netloc fir_poly_0_m_axis 1 3 4 1040 280 NJ 280 1890J 270 2370
+preplace netloc axis_combiner_0_M_AXIS 1 4 1 1490 920n
+preplace netloc system_configuration|cfg_0_cfg_data 1 1 2 3140 730 3420
+preplace netloc system_configuration|slice_3_dout 1 3 1 NJ 710
+preplace netloc system_configuration|slice_2_dout 1 3 1 NJ 810
+preplace netloc system_configuration|pll_0_clk_out1 1 0 1 N 730
+preplace netloc system_configuration|rst_0_peripheral_aresetn 1 0 1 N 750
+preplace netloc system_configuration|port_slicer_0_dout 1 2 2 3410J 970 3680
+preplace netloc system_configuration|port_slicer_1_dout 1 3 1 N 910
+preplace netloc system_configuration|ps_0_axi_periph_M00_AXI 1 0 1 N 710
+levelinfo -pg 1 -30 110 410 840 1240 1670 2150 2560 3070 3900
+levelinfo -hier system_configuration * 3010 3280 3550 *
+pagesize -pg 1 -db -bbox -sgen -210 -180 4070 1870
+pagesize -hier system_configuration -db -bbox -sgen 2850 640 3710 980
 ",
    "Color Coded_ScaleFactor":"0.853553",
-   "Color Coded_TopLeft":"548,355",
+   "Color Coded_TopLeft":"721,506",
    "Default View_Layers":"/rst_0_peripheral_aresetn:true|/pll_0_clk_out1:true|/c_counter_binary_0_Q:true|",
    "Default View_ScaleFactor":"0.684436",
    "Default View_TopLeft":"-145,405",

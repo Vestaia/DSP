@@ -83,33 +83,38 @@ void fpga<fpga_cfg,sample>::capture_n_raw(sample* data, unsigned int n){
 }
 //Implement averaging
 template <class fpga_cfg, class sample>
-void fpga<fpga_cfg,sample>::capture_n_raw(sample* data, unsigned int n, unsigned int rate){
-    float period = CLOCK_FREQ / rate;
+void fpga<fpga_cfg,sample>::capture_n_raw(sample* data, unsigned int n, unsigned rate){
+    double period = CLOCK_FREQ / (double)rate;
     if ((n * sizeof(sample)) > ring_size) return;
-    float end = *ring_wptr / sizeof(sample);
-    float start = ceil(end - n * period);
+    double end = *ring_wptr;
+    double start = ceil(end - n * period);
     int index = 0;
     int ring_samples = ring_size / sizeof(sample);
-    printf("Start: %f\n", start);
-    printf("End: %f\n", end);
-    printf("Total: %d\n", ring_size/sizeof(sample));
+    // printf("Start: %f\n", start);
+    // printf("End: %f\n", end);
+    // printf("Total: %d\n", ring_samples);
     if(start < 0){
-        printf("A\n");
+        // printf("A\n");
         start += ring_samples;
-        float i;
+        double i;
         for (i = start; i < ring_samples; i += period)
             data[index++] = ((sample*)ring_buf)[(int)i];
-        printf("Index: %d\n", index);
-        for (i = i - ring_samples; i < end; i+= period)
+        // printf("Index: %d\n", index);
+        // printf("i = %f\n", i);
+        for (i = i - ring_samples; i < end; i += period){
+            // if(i > (end - period))
+            //     printf("i = %f\n", i);
             data[index++] = ((sample*)ring_buf)[(int)i];
+    }
+            
 
     }
     else{
-        printf("B\n");
+        // printf("B\n");
         for (float i = start; i < end; i+= period)
             data[index++] = ((sample*)ring_buf)[(int)i];
     }
-    printf("Index: %d\n", index);
+    // printf("Index: %d\n", index);
     // static int test = 0;
     // for (int i = 0; i < n; i+= 1)
     //     data[i].ch_a = test;

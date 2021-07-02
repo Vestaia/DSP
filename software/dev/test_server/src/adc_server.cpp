@@ -4,6 +4,10 @@
 int main(){
     pwp_fpga rp = pwp_fpga();
     server s = server();
+    int32_t coef[8] = {1,0,0,0,-1,0,0,0};
+    uint16_t delay[1] = {32};
+    rp.set_coef(coef, sizeof(coef));
+    rp.set_delay(delay, sizeof(delay));
     rp.reset();
     request req;
     s.attach(INADDR_ANY, 42069);
@@ -13,9 +17,9 @@ int main(){
             perror("read_request");
             break;
         }
-        uint16_t* data = new uint16_t[req.nsamples];
+        uint32_t* data = new uint32_t[req.nsamples];
         sample* samples = new sample[req.nsamples];
-        rp.capture_n_raw(samples, req.nsamples, 125000000/100);
+        rp.capture_n_raw(samples, req.nsamples, req.rate);
         for (int i = 0; i < req.nsamples; i++){
             data[i] = samples[i].ch_a;
         }

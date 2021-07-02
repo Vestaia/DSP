@@ -2,12 +2,12 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Mon Jun 28 17:22:05 2021
-# Process ID: 9869
-# Current directory: /home/ywang/Code/DSP/project/adc_recorder/adc_recorder.runs/synth_1
+# Start of session at: Thu Jul  1 11:23:25 2021
+# Process ID: 12765
+# Current directory: /home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.runs/synth_1
 # Command line: vivado -log system_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_wrapper.tcl
-# Log file: /home/ywang/Code/DSP/project/adc_recorder/adc_recorder.runs/synth_1/system_wrapper.vds
-# Journal file: /home/ywang/Code/DSP/project/adc_recorder/adc_recorder.runs/synth_1/vivado.jou
+# Log file: /home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.runs/synth_1/system_wrapper.vds
+# Journal file: /home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.runs/synth_1/vivado.jou
 #-----------------------------------------------------------
 source system_wrapper.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
@@ -19,35 +19,275 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 9953 
-WARNING: [Synth 8-2611] redeclaration of ansi port pulse is not allowed [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/0f35/pulse_gen.v:13]
+INFO: Helper process launched with PID 12847 
+WARNING: [Synth 8-2611] redeclaration of ansi port pulse is not allowed [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/0f35/pulse_gen.v:13]
+WARNING: [Synth 8-2611] redeclaration of ansi port dob is not allowed [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/3d46/bram.v:17]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:14 . Memory (MB): peak = 1895.473 ; gain = 213.590 ; free physical = 912 ; free virtual = 12276
+Starting RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:18 . Memory (MB): peak = 1896.531 ; gain = 212.590 ; free physical = 1649 ; free virtual = 12889
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'system_wrapper' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/hdl/system_wrapper.v:12]
-INFO: [Synth 8-6157] synthesizing module 'system' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:308]
-INFO: [Synth 8-6157] synthesizing module 'system_Waveform_Offset_Addr_1' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_Waveform_Offset_Addr_1/synth/system_Waveform_Offset_Addr_1.v:57]
-INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_6_xlconstant' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/34f7/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-6157] synthesizing module 'system_wrapper' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/hdl/system_wrapper.v:12]
+INFO: [Synth 8-6157] synthesizing module 'system' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:308]
+INFO: [Synth 8-6157] synthesizing module 'system_Waveform_Offset_Addr_1' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_Waveform_Offset_Addr_1/synth/system_Waveform_Offset_Addr_1.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_6_xlconstant' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/34f7/hdl/xlconstant_v1_1_vl_rfs.v:23]
 	Parameter CONST_VAL bound to: 402653184 - type: integer 
 	Parameter CONST_WIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_6_xlconstant' (1#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/34f7/hdl/xlconstant_v1_1_vl_rfs.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'system_Waveform_Offset_Addr_1' (2#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_Waveform_Offset_Addr_1/synth/system_Waveform_Offset_Addr_1.v:57]
-INFO: [Synth 8-6157] synthesizing module 'system_Waveform_Offset_Addr_2' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_Waveform_Offset_Addr_2/synth/system_Waveform_Offset_Addr_2.v:57]
-INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_6_xlconstant__parameterized0' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/34f7/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_6_xlconstant' (1#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/34f7/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'system_Waveform_Offset_Addr_1' (2#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_Waveform_Offset_Addr_1/synth/system_Waveform_Offset_Addr_1.v:57]
+INFO: [Synth 8-6157] synthesizing module 'system_Waveform_Offset_Addr_2' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_Waveform_Offset_Addr_2/synth/system_Waveform_Offset_Addr_2.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_6_xlconstant__parameterized0' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/34f7/hdl/xlconstant_v1_1_vl_rfs.v:23]
 	Parameter CONST_VAL bound to: 268435456 - type: integer 
 	Parameter CONST_WIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_6_xlconstant__parameterized0' (2#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/34f7/hdl/xlconstant_v1_1_vl_rfs.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'system_Waveform_Offset_Addr_2' (3#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_Waveform_Offset_Addr_2/synth/system_Waveform_Offset_Addr_2.v:57]
-INFO: [Synth 8-6157] synthesizing module 'system_adc_0_0' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_adc_0_0/synth/system_adc_0_0.v:57]
-INFO: [Synth 8-6157] synthesizing module 'axis_red_pitaya_adc' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/fda5/src/axis_red_pitaya_adc.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_6_xlconstant__parameterized0' (2#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/34f7/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'system_Waveform_Offset_Addr_2' (3#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_Waveform_Offset_Addr_2/synth/system_Waveform_Offset_Addr_2.v:57]
+INFO: [Synth 8-6157] synthesizing module 'system_adc_0_0' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_adc_0_0/synth/system_adc_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'axis_red_pitaya_adc' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/fda5/src/axis_red_pitaya_adc.v:4]
 	Parameter ADC_DATA_WIDTH bound to: 14 - type: integer 
 	Parameter AXIS_TDATA_WIDTH bound to: 32 - type: integer 
 	Parameter PADDING_WIDTH bound to: 2 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axis_red_pitaya_adc' (4#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/fda5/src/axis_red_pitaya_adc.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'system_adc_0_0' (5#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_adc_0_0/synth/system_adc_0_0.v:57]
-WARNING: [Synth 8-7023] instance 'adc_0' of module 'system_adc_0_0' has 6 connections declared, but only 5 given [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:540]
-INFO: [Synth 8-6157] synthesizing module 'system_axis_red_pitaya_dac_0_0' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_red_pitaya_dac_0_0/synth/system_axis_red_pitaya_dac_0_0.v:57]
-INFO: [Synth 8-6157] synthesizing module 'axis_red_pitaya_dac' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ab40/src/axis_red_pitaya_dac.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'axis_red_pitaya_adc' (4#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/fda5/src/axis_red_pitaya_adc.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'system_adc_0_0' (5#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_adc_0_0/synth/system_adc_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'system_axis_broadcaster_0_0' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_broadcaster_0_0/synth/system_axis_broadcaster_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'top_system_axis_broadcaster_0_0' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_broadcaster_0_0/hdl/top_system_axis_broadcaster_0_0.v:60]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_NUM_MI_SLOTS bound to: 2 - type: integer 
+	Parameter C_S_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXIS_TDATA_WIDTH bound to: 16 - type: integer 
+	Parameter C_AXIS_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXIS_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXIS_SIGNAL_SET bound to: 2 - type: integer 
+	Parameter G_INDX_SS_TREADY bound to: 0 - type: integer 
+	Parameter G_INDX_SS_TDATA bound to: 1 - type: integer 
+	Parameter G_INDX_SS_TSTRB bound to: 2 - type: integer 
+	Parameter G_INDX_SS_TKEEP bound to: 3 - type: integer 
+	Parameter G_INDX_SS_TLAST bound to: 4 - type: integer 
+	Parameter G_INDX_SS_TID bound to: 5 - type: integer 
+	Parameter G_INDX_SS_TDEST bound to: 6 - type: integer 
+	Parameter G_INDX_SS_TUSER bound to: 7 - type: integer 
+	Parameter G_MASK_SS_TREADY bound to: 1 - type: integer 
+	Parameter G_MASK_SS_TDATA bound to: 2 - type: integer 
+	Parameter G_MASK_SS_TSTRB bound to: 4 - type: integer 
+	Parameter G_MASK_SS_TKEEP bound to: 8 - type: integer 
+	Parameter G_MASK_SS_TLAST bound to: 16 - type: integer 
+	Parameter G_MASK_SS_TID bound to: 32 - type: integer 
+	Parameter G_MASK_SS_TDEST bound to: 64 - type: integer 
+	Parameter G_MASK_SS_TUSER bound to: 128 - type: integer 
+	Parameter G_TASK_SEVERITY_ERR bound to: 2 - type: integer 
+	Parameter G_TASK_SEVERITY_WARNING bound to: 1 - type: integer 
+	Parameter G_TASK_SEVERITY_INFO bound to: 0 - type: integer 
+	Parameter P_TPAYLOAD_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axis_broadcaster_v1_1_19_core' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/d7e4/hdl/axis_broadcaster_v1_1_vl_rfs.v:59]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXIS_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXIS_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXIS_SIGNAL_SET bound to: 2 - type: integer 
+	Parameter C_NUM_MI_SLOTS bound to: 2 - type: integer 
+	Parameter G_INDX_SS_TREADY bound to: 0 - type: integer 
+	Parameter G_INDX_SS_TDATA bound to: 1 - type: integer 
+	Parameter G_INDX_SS_TSTRB bound to: 2 - type: integer 
+	Parameter G_INDX_SS_TKEEP bound to: 3 - type: integer 
+	Parameter G_INDX_SS_TLAST bound to: 4 - type: integer 
+	Parameter G_INDX_SS_TID bound to: 5 - type: integer 
+	Parameter G_INDX_SS_TDEST bound to: 6 - type: integer 
+	Parameter G_INDX_SS_TUSER bound to: 7 - type: integer 
+	Parameter G_MASK_SS_TREADY bound to: 1 - type: integer 
+	Parameter G_MASK_SS_TDATA bound to: 2 - type: integer 
+	Parameter G_MASK_SS_TSTRB bound to: 4 - type: integer 
+	Parameter G_MASK_SS_TKEEP bound to: 8 - type: integer 
+	Parameter G_MASK_SS_TLAST bound to: 16 - type: integer 
+	Parameter G_MASK_SS_TID bound to: 32 - type: integer 
+	Parameter G_MASK_SS_TDEST bound to: 64 - type: integer 
+	Parameter G_MASK_SS_TUSER bound to: 128 - type: integer 
+	Parameter G_TASK_SEVERITY_ERR bound to: 2 - type: integer 
+	Parameter G_TASK_SEVERITY_WARNING bound to: 1 - type: integer 
+	Parameter G_TASK_SEVERITY_INFO bound to: 0 - type: integer 
+	Parameter P_TPAYLOAD_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axis_infrastructure_v1_1_0_util_vector2axis' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8713/hdl/axis_infrastructure_v1_1_vl_rfs.v:992]
+	Parameter C_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_TPAYLOAD_WIDTH bound to: 32 - type: integer 
+	Parameter C_SIGNAL_SET bound to: 2 - type: integer 
+	Parameter G_INDX_SS_TREADY bound to: 0 - type: integer 
+	Parameter G_INDX_SS_TDATA bound to: 1 - type: integer 
+	Parameter G_INDX_SS_TSTRB bound to: 2 - type: integer 
+	Parameter G_INDX_SS_TKEEP bound to: 3 - type: integer 
+	Parameter G_INDX_SS_TLAST bound to: 4 - type: integer 
+	Parameter G_INDX_SS_TID bound to: 5 - type: integer 
+	Parameter G_INDX_SS_TDEST bound to: 6 - type: integer 
+	Parameter G_INDX_SS_TUSER bound to: 7 - type: integer 
+	Parameter G_MASK_SS_TREADY bound to: 1 - type: integer 
+	Parameter G_MASK_SS_TDATA bound to: 2 - type: integer 
+	Parameter G_MASK_SS_TSTRB bound to: 4 - type: integer 
+	Parameter G_MASK_SS_TKEEP bound to: 8 - type: integer 
+	Parameter G_MASK_SS_TLAST bound to: 16 - type: integer 
+	Parameter G_MASK_SS_TID bound to: 32 - type: integer 
+	Parameter G_MASK_SS_TDEST bound to: 64 - type: integer 
+	Parameter G_MASK_SS_TUSER bound to: 128 - type: integer 
+	Parameter G_TASK_SEVERITY_ERR bound to: 2 - type: integer 
+	Parameter G_TASK_SEVERITY_WARNING bound to: 1 - type: integer 
+	Parameter G_TASK_SEVERITY_INFO bound to: 0 - type: integer 
+	Parameter P_TDATA_INDX bound to: 0 - type: integer 
+	Parameter P_TSTRB_INDX bound to: 32 - type: integer 
+	Parameter P_TKEEP_INDX bound to: 32 - type: integer 
+	Parameter P_TLAST_INDX bound to: 32 - type: integer 
+	Parameter P_TID_INDX bound to: 32 - type: integer 
+	Parameter P_TDEST_INDX bound to: 32 - type: integer 
+	Parameter P_TUSER_INDX bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axis_infrastructure_v1_1_0_util_vector2axis' (6#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8713/hdl/axis_infrastructure_v1_1_vl_rfs.v:992]
+INFO: [Synth 8-6157] synthesizing module 'axis_infrastructure_v1_1_0_util_axis2vector' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8713/hdl/axis_infrastructure_v1_1_vl_rfs.v:810]
+	Parameter C_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_TPAYLOAD_WIDTH bound to: 32 - type: integer 
+	Parameter C_SIGNAL_SET bound to: 2 - type: integer 
+	Parameter G_INDX_SS_TREADY bound to: 0 - type: integer 
+	Parameter G_INDX_SS_TDATA bound to: 1 - type: integer 
+	Parameter G_INDX_SS_TSTRB bound to: 2 - type: integer 
+	Parameter G_INDX_SS_TKEEP bound to: 3 - type: integer 
+	Parameter G_INDX_SS_TLAST bound to: 4 - type: integer 
+	Parameter G_INDX_SS_TID bound to: 5 - type: integer 
+	Parameter G_INDX_SS_TDEST bound to: 6 - type: integer 
+	Parameter G_INDX_SS_TUSER bound to: 7 - type: integer 
+	Parameter G_MASK_SS_TREADY bound to: 1 - type: integer 
+	Parameter G_MASK_SS_TDATA bound to: 2 - type: integer 
+	Parameter G_MASK_SS_TSTRB bound to: 4 - type: integer 
+	Parameter G_MASK_SS_TKEEP bound to: 8 - type: integer 
+	Parameter G_MASK_SS_TLAST bound to: 16 - type: integer 
+	Parameter G_MASK_SS_TID bound to: 32 - type: integer 
+	Parameter G_MASK_SS_TDEST bound to: 64 - type: integer 
+	Parameter G_MASK_SS_TUSER bound to: 128 - type: integer 
+	Parameter G_TASK_SEVERITY_ERR bound to: 2 - type: integer 
+	Parameter G_TASK_SEVERITY_WARNING bound to: 1 - type: integer 
+	Parameter G_TASK_SEVERITY_INFO bound to: 0 - type: integer 
+	Parameter P_TDATA_INDX bound to: 0 - type: integer 
+	Parameter P_TSTRB_INDX bound to: 32 - type: integer 
+	Parameter P_TKEEP_INDX bound to: 32 - type: integer 
+	Parameter P_TLAST_INDX bound to: 32 - type: integer 
+	Parameter P_TID_INDX bound to: 32 - type: integer 
+	Parameter P_TDEST_INDX bound to: 32 - type: integer 
+	Parameter P_TUSER_INDX bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axis_infrastructure_v1_1_0_util_axis2vector' (7#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8713/hdl/axis_infrastructure_v1_1_vl_rfs.v:810]
+INFO: [Synth 8-6155] done synthesizing module 'axis_broadcaster_v1_1_19_core' (8#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/d7e4/hdl/axis_broadcaster_v1_1_vl_rfs.v:59]
+INFO: [Synth 8-6157] synthesizing module 'tdata_system_axis_broadcaster_0_0' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_broadcaster_0_0/hdl/tdata_system_axis_broadcaster_0_0.v:49]
+	Parameter C_S_AXIS_TDATA_WIDTH bound to: 64 - type: integer 
+	Parameter C_M_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'tdata_system_axis_broadcaster_0_0' (9#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_broadcaster_0_0/hdl/tdata_system_axis_broadcaster_0_0.v:49]
+INFO: [Synth 8-6157] synthesizing module 'tuser_system_axis_broadcaster_0_0' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_broadcaster_0_0/hdl/tuser_system_axis_broadcaster_0_0.v:49]
+	Parameter C_S_AXIS_TUSER_WIDTH bound to: 2 - type: integer 
+	Parameter C_M_AXIS_TUSER_WIDTH bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'tuser_system_axis_broadcaster_0_0' (10#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_broadcaster_0_0/hdl/tuser_system_axis_broadcaster_0_0.v:49]
+INFO: [Synth 8-6155] done synthesizing module 'top_system_axis_broadcaster_0_0' (11#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_broadcaster_0_0/hdl/top_system_axis_broadcaster_0_0.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'system_axis_broadcaster_0_0' (12#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_broadcaster_0_0/synth/system_axis_broadcaster_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'system_axis_combiner_0_0' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_combiner_0_0/synth/system_axis_combiner_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'axis_combiner_v1_1_18_top' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ddc9/hdl/axis_combiner_v1_1_vl_rfs.v:56]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_AXIS_TDATA_WIDTH bound to: 16 - type: integer 
+	Parameter C_AXIS_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXIS_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXIS_SIGNAL_SET bound to: 3 - type: integer 
+	Parameter C_MASTER_PORT_NUM bound to: 0 - type: integer 
+	Parameter C_NUM_SI_SLOTS bound to: 2 - type: integer 
+	Parameter G_INDX_SS_TREADY bound to: 0 - type: integer 
+	Parameter G_INDX_SS_TDATA bound to: 1 - type: integer 
+	Parameter G_INDX_SS_TSTRB bound to: 2 - type: integer 
+	Parameter G_INDX_SS_TKEEP bound to: 3 - type: integer 
+	Parameter G_INDX_SS_TLAST bound to: 4 - type: integer 
+	Parameter G_INDX_SS_TID bound to: 5 - type: integer 
+	Parameter G_INDX_SS_TDEST bound to: 6 - type: integer 
+	Parameter G_INDX_SS_TUSER bound to: 7 - type: integer 
+	Parameter G_MASK_SS_TREADY bound to: 1 - type: integer 
+	Parameter G_MASK_SS_TDATA bound to: 2 - type: integer 
+	Parameter G_MASK_SS_TSTRB bound to: 4 - type: integer 
+	Parameter G_MASK_SS_TKEEP bound to: 8 - type: integer 
+	Parameter G_MASK_SS_TLAST bound to: 16 - type: integer 
+	Parameter G_MASK_SS_TID bound to: 32 - type: integer 
+	Parameter G_MASK_SS_TDEST bound to: 64 - type: integer 
+	Parameter G_MASK_SS_TUSER bound to: 128 - type: integer 
+	Parameter G_TASK_SEVERITY_ERR bound to: 2 - type: integer 
+	Parameter G_TASK_SEVERITY_WARNING bound to: 1 - type: integer 
+	Parameter G_TASK_SEVERITY_INFO bound to: 0 - type: integer 
+	Parameter P_TPAYLOAD_WIDTH bound to: 32 - type: integer 
+	Parameter P_MASTER_PORT_NUM bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axis_infrastructure_v1_1_0_util_axis2vector__parameterized0' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8713/hdl/axis_infrastructure_v1_1_vl_rfs.v:810]
+	Parameter C_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_TUSER_WIDTH bound to: 2 - type: integer 
+	Parameter C_TPAYLOAD_WIDTH bound to: 32 - type: integer 
+	Parameter C_SIGNAL_SET bound to: 3 - type: integer 
+	Parameter G_INDX_SS_TREADY bound to: 0 - type: integer 
+	Parameter G_INDX_SS_TDATA bound to: 1 - type: integer 
+	Parameter G_INDX_SS_TSTRB bound to: 2 - type: integer 
+	Parameter G_INDX_SS_TKEEP bound to: 3 - type: integer 
+	Parameter G_INDX_SS_TLAST bound to: 4 - type: integer 
+	Parameter G_INDX_SS_TID bound to: 5 - type: integer 
+	Parameter G_INDX_SS_TDEST bound to: 6 - type: integer 
+	Parameter G_INDX_SS_TUSER bound to: 7 - type: integer 
+	Parameter G_MASK_SS_TREADY bound to: 1 - type: integer 
+	Parameter G_MASK_SS_TDATA bound to: 2 - type: integer 
+	Parameter G_MASK_SS_TSTRB bound to: 4 - type: integer 
+	Parameter G_MASK_SS_TKEEP bound to: 8 - type: integer 
+	Parameter G_MASK_SS_TLAST bound to: 16 - type: integer 
+	Parameter G_MASK_SS_TID bound to: 32 - type: integer 
+	Parameter G_MASK_SS_TDEST bound to: 64 - type: integer 
+	Parameter G_MASK_SS_TUSER bound to: 128 - type: integer 
+	Parameter G_TASK_SEVERITY_ERR bound to: 2 - type: integer 
+	Parameter G_TASK_SEVERITY_WARNING bound to: 1 - type: integer 
+	Parameter G_TASK_SEVERITY_INFO bound to: 0 - type: integer 
+	Parameter P_TDATA_INDX bound to: 0 - type: integer 
+	Parameter P_TSTRB_INDX bound to: 32 - type: integer 
+	Parameter P_TKEEP_INDX bound to: 32 - type: integer 
+	Parameter P_TLAST_INDX bound to: 32 - type: integer 
+	Parameter P_TID_INDX bound to: 32 - type: integer 
+	Parameter P_TDEST_INDX bound to: 32 - type: integer 
+	Parameter P_TUSER_INDX bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axis_infrastructure_v1_1_0_util_axis2vector__parameterized0' (12#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8713/hdl/axis_infrastructure_v1_1_vl_rfs.v:810]
+INFO: [Synth 8-6157] synthesizing module 'axis_infrastructure_v1_1_0_util_vector2axis__parameterized0' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8713/hdl/axis_infrastructure_v1_1_vl_rfs.v:992]
+	Parameter C_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_TUSER_WIDTH bound to: 2 - type: integer 
+	Parameter C_TPAYLOAD_WIDTH bound to: 32 - type: integer 
+	Parameter C_SIGNAL_SET bound to: 3 - type: integer 
+	Parameter G_INDX_SS_TREADY bound to: 0 - type: integer 
+	Parameter G_INDX_SS_TDATA bound to: 1 - type: integer 
+	Parameter G_INDX_SS_TSTRB bound to: 2 - type: integer 
+	Parameter G_INDX_SS_TKEEP bound to: 3 - type: integer 
+	Parameter G_INDX_SS_TLAST bound to: 4 - type: integer 
+	Parameter G_INDX_SS_TID bound to: 5 - type: integer 
+	Parameter G_INDX_SS_TDEST bound to: 6 - type: integer 
+	Parameter G_INDX_SS_TUSER bound to: 7 - type: integer 
+	Parameter G_MASK_SS_TREADY bound to: 1 - type: integer 
+	Parameter G_MASK_SS_TDATA bound to: 2 - type: integer 
+	Parameter G_MASK_SS_TSTRB bound to: 4 - type: integer 
+	Parameter G_MASK_SS_TKEEP bound to: 8 - type: integer 
+	Parameter G_MASK_SS_TLAST bound to: 16 - type: integer 
+	Parameter G_MASK_SS_TID bound to: 32 - type: integer 
+	Parameter G_MASK_SS_TDEST bound to: 64 - type: integer 
+	Parameter G_MASK_SS_TUSER bound to: 128 - type: integer 
+	Parameter G_TASK_SEVERITY_ERR bound to: 2 - type: integer 
+	Parameter G_TASK_SEVERITY_WARNING bound to: 1 - type: integer 
+	Parameter G_TASK_SEVERITY_INFO bound to: 0 - type: integer 
+	Parameter P_TDATA_INDX bound to: 0 - type: integer 
+	Parameter P_TSTRB_INDX bound to: 32 - type: integer 
+	Parameter P_TKEEP_INDX bound to: 32 - type: integer 
+	Parameter P_TLAST_INDX bound to: 32 - type: integer 
+	Parameter P_TID_INDX bound to: 32 - type: integer 
+	Parameter P_TDEST_INDX bound to: 32 - type: integer 
+	Parameter P_TUSER_INDX bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axis_infrastructure_v1_1_0_util_vector2axis__parameterized0' (12#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8713/hdl/axis_infrastructure_v1_1_vl_rfs.v:992]
+INFO: [Synth 8-6155] done synthesizing module 'axis_combiner_v1_1_18_top' (13#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ddc9/hdl/axis_combiner_v1_1_vl_rfs.v:56]
+INFO: [Synth 8-6155] done synthesizing module 'system_axis_combiner_0_0' (14#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_combiner_0_0/synth/system_axis_combiner_0_0.v:57]
+WARNING: [Synth 8-7023] instance 'axis_combiner_0' of module 'system_axis_combiner_0_0' has 8 connections declared, but only 6 given [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:564]
+INFO: [Synth 8-6157] synthesizing module 'system_axis_red_pitaya_dac_0_0' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_red_pitaya_dac_0_0/synth/system_axis_red_pitaya_dac_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'axis_red_pitaya_dac' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ab40/src/axis_red_pitaya_dac.v:4]
 	Parameter DAC_DATA_WIDTH bound to: 14 - type: integer 
 	Parameter AXIS_TDATA_WIDTH bound to: 32 - type: integer 
 INFO: [Synth 8-6157] synthesizing module 'ODDR' [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:49681]
@@ -57,11 +297,11 @@ INFO: [Synth 8-6157] synthesizing module 'ODDR' [/tools/Xilinx/Vivado/2019.2/scr
 	Parameter IS_D1_INVERTED bound to: 1'b0 
 	Parameter IS_D2_INVERTED bound to: 1'b0 
 	Parameter SRTYPE bound to: SYNC - type: string 
-INFO: [Synth 8-6155] done synthesizing module 'ODDR' (6#1) [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:49681]
-INFO: [Synth 8-6155] done synthesizing module 'axis_red_pitaya_dac' (7#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ab40/src/axis_red_pitaya_dac.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'system_axis_red_pitaya_dac_0_0' (8#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_red_pitaya_dac_0_0/synth/system_axis_red_pitaya_dac_0_0.v:57]
-WARNING: [Synth 8-7023] instance 'axis_red_pitaya_dac_0' of module 'system_axis_red_pitaya_dac_0_0' has 11 connections declared, but only 10 given [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:546]
-INFO: [Synth 8-638] synthesizing module 'system_c_counter_binary_0_0' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_c_counter_binary_0_0/synth/system_c_counter_binary_0_0.vhd:66]
+INFO: [Synth 8-6155] done synthesizing module 'ODDR' (15#1) [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:49681]
+INFO: [Synth 8-6155] done synthesizing module 'axis_red_pitaya_dac' (16#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ab40/src/axis_red_pitaya_dac.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'system_axis_red_pitaya_dac_0_0' (17#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_red_pitaya_dac_0_0/synth/system_axis_red_pitaya_dac_0_0.v:57]
+WARNING: [Synth 8-7023] instance 'axis_red_pitaya_dac_0' of module 'system_axis_red_pitaya_dac_0_0' has 11 connections declared, but only 10 given [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:571]
+INFO: [Synth 8-638] synthesizing module 'system_c_counter_binary_0_0' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_c_counter_binary_0_0/synth/system_c_counter_binary_0_0.vhd:66]
 	Parameter C_IMPLEMENTATION bound to: 1 - type: integer 
 	Parameter C_VERBOSITY bound to: 0 - type: integer 
 	Parameter C_XDEVICEFAMILY bound to: zynq - type: string 
@@ -84,26 +324,10 @@ INFO: [Synth 8-638] synthesizing module 'system_c_counter_binary_0_0' [/home/ywa
 	Parameter C_SCLR_OVERRIDES_SSET bound to: 1 - type: integer 
 	Parameter C_HAS_SSET bound to: 0 - type: integer 
 	Parameter C_HAS_SINIT bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'c_counter_binary_v12_0_14' declared at '/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/1f12/hdl/c_counter_binary_v12_0_vh_rfs.vhd:2146' bound to instance 'U0' of component 'c_counter_binary_v12_0_14' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_c_counter_binary_0_0/synth/system_c_counter_binary_0_0.vhd:122]
-INFO: [Synth 8-256] done synthesizing module 'system_c_counter_binary_0_0' (15#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_c_counter_binary_0_0/synth/system_c_counter_binary_0_0.vhd:66]
-INFO: [Synth 8-6157] synthesizing module 'system_cfg_0_0' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_cfg_0_0/synth/system_cfg_0_0.v:57]
-INFO: [Synth 8-6157] synthesizing module 'axi_cfg_register' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/b7d1/src/axi_cfg_register.v:4]
-	Parameter CFG_DATA_WIDTH bound to: 256 - type: integer 
-	Parameter AXI_DATA_WIDTH bound to: 32 - type: integer 
-	Parameter AXI_ADDR_WIDTH bound to: 32 - type: integer 
-	Parameter ADDR_LSB bound to: 2 - type: integer 
-	Parameter CFG_SIZE bound to: 8 - type: integer 
-	Parameter CFG_WIDTH bound to: 3 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'FDRE' [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:13708]
-	Parameter INIT bound to: 1'b0 
-	Parameter IS_C_INVERTED bound to: 1'b0 
-	Parameter IS_D_INVERTED bound to: 1'b0 
-	Parameter IS_R_INVERTED bound to: 1'b0 
-INFO: [Synth 8-6155] done synthesizing module 'FDRE' (16#1) [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:13708]
-INFO: [Synth 8-6155] done synthesizing module 'axi_cfg_register' (17#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/b7d1/src/axi_cfg_register.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'system_cfg_0_0' (18#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_cfg_0_0/synth/system_cfg_0_0.v:57]
-INFO: [Synth 8-6157] synthesizing module 'system_concat_0_0' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_concat_0_0/synth/system_concat_0_0.v:58]
-INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
+INFO: [Synth 8-3491] module 'c_counter_binary_v12_0_14' declared at '/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/1f12/hdl/c_counter_binary_v12_0_vh_rfs.vhd:2146' bound to instance 'U0' of component 'c_counter_binary_v12_0_14' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_c_counter_binary_0_0/synth/system_c_counter_binary_0_0.vhd:122]
+INFO: [Synth 8-256] done synthesizing module 'system_c_counter_binary_0_0' (24#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_c_counter_binary_0_0/synth/system_c_counter_binary_0_0.vhd:66]
+INFO: [Synth 8-6157] synthesizing module 'system_concat_0_0' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_concat_0_0/synth/system_concat_0_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
 	Parameter IN0_WIDTH bound to: 1 - type: integer 
 	Parameter IN1_WIDTH bound to: 7 - type: integer 
 	Parameter IN2_WIDTH bound to: 1 - type: integer 
@@ -138,22 +362,54 @@ INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat' [/home/ywang
 	Parameter IN31_WIDTH bound to: 1 - type: integer 
 	Parameter dout_width bound to: 8 - type: integer 
 	Parameter NUM_PORTS bound to: 2 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_3_xlconcat' (19#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
-INFO: [Synth 8-6155] done synthesizing module 'system_concat_0_0' (20#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_concat_0_0/synth/system_concat_0_0.v:58]
-INFO: [Synth 8-6157] synthesizing module 'system_const_0_0' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_const_0_0/synth/system_const_0_0.v:57]
-INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_6_xlconstant__parameterized1' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/34f7/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_3_xlconcat' (25#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'system_concat_0_0' (26#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_concat_0_0/synth/system_concat_0_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'system_const_0_0' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_const_0_0/synth/system_const_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_6_xlconstant__parameterized1' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/34f7/hdl/xlconstant_v1_1_vl_rfs.v:23]
 	Parameter CONST_VAL bound to: 1 - type: integer 
 	Parameter CONST_WIDTH bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_6_xlconstant__parameterized1' (20#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/34f7/hdl/xlconstant_v1_1_vl_rfs.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'system_const_0_0' (21#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_const_0_0/synth/system_const_0_0.v:57]
-INFO: [Synth 8-6157] synthesizing module 'system_not_0_0' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_not_0_0/synth/system_not_0_0.v:57]
-INFO: [Synth 8-6157] synthesizing module 'util_vector_logic_v2_0_1_util_vector_logic' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/2137/hdl/util_vector_logic_v2_0_vl_rfs.v:45]
+INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_6_xlconstant__parameterized1' (26#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/34f7/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'system_const_0_0' (27#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_const_0_0/synth/system_const_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'system_fir_poly_0_0' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_fir_poly_0_0/synth/system_fir_poly_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'fir_poly' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/3d46/fir_poly.v:3]
+	Parameter AXIS_TDATA_WIDTH bound to: 16 - type: integer 
+	Parameter BUFFER_LENGTH bound to: 4 - type: integer 
+	Parameter COEF_WIDTH bound to: 16 - type: integer 
+	Parameter ORDER bound to: 3 - type: integer 
+	Parameter PIECES bound to: 2 - type: integer 
+	Parameter OUTPUT_WIDTH bound to: 16 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'bram' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/3d46/bram.v:1]
+	Parameter ADDR_LEN bound to: 4 - type: integer 
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'bram' (28#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/3d46/bram.v:1]
+INFO: [Synth 8-6157] synthesizing module 'macc_sum' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/3d46/macc_sum.v:2]
+	Parameter I_ACC_WIDTH bound to: 16 - type: integer 
+	Parameter O_ACC_WIDTH bound to: 20 - type: integer 
+	Parameter I_MACC_WIDTH bound to: 32 - type: integer 
+	Parameter COEF_WIDTH bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'macc_sum' (29#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/3d46/macc_sum.v:2]
+INFO: [Synth 8-6157] synthesizing module 'macc_sum__parameterized0' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/3d46/macc_sum.v:2]
+	Parameter I_ACC_WIDTH bound to: 20 - type: integer 
+	Parameter O_ACC_WIDTH bound to: 24 - type: integer 
+	Parameter I_MACC_WIDTH bound to: 36 - type: integer 
+	Parameter COEF_WIDTH bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'macc_sum__parameterized0' (29#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/3d46/macc_sum.v:2]
+INFO: [Synth 8-6157] synthesizing module 'macc_sum__parameterized1' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/3d46/macc_sum.v:2]
+	Parameter I_ACC_WIDTH bound to: 24 - type: integer 
+	Parameter O_ACC_WIDTH bound to: 28 - type: integer 
+	Parameter I_MACC_WIDTH bound to: 40 - type: integer 
+	Parameter COEF_WIDTH bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'macc_sum__parameterized1' (29#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/3d46/macc_sum.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'fir_poly' (30#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/3d46/fir_poly.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'system_fir_poly_0_0' (31#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_fir_poly_0_0/synth/system_fir_poly_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'system_not_0_0' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_not_0_0/synth/system_not_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'util_vector_logic_v2_0_1_util_vector_logic' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/2137/hdl/util_vector_logic_v2_0_vl_rfs.v:45]
 	Parameter C_OPERATION bound to: not - type: string 
 	Parameter C_SIZE bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'util_vector_logic_v2_0_1_util_vector_logic' (22#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/2137/hdl/util_vector_logic_v2_0_vl_rfs.v:45]
-INFO: [Synth 8-6155] done synthesizing module 'system_not_0_0' (23#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_not_0_0/synth/system_not_0_0.v:57]
-INFO: [Synth 8-6157] synthesizing module 'system_pll_0_0' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0.v:71]
-INFO: [Synth 8-6157] synthesizing module 'system_pll_0_0_clk_wiz' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0_clk_wiz.v:69]
+INFO: [Synth 8-6155] done synthesizing module 'util_vector_logic_v2_0_1_util_vector_logic' (32#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/2137/hdl/util_vector_logic_v2_0_vl_rfs.v:45]
+INFO: [Synth 8-6155] done synthesizing module 'system_not_0_0' (33#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_not_0_0/synth/system_not_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'system_pll_0_0' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0.v:71]
+INFO: [Synth 8-6157] synthesizing module 'system_pll_0_0_clk_wiz' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0_clk_wiz.v:69]
 INFO: [Synth 8-6157] synthesizing module 'IBUFDS' [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:32952]
 	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
 	Parameter DIFF_TERM bound to: FALSE - type: string 
@@ -162,7 +418,7 @@ INFO: [Synth 8-6157] synthesizing module 'IBUFDS' [/tools/Xilinx/Vivado/2019.2/s
 	Parameter IBUF_LOW_PWR bound to: TRUE - type: string 
 	Parameter IFD_DELAY_VALUE bound to: AUTO - type: string 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
-INFO: [Synth 8-6155] done synthesizing module 'IBUFDS' (24#1) [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:32952]
+INFO: [Synth 8-6155] done synthesizing module 'IBUFDS' (34#1) [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:32952]
 INFO: [Synth 8-6157] synthesizing module 'PLLE2_ADV' [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:61416]
 	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
 	Parameter CLKFBOUT_MULT bound to: 8 - type: integer 
@@ -195,20 +451,20 @@ INFO: [Synth 8-6157] synthesizing module 'PLLE2_ADV' [/tools/Xilinx/Vivado/2019.
 	Parameter REF_JITTER1 bound to: 0.010000 - type: double 
 	Parameter REF_JITTER2 bound to: 0.010000 - type: double 
 	Parameter STARTUP_WAIT bound to: FALSE - type: string 
-INFO: [Synth 8-6155] done synthesizing module 'PLLE2_ADV' (25#1) [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:61416]
+INFO: [Synth 8-6155] done synthesizing module 'PLLE2_ADV' (35#1) [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:61416]
 INFO: [Synth 8-6157] synthesizing module 'BUFG' [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:1075]
-INFO: [Synth 8-6155] done synthesizing module 'BUFG' (26#1) [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:1075]
-INFO: [Synth 8-6155] done synthesizing module 'system_pll_0_0_clk_wiz' (27#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0_clk_wiz.v:69]
-INFO: [Synth 8-6155] done synthesizing module 'system_pll_0_0' (28#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0.v:71]
-INFO: [Synth 8-6157] synthesizing module 'system_port_slicer_4_0' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_port_slicer_4_0/synth/system_port_slicer_4_0.v:57]
-INFO: [Synth 8-6157] synthesizing module 'port_slicer' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8bd6/src/port_slicer.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'BUFG' (36#1) [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:1075]
+INFO: [Synth 8-6155] done synthesizing module 'system_pll_0_0_clk_wiz' (37#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0_clk_wiz.v:69]
+INFO: [Synth 8-6155] done synthesizing module 'system_pll_0_0' (38#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0.v:71]
+INFO: [Synth 8-6157] synthesizing module 'system_port_slicer_4_0' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_port_slicer_4_0/synth/system_port_slicer_4_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'port_slicer' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8bd6/src/port_slicer.v:4]
 	Parameter DIN_WIDTH bound to: 48 - type: integer 
 	Parameter DIN_FROM bound to: 16 - type: integer 
 	Parameter DIN_TO bound to: 16 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'port_slicer' (29#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8bd6/src/port_slicer.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'system_port_slicer_4_0' (30#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_port_slicer_4_0/synth/system_port_slicer_4_0.v:57]
-INFO: [Synth 8-6157] synthesizing module 'system_ps_0_2' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/synth/system_ps_0_2.v:60]
-INFO: [Synth 8-6157] synthesizing module 'processing_system7_v5_5_processing_system7' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/hdl/verilog/processing_system7_v5_5_processing_system7.v:161]
+INFO: [Synth 8-6155] done synthesizing module 'port_slicer' (39#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8bd6/src/port_slicer.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'system_port_slicer_4_0' (40#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_port_slicer_4_0/synth/system_port_slicer_4_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'system_ps_0_2' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/synth/system_ps_0_2.v:60]
+INFO: [Synth 8-6157] synthesizing module 'processing_system7_v5_5_processing_system7' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/hdl/verilog/processing_system7_v5_5_processing_system7.v:161]
 	Parameter C_USE_DEFAULT_ACP_USER_VAL bound to: 0 - type: integer 
 	Parameter C_S_AXI_ACP_ARUSER_VAL bound to: 31 - type: integer 
 	Parameter C_S_AXI_ACP_AWUSER_VAL bound to: 31 - type: integer 
@@ -265,20 +521,20 @@ INFO: [Synth 8-6157] synthesizing module 'processing_system7_v5_5_processing_sys
 	Parameter C_USE_S_AXI_ACP bound to: 0 - type: integer 
 	Parameter C_GP0_EN_MODIFIABLE_TXN bound to: 1 - type: integer 
 	Parameter C_GP1_EN_MODIFIABLE_TXN bound to: 1 - type: integer 
-INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/hdl/verilog/processing_system7_v5_5_processing_system7.v:1347]
-INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/hdl/verilog/processing_system7_v5_5_processing_system7.v:1348]
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/hdl/verilog/processing_system7_v5_5_processing_system7.v:1347]
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/hdl/verilog/processing_system7_v5_5_processing_system7.v:1348]
 INFO: [Synth 8-6157] synthesizing module 'BIBUF' [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:722]
-INFO: [Synth 8-6155] done synthesizing module 'BIBUF' (31#1) [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:722]
+INFO: [Synth 8-6155] done synthesizing module 'BIBUF' (41#1) [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:722]
 INFO: [Synth 8-6157] synthesizing module 'PS7' [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:61924]
-INFO: [Synth 8-6155] done synthesizing module 'PS7' (32#1) [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:61924]
-INFO: [Synth 8-6155] done synthesizing module 'processing_system7_v5_5_processing_system7' (33#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/hdl/verilog/processing_system7_v5_5_processing_system7.v:161]
-WARNING: [Synth 8-7023] instance 'inst' of module 'processing_system7_v5_5_processing_system7' has 685 connections declared, but only 672 given [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/synth/system_ps_0_2.v:650]
-INFO: [Synth 8-6155] done synthesizing module 'system_ps_0_2' (34#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/synth/system_ps_0_2.v:60]
-WARNING: [Synth 8-7023] instance 'ps_0' of module 'system_ps_0_2' has 172 connections declared, but only 132 given [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:599]
-INFO: [Synth 8-6157] synthesizing module 'system_ps_0_axi_periph_0' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:878]
-INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_1OVXGTK' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:12]
-INFO: [Synth 8-6157] synthesizing module 'system_auto_pc_0' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_auto_pc_0/synth/system_auto_pc_0.v:58]
-INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_axi_protocol_converter' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4808]
+INFO: [Synth 8-6155] done synthesizing module 'PS7' (42#1) [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:61924]
+INFO: [Synth 8-6155] done synthesizing module 'processing_system7_v5_5_processing_system7' (43#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/hdl/verilog/processing_system7_v5_5_processing_system7.v:161]
+WARNING: [Synth 8-7023] instance 'inst' of module 'processing_system7_v5_5_processing_system7' has 685 connections declared, but only 672 given [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/synth/system_ps_0_2.v:650]
+INFO: [Synth 8-6155] done synthesizing module 'system_ps_0_2' (44#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/synth/system_ps_0_2.v:60]
+WARNING: [Synth 8-7023] instance 'ps_0' of module 'system_ps_0_2' has 172 connections declared, but only 132 given [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:612]
+INFO: [Synth 8-6157] synthesizing module 'system_ps_0_axi_periph_0' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:1041]
+INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_1OVXGTK' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:12]
+INFO: [Synth 8-6157] synthesizing module 'system_auto_pc_0' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_auto_pc_0/synth/system_auto_pc_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_axi_protocol_converter' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4808]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_M_AXI_PROTOCOL bound to: 2 - type: integer 
 	Parameter C_S_AXI_PROTOCOL bound to: 1 - type: integer 
@@ -304,39 +560,39 @@ INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_axi_pro
 	Parameter P_SLVERR bound to: 2'b10 
 	Parameter P_PROTECTION bound to: 1 - type: integer 
 	Parameter P_CONVERSION bound to: 2 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4226]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4226]
 	Parameter C_S_AXI_PROTOCOL bound to: 1 - type: integer 
 	Parameter C_AXI_ID_WIDTH bound to: 12 - type: integer 
 	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
 	Parameter C_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_AXI_SUPPORTS_WRITE bound to: 1 - type: integer 
 	Parameter C_AXI_SUPPORTS_READ bound to: 1 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_aw_channel' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3971]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_aw_channel' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3971]
 	Parameter C_ID_WIDTH bound to: 12 - type: integer 
 	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_cmd_translator' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3464]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_cmd_translator' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3464]
 	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
 	Parameter P_AXBURST_FIXED bound to: 2'b00 
 	Parameter P_AXBURST_INCR bound to: 2'b01 
 	Parameter P_AXBURST_WRAP bound to: 2'b10 
-INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_incr_cmd' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3092]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_incr_cmd' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3092]
 	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
 	Parameter L_AXI_ADDR_LOW_BIT bound to: 12 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_incr_cmd' (35#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3092]
-INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_wrap_cmd' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2902]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_incr_cmd' (45#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3092]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_wrap_cmd' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2902]
 	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
 	Parameter L_AXI_ADDR_LOW_BIT bound to: 12 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_wrap_cmd' (36#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2902]
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_cmd_translator' (37#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3464]
-INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_wr_cmd_fsm' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3224]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_wrap_cmd' (46#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2902]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_cmd_translator' (47#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3464]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_wr_cmd_fsm' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3224]
 	Parameter SM_IDLE bound to: 2'b00 
 	Parameter SM_CMD_EN bound to: 2'b01 
 	Parameter SM_CMD_ACCEPTED bound to: 2'b10 
 	Parameter SM_DONE_WAIT bound to: 2'b11 
-INFO: [Synth 8-226] default block is never used [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3277]
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_wr_cmd_fsm' (38#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3224]
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_aw_channel' (39#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3971]
-INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_b_channel' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3606]
+INFO: [Synth 8-226] default block is never used [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3277]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_wr_cmd_fsm' (48#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3224]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_aw_channel' (49#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3971]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_b_channel' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3606]
 	Parameter C_ID_WIDTH bound to: 12 - type: integer 
 	Parameter LP_RESP_OKAY bound to: 2'b00 
 	Parameter LP_RESP_EXOKAY bound to: 2'b01 
@@ -348,7 +604,7 @@ INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_b_c
 	Parameter P_RWIDTH bound to: 2 - type: integer 
 	Parameter P_RDEPTH bound to: 4 - type: integer 
 	Parameter P_RAWIDTH bound to: 2 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_simple_fifo' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_simple_fifo' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
 	Parameter C_WIDTH bound to: 20 - type: integer 
 	Parameter C_AWIDTH bound to: 2 - type: integer 
 	Parameter C_DEPTH bound to: 4 - type: integer 
@@ -356,8 +612,8 @@ INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_sim
 	Parameter C_EMPTY_PRE bound to: 2'b00 
 	Parameter C_FULL bound to: 2'b10 
 	Parameter C_FULL_PRE bound to: 2'b01 
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_simple_fifo' (40#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
-INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_simple_fifo__parameterized0' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_simple_fifo' (50#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_simple_fifo__parameterized0' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
 	Parameter C_WIDTH bound to: 2 - type: integer 
 	Parameter C_AWIDTH bound to: 2 - type: integer 
 	Parameter C_DEPTH bound to: 4 - type: integer 
@@ -365,22 +621,22 @@ INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_sim
 	Parameter C_EMPTY_PRE bound to: 2'b00 
 	Parameter C_FULL bound to: 2'b10 
 	Parameter C_FULL_PRE bound to: 2'b01 
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_simple_fifo__parameterized0' (40#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_b_channel' (41#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3606]
-INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_ar_channel' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4082]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_simple_fifo__parameterized0' (50#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_b_channel' (51#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3606]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_ar_channel' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4082]
 	Parameter C_ID_WIDTH bound to: 12 - type: integer 
 	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_rd_cmd_fsm' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3334]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_rd_cmd_fsm' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3334]
 	Parameter SM_IDLE bound to: 2'b00 
 	Parameter SM_CMD_EN bound to: 2'b01 
 	Parameter SM_CMD_ACCEPTED bound to: 2'b10 
 	Parameter SM_DONE bound to: 2'b11 
-INFO: [Synth 8-226] default block is never used [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3395]
-WARNING: [Synth 8-6014] Unused sequential element state_r1_reg was removed.  [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3383]
-WARNING: [Synth 8-6014] Unused sequential element s_arlen_r_reg was removed.  [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3384]
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_rd_cmd_fsm' (42#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3334]
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_ar_channel' (43#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4082]
-INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_r_channel' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3811]
+INFO: [Synth 8-226] default block is never used [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3395]
+WARNING: [Synth 8-6014] Unused sequential element state_r1_reg was removed.  [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3383]
+WARNING: [Synth 8-6014] Unused sequential element s_arlen_r_reg was removed.  [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3384]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_rd_cmd_fsm' (52#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3334]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_ar_channel' (53#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4082]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_r_channel' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3811]
 	Parameter C_ID_WIDTH bound to: 12 - type: integer 
 	Parameter C_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter P_WIDTH bound to: 13 - type: integer 
@@ -389,7 +645,7 @@ INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_r_c
 	Parameter P_D_WIDTH bound to: 34 - type: integer 
 	Parameter P_D_DEPTH bound to: 32 - type: integer 
 	Parameter P_D_AWIDTH bound to: 5 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_simple_fifo__parameterized1' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_simple_fifo__parameterized1' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
 	Parameter C_WIDTH bound to: 34 - type: integer 
 	Parameter C_AWIDTH bound to: 5 - type: integer 
 	Parameter C_DEPTH bound to: 32 - type: integer 
@@ -397,8 +653,8 @@ INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_sim
 	Parameter C_EMPTY_PRE bound to: 5'b00000 
 	Parameter C_FULL bound to: 5'b11110 
 	Parameter C_FULL_PRE bound to: 5'b11010 
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_simple_fifo__parameterized1' (43#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
-INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_simple_fifo__parameterized2' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_simple_fifo__parameterized1' (53#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_simple_fifo__parameterized2' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
 	Parameter C_WIDTH bound to: 13 - type: integer 
 	Parameter C_AWIDTH bound to: 5 - type: integer 
 	Parameter C_DEPTH bound to: 32 - type: integer 
@@ -406,9 +662,9 @@ INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_sim
 	Parameter C_EMPTY_PRE bound to: 5'b00000 
 	Parameter C_FULL bound to: 5'b11110 
 	Parameter C_FULL_PRE bound to: 5'b11010 
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_simple_fifo__parameterized2' (43#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_r_channel' (44#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3811]
-INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axi_register_slice' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:3704]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_simple_fifo__parameterized2' (53#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_r_channel' (54#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3811]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axi_register_slice' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:3704]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_AXI_PROTOCOL bound to: 1 - type: integer 
 	Parameter C_AXI_ID_WIDTH bound to: 12 - type: integer 
@@ -520,7 +776,7 @@ INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axi_registe
 	Parameter G_AXI_RUSER_INDEX bound to: 47 - type: integer 
 	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
 	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 47 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_axi2vector' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
+INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_axi2vector' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
 	Parameter C_AXI_PROTOCOL bound to: 1 - type: integer 
 	Parameter C_AXI_ID_WIDTH bound to: 12 - type: integer 
 	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
@@ -612,8 +868,8 @@ INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_axi2vector' 
 	Parameter G_AXI_RUSER_INDEX bound to: 47 - type: integer 
 	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
 	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 47 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_axi2vector' (45#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
-INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
+INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_axi2vector' (55#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
+INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
 	Parameter C_AXI_PROTOCOL bound to: 1 - type: integer 
 	Parameter C_AXI_ID_WIDTH bound to: 12 - type: integer 
 	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
@@ -705,30 +961,30 @@ INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' 
 	Parameter G_AXI_RUSER_INDEX bound to: 47 - type: integer 
 	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
 	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 47 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' (46#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
-INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' (56#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 66 - type: integer 
 	Parameter C_REG_CONFIG bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice' (47#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
-INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized0' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice' (57#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized0' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 49 - type: integer 
 	Parameter C_REG_CONFIG bound to: 0 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized0' (47#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
-INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized1' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized0' (57#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized1' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 14 - type: integer 
 	Parameter C_REG_CONFIG bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized1' (47#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
-INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized2' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized1' (57#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized2' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 47 - type: integer 
 	Parameter C_REG_CONFIG bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized2' (47#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axi_register_slice' (48#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:3704]
-WARNING: [Synth 8-7023] instance 'SI_REG' of module 'axi_register_slice_v2_1_20_axi_register_slice' has 93 connections declared, but only 92 given [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4392]
-INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axi_register_slice__parameterized0' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:3704]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized2' (57#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axi_register_slice' (58#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:3704]
+WARNING: [Synth 8-7023] instance 'SI_REG' of module 'axi_register_slice_v2_1_20_axi_register_slice' has 93 connections declared, but only 92 given [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4392]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axi_register_slice__parameterized0' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:3704]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_AXI_PROTOCOL bound to: 2 - type: integer 
 	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
@@ -840,7 +1096,7 @@ INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axi_registe
 	Parameter G_AXI_RUSER_INDEX bound to: 34 - type: integer 
 	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
 	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 34 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_axi2vector__parameterized0' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
+INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_axi2vector__parameterized0' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
 	Parameter C_AXI_PROTOCOL bound to: 2 - type: integer 
 	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
 	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
@@ -932,8 +1188,8 @@ INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_axi2vector__
 	Parameter G_AXI_RUSER_INDEX bound to: 34 - type: integer 
 	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
 	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 34 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_axi2vector__parameterized0' (48#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
-INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_vector2axi__parameterized0' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
+INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_axi2vector__parameterized0' (58#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
+INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_vector2axi__parameterized0' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
 	Parameter C_AXI_PROTOCOL bound to: 2 - type: integer 
 	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
 	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
@@ -1025,41 +1281,41 @@ INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_vector2axi__
 	Parameter G_AXI_RUSER_INDEX bound to: 34 - type: integer 
 	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
 	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 34 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_vector2axi__parameterized0' (48#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
-INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized3' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_vector2axi__parameterized0' (58#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized3' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 35 - type: integer 
 	Parameter C_REG_CONFIG bound to: 0 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized3' (48#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
-INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized4' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized3' (58#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized4' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 36 - type: integer 
 	Parameter C_REG_CONFIG bound to: 0 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized4' (48#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
-INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized5' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized4' (58#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized5' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 2 - type: integer 
 	Parameter C_REG_CONFIG bound to: 0 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized5' (48#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
-INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized6' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized5' (58#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized6' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 34 - type: integer 
 	Parameter C_REG_CONFIG bound to: 0 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized6' (48#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axi_register_slice__parameterized0' (48#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:3704]
-WARNING: [Synth 8-7023] instance 'MI_REG' of module 'axi_register_slice_v2_1_20_axi_register_slice' has 93 connections declared, but only 92 given [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4647]
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s' (49#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4226]
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_axi_protocol_converter' (50#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4808]
-INFO: [Synth 8-6155] done synthesizing module 'system_auto_pc_0' (51#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_auto_pc_0/synth/system_auto_pc_0.v:58]
-WARNING: [Synth 8-7023] instance 'auto_pc' of module 'system_auto_pc_0' has 59 connections declared, but only 57 given [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:247]
-INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_1OVXGTK' (52#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:12]
-INFO: [Synth 8-6155] done synthesizing module 'system_ps_0_axi_periph_0' (53#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:878]
-INFO: [Synth 8-6157] synthesizing module 'system_pulse_gen_0_0' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pulse_gen_0_0/synth/system_pulse_gen_0_0.v:57]
-INFO: [Synth 8-6157] synthesizing module 'pulse_gen' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/0f35/pulse_gen.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized6' (58#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axi_register_slice__parameterized0' (58#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:3704]
+WARNING: [Synth 8-7023] instance 'MI_REG' of module 'axi_register_slice_v2_1_20_axi_register_slice' has 93 connections declared, but only 92 given [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4647]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s' (59#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4226]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_axi_protocol_converter' (60#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4808]
+INFO: [Synth 8-6155] done synthesizing module 'system_auto_pc_0' (61#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_auto_pc_0/synth/system_auto_pc_0.v:58]
+WARNING: [Synth 8-7023] instance 'auto_pc' of module 'system_auto_pc_0' has 59 connections declared, but only 57 given [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:247]
+INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_1OVXGTK' (62#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'system_ps_0_axi_periph_0' (63#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:1041]
+INFO: [Synth 8-6157] synthesizing module 'system_pulse_gen_0_0' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pulse_gen_0_0/synth/system_pulse_gen_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'pulse_gen' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/0f35/pulse_gen.v:3]
 	Parameter OUTPUT_WIDTH bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'pulse_gen' (54#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/0f35/pulse_gen.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'system_pulse_gen_0_0' (55#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pulse_gen_0_0/synth/system_pulse_gen_0_0.v:57]
-INFO: [Synth 8-638] synthesizing module 'system_rst_0_0' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_rst_0_0/synth/system_rst_0_0.vhd:74]
+INFO: [Synth 8-6155] done synthesizing module 'pulse_gen' (64#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/0f35/pulse_gen.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'system_pulse_gen_0_0' (65#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pulse_gen_0_0/synth/system_pulse_gen_0_0.v:57]
+INFO: [Synth 8-638] synthesizing module 'system_rst_0_0' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_rst_0_0/synth/system_rst_0_0.vhd:74]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_EXT_RST_WIDTH bound to: 4 - type: integer 
 	Parameter C_AUX_RST_WIDTH bound to: 4 - type: integer 
@@ -1069,8 +1325,8 @@ INFO: [Synth 8-638] synthesizing module 'system_rst_0_0' [/home/ywang/Code/DSP/p
 	Parameter C_NUM_PERP_RST bound to: 1 - type: integer 
 	Parameter C_NUM_INTERCONNECT_ARESETN bound to: 1 - type: integer 
 	Parameter C_NUM_PERP_ARESETN bound to: 1 - type: integer 
-INFO: [Synth 8-3491] module 'proc_sys_reset' declared at '/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1264' bound to instance 'U0' of component 'proc_sys_reset' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_rst_0_0/synth/system_rst_0_0.vhd:129]
-INFO: [Synth 8-638] synthesizing module 'proc_sys_reset' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1323]
+INFO: [Synth 8-3491] module 'proc_sys_reset' declared at '/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1264' bound to instance 'U0' of component 'proc_sys_reset' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_rst_0_0/synth/system_rst_0_0.vhd:129]
+INFO: [Synth 8-638] synthesizing module 'proc_sys_reset' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1323]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_EXT_RST_WIDTH bound to: 4 - type: integer 
 	Parameter C_AUX_RST_WIDTH bound to: 4 - type: integer 
@@ -1084,37 +1340,37 @@ INFO: [Synth 8-638] synthesizing module 'proc_sys_reset' [/home/ywang/Code/DSP/p
 	Parameter IS_C_INVERTED bound to: 1'b0 
 	Parameter IS_D_INVERTED bound to: 1'b0 
 	Parameter IS_R_INVERTED bound to: 1'b0 
-INFO: [Synth 8-113] binding component instance 'FDRE_inst' to cell 'FDRE' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1392]
+INFO: [Synth 8-113] binding component instance 'FDRE_inst' to cell 'FDRE' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1392]
 	Parameter INIT bound to: 1'b1 
 	Parameter IS_C_INVERTED bound to: 1'b0 
 	Parameter IS_D_INVERTED bound to: 1'b0 
 	Parameter IS_R_INVERTED bound to: 1'b0 
-INFO: [Synth 8-113] binding component instance 'FDRE_BSR' to cell 'FDRE' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1408]
+INFO: [Synth 8-113] binding component instance 'FDRE_BSR' to cell 'FDRE' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1408]
 	Parameter INIT bound to: 1'b0 
 	Parameter IS_C_INVERTED bound to: 1'b0 
 	Parameter IS_D_INVERTED bound to: 1'b0 
 	Parameter IS_R_INVERTED bound to: 1'b0 
-INFO: [Synth 8-113] binding component instance 'FDRE_BSR_N' to cell 'FDRE' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1434]
+INFO: [Synth 8-113] binding component instance 'FDRE_BSR_N' to cell 'FDRE' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1434]
 	Parameter INIT bound to: 1'b1 
 	Parameter IS_C_INVERTED bound to: 1'b0 
 	Parameter IS_D_INVERTED bound to: 1'b0 
 	Parameter IS_R_INVERTED bound to: 1'b0 
-INFO: [Synth 8-113] binding component instance 'FDRE_PER' to cell 'FDRE' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1457]
+INFO: [Synth 8-113] binding component instance 'FDRE_PER' to cell 'FDRE' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1457]
 	Parameter INIT bound to: 1'b0 
 	Parameter IS_C_INVERTED bound to: 1'b0 
 	Parameter IS_D_INVERTED bound to: 1'b0 
 	Parameter IS_R_INVERTED bound to: 1'b0 
-INFO: [Synth 8-113] binding component instance 'FDRE_PER_N' to cell 'FDRE' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1481]
-INFO: [Synth 8-638] synthesizing module 'lpf' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:816]
+INFO: [Synth 8-113] binding component instance 'FDRE_PER_N' to cell 'FDRE' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1481]
+INFO: [Synth 8-638] synthesizing module 'lpf' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:816]
 	Parameter C_EXT_RST_WIDTH bound to: 4 - type: integer 
 	Parameter C_AUX_RST_WIDTH bound to: 4 - type: integer 
 	Parameter C_EXT_RESET_HIGH bound to: 1'b0 
 	Parameter C_AUX_RESET_HIGH bound to: 1'b0 
-INFO: [Synth 8-3491] module 'SRL16' declared at '/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:77949' bound to instance 'POR_SRL_I' of component 'SRL16' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:868]
+INFO: [Synth 8-3491] module 'SRL16' declared at '/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:77949' bound to instance 'POR_SRL_I' of component 'SRL16' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:868]
 INFO: [Synth 8-6157] synthesizing module 'SRL16' [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:77949]
 	Parameter INIT bound to: 16'b0000000000000000 
-INFO: [Synth 8-6155] done synthesizing module 'SRL16' (56#1) [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:77949]
-INFO: [Synth 8-638] synthesizing module 'cdc_sync' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+INFO: [Synth 8-6155] done synthesizing module 'SRL16' (66#1) [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:77949]
+INFO: [Synth 8-638] synthesizing module 'cdc_sync' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
 	Parameter C_CDC_TYPE bound to: 1 - type: integer 
 	Parameter C_RESET_STATE bound to: 0 - type: integer 
 	Parameter C_SINGLE_BIT bound to: 1 - type: integer 
@@ -1122,48 +1378,80 @@ INFO: [Synth 8-638] synthesizing module 'cdc_sync' [/home/ywang/Code/DSP/project
 	Parameter C_VECTOR_WIDTH bound to: 2 - type: integer 
 	Parameter C_MTBF_STAGES bound to: 4 - type: integer 
 	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:514]
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:514]
 	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2' to cell 'FDR' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:545]
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2' to cell 'FDR' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:545]
 	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d3' to cell 'FDR' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:554]
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d3' to cell 'FDR' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:554]
 	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d4' to cell 'FDR' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:564]
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d4' to cell 'FDR' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:564]
 	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d5' to cell 'FDR' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:574]
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d5' to cell 'FDR' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:574]
 	Parameter INIT bound to: 1'b0 
-INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d6' to cell 'FDR' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:584]
-INFO: [Synth 8-256] done synthesizing module 'cdc_sync' (57#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
-INFO: [Synth 8-256] done synthesizing module 'lpf' (58#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:816]
-INFO: [Synth 8-638] synthesizing module 'sequence_psr' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:301]
-INFO: [Synth 8-638] synthesizing module 'upcnt_n' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:125]
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d6' to cell 'FDR' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:584]
+INFO: [Synth 8-256] done synthesizing module 'cdc_sync' (67#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+INFO: [Synth 8-256] done synthesizing module 'lpf' (68#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:816]
+INFO: [Synth 8-638] synthesizing module 'sequence_psr' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:301]
+INFO: [Synth 8-638] synthesizing module 'upcnt_n' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:125]
 	Parameter C_SIZE bound to: 6 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'upcnt_n' (59#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:125]
-INFO: [Synth 8-256] done synthesizing module 'sequence_psr' (60#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:301]
-INFO: [Synth 8-256] done synthesizing module 'proc_sys_reset' (61#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1323]
-INFO: [Synth 8-256] done synthesizing module 'system_rst_0_0' (62#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_rst_0_0/synth/system_rst_0_0.vhd:74]
-WARNING: [Synth 8-7023] instance 'rst_0' of module 'system_rst_0_0' has 10 connections declared, but only 6 given [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:798]
-INFO: [Synth 8-6157] synthesizing module 'system_sig_exp_decay_0_0' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_sig_exp_decay_0_0/synth/system_sig_exp_decay_0_0.v:57]
-INFO: [Synth 8-6157] synthesizing module 'sig_exp_decay' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/0756/exp_decay.v:3]
+INFO: [Synth 8-256] done synthesizing module 'upcnt_n' (69#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:125]
+INFO: [Synth 8-256] done synthesizing module 'sequence_psr' (70#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:301]
+INFO: [Synth 8-256] done synthesizing module 'proc_sys_reset' (71#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1323]
+INFO: [Synth 8-256] done synthesizing module 'system_rst_0_0' (72#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_rst_0_0/synth/system_rst_0_0.vhd:74]
+WARNING: [Synth 8-7023] instance 'rst_0' of module 'system_rst_0_0' has 10 connections declared, but only 6 given [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:811]
+INFO: [Synth 8-6157] synthesizing module 'system_sig_exp_decay_0_0' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_sig_exp_decay_0_0/synth/system_sig_exp_decay_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'sig_exp_decay' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/0756/exp_decay.v:3]
 	Parameter DAC_WIDTH bound to: 14 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'sig_exp_decay' (63#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/0756/exp_decay.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'system_sig_exp_decay_0_0' (64#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_sig_exp_decay_0_0/synth/system_sig_exp_decay_0_0.v:57]
-INFO: [Synth 8-6157] synthesizing module 'system_slice_2_0' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_slice_2_0/synth/system_slice_2_0.v:57]
-INFO: [Synth 8-6157] synthesizing module 'port_slicer__parameterized0' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8bd6/src/port_slicer.v:4]
-	Parameter DIN_WIDTH bound to: 256 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sig_exp_decay' (73#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/0756/exp_decay.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'system_sig_exp_decay_0_0' (74#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_sig_exp_decay_0_0/synth/system_sig_exp_decay_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'system_configuration_imp_1T0V4NT' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:910]
+INFO: [Synth 8-6157] synthesizing module 'system_cfg_0_0' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_cfg_0_0/synth/system_cfg_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'axi_cfg_register' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/b7d1/src/axi_cfg_register.v:4]
+	Parameter CFG_DATA_WIDTH bound to: 4096 - type: integer 
+	Parameter AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter ADDR_LSB bound to: 2 - type: integer 
+	Parameter CFG_SIZE bound to: 128 - type: integer 
+	Parameter CFG_WIDTH bound to: 7 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'FDRE' [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:13708]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-6155] done synthesizing module 'FDRE' (75#1) [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:13708]
+INFO: [Synth 8-6155] done synthesizing module 'axi_cfg_register' (76#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/b7d1/src/axi_cfg_register.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'system_cfg_0_0' (77#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_cfg_0_0/synth/system_cfg_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'system_slice_2_0' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_slice_2_0/synth/system_slice_2_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'port_slicer__parameterized0' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8bd6/src/port_slicer.v:4]
+	Parameter DIN_WIDTH bound to: 4096 - type: integer 
 	Parameter DIN_FROM bound to: 1 - type: integer 
 	Parameter DIN_TO bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'port_slicer__parameterized0' (64#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8bd6/src/port_slicer.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'system_slice_2_0' (65#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_slice_2_0/synth/system_slice_2_0.v:57]
-INFO: [Synth 8-6157] synthesizing module 'system_slice_3_0' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_slice_3_0/synth/system_slice_3_0.v:57]
-INFO: [Synth 8-6157] synthesizing module 'port_slicer__parameterized1' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8bd6/src/port_slicer.v:4]
-	Parameter DIN_WIDTH bound to: 256 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'port_slicer__parameterized0' (77#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8bd6/src/port_slicer.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'system_slice_2_0' (78#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_slice_2_0/synth/system_slice_2_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'system_port_slicer_0_0' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_port_slicer_0_0/synth/system_port_slicer_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'port_slicer__parameterized1' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8bd6/src/port_slicer.v:4]
+	Parameter DIN_WIDTH bound to: 4096 - type: integer 
+	Parameter DIN_FROM bound to: 2047 - type: integer 
+	Parameter DIN_TO bound to: 1024 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'port_slicer__parameterized1' (78#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8bd6/src/port_slicer.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'system_port_slicer_0_0' (79#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_port_slicer_0_0/synth/system_port_slicer_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'system_port_slicer_0_1' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_port_slicer_0_1/synth/system_port_slicer_0_1.v:57]
+INFO: [Synth 8-6157] synthesizing module 'port_slicer__parameterized2' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8bd6/src/port_slicer.v:4]
+	Parameter DIN_WIDTH bound to: 4096 - type: integer 
+	Parameter DIN_FROM bound to: 3071 - type: integer 
+	Parameter DIN_TO bound to: 2048 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'port_slicer__parameterized2' (79#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8bd6/src/port_slicer.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'system_port_slicer_0_1' (80#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_port_slicer_0_1/synth/system_port_slicer_0_1.v:57]
+INFO: [Synth 8-6157] synthesizing module 'system_slice_3_0' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_slice_3_0/synth/system_slice_3_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'port_slicer__parameterized3' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8bd6/src/port_slicer.v:4]
+	Parameter DIN_WIDTH bound to: 4096 - type: integer 
 	Parameter DIN_FROM bound to: 2 - type: integer 
 	Parameter DIN_TO bound to: 2 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'port_slicer__parameterized1' (65#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8bd6/src/port_slicer.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'system_slice_3_0' (66#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_slice_3_0/synth/system_slice_3_0.v:57]
-INFO: [Synth 8-6157] synthesizing module 'system_writer_0_2' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_writer_0_2/synth/system_writer_0_2.v:57]
-INFO: [Synth 8-6157] synthesizing module 'axis_ram_writer' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/edca/src/axis_ram_writer.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'port_slicer__parameterized3' (80#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8bd6/src/port_slicer.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'system_slice_3_0' (81#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_slice_3_0/synth/system_slice_3_0.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'system_configuration_imp_1T0V4NT' (82#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:910]
+INFO: [Synth 8-6157] synthesizing module 'system_writer_0_2' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_writer_0_2/synth/system_writer_0_2.v:57]
+INFO: [Synth 8-6157] synthesizing module 'axis_ram_writer' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/edca/src/axis_ram_writer.v:4]
 	Parameter ADDR_WIDTH bound to: 24 - type: integer 
 	Parameter AXI_ID_WIDTH bound to: 6 - type: integer 
 	Parameter AXI_ADDR_WIDTH bound to: 32 - type: integer 
@@ -1189,29 +1477,28 @@ INFO: [Synth 8-6157] synthesizing module 'FIFO36E1' [/tools/Xilinx/Vivado/2019.2
 	Parameter IS_WREN_INVERTED bound to: 1'b0 
 	Parameter SIM_DEVICE bound to: 7SERIES - type: string 
 	Parameter SRVAL bound to: 72'b000000000000000000000000000000000000000000000000000000000000000000000000 
-INFO: [Synth 8-6155] done synthesizing module 'FIFO36E1' (67#1) [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:14358]
-WARNING: [Synth 8-689] width (72) of port connection 'DI' does not match port width (64) of module 'FIFO36E1' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/edca/src/axis_ram_writer.v:74]
-WARNING: [Synth 8-689] width (72) of port connection 'DO' does not match port width (64) of module 'FIFO36E1' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/edca/src/axis_ram_writer.v:77]
-WARNING: [Synth 8-7023] instance 'fifo_0' of module 'FIFO36E1' has 24 connections declared, but only 9 given [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/edca/src/axis_ram_writer.v:68]
-INFO: [Synth 8-6155] done synthesizing module 'axis_ram_writer' (68#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/edca/src/axis_ram_writer.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'system_writer_0_2' (69#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_writer_0_2/synth/system_writer_0_2.v:57]
-WARNING: [Synth 8-7023] instance 'writer_0' of module 'system_writer_0_2' has 23 connections declared, but only 22 given [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:817]
-INFO: [Synth 8-6157] synthesizing module 'system_writer_0_3' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_writer_0_3/synth/system_writer_0_3.v:57]
-INFO: [Synth 8-6157] synthesizing module 'axis_ram_writer__parameterized0' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/edca/src/axis_ram_writer.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'FIFO36E1' (83#1) [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:14358]
+WARNING: [Synth 8-689] width (72) of port connection 'DI' does not match port width (64) of module 'FIFO36E1' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/edca/src/axis_ram_writer.v:74]
+WARNING: [Synth 8-689] width (72) of port connection 'DO' does not match port width (64) of module 'FIFO36E1' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/edca/src/axis_ram_writer.v:77]
+WARNING: [Synth 8-7023] instance 'fifo_0' of module 'FIFO36E1' has 24 connections declared, but only 9 given [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/edca/src/axis_ram_writer.v:68]
+INFO: [Synth 8-6155] done synthesizing module 'axis_ram_writer' (84#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/edca/src/axis_ram_writer.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'system_writer_0_2' (85#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_writer_0_2/synth/system_writer_0_2.v:57]
+INFO: [Synth 8-6157] synthesizing module 'system_writer_0_3' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_writer_0_3/synth/system_writer_0_3.v:57]
+INFO: [Synth 8-6157] synthesizing module 'axis_ram_writer__parameterized0' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/edca/src/axis_ram_writer.v:4]
 	Parameter ADDR_WIDTH bound to: 4 - type: integer 
 	Parameter AXI_ID_WIDTH bound to: 6 - type: integer 
 	Parameter AXI_ADDR_WIDTH bound to: 32 - type: integer 
 	Parameter AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter AXIS_TDATA_WIDTH bound to: 32 - type: integer 
 	Parameter ADDR_SIZE bound to: 2 - type: integer 
-WARNING: [Synth 8-689] width (72) of port connection 'DI' does not match port width (64) of module 'FIFO36E1' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/edca/src/axis_ram_writer.v:74]
-WARNING: [Synth 8-689] width (72) of port connection 'DO' does not match port width (64) of module 'FIFO36E1' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/edca/src/axis_ram_writer.v:77]
-WARNING: [Synth 8-7023] instance 'fifo_0' of module 'FIFO36E1' has 24 connections declared, but only 9 given [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/edca/src/axis_ram_writer.v:68]
-INFO: [Synth 8-6155] done synthesizing module 'axis_ram_writer__parameterized0' (69#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/edca/src/axis_ram_writer.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'system_writer_0_3' (70#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_writer_0_3/synth/system_writer_0_3.v:57]
-WARNING: [Synth 8-7023] instance 'writer_1' of module 'system_writer_0_3' has 23 connections declared, but only 21 given [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:840]
-INFO: [Synth 8-6157] synthesizing module 'system_xlconcat_0_0' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_xlconcat_0_0/synth/system_xlconcat_0_0.v:58]
-INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat__parameterized0' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
+WARNING: [Synth 8-689] width (72) of port connection 'DI' does not match port width (64) of module 'FIFO36E1' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/edca/src/axis_ram_writer.v:74]
+WARNING: [Synth 8-689] width (72) of port connection 'DO' does not match port width (64) of module 'FIFO36E1' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/edca/src/axis_ram_writer.v:77]
+WARNING: [Synth 8-7023] instance 'fifo_0' of module 'FIFO36E1' has 24 connections declared, but only 9 given [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/edca/src/axis_ram_writer.v:68]
+INFO: [Synth 8-6155] done synthesizing module 'axis_ram_writer__parameterized0' (85#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/edca/src/axis_ram_writer.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'system_writer_0_3' (86#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_writer_0_3/synth/system_writer_0_3.v:57]
+WARNING: [Synth 8-7023] instance 'writer_1' of module 'system_writer_0_3' has 23 connections declared, but only 21 given [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:872]
+INFO: [Synth 8-6157] synthesizing module 'system_xlconcat_0_0' [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_xlconcat_0_0/synth/system_xlconcat_0_0.v:58]
+INFO: [Common 17-14] Message 'Synth 8-6157' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 	Parameter IN0_WIDTH bound to: 32 - type: integer 
 	Parameter IN1_WIDTH bound to: 32 - type: integer 
 	Parameter IN2_WIDTH bound to: 1 - type: integer 
@@ -1246,10 +1533,8 @@ INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat__parameterize
 	Parameter IN31_WIDTH bound to: 1 - type: integer 
 	Parameter dout_width bound to: 64 - type: integer 
 	Parameter NUM_PORTS bound to: 2 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_3_xlconcat__parameterized0' (70#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
-INFO: [Synth 8-6155] done synthesizing module 'system_xlconcat_0_0' (71#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_xlconcat_0_0/synth/system_xlconcat_0_0.v:58]
-INFO: [Synth 8-6157] synthesizing module 'system_xlconcat_2_0' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_xlconcat_2_0/synth/system_xlconcat_2_0.v:58]
-INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat__parameterized1' [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_3_xlconcat__parameterized0' (86#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'system_xlconcat_0_0' (87#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_xlconcat_0_0/synth/system_xlconcat_0_0.v:58]
 	Parameter IN0_WIDTH bound to: 1 - type: integer 
 	Parameter IN1_WIDTH bound to: 1 - type: integer 
 	Parameter IN2_WIDTH bound to: 1 - type: integer 
@@ -1284,13 +1569,11 @@ INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat__parameterize
 	Parameter IN31_WIDTH bound to: 1 - type: integer 
 	Parameter dout_width bound to: 8 - type: integer 
 	Parameter NUM_PORTS bound to: 8 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_3_xlconcat__parameterized1' (71#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
-INFO: [Synth 8-6155] done synthesizing module 'system_xlconcat_2_0' (72#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_xlconcat_2_0/synth/system_xlconcat_2_0.v:58]
-WARNING: [Synth 8-3848] Net adc_enc_n_o in module/entity system does not have driver. [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:372]
-WARNING: [Synth 8-3848] Net adc_enc_p_o in module/entity system does not have driver. [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:373]
-WARNING: [Synth 8-3848] Net dac_pwm_o in module/entity system does not have driver. [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:376]
-INFO: [Synth 8-6155] done synthesizing module 'system' (73#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:308]
-INFO: [Synth 8-6155] done synthesizing module 'system_wrapper' (74#1) [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/hdl/system_wrapper.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_3_xlconcat__parameterized1' (87#1) [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
+INFO: [Common 17-14] Message 'Synth 8-6155' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-3848] Net adc_enc_n_o in module/entity system does not have driver. [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:372]
+WARNING: [Synth 8-3848] Net adc_enc_p_o in module/entity system does not have driver. [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:373]
+WARNING: [Synth 8-3848] Net dac_pwm_o in module/entity system does not have driver. [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:376]
 WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized1 has unconnected port In8[0]
 WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized1 has unconnected port In9[0]
 WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized1 has unconnected port In10[0]
@@ -1347,53 +1630,53 @@ WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unco
 WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In31[0]
 WARNING: [Synth 8-3331] design axis_ram_writer__parameterized0 has unconnected port m_axi_bvalid
 WARNING: [Synth 8-3331] design axis_ram_writer has unconnected port m_axi_bvalid
-WARNING: [Synth 8-3331] design port_slicer__parameterized1 has unconnected port din[255]
-WARNING: [Synth 8-3331] design port_slicer__parameterized1 has unconnected port din[254]
-WARNING: [Synth 8-3331] design port_slicer__parameterized1 has unconnected port din[253]
-WARNING: [Synth 8-3331] design port_slicer__parameterized1 has unconnected port din[252]
-WARNING: [Synth 8-3331] design port_slicer__parameterized1 has unconnected port din[251]
-WARNING: [Synth 8-3331] design port_slicer__parameterized1 has unconnected port din[250]
-WARNING: [Synth 8-3331] design port_slicer__parameterized1 has unconnected port din[249]
-WARNING: [Synth 8-3331] design port_slicer__parameterized1 has unconnected port din[248]
-WARNING: [Synth 8-3331] design port_slicer__parameterized1 has unconnected port din[247]
-WARNING: [Synth 8-3331] design port_slicer__parameterized1 has unconnected port din[246]
-WARNING: [Synth 8-3331] design port_slicer__parameterized1 has unconnected port din[245]
-WARNING: [Synth 8-3331] design port_slicer__parameterized1 has unconnected port din[244]
-WARNING: [Synth 8-3331] design port_slicer__parameterized1 has unconnected port din[243]
-WARNING: [Synth 8-3331] design port_slicer__parameterized1 has unconnected port din[242]
-WARNING: [Synth 8-3331] design port_slicer__parameterized1 has unconnected port din[241]
-WARNING: [Synth 8-3331] design port_slicer__parameterized1 has unconnected port din[240]
-WARNING: [Synth 8-3331] design port_slicer__parameterized1 has unconnected port din[239]
-WARNING: [Synth 8-3331] design port_slicer__parameterized1 has unconnected port din[238]
-WARNING: [Synth 8-3331] design port_slicer__parameterized1 has unconnected port din[237]
-WARNING: [Synth 8-3331] design port_slicer__parameterized1 has unconnected port din[236]
-WARNING: [Synth 8-3331] design port_slicer__parameterized1 has unconnected port din[235]
-WARNING: [Synth 8-3331] design port_slicer__parameterized1 has unconnected port din[234]
-WARNING: [Synth 8-3331] design port_slicer__parameterized1 has unconnected port din[233]
-WARNING: [Synth 8-3331] design port_slicer__parameterized1 has unconnected port din[232]
-WARNING: [Synth 8-3331] design port_slicer__parameterized1 has unconnected port din[231]
-WARNING: [Synth 8-3331] design port_slicer__parameterized1 has unconnected port din[230]
-WARNING: [Synth 8-3331] design port_slicer__parameterized1 has unconnected port din[229]
-WARNING: [Synth 8-3331] design port_slicer__parameterized1 has unconnected port din[228]
-WARNING: [Synth 8-3331] design port_slicer__parameterized1 has unconnected port din[227]
-WARNING: [Synth 8-3331] design port_slicer__parameterized1 has unconnected port din[226]
-WARNING: [Synth 8-3331] design port_slicer__parameterized1 has unconnected port din[225]
-WARNING: [Synth 8-3331] design port_slicer__parameterized1 has unconnected port din[224]
-WARNING: [Synth 8-3331] design port_slicer__parameterized1 has unconnected port din[223]
-WARNING: [Synth 8-3331] design port_slicer__parameterized1 has unconnected port din[222]
-WARNING: [Synth 8-3331] design port_slicer__parameterized1 has unconnected port din[221]
-WARNING: [Synth 8-3331] design port_slicer__parameterized1 has unconnected port din[220]
-WARNING: [Synth 8-3331] design port_slicer__parameterized1 has unconnected port din[219]
-WARNING: [Synth 8-3331] design port_slicer__parameterized1 has unconnected port din[218]
-WARNING: [Synth 8-3331] design port_slicer__parameterized1 has unconnected port din[217]
-WARNING: [Synth 8-3331] design port_slicer__parameterized1 has unconnected port din[216]
-WARNING: [Synth 8-3331] design port_slicer__parameterized1 has unconnected port din[215]
-WARNING: [Synth 8-3331] design port_slicer__parameterized1 has unconnected port din[214]
-WARNING: [Synth 8-3331] design port_slicer__parameterized1 has unconnected port din[213]
-WARNING: [Synth 8-3331] design port_slicer__parameterized1 has unconnected port din[212]
+WARNING: [Synth 8-3331] design port_slicer__parameterized3 has unconnected port din[4095]
+WARNING: [Synth 8-3331] design port_slicer__parameterized3 has unconnected port din[4094]
+WARNING: [Synth 8-3331] design port_slicer__parameterized3 has unconnected port din[4093]
+WARNING: [Synth 8-3331] design port_slicer__parameterized3 has unconnected port din[4092]
+WARNING: [Synth 8-3331] design port_slicer__parameterized3 has unconnected port din[4091]
+WARNING: [Synth 8-3331] design port_slicer__parameterized3 has unconnected port din[4090]
+WARNING: [Synth 8-3331] design port_slicer__parameterized3 has unconnected port din[4089]
+WARNING: [Synth 8-3331] design port_slicer__parameterized3 has unconnected port din[4088]
+WARNING: [Synth 8-3331] design port_slicer__parameterized3 has unconnected port din[4087]
+WARNING: [Synth 8-3331] design port_slicer__parameterized3 has unconnected port din[4086]
+WARNING: [Synth 8-3331] design port_slicer__parameterized3 has unconnected port din[4085]
+WARNING: [Synth 8-3331] design port_slicer__parameterized3 has unconnected port din[4084]
+WARNING: [Synth 8-3331] design port_slicer__parameterized3 has unconnected port din[4083]
+WARNING: [Synth 8-3331] design port_slicer__parameterized3 has unconnected port din[4082]
+WARNING: [Synth 8-3331] design port_slicer__parameterized3 has unconnected port din[4081]
+WARNING: [Synth 8-3331] design port_slicer__parameterized3 has unconnected port din[4080]
+WARNING: [Synth 8-3331] design port_slicer__parameterized3 has unconnected port din[4079]
+WARNING: [Synth 8-3331] design port_slicer__parameterized3 has unconnected port din[4078]
+WARNING: [Synth 8-3331] design port_slicer__parameterized3 has unconnected port din[4077]
+WARNING: [Synth 8-3331] design port_slicer__parameterized3 has unconnected port din[4076]
+WARNING: [Synth 8-3331] design port_slicer__parameterized3 has unconnected port din[4075]
+WARNING: [Synth 8-3331] design port_slicer__parameterized3 has unconnected port din[4074]
+WARNING: [Synth 8-3331] design port_slicer__parameterized3 has unconnected port din[4073]
+WARNING: [Synth 8-3331] design port_slicer__parameterized3 has unconnected port din[4072]
+WARNING: [Synth 8-3331] design port_slicer__parameterized3 has unconnected port din[4071]
+WARNING: [Synth 8-3331] design port_slicer__parameterized3 has unconnected port din[4070]
+WARNING: [Synth 8-3331] design port_slicer__parameterized3 has unconnected port din[4069]
+WARNING: [Synth 8-3331] design port_slicer__parameterized3 has unconnected port din[4068]
+WARNING: [Synth 8-3331] design port_slicer__parameterized3 has unconnected port din[4067]
+WARNING: [Synth 8-3331] design port_slicer__parameterized3 has unconnected port din[4066]
+WARNING: [Synth 8-3331] design port_slicer__parameterized3 has unconnected port din[4065]
+WARNING: [Synth 8-3331] design port_slicer__parameterized3 has unconnected port din[4064]
+WARNING: [Synth 8-3331] design port_slicer__parameterized3 has unconnected port din[4063]
+WARNING: [Synth 8-3331] design port_slicer__parameterized3 has unconnected port din[4062]
+WARNING: [Synth 8-3331] design port_slicer__parameterized3 has unconnected port din[4061]
+WARNING: [Synth 8-3331] design port_slicer__parameterized3 has unconnected port din[4060]
+WARNING: [Synth 8-3331] design port_slicer__parameterized3 has unconnected port din[4059]
+WARNING: [Synth 8-3331] design port_slicer__parameterized3 has unconnected port din[4058]
+WARNING: [Synth 8-3331] design port_slicer__parameterized3 has unconnected port din[4057]
+WARNING: [Synth 8-3331] design port_slicer__parameterized3 has unconnected port din[4056]
+WARNING: [Synth 8-3331] design port_slicer__parameterized3 has unconnected port din[4055]
+WARNING: [Synth 8-3331] design port_slicer__parameterized3 has unconnected port din[4054]
+WARNING: [Synth 8-3331] design port_slicer__parameterized3 has unconnected port din[4053]
+WARNING: [Synth 8-3331] design port_slicer__parameterized3 has unconnected port din[4052]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:16 ; elapsed = 00:00:29 . Memory (MB): peak = 2055.348 ; gain = 373.465 ; free physical = 929 ; free virtual = 12295
+Finished RTL Elaboration : Time (s): cpu = 00:00:24 ; elapsed = 00:00:39 . Memory (MB): peak = 2113.406 ; gain = 429.465 ; free physical = 1616 ; free virtual = 12860
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1406,32 +1689,32 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:29 . Memory (MB): peak = 2064.254 ; gain = 382.371 ; free physical = 913 ; free virtual = 12279
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:41 . Memory (MB): peak = 2122.312 ; gain = 438.371 ; free physical = 1639 ; free virtual = 12884
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:29 . Memory (MB): peak = 2064.254 ; gain = 382.371 ; free physical = 913 ; free virtual = 12279
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:25 ; elapsed = 00:00:41 . Memory (MB): peak = 2122.312 ; gain = 438.371 ; free physical = 1639 ; free virtual = 12884
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.07 . Memory (MB): peak = 2070.191 ; gain = 0.000 ; free physical = 905 ; free virtual = 12271
+Netlist sorting complete. Time (s): cpu = 00:00:00.18 ; elapsed = 00:00:00.18 . Memory (MB): peak = 2122.312 ; gain = 0.000 ; free physical = 1618 ; free virtual = 12863
 INFO: [Netlist 29-17] Analyzing 36 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/system_ps_0_2.xdc] for cell 'system_i/ps_0/inst'
-Finished Parsing XDC File [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/system_ps_0_2.xdc] for cell 'system_i/ps_0/inst'
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/system_ps_0_2.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/system_wrapper_propImpl.xdc].
+Parsing XDC File [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/system_ps_0_2.xdc] for cell 'system_i/ps_0/inst'
+Finished Parsing XDC File [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/system_ps_0_2.xdc] for cell 'system_i/ps_0/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/system_ps_0_2.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/system_wrapper_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/system_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Parsing XDC File [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0_board.xdc] for cell 'system_i/pll_0/inst'
-Finished Parsing XDC File [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0_board.xdc] for cell 'system_i/pll_0/inst'
-Parsing XDC File [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0.xdc] for cell 'system_i/pll_0/inst'
-Finished Parsing XDC File [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0.xdc] for cell 'system_i/pll_0/inst'
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/system_wrapper_propImpl.xdc].
+Parsing XDC File [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0_board.xdc] for cell 'system_i/pll_0/inst'
+Finished Parsing XDC File [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0_board.xdc] for cell 'system_i/pll_0/inst'
+Parsing XDC File [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0.xdc] for cell 'system_i/pll_0/inst'
+Finished Parsing XDC File [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0.xdc] for cell 'system_i/pll_0/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/system_wrapper_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/system_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Parsing XDC File [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_rst_0_0/system_rst_0_0_board.xdc] for cell 'system_i/rst_0/U0'
-Finished Parsing XDC File [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_rst_0_0/system_rst_0_0_board.xdc] for cell 'system_i/rst_0/U0'
-Parsing XDC File [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_rst_0_0/system_rst_0_0.xdc] for cell 'system_i/rst_0/U0'
-Finished Parsing XDC File [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_rst_0_0/system_rst_0_0.xdc] for cell 'system_i/rst_0/U0'
+Parsing XDC File [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_rst_0_0/system_rst_0_0_board.xdc] for cell 'system_i/rst_0/U0'
+Finished Parsing XDC File [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_rst_0_0/system_rst_0_0_board.xdc] for cell 'system_i/rst_0/U0'
+Parsing XDC File [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_rst_0_0/system_rst_0_0.xdc] for cell 'system_i/rst_0/U0'
+Finished Parsing XDC File [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_rst_0_0/system_rst_0_0.xdc] for cell 'system_i/rst_0/U0'
 INFO: [Timing 38-2] Deriving generated clocks
 Parsing XDC File [/home/ywang/Code/red-pitaya-notes/cfg/ports.xdc]
 WARNING: [Vivado 12-584] No ports matched 'Vp_Vn_v_p'. [/home/ywang/Code/red-pitaya-notes/cfg/ports.xdc:123]
@@ -1472,35 +1755,35 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/system_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Parsing XDC File [/home/ywang/Code/red-pitaya-notes/cfg/clocks.xdc]
 Finished Parsing XDC File [/home/ywang/Code/red-pitaya-notes/cfg/clocks.xdc]
-Parsing XDC File [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.runs/synth_1/dont_touch.xdc]
-Finished Parsing XDC File [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.runs/synth_1/dont_touch.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.runs/synth_1/dont_touch.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/system_wrapper_propImpl.xdc].
+Parsing XDC File [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.runs/synth_1/dont_touch.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.runs/synth_1/dont_touch.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/system_wrapper_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/system_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2111.113 ; gain = 0.000 ; free physical = 828 ; free virtual = 12194
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2160.266 ; gain = 0.000 ; free physical = 1488 ; free virtual = 12750
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 13 instances were transformed.
   FDR => FDRE: 12 instances
   SRL16 => SRL16E: 1 instance 
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2111.113 ; gain = 0.000 ; free physical = 828 ; free virtual = 12194
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.08 . Memory (MB): peak = 2160.266 ; gain = 0.000 ; free physical = 1488 ; free virtual = 12750
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:24 ; elapsed = 00:00:38 . Memory (MB): peak = 2111.113 ; gain = 429.230 ; free physical = 913 ; free virtual = 12279
+Finished Constraint Validation : Time (s): cpu = 00:00:35 ; elapsed = 00:00:53 . Memory (MB): peak = 2160.266 ; gain = 476.324 ; free physical = 1604 ; free virtual = 12867
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:24 ; elapsed = 00:00:38 . Memory (MB): peak = 2111.113 ; gain = 429.230 ; free physical = 913 ; free virtual = 12279
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:35 ; elapsed = 00:00:53 . Memory (MB): peak = 2160.266 ; gain = 476.324 ; free physical = 1604 ; free virtual = 12866
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property DONT_TOUCH = true for system_i/ps_0/inst. (constraint file  /home/ywang/Code/DSP/project/adc_recorder/adc_recorder.runs/synth_1/dont_touch.xdc, line 81).
-Applied set_property DONT_TOUCH = true for system_i/pll_0/inst. (constraint file  /home/ywang/Code/DSP/project/adc_recorder/adc_recorder.runs/synth_1/dont_touch.xdc, line 86).
-Applied set_property DONT_TOUCH = true for system_i/rst_0/U0. (constraint file  /home/ywang/Code/DSP/project/adc_recorder/adc_recorder.runs/synth_1/dont_touch.xdc, line 94).
+Applied set_property DONT_TOUCH = true for system_i/ps_0/inst. (constraint file  /home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.runs/synth_1/dont_touch.xdc, line 96).
+Applied set_property DONT_TOUCH = true for system_i/pll_0/inst. (constraint file  /home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.runs/synth_1/dont_touch.xdc, line 101).
+Applied set_property DONT_TOUCH = true for system_i/rst_0/U0. (constraint file  /home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.runs/synth_1/dont_touch.xdc, line 109).
 Applied set_property DONT_TOUCH = true for system_i. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/Waveform_Offset_Addr. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/ps_0. (constraint file  auto generated constraint, line ).
@@ -1510,7 +1793,7 @@ Applied set_property DONT_TOUCH = true for system_i/Waveform_Offset_Addr1. (cons
 Applied set_property DONT_TOUCH = true for system_i/adc_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/axis_red_pitaya_dac_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/c_counter_binary_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for system_i/cfg_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/system_configuration/cfg_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/concat_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/const_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/not_0. (constraint file  auto generated constraint, line ).
@@ -1520,14 +1803,20 @@ Applied set_property DONT_TOUCH = true for system_i/ps_0_axi_periph. (constraint
 Applied set_property DONT_TOUCH = true for system_i/pulse_gen_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/rst_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/sig_exp_decay_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for system_i/slice_2. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for system_i/slice_3. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/system_configuration/filter_reset. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/system_configuration/writer_reset. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/xlconcat_2. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/xlconcat_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/fir_poly_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/system_configuration/port_slicer_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/system_configuration/port_slicer_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/axis_broadcaster_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/axis_combiner_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/ps_0_axi_periph/s00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:38 . Memory (MB): peak = 2111.113 ; gain = 429.230 ; free physical = 913 ; free virtual = 12279
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:36 ; elapsed = 00:00:53 . Memory (MB): peak = 2160.266 ; gain = 476.324 ; free physical = 1604 ; free virtual = 12867
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 2 [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/3d46/macc_sum.v:36]
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'axi_protocol_converter_v2_1_20_b2s_rd_cmd_fsm'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
@@ -1539,8 +1828,9 @@ INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'axi_p
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'axi_protocol_converter_v2_1_20_b2s_rd_cmd_fsm'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:26 ; elapsed = 00:00:40 . Memory (MB): peak = 2111.113 ; gain = 429.230 ; free physical = 904 ; free virtual = 12272
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:43 ; elapsed = 00:01:01 . Memory (MB): peak = 2160.266 ; gain = 476.324 ; free physical = 1577 ; free virtual = 12842
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-223] decloning instance 'system_i/axis_broadcaster_0/inst/broadcaster_core/MI_SLOT[0].util_vector2axis' (axis_infrastructure_v1_1_0_util_vector2axis) to 'system_i/axis_broadcaster_0/inst/broadcaster_core/MI_SLOT[1].util_vector2axis'
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -1572,8 +1862,10 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-INFO: [Synth 8-3936] Found unconnected internal register 'inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw.aw_pipe/m_payload_i_reg' and it is trimmed from '66' to '62' bits. [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1709]
-INFO: [Synth 8-3936] Found unconnected internal register 'inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/ar.ar_pipe/m_payload_i_reg' and it is trimmed from '66' to '62' bits. [/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1709]
+INFO: [Synth 8-3936] Found unconnected internal register 'inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw.aw_pipe/m_payload_i_reg' and it is trimmed from '66' to '62' bits. [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1709]
+INFO: [Synth 8-3936] Found unconnected internal register 'inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/ar.ar_pipe/m_payload_i_reg' and it is trimmed from '66' to '62' bits. [/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1709]
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/axis_broadcaster_0/\inst/broadcaster_core/m_ready_d_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/axis_broadcaster_0/\inst/broadcaster_core/m_ready_d_reg[1] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[0][6] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[0][7] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[0][4] )
@@ -1595,7 +1887,7 @@ WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GE
 WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d5) is unused and will be removed from module proc_sys_reset.
 WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d6) is unused and will be removed from module proc_sys_reset.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:44 . Memory (MB): peak = 2135.129 ; gain = 453.246 ; free physical = 879 ; free virtual = 12252
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:57 ; elapsed = 00:01:16 . Memory (MB): peak = 2192.289 ; gain = 508.348 ; free physical = 1550 ; free virtual = 12826
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1607,13 +1899,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:37 ; elapsed = 00:00:53 . Memory (MB): peak = 2244.129 ; gain = 562.246 ; free physical = 581 ; free virtual = 11954
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:06 ; elapsed = 00:01:27 . Memory (MB): peak = 2294.289 ; gain = 610.348 ; free physical = 1226 ; free virtual = 12509
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:39 ; elapsed = 00:00:56 . Memory (MB): peak = 2309.168 ; gain = 627.285 ; free physical = 537 ; free virtual = 11910
+Finished Timing Optimization : Time (s): cpu = 00:01:12 ; elapsed = 00:01:33 . Memory (MB): peak = 2363.336 ; gain = 679.395 ; free physical = 1164 ; free virtual = 12448
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1624,8 +1916,9 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/axis_combiner_0/\inst/m_ready_d_reg )
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:41 ; elapsed = 00:00:58 . Memory (MB): peak = 2309.168 ; gain = 627.285 ; free physical = 538 ; free virtual = 11911
+Finished Technology Mapping : Time (s): cpu = 00:01:19 ; elapsed = 00:01:41 . Memory (MB): peak = 2371.344 ; gain = 687.402 ; free physical = 1182 ; free virtual = 12465
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1649,13 +1942,13 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:45 ; elapsed = 00:01:02 . Memory (MB): peak = 2313.137 ; gain = 631.254 ; free physical = 538 ; free virtual = 11910
+Finished IO Insertion : Time (s): cpu = 00:01:24 ; elapsed = 00:01:45 . Memory (MB): peak = 2377.281 ; gain = 693.340 ; free physical = 1182 ; free virtual = 12465
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:45 ; elapsed = 00:01:02 . Memory (MB): peak = 2313.137 ; gain = 631.254 ; free physical = 538 ; free virtual = 11910
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:24 ; elapsed = 00:01:45 . Memory (MB): peak = 2377.281 ; gain = 693.340 ; free physical = 1182 ; free virtual = 12465
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1674,25 +1967,25 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:45 ; elapsed = 00:01:02 . Memory (MB): peak = 2313.137 ; gain = 631.254 ; free physical = 538 ; free virtual = 11910
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:24 ; elapsed = 00:01:46 . Memory (MB): peak = 2377.281 ; gain = 693.340 ; free physical = 1182 ; free virtual = 12466
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:45 ; elapsed = 00:01:02 . Memory (MB): peak = 2313.137 ; gain = 631.254 ; free physical = 538 ; free virtual = 11910
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:24 ; elapsed = 00:01:46 . Memory (MB): peak = 2377.281 ; gain = 693.340 ; free physical = 1182 ; free virtual = 12466
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:45 ; elapsed = 00:01:02 . Memory (MB): peak = 2313.137 ; gain = 631.254 ; free physical = 538 ; free virtual = 11910
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:24 ; elapsed = 00:01:46 . Memory (MB): peak = 2377.281 ; gain = 693.340 ; free physical = 1182 ; free virtual = 12466
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:45 ; elapsed = 00:01:02 . Memory (MB): peak = 2313.137 ; gain = 631.254 ; free physical = 538 ; free virtual = 11910
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:24 ; elapsed = 00:01:46 . Memory (MB): peak = 2377.281 ; gain = 693.340 ; free physical = 1182 ; free virtual = 12466
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1710,54 +2003,61 @@ Report Cell Usage:
 +------+----------+------+
 |1     |BIBUF     |   130|
 |2     |BUFG      |     4|
-|3     |CARRY4    |    70|
+|3     |CARRY4    |   150|
 |4     |DSP48E1   |     1|
-|5     |FIFO36E1  |     2|
-|6     |LUT1      |   238|
-|7     |LUT2      |    67|
-|8     |LUT3      |   336|
-|9     |LUT4      |    43|
-|10    |LUT5      |    99|
-|11    |LUT6      |   237|
-|12    |MUXF7     |    32|
-|13    |ODDR      |    18|
-|14    |PLLE2_ADV |     1|
-|15    |PS7       |     1|
-|16    |SRL16     |     1|
-|17    |SRLC32E   |    47|
-|18    |FDR       |     8|
-|19    |FDRE      |  1154|
-|20    |FDSE      |    23|
-|21    |IBUF      |    36|
-|22    |IBUFDS    |     1|
-|23    |OBUF      |    35|
-|24    |OBUFT     |     6|
+|5     |DSP48E1_2 |     1|
+|6     |DSP48E1_3 |     4|
+|7     |DSP48E1_4 |     1|
+|8     |DSP48E1_5 |     2|
+|9     |FIFO36E1  |     2|
+|10    |LUT1      |   244|
+|11    |LUT2      |   825|
+|12    |LUT3      |   364|
+|13    |LUT4      |    47|
+|14    |LUT5      |   101|
+|15    |LUT6      |  1452|
+|16    |MUXF7     |   544|
+|17    |MUXF8     |   256|
+|18    |ODDR      |    18|
+|19    |PLLE2_ADV |     1|
+|20    |PS7       |     1|
+|21    |RAM32M    |     3|
+|22    |SRL16     |     1|
+|23    |SRLC32E   |    47|
+|24    |FDR       |     8|
+|25    |FDRE      |  5327|
+|26    |FDSE      |    23|
+|27    |IBUF      |    36|
+|28    |IBUFDS    |     1|
+|29    |OBUF      |    35|
+|30    |OBUFT     |     6|
 +------+----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:45 ; elapsed = 00:01:02 . Memory (MB): peak = 2313.137 ; gain = 631.254 ; free physical = 538 ; free virtual = 11910
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:24 ; elapsed = 00:01:46 . Memory (MB): peak = 2377.281 ; gain = 693.340 ; free physical = 1182 ; free virtual = 12466
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 703 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:42 ; elapsed = 00:00:58 . Memory (MB): peak = 2313.137 ; gain = 584.395 ; free physical = 610 ; free virtual = 11983
-Synthesis Optimization Complete : Time (s): cpu = 00:00:45 ; elapsed = 00:01:02 . Memory (MB): peak = 2313.145 ; gain = 631.254 ; free physical = 610 ; free virtual = 11983
+Synthesis finished with 0 errors, 0 critical warnings and 14684 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:19 ; elapsed = 00:01:41 . Memory (MB): peak = 2377.281 ; gain = 655.387 ; free physical = 1254 ; free virtual = 12538
+Synthesis Optimization Complete : Time (s): cpu = 00:01:25 ; elapsed = 00:01:46 . Memory (MB): peak = 2377.289 ; gain = 693.340 ; free physical = 1254 ; free virtual = 12538
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2313.145 ; gain = 0.000 ; free physical = 680 ; free virtual = 12052
-INFO: [Netlist 29-17] Analyzing 134 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00.17 ; elapsed = 00:00:00.17 . Memory (MB): peak = 2377.289 ; gain = 0.000 ; free physical = 1319 ; free virtual = 12605
+INFO: [Netlist 29-17] Analyzing 993 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2313.145 ; gain = 0.000 ; free physical = 619 ; free virtual = 11992
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2377.289 ; gain = 0.000 ; free physical = 1260 ; free virtual = 12547
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 9 instances were transformed.
+  A total of 12 instances were transformed.
   FDR => FDRE: 8 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 3 instances
   SRL16 => SRL16E: 1 instance 
 
 INFO: [Common 17-83] Releasing license: Synthesis
-236 Infos, 159 Warnings, 0 Critical Warnings and 0 Errors encountered.
+281 Infos, 159 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:53 ; elapsed = 00:01:12 . Memory (MB): peak = 2313.145 ; gain = 845.633 ; free physical = 920 ; free virtual = 12293
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2313.145 ; gain = 0.000 ; free physical = 920 ; free virtual = 12293
+synth_design: Time (s): cpu = 00:01:35 ; elapsed = 00:01:59 . Memory (MB): peak = 2377.289 ; gain = 909.781 ; free physical = 1582 ; free virtual = 12869
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2377.289 ; gain = 0.000 ; free physical = 1583 ; free virtual = 12870
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint '/home/ywang/Code/DSP/project/adc_recorder/adc_recorder.runs/synth_1/system_wrapper.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint '/home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.runs/synth_1/system_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file system_wrapper_utilization_synth.rpt -pb system_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Jun 28 17:23:28 2021...
+INFO: [Common 17-206] Exiting Vivado at Thu Jul  1 11:25:37 2021...

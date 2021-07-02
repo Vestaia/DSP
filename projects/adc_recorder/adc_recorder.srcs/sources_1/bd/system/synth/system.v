@@ -1,7 +1,7 @@
 //Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-//Date        : Mon Jun 28 17:22:01 2021
+//Date        : Thu Jul  1 11:21:05 2021
 //Host        : evermist running 64-bit Ubuntu 18.04.4 LTS
 //Command     : generate_target system.bd
 //Design      : system
@@ -304,7 +304,7 @@ module s00_couplers_imp_1OVXGTK
         .s_axi_wvalid(s00_couplers_to_auto_pc_WVALID));
 endmodule
 
-(* CORE_GENERATION_INFO = "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=24,numReposBlks=22,numNonXlnxBlks=10,numHierBlks=2,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,synth_mode=Global}" *) (* HW_HANDOFF = "system.hwdef" *) 
+(* CORE_GENERATION_INFO = "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=30,numReposBlks=27,numNonXlnxBlks=13,numHierBlks=3,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,synth_mode=Global}" *) (* HW_HANDOFF = "system.hwdef" *) 
 module system
    (DDR_addr,
     DDR_ba,
@@ -382,22 +382,30 @@ module system
   output [7:0]led_o;
 
   wire [31:0]Waveform_Offset_Addr1_dout;
+  wire [31:0]adc_0_M_AXIS_TDATA;
+  wire adc_0_M_AXIS_TVALID;
   wire adc_0_adc_csn;
-  wire [31:0]adc_0_m_axis_tdata;
   wire adc_clk_n_i_1;
   wire adc_clk_p_i_1;
   wire [13:0]adc_dat_a_i_1;
   wire [13:0]adc_dat_b_i_1;
+  wire [15:0]axis_broadcaster_0_M00_AXIS_TDATA;
+  wire [0:0]axis_broadcaster_0_M00_AXIS_TVALID;
+  wire [31:16]axis_broadcaster_0_M01_AXIS_TDATA;
+  wire [1:1]axis_broadcaster_0_M01_AXIS_TVALID;
+  wire axis_combiner_0_M_AXIS_TREADY;
+  wire [31:0]axis_combiner_0_m_axis_tdata;
   wire axis_red_pitaya_dac_0_dac_clk;
   wire [13:0]axis_red_pitaya_dac_0_dac_dat;
   wire axis_red_pitaya_dac_0_dac_rst;
   wire axis_red_pitaya_dac_0_dac_sel;
   wire axis_red_pitaya_dac_0_dac_wrt;
   wire [47:0]c_counter_binary_0_Q;
-  wire [255:0]cfg_0_cfg_data;
   wire [7:0]concat_0_dout;
   wire [0:0]const_0_dout;
   wire [31:0]const_1_dout;
+  wire [15:0]fir_poly_0_m_axis_TDATA;
+  wire fir_poly_0_m_axis_TVALID;
   wire [0:0]not_0_Res;
   wire pll_0_clk_out1;
   wire pll_0_clk_out2;
@@ -485,6 +493,8 @@ module system
   wire sig_exp_decay_0_M_AXIS_TVALID;
   wire [0:0]slice_2_dout;
   wire [0:0]slice_3_dout;
+  wire [1023:0]system_configuration_dout2;
+  wire [1023:0]system_configuration_dout3;
   wire [31:0]writer_0_M_AXI_AWADDR;
   wire [1:0]writer_0_M_AXI_AWBURST;
   wire [3:0]writer_0_M_AXI_AWCACHE;
@@ -542,7 +552,22 @@ module system
         .adc_csn(adc_0_adc_csn),
         .adc_dat_a(adc_dat_a_i_1),
         .adc_dat_b(adc_dat_b_i_1),
-        .m_axis_tdata(adc_0_m_axis_tdata));
+        .m_axis_tdata(adc_0_M_AXIS_TDATA),
+        .m_axis_tvalid(adc_0_M_AXIS_TVALID));
+  system_axis_broadcaster_0_0 axis_broadcaster_0
+       (.aclk(pll_0_clk_out1),
+        .aresetn(slice_2_dout),
+        .m_axis_tdata({axis_broadcaster_0_M01_AXIS_TDATA,axis_broadcaster_0_M00_AXIS_TDATA}),
+        .m_axis_tvalid({axis_broadcaster_0_M01_AXIS_TVALID,axis_broadcaster_0_M00_AXIS_TVALID}),
+        .s_axis_tdata(adc_0_M_AXIS_TDATA),
+        .s_axis_tvalid(adc_0_M_AXIS_TVALID));
+  system_axis_combiner_0_0 axis_combiner_0
+       (.aclk(pll_0_clk_out1),
+        .aresetn(slice_2_dout),
+        .m_axis_tdata(axis_combiner_0_m_axis_tdata),
+        .m_axis_tready(axis_combiner_0_M_AXIS_TREADY),
+        .s_axis_tdata({fir_poly_0_m_axis_TDATA,axis_broadcaster_0_M01_AXIS_TDATA}),
+        .s_axis_tvalid({fir_poly_0_m_axis_TVALID,axis_broadcaster_0_M01_AXIS_TVALID}));
   system_axis_red_pitaya_dac_0_0 axis_red_pitaya_dac_0
        (.aclk(pll_0_clk_out1),
         .dac_clk(axis_red_pitaya_dac_0_dac_clk),
@@ -557,33 +582,21 @@ module system
   system_c_counter_binary_0_0 c_counter_binary_0
        (.CLK(pll_0_clk_out1),
         .Q(c_counter_binary_0_Q));
-  system_cfg_0_0 cfg_0
-       (.aclk(pll_0_clk_out1),
-        .aresetn(rst_0_peripheral_aresetn),
-        .cfg_data(cfg_0_cfg_data),
-        .s_axi_araddr(ps_0_axi_periph_M00_AXI_ARADDR),
-        .s_axi_arready(ps_0_axi_periph_M00_AXI_ARREADY),
-        .s_axi_arvalid(ps_0_axi_periph_M00_AXI_ARVALID),
-        .s_axi_awaddr(ps_0_axi_periph_M00_AXI_AWADDR),
-        .s_axi_awready(ps_0_axi_periph_M00_AXI_AWREADY),
-        .s_axi_awvalid(ps_0_axi_periph_M00_AXI_AWVALID),
-        .s_axi_bready(ps_0_axi_periph_M00_AXI_BREADY),
-        .s_axi_bresp(ps_0_axi_periph_M00_AXI_BRESP),
-        .s_axi_bvalid(ps_0_axi_periph_M00_AXI_BVALID),
-        .s_axi_rdata(ps_0_axi_periph_M00_AXI_RDATA),
-        .s_axi_rready(ps_0_axi_periph_M00_AXI_RREADY),
-        .s_axi_rresp(ps_0_axi_periph_M00_AXI_RRESP),
-        .s_axi_rvalid(ps_0_axi_periph_M00_AXI_RVALID),
-        .s_axi_wdata(ps_0_axi_periph_M00_AXI_WDATA),
-        .s_axi_wready(ps_0_axi_periph_M00_AXI_WREADY),
-        .s_axi_wstrb(ps_0_axi_periph_M00_AXI_WSTRB),
-        .s_axi_wvalid(ps_0_axi_periph_M00_AXI_WVALID));
   system_concat_0_0 concat_0
        (.In0(not_0_Res),
         .In1({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .dout(concat_0_dout));
   system_const_0_0 const_0
        (.dout(const_0_dout));
+  system_fir_poly_0_0 fir_poly_0
+       (.aclk(pll_0_clk_out1),
+        .aresetn(slice_2_dout),
+        .coef_flat(system_configuration_dout2[255:0]),
+        .delay_flat(system_configuration_dout3[15:0]),
+        .m_axis_tdata(fir_poly_0_m_axis_TDATA),
+        .m_axis_tvalid(fir_poly_0_m_axis_TVALID),
+        .s_axis_tdata(axis_broadcaster_0_M00_AXIS_TDATA),
+        .s_axis_tvalid(axis_broadcaster_0_M00_AXIS_TVALID));
   system_not_0_0 not_0
        (.Op1(slice_2_dout),
         .Res(not_0_Res));
@@ -808,12 +821,30 @@ module system
         .m_axis_tvalid(sig_exp_decay_0_M_AXIS_TVALID),
         .rst(slice_2_dout),
         .trigger(pulse_gen_0_pulse));
-  system_slice_2_0 slice_2
-       (.din(cfg_0_cfg_data),
-        .dout(slice_2_dout));
-  system_slice_3_0 slice_3
-       (.din(cfg_0_cfg_data),
-        .dout(slice_3_dout));
+  system_configuration_imp_1T0V4NT system_configuration
+       (.S_AXI_araddr(ps_0_axi_periph_M00_AXI_ARADDR),
+        .S_AXI_arready(ps_0_axi_periph_M00_AXI_ARREADY),
+        .S_AXI_arvalid(ps_0_axi_periph_M00_AXI_ARVALID),
+        .S_AXI_awaddr(ps_0_axi_periph_M00_AXI_AWADDR),
+        .S_AXI_awready(ps_0_axi_periph_M00_AXI_AWREADY),
+        .S_AXI_awvalid(ps_0_axi_periph_M00_AXI_AWVALID),
+        .S_AXI_bready(ps_0_axi_periph_M00_AXI_BREADY),
+        .S_AXI_bresp(ps_0_axi_periph_M00_AXI_BRESP),
+        .S_AXI_bvalid(ps_0_axi_periph_M00_AXI_BVALID),
+        .S_AXI_rdata(ps_0_axi_periph_M00_AXI_RDATA),
+        .S_AXI_rready(ps_0_axi_periph_M00_AXI_RREADY),
+        .S_AXI_rresp(ps_0_axi_periph_M00_AXI_RRESP),
+        .S_AXI_rvalid(ps_0_axi_periph_M00_AXI_RVALID),
+        .S_AXI_wdata(ps_0_axi_periph_M00_AXI_WDATA),
+        .S_AXI_wready(ps_0_axi_periph_M00_AXI_WREADY),
+        .S_AXI_wstrb(ps_0_axi_periph_M00_AXI_WSTRB),
+        .S_AXI_wvalid(ps_0_axi_periph_M00_AXI_WVALID),
+        .aclk(pll_0_clk_out1),
+        .aresetn(rst_0_peripheral_aresetn),
+        .dout(slice_3_dout),
+        .dout1(slice_2_dout),
+        .dout2(system_configuration_dout2),
+        .dout3(system_configuration_dout3));
   system_writer_0_2 writer_0
        (.aclk(pll_0_clk_out1),
         .aresetn(slice_3_dout),
@@ -835,6 +866,7 @@ module system
         .m_axi_wstrb(writer_0_M_AXI_WSTRB),
         .m_axi_wvalid(writer_0_M_AXI_WVALID),
         .s_axis_tdata(xlconcat_0_dout),
+        .s_axis_tready(axis_combiner_0_M_AXIS_TREADY),
         .s_axis_tvalid(slice_2_dout),
         .sts_data(writer_0_sts_data));
   system_writer_0_3 writer_1
@@ -861,7 +893,7 @@ module system
         .s_axis_tvalid(slice_2_dout));
   system_xlconcat_0_0 xlconcat_0
        (.In0(c_counter_binary_0_Q[31:0]),
-        .In1(adc_0_m_axis_tdata),
+        .In1(axis_combiner_0_m_axis_tdata),
         .dout(xlconcat_0_dout));
   system_xlconcat_2_0 xlconcat_2
        (.In0(1'b0),
@@ -873,6 +905,137 @@ module system
         .In6(1'b0),
         .In7(1'b0),
         .dout(xlconcat_2_dout));
+endmodule
+
+module system_configuration_imp_1T0V4NT
+   (S_AXI_araddr,
+    S_AXI_arready,
+    S_AXI_arvalid,
+    S_AXI_awaddr,
+    S_AXI_awready,
+    S_AXI_awvalid,
+    S_AXI_bready,
+    S_AXI_bresp,
+    S_AXI_bvalid,
+    S_AXI_rdata,
+    S_AXI_rready,
+    S_AXI_rresp,
+    S_AXI_rvalid,
+    S_AXI_wdata,
+    S_AXI_wready,
+    S_AXI_wstrb,
+    S_AXI_wvalid,
+    aclk,
+    aresetn,
+    dout,
+    dout1,
+    dout2,
+    dout3);
+  input [31:0]S_AXI_araddr;
+  output S_AXI_arready;
+  input S_AXI_arvalid;
+  input [31:0]S_AXI_awaddr;
+  output S_AXI_awready;
+  input S_AXI_awvalid;
+  input S_AXI_bready;
+  output [1:0]S_AXI_bresp;
+  output S_AXI_bvalid;
+  output [31:0]S_AXI_rdata;
+  input S_AXI_rready;
+  output [1:0]S_AXI_rresp;
+  output S_AXI_rvalid;
+  input [31:0]S_AXI_wdata;
+  output S_AXI_wready;
+  input [3:0]S_AXI_wstrb;
+  input S_AXI_wvalid;
+  input aclk;
+  input aresetn;
+  output [0:0]dout;
+  output [0:0]dout1;
+  output [1023:0]dout2;
+  output [1023:0]dout3;
+
+  wire [4095:0]cfg_0_cfg_data;
+  wire pll_0_clk_out1;
+  wire [1023:0]port_slicer_0_dout;
+  wire [1023:0]port_slicer_1_dout;
+  wire [31:0]ps_0_axi_periph_M00_AXI_ARADDR;
+  wire ps_0_axi_periph_M00_AXI_ARREADY;
+  wire ps_0_axi_periph_M00_AXI_ARVALID;
+  wire [31:0]ps_0_axi_periph_M00_AXI_AWADDR;
+  wire ps_0_axi_periph_M00_AXI_AWREADY;
+  wire ps_0_axi_periph_M00_AXI_AWVALID;
+  wire ps_0_axi_periph_M00_AXI_BREADY;
+  wire [1:0]ps_0_axi_periph_M00_AXI_BRESP;
+  wire ps_0_axi_periph_M00_AXI_BVALID;
+  wire [31:0]ps_0_axi_periph_M00_AXI_RDATA;
+  wire ps_0_axi_periph_M00_AXI_RREADY;
+  wire [1:0]ps_0_axi_periph_M00_AXI_RRESP;
+  wire ps_0_axi_periph_M00_AXI_RVALID;
+  wire [31:0]ps_0_axi_periph_M00_AXI_WDATA;
+  wire ps_0_axi_periph_M00_AXI_WREADY;
+  wire [3:0]ps_0_axi_periph_M00_AXI_WSTRB;
+  wire ps_0_axi_periph_M00_AXI_WVALID;
+  wire rst_0_peripheral_aresetn;
+  wire [0:0]slice_2_dout;
+  wire [0:0]slice_3_dout;
+
+  assign S_AXI_arready = ps_0_axi_periph_M00_AXI_ARREADY;
+  assign S_AXI_awready = ps_0_axi_periph_M00_AXI_AWREADY;
+  assign S_AXI_bresp[1:0] = ps_0_axi_periph_M00_AXI_BRESP;
+  assign S_AXI_bvalid = ps_0_axi_periph_M00_AXI_BVALID;
+  assign S_AXI_rdata[31:0] = ps_0_axi_periph_M00_AXI_RDATA;
+  assign S_AXI_rresp[1:0] = ps_0_axi_periph_M00_AXI_RRESP;
+  assign S_AXI_rvalid = ps_0_axi_periph_M00_AXI_RVALID;
+  assign S_AXI_wready = ps_0_axi_periph_M00_AXI_WREADY;
+  assign dout[0] = slice_3_dout;
+  assign dout1[0] = slice_2_dout;
+  assign dout2[1023:0] = port_slicer_0_dout;
+  assign dout3[1023:0] = port_slicer_1_dout;
+  assign pll_0_clk_out1 = aclk;
+  assign ps_0_axi_periph_M00_AXI_ARADDR = S_AXI_araddr[31:0];
+  assign ps_0_axi_periph_M00_AXI_ARVALID = S_AXI_arvalid;
+  assign ps_0_axi_periph_M00_AXI_AWADDR = S_AXI_awaddr[31:0];
+  assign ps_0_axi_periph_M00_AXI_AWVALID = S_AXI_awvalid;
+  assign ps_0_axi_periph_M00_AXI_BREADY = S_AXI_bready;
+  assign ps_0_axi_periph_M00_AXI_RREADY = S_AXI_rready;
+  assign ps_0_axi_periph_M00_AXI_WDATA = S_AXI_wdata[31:0];
+  assign ps_0_axi_periph_M00_AXI_WSTRB = S_AXI_wstrb[3:0];
+  assign ps_0_axi_periph_M00_AXI_WVALID = S_AXI_wvalid;
+  assign rst_0_peripheral_aresetn = aresetn;
+  system_cfg_0_0 cfg_0
+       (.aclk(pll_0_clk_out1),
+        .aresetn(rst_0_peripheral_aresetn),
+        .cfg_data(cfg_0_cfg_data),
+        .s_axi_araddr(ps_0_axi_periph_M00_AXI_ARADDR),
+        .s_axi_arready(ps_0_axi_periph_M00_AXI_ARREADY),
+        .s_axi_arvalid(ps_0_axi_periph_M00_AXI_ARVALID),
+        .s_axi_awaddr(ps_0_axi_periph_M00_AXI_AWADDR),
+        .s_axi_awready(ps_0_axi_periph_M00_AXI_AWREADY),
+        .s_axi_awvalid(ps_0_axi_periph_M00_AXI_AWVALID),
+        .s_axi_bready(ps_0_axi_periph_M00_AXI_BREADY),
+        .s_axi_bresp(ps_0_axi_periph_M00_AXI_BRESP),
+        .s_axi_bvalid(ps_0_axi_periph_M00_AXI_BVALID),
+        .s_axi_rdata(ps_0_axi_periph_M00_AXI_RDATA),
+        .s_axi_rready(ps_0_axi_periph_M00_AXI_RREADY),
+        .s_axi_rresp(ps_0_axi_periph_M00_AXI_RRESP),
+        .s_axi_rvalid(ps_0_axi_periph_M00_AXI_RVALID),
+        .s_axi_wdata(ps_0_axi_periph_M00_AXI_WDATA),
+        .s_axi_wready(ps_0_axi_periph_M00_AXI_WREADY),
+        .s_axi_wstrb(ps_0_axi_periph_M00_AXI_WSTRB),
+        .s_axi_wvalid(ps_0_axi_periph_M00_AXI_WVALID));
+  system_slice_2_0 filter_reset
+       (.din(cfg_0_cfg_data),
+        .dout(slice_2_dout));
+  system_port_slicer_0_0 port_slicer_0
+       (.din(cfg_0_cfg_data),
+        .dout(port_slicer_0_dout));
+  system_port_slicer_0_1 port_slicer_1
+       (.din(cfg_0_cfg_data),
+        .dout(port_slicer_1_dout));
+  system_slice_3_0 writer_reset
+       (.din(cfg_0_cfg_data),
+        .dout(slice_3_dout));
 endmodule
 
 module system_ps_0_axi_periph_0
