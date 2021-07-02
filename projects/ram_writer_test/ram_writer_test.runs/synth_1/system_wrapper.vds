@@ -1,0 +1,1924 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Mon Jun 28 17:20:57 2021
+# Process ID: 14719
+# Current directory: /home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.runs/synth_1
+# Command line: vivado -log system_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_wrapper.tcl
+# Log file: /home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.runs/synth_1/system_wrapper.vds
+# Journal file: /home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source system_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository '/home/lars/Documents/Github/filters'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/lars/Documents/Github/DSP/cores'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/lars/Documents/Github/DSP/pavel-cores'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2019.2/data/ip'.
+Command: synth_design -top system_wrapper -part xc7z010clg400-1 -fanout_limit 400 -directive PerformanceOptimized -fsm_extraction one_hot -keep_equivalent_registers -resource_sharing off -no_lc -shreg_min_size 5
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 14832 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:18 . Memory (MB): peak = 1921.582 ; gain = 200.688 ; free physical = 558 ; free virtual = 3074
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'system_wrapper' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/imports/hdl/system_wrapper.v:12]
+INFO: [Synth 8-6157] synthesizing module 'system' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/synth/system.v:308]
+INFO: [Synth 8-6157] synthesizing module 'system_Waveform_Offset_Addr_1' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ip/system_Waveform_Offset_Addr_1/synth/system_Waveform_Offset_Addr_1.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_6_xlconstant' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/34f7/hdl/xlconstant_v1_1_vl_rfs.v:23]
+	Parameter CONST_VAL bound to: 268435456 - type: integer 
+	Parameter CONST_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_6_xlconstant' (1#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/34f7/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'system_Waveform_Offset_Addr_1' (2#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ip/system_Waveform_Offset_Addr_1/synth/system_Waveform_Offset_Addr_1.v:57]
+INFO: [Synth 8-6157] synthesizing module 'system_axis_constant_0_0' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ip/system_axis_constant_0_0/synth/system_axis_constant_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'axis_constant' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/457f/src/axis_constant.v:4]
+	Parameter AXIS_TDATA_WIDTH bound to: 64 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axis_constant' (3#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/457f/src/axis_constant.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'system_axis_constant_0_0' (4#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ip/system_axis_constant_0_0/synth/system_axis_constant_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'system_cfg_0_2' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ip/system_cfg_0_2/synth/system_cfg_0_2.v:57]
+INFO: [Synth 8-6157] synthesizing module 'axi_cfg_register' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/b7d1/src/axi_cfg_register.v:4]
+	Parameter CFG_DATA_WIDTH bound to: 256 - type: integer 
+	Parameter AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter ADDR_LSB bound to: 2 - type: integer 
+	Parameter CFG_SIZE bound to: 8 - type: integer 
+	Parameter CFG_WIDTH bound to: 3 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'FDRE' [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:13708]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-6155] done synthesizing module 'FDRE' (5#1) [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:13708]
+INFO: [Synth 8-6155] done synthesizing module 'axi_cfg_register' (6#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/b7d1/src/axi_cfg_register.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'system_cfg_0_2' (7#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ip/system_cfg_0_2/synth/system_cfg_0_2.v:57]
+INFO: [Synth 8-6157] synthesizing module 'system_const_0_2' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ip/system_const_0_2/synth/system_const_0_2.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_6_xlconstant__parameterized0' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/34f7/hdl/xlconstant_v1_1_vl_rfs.v:23]
+	Parameter CONST_VAL bound to: 1 - type: integer 
+	Parameter CONST_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_6_xlconstant__parameterized0' (7#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/34f7/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'system_const_0_2' (8#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ip/system_const_0_2/synth/system_const_0_2.v:57]
+INFO: [Synth 8-6157] synthesizing module 'system_pll_0_2' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ip/system_pll_0_2/system_pll_0_2.v:71]
+INFO: [Synth 8-6157] synthesizing module 'system_pll_0_2_clk_wiz' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ip/system_pll_0_2/system_pll_0_2_clk_wiz.v:69]
+INFO: [Synth 8-6157] synthesizing module 'IBUFDS' [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:32952]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter DIFF_TERM bound to: FALSE - type: string 
+	Parameter DQS_BIAS bound to: FALSE - type: string 
+	Parameter IBUF_DELAY_VALUE bound to: 0 - type: string 
+	Parameter IBUF_LOW_PWR bound to: TRUE - type: string 
+	Parameter IFD_DELAY_VALUE bound to: AUTO - type: string 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'IBUFDS' (9#1) [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:32952]
+INFO: [Synth 8-6157] synthesizing module 'PLLE2_ADV' [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:61416]
+	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
+	Parameter CLKFBOUT_MULT bound to: 8 - type: integer 
+	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKIN1_PERIOD bound to: 8.000000 - type: double 
+	Parameter CLKIN2_PERIOD bound to: 0.000000 - type: double 
+	Parameter CLKOUT0_DIVIDE bound to: 8 - type: integer 
+	Parameter CLKOUT0_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT0_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT1_DIVIDE bound to: 4 - type: integer 
+	Parameter CLKOUT1_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT1_PHASE bound to: -90.000000 - type: double 
+	Parameter CLKOUT2_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT2_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT2_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT3_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT3_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT3_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT4_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT4_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT4_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT5_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT5_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT5_PHASE bound to: 0.000000 - type: double 
+	Parameter COMPENSATION bound to: ZHOLD - type: string 
+	Parameter DIVCLK_DIVIDE bound to: 1 - type: integer 
+	Parameter IS_CLKINSEL_INVERTED bound to: 1'b0 
+	Parameter IS_PWRDWN_INVERTED bound to: 1'b0 
+	Parameter IS_RST_INVERTED bound to: 1'b0 
+	Parameter REF_JITTER1 bound to: 0.010000 - type: double 
+	Parameter REF_JITTER2 bound to: 0.010000 - type: double 
+	Parameter STARTUP_WAIT bound to: FALSE - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'PLLE2_ADV' (10#1) [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:61416]
+INFO: [Synth 8-6157] synthesizing module 'BUFG' [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:1075]
+INFO: [Synth 8-6155] done synthesizing module 'BUFG' (11#1) [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:1075]
+INFO: [Synth 8-6155] done synthesizing module 'system_pll_0_2_clk_wiz' (12#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ip/system_pll_0_2/system_pll_0_2_clk_wiz.v:69]
+INFO: [Synth 8-6155] done synthesizing module 'system_pll_0_2' (13#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ip/system_pll_0_2/system_pll_0_2.v:71]
+WARNING: [Synth 8-7023] instance 'pll_0' of module 'system_pll_0_2' has 5 connections declared, but only 4 given [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/synth/system.v:521]
+INFO: [Synth 8-6157] synthesizing module 'system_ps_0_2' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ip/system_ps_0_2/synth/system_ps_0_2.v:60]
+INFO: [Synth 8-6157] synthesizing module 'processing_system7_v5_5_processing_system7' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ip/system_ps_0_2/hdl/verilog/processing_system7_v5_5_processing_system7.v:161]
+	Parameter C_USE_DEFAULT_ACP_USER_VAL bound to: 0 - type: integer 
+	Parameter C_S_AXI_ACP_ARUSER_VAL bound to: 31 - type: integer 
+	Parameter C_S_AXI_ACP_AWUSER_VAL bound to: 31 - type: integer 
+	Parameter C_M_AXI_GP0_THREAD_ID_WIDTH bound to: 12 - type: integer 
+	Parameter C_M_AXI_GP1_THREAD_ID_WIDTH bound to: 12 - type: integer 
+	Parameter C_M_AXI_GP0_ENABLE_STATIC_REMAP bound to: 0 - type: integer 
+	Parameter C_M_AXI_GP1_ENABLE_STATIC_REMAP bound to: 0 - type: integer 
+	Parameter C_M_AXI_GP0_ID_WIDTH bound to: 12 - type: integer 
+	Parameter C_M_AXI_GP1_ID_WIDTH bound to: 12 - type: integer 
+	Parameter C_S_AXI_GP0_ID_WIDTH bound to: 6 - type: integer 
+	Parameter C_S_AXI_GP1_ID_WIDTH bound to: 6 - type: integer 
+	Parameter C_S_AXI_HP0_ID_WIDTH bound to: 6 - type: integer 
+	Parameter C_S_AXI_HP1_ID_WIDTH bound to: 6 - type: integer 
+	Parameter C_S_AXI_HP2_ID_WIDTH bound to: 6 - type: integer 
+	Parameter C_S_AXI_HP3_ID_WIDTH bound to: 6 - type: integer 
+	Parameter C_S_AXI_ACP_ID_WIDTH bound to: 3 - type: integer 
+	Parameter C_S_AXI_HP0_DATA_WIDTH bound to: 64 - type: integer 
+	Parameter C_S_AXI_HP1_DATA_WIDTH bound to: 64 - type: integer 
+	Parameter C_S_AXI_HP2_DATA_WIDTH bound to: 64 - type: integer 
+	Parameter C_S_AXI_HP3_DATA_WIDTH bound to: 64 - type: integer 
+	Parameter C_INCLUDE_ACP_TRANS_CHECK bound to: 0 - type: integer 
+	Parameter C_NUM_F2P_INTR_INPUTS bound to: 1 - type: integer 
+	Parameter C_FCLK_CLK0_BUF bound to: TRUE - type: string 
+	Parameter C_FCLK_CLK1_BUF bound to: FALSE - type: string 
+	Parameter C_FCLK_CLK2_BUF bound to: FALSE - type: string 
+	Parameter C_FCLK_CLK3_BUF bound to: FALSE - type: string 
+	Parameter C_EMIO_GPIO_WIDTH bound to: 64 - type: integer 
+	Parameter C_INCLUDE_TRACE_BUFFER bound to: 0 - type: integer 
+	Parameter C_TRACE_BUFFER_FIFO_SIZE bound to: 128 - type: integer 
+	Parameter C_TRACE_BUFFER_CLOCK_DELAY bound to: 12 - type: integer 
+	Parameter USE_TRACE_DATA_EDGE_DETECTOR bound to: 0 - type: integer 
+	Parameter C_TRACE_PIPELINE_WIDTH bound to: 8 - type: integer 
+	Parameter C_PS7_SI_REV bound to: PRODUCTION - type: string 
+	Parameter C_EN_EMIO_ENET0 bound to: 0 - type: integer 
+	Parameter C_EN_EMIO_ENET1 bound to: 0 - type: integer 
+	Parameter C_EN_EMIO_TRACE bound to: 0 - type: integer 
+	Parameter C_DQ_WIDTH bound to: 32 - type: integer 
+	Parameter C_DQS_WIDTH bound to: 4 - type: integer 
+	Parameter C_DM_WIDTH bound to: 4 - type: integer 
+	Parameter C_MIO_PRIMITIVE bound to: 54 - type: integer 
+	Parameter C_PACKAGE_NAME bound to: clg400 - type: string 
+	Parameter C_IRQ_F2P_MODE bound to: DIRECT - type: string 
+	Parameter C_TRACE_INTERNAL_WIDTH bound to: 2 - type: integer 
+	Parameter C_EN_EMIO_PJTAG bound to: 0 - type: integer 
+	Parameter C_USE_AXI_NONSECURE bound to: 0 - type: integer 
+	Parameter C_USE_S_AXI_HP0 bound to: 1 - type: integer 
+	Parameter C_USE_S_AXI_HP1 bound to: 0 - type: integer 
+	Parameter C_USE_S_AXI_HP2 bound to: 0 - type: integer 
+	Parameter C_USE_S_AXI_HP3 bound to: 0 - type: integer 
+	Parameter C_USE_M_AXI_GP0 bound to: 1 - type: integer 
+	Parameter C_USE_M_AXI_GP1 bound to: 0 - type: integer 
+	Parameter C_USE_S_AXI_GP0 bound to: 0 - type: integer 
+	Parameter C_USE_S_AXI_GP1 bound to: 0 - type: integer 
+	Parameter C_USE_S_AXI_ACP bound to: 0 - type: integer 
+	Parameter C_GP0_EN_MODIFIABLE_TXN bound to: 1 - type: integer 
+	Parameter C_GP1_EN_MODIFIABLE_TXN bound to: 1 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ip/system_ps_0_2/hdl/verilog/processing_system7_v5_5_processing_system7.v:1347]
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ip/system_ps_0_2/hdl/verilog/processing_system7_v5_5_processing_system7.v:1348]
+INFO: [Synth 8-6157] synthesizing module 'BIBUF' [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:722]
+INFO: [Synth 8-6155] done synthesizing module 'BIBUF' (14#1) [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:722]
+INFO: [Synth 8-6157] synthesizing module 'PS7' [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:61924]
+INFO: [Synth 8-6155] done synthesizing module 'PS7' (15#1) [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:61924]
+INFO: [Synth 8-6155] done synthesizing module 'processing_system7_v5_5_processing_system7' (16#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ip/system_ps_0_2/hdl/verilog/processing_system7_v5_5_processing_system7.v:161]
+WARNING: [Synth 8-7023] instance 'inst' of module 'processing_system7_v5_5_processing_system7' has 685 connections declared, but only 672 given [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ip/system_ps_0_2/synth/system_ps_0_2.v:512]
+INFO: [Synth 8-6155] done synthesizing module 'system_ps_0_2' (17#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ip/system_ps_0_2/synth/system_ps_0_2.v:60]
+WARNING: [Synth 8-7023] instance 'ps_0' of module 'system_ps_0_2' has 127 connections declared, but only 99 given [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/synth/system.v:526]
+INFO: [Synth 8-6157] synthesizing module 'system_ps_0_axi_periph_2' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/synth/system.v:724]
+INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_1OVXGTK' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/synth/system.v:12]
+INFO: [Synth 8-6157] synthesizing module 'system_auto_pc_0' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ip/system_auto_pc_0/synth/system_auto_pc_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_axi_protocol_converter' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4808]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_M_AXI_PROTOCOL bound to: 2 - type: integer 
+	Parameter C_S_AXI_PROTOCOL bound to: 1 - type: integer 
+	Parameter C_IGNORE_ID bound to: 0 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 12 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_SUPPORTS_WRITE bound to: 1 - type: integer 
+	Parameter C_AXI_SUPPORTS_READ bound to: 1 - type: integer 
+	Parameter C_AXI_SUPPORTS_USER_SIGNALS bound to: 0 - type: integer 
+	Parameter C_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_TRANSLATION_MODE bound to: 2 - type: integer 
+	Parameter P_AXI4 bound to: 0 - type: integer 
+	Parameter P_AXI3 bound to: 1 - type: integer 
+	Parameter P_AXILITE bound to: 2 - type: integer 
+	Parameter P_AXILITE_SIZE bound to: 3'b010 
+	Parameter P_INCR bound to: 2'b01 
+	Parameter P_DECERR bound to: 2'b11 
+	Parameter P_SLVERR bound to: 2'b10 
+	Parameter P_PROTECTION bound to: 1 - type: integer 
+	Parameter P_CONVERSION bound to: 2 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4226]
+	Parameter C_S_AXI_PROTOCOL bound to: 1 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 12 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_SUPPORTS_WRITE bound to: 1 - type: integer 
+	Parameter C_AXI_SUPPORTS_READ bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_aw_channel' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3971]
+	Parameter C_ID_WIDTH bound to: 12 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_cmd_translator' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3464]
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter P_AXBURST_FIXED bound to: 2'b00 
+	Parameter P_AXBURST_INCR bound to: 2'b01 
+	Parameter P_AXBURST_WRAP bound to: 2'b10 
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_incr_cmd' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3092]
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter L_AXI_ADDR_LOW_BIT bound to: 12 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_incr_cmd' (18#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3092]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_wrap_cmd' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2902]
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter L_AXI_ADDR_LOW_BIT bound to: 12 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_wrap_cmd' (19#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2902]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_cmd_translator' (20#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3464]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_wr_cmd_fsm' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3224]
+	Parameter SM_IDLE bound to: 2'b00 
+	Parameter SM_CMD_EN bound to: 2'b01 
+	Parameter SM_CMD_ACCEPTED bound to: 2'b10 
+	Parameter SM_DONE_WAIT bound to: 2'b11 
+INFO: [Synth 8-226] default block is never used [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3277]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_wr_cmd_fsm' (21#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3224]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_aw_channel' (22#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3971]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_b_channel' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3606]
+	Parameter C_ID_WIDTH bound to: 12 - type: integer 
+	Parameter LP_RESP_OKAY bound to: 2'b00 
+	Parameter LP_RESP_EXOKAY bound to: 2'b01 
+	Parameter LP_RESP_SLVERROR bound to: 2'b10 
+	Parameter LP_RESP_DECERR bound to: 2'b11 
+	Parameter P_WIDTH bound to: 20 - type: integer 
+	Parameter P_DEPTH bound to: 4 - type: integer 
+	Parameter P_AWIDTH bound to: 2 - type: integer 
+	Parameter P_RWIDTH bound to: 2 - type: integer 
+	Parameter P_RDEPTH bound to: 4 - type: integer 
+	Parameter P_RAWIDTH bound to: 2 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_simple_fifo' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
+	Parameter C_WIDTH bound to: 20 - type: integer 
+	Parameter C_AWIDTH bound to: 2 - type: integer 
+	Parameter C_DEPTH bound to: 4 - type: integer 
+	Parameter C_EMPTY bound to: 2'b11 
+	Parameter C_EMPTY_PRE bound to: 2'b00 
+	Parameter C_FULL bound to: 2'b10 
+	Parameter C_FULL_PRE bound to: 2'b01 
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_simple_fifo' (23#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_simple_fifo__parameterized0' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
+	Parameter C_WIDTH bound to: 2 - type: integer 
+	Parameter C_AWIDTH bound to: 2 - type: integer 
+	Parameter C_DEPTH bound to: 4 - type: integer 
+	Parameter C_EMPTY bound to: 2'b11 
+	Parameter C_EMPTY_PRE bound to: 2'b00 
+	Parameter C_FULL bound to: 2'b10 
+	Parameter C_FULL_PRE bound to: 2'b01 
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_simple_fifo__parameterized0' (23#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_b_channel' (24#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3606]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_ar_channel' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4082]
+	Parameter C_ID_WIDTH bound to: 12 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_rd_cmd_fsm' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3334]
+	Parameter SM_IDLE bound to: 2'b00 
+	Parameter SM_CMD_EN bound to: 2'b01 
+	Parameter SM_CMD_ACCEPTED bound to: 2'b10 
+	Parameter SM_DONE bound to: 2'b11 
+INFO: [Synth 8-226] default block is never used [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3395]
+WARNING: [Synth 8-6014] Unused sequential element state_r1_reg was removed.  [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3383]
+WARNING: [Synth 8-6014] Unused sequential element s_arlen_r_reg was removed.  [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3384]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_rd_cmd_fsm' (25#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3334]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_ar_channel' (26#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4082]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_r_channel' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3811]
+	Parameter C_ID_WIDTH bound to: 12 - type: integer 
+	Parameter C_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter P_WIDTH bound to: 13 - type: integer 
+	Parameter P_DEPTH bound to: 32 - type: integer 
+	Parameter P_AWIDTH bound to: 5 - type: integer 
+	Parameter P_D_WIDTH bound to: 34 - type: integer 
+	Parameter P_D_DEPTH bound to: 32 - type: integer 
+	Parameter P_D_AWIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_simple_fifo__parameterized1' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
+	Parameter C_WIDTH bound to: 34 - type: integer 
+	Parameter C_AWIDTH bound to: 5 - type: integer 
+	Parameter C_DEPTH bound to: 32 - type: integer 
+	Parameter C_EMPTY bound to: 5'b11111 
+	Parameter C_EMPTY_PRE bound to: 5'b00000 
+	Parameter C_FULL bound to: 5'b11110 
+	Parameter C_FULL_PRE bound to: 5'b11010 
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_simple_fifo__parameterized1' (26#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_simple_fifo__parameterized2' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
+	Parameter C_WIDTH bound to: 13 - type: integer 
+	Parameter C_AWIDTH bound to: 5 - type: integer 
+	Parameter C_DEPTH bound to: 32 - type: integer 
+	Parameter C_EMPTY bound to: 5'b11111 
+	Parameter C_EMPTY_PRE bound to: 5'b00000 
+	Parameter C_FULL bound to: 5'b11110 
+	Parameter C_FULL_PRE bound to: 5'b11010 
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_simple_fifo__parameterized2' (26#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_r_channel' (27#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3811]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axi_register_slice' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:3704]
+	Parameter C_FAMILY bound to: virtex6 - type: string 
+	Parameter C_AXI_PROTOCOL bound to: 1 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 12 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_SUPPORTS_USER_SIGNALS bound to: 0 - type: integer 
+	Parameter C_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_REG_CONFIG_AW bound to: 1 - type: integer 
+	Parameter C_REG_CONFIG_W bound to: 0 - type: integer 
+	Parameter C_REG_CONFIG_B bound to: 1 - type: integer 
+	Parameter C_REG_CONFIG_AR bound to: 1 - type: integer 
+	Parameter C_REG_CONFIG_R bound to: 1 - type: integer 
+	Parameter C_RESERVE_MODE bound to: 0 - type: integer 
+	Parameter C_NUM_SLR_CROSSINGS bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MASTER_AW bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MASTER_W bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MASTER_B bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MASTER_AR bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MASTER_R bound to: 0 - type: integer 
+	Parameter C_PIPELINES_SLAVE_AW bound to: 0 - type: integer 
+	Parameter C_PIPELINES_SLAVE_W bound to: 0 - type: integer 
+	Parameter C_PIPELINES_SLAVE_B bound to: 0 - type: integer 
+	Parameter C_PIPELINES_SLAVE_AR bound to: 0 - type: integer 
+	Parameter C_PIPELINES_SLAVE_R bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MIDDLE_AW bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MIDDLE_W bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MIDDLE_B bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MIDDLE_AR bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MIDDLE_R bound to: 0 - type: integer 
+	Parameter C_AXI_SUPPORTS_REGION_SIGNALS bound to: 0 - type: integer 
+	Parameter P_FORWARD bound to: 0 - type: integer 
+	Parameter P_RESPONSE bound to: 1 - type: integer 
+	Parameter G_AXI_AWADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_AWADDR_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_AWPROT_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_AWPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_AWSIZE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWSIZE_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_AWBURST_INDEX bound to: 38 - type: integer 
+	Parameter G_AXI_AWBURST_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_AWCACHE_INDEX bound to: 40 - type: integer 
+	Parameter G_AXI_AWCACHE_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWLEN_INDEX bound to: 44 - type: integer 
+	Parameter G_AXI_AWLEN_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWLOCK_INDEX bound to: 48 - type: integer 
+	Parameter G_AXI_AWLOCK_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_AWID_INDEX bound to: 50 - type: integer 
+	Parameter G_AXI_AWID_WIDTH bound to: 12 - type: integer 
+	Parameter G_AXI_AWQOS_INDEX bound to: 62 - type: integer 
+	Parameter G_AXI_AWQOS_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWREGION_INDEX bound to: 66 - type: integer 
+	Parameter G_AXI_AWREGION_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWUSER_INDEX bound to: 66 - type: integer 
+	Parameter G_AXI_AWUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWPAYLOAD_WIDTH bound to: 66 - type: integer 
+	Parameter G_AXI_ARADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_ARADDR_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_ARPROT_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_ARPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_ARSIZE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARSIZE_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_ARBURST_INDEX bound to: 38 - type: integer 
+	Parameter G_AXI_ARBURST_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_ARCACHE_INDEX bound to: 40 - type: integer 
+	Parameter G_AXI_ARCACHE_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARLEN_INDEX bound to: 44 - type: integer 
+	Parameter G_AXI_ARLEN_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARLOCK_INDEX bound to: 48 - type: integer 
+	Parameter G_AXI_ARLOCK_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_ARID_INDEX bound to: 50 - type: integer 
+	Parameter G_AXI_ARID_WIDTH bound to: 12 - type: integer 
+	Parameter G_AXI_ARQOS_INDEX bound to: 62 - type: integer 
+	Parameter G_AXI_ARQOS_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARREGION_INDEX bound to: 66 - type: integer 
+	Parameter G_AXI_ARREGION_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARUSER_INDEX bound to: 66 - type: integer 
+	Parameter G_AXI_ARUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARPAYLOAD_WIDTH bound to: 66 - type: integer 
+	Parameter G_AXI_WDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_WDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_WLAST_INDEX bound to: 36 - type: integer 
+	Parameter G_AXI_WLAST_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_WID_INDEX bound to: 37 - type: integer 
+	Parameter G_AXI_WID_WIDTH bound to: 12 - type: integer 
+	Parameter G_AXI_WUSER_INDEX bound to: 49 - type: integer 
+	Parameter G_AXI_WUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WPAYLOAD_WIDTH bound to: 49 - type: integer 
+	Parameter G_AXI_BRESP_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_BRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_BID_INDEX bound to: 2 - type: integer 
+	Parameter G_AXI_BID_WIDTH bound to: 12 - type: integer 
+	Parameter G_AXI_BUSER_INDEX bound to: 14 - type: integer 
+	Parameter G_AXI_BUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_BPAYLOAD_WIDTH bound to: 14 - type: integer 
+	Parameter G_AXI_RDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_RDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_RLAST_INDEX bound to: 34 - type: integer 
+	Parameter G_AXI_RLAST_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_RID_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_RID_WIDTH bound to: 12 - type: integer 
+	Parameter G_AXI_RUSER_INDEX bound to: 47 - type: integer 
+	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 47 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_axi2vector' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
+	Parameter C_AXI_PROTOCOL bound to: 1 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 12 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_SUPPORTS_USER_SIGNALS bound to: 0 - type: integer 
+	Parameter C_AXI_SUPPORTS_REGION_SIGNALS bound to: 0 - type: integer 
+	Parameter C_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AWPAYLOAD_WIDTH bound to: 66 - type: integer 
+	Parameter C_WPAYLOAD_WIDTH bound to: 49 - type: integer 
+	Parameter C_BPAYLOAD_WIDTH bound to: 14 - type: integer 
+	Parameter C_ARPAYLOAD_WIDTH bound to: 66 - type: integer 
+	Parameter C_RPAYLOAD_WIDTH bound to: 47 - type: integer 
+	Parameter G_AXI_AWADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_AWADDR_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_AWPROT_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_AWPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_AWSIZE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWSIZE_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_AWBURST_INDEX bound to: 38 - type: integer 
+	Parameter G_AXI_AWBURST_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_AWCACHE_INDEX bound to: 40 - type: integer 
+	Parameter G_AXI_AWCACHE_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWLEN_INDEX bound to: 44 - type: integer 
+	Parameter G_AXI_AWLEN_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWLOCK_INDEX bound to: 48 - type: integer 
+	Parameter G_AXI_AWLOCK_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_AWID_INDEX bound to: 50 - type: integer 
+	Parameter G_AXI_AWID_WIDTH bound to: 12 - type: integer 
+	Parameter G_AXI_AWQOS_INDEX bound to: 62 - type: integer 
+	Parameter G_AXI_AWQOS_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWREGION_INDEX bound to: 66 - type: integer 
+	Parameter G_AXI_AWREGION_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWUSER_INDEX bound to: 66 - type: integer 
+	Parameter G_AXI_AWUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWPAYLOAD_WIDTH bound to: 66 - type: integer 
+	Parameter G_AXI_ARADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_ARADDR_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_ARPROT_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_ARPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_ARSIZE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARSIZE_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_ARBURST_INDEX bound to: 38 - type: integer 
+	Parameter G_AXI_ARBURST_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_ARCACHE_INDEX bound to: 40 - type: integer 
+	Parameter G_AXI_ARCACHE_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARLEN_INDEX bound to: 44 - type: integer 
+	Parameter G_AXI_ARLEN_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARLOCK_INDEX bound to: 48 - type: integer 
+	Parameter G_AXI_ARLOCK_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_ARID_INDEX bound to: 50 - type: integer 
+	Parameter G_AXI_ARID_WIDTH bound to: 12 - type: integer 
+	Parameter G_AXI_ARQOS_INDEX bound to: 62 - type: integer 
+	Parameter G_AXI_ARQOS_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARREGION_INDEX bound to: 66 - type: integer 
+	Parameter G_AXI_ARREGION_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARUSER_INDEX bound to: 66 - type: integer 
+	Parameter G_AXI_ARUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARPAYLOAD_WIDTH bound to: 66 - type: integer 
+	Parameter G_AXI_WDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_WDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_WLAST_INDEX bound to: 36 - type: integer 
+	Parameter G_AXI_WLAST_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_WID_INDEX bound to: 37 - type: integer 
+	Parameter G_AXI_WID_WIDTH bound to: 12 - type: integer 
+	Parameter G_AXI_WUSER_INDEX bound to: 49 - type: integer 
+	Parameter G_AXI_WUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WPAYLOAD_WIDTH bound to: 49 - type: integer 
+	Parameter G_AXI_BRESP_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_BRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_BID_INDEX bound to: 2 - type: integer 
+	Parameter G_AXI_BID_WIDTH bound to: 12 - type: integer 
+	Parameter G_AXI_BUSER_INDEX bound to: 14 - type: integer 
+	Parameter G_AXI_BUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_BPAYLOAD_WIDTH bound to: 14 - type: integer 
+	Parameter G_AXI_RDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_RDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_RLAST_INDEX bound to: 34 - type: integer 
+	Parameter G_AXI_RLAST_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_RID_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_RID_WIDTH bound to: 12 - type: integer 
+	Parameter G_AXI_RUSER_INDEX bound to: 47 - type: integer 
+	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 47 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_axi2vector' (28#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
+INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
+	Parameter C_AXI_PROTOCOL bound to: 1 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 12 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_SUPPORTS_USER_SIGNALS bound to: 0 - type: integer 
+	Parameter C_AXI_SUPPORTS_REGION_SIGNALS bound to: 0 - type: integer 
+	Parameter C_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AWPAYLOAD_WIDTH bound to: 66 - type: integer 
+	Parameter C_WPAYLOAD_WIDTH bound to: 49 - type: integer 
+	Parameter C_BPAYLOAD_WIDTH bound to: 14 - type: integer 
+	Parameter C_ARPAYLOAD_WIDTH bound to: 66 - type: integer 
+	Parameter C_RPAYLOAD_WIDTH bound to: 47 - type: integer 
+	Parameter G_AXI_AWADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_AWADDR_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_AWPROT_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_AWPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_AWSIZE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWSIZE_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_AWBURST_INDEX bound to: 38 - type: integer 
+	Parameter G_AXI_AWBURST_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_AWCACHE_INDEX bound to: 40 - type: integer 
+	Parameter G_AXI_AWCACHE_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWLEN_INDEX bound to: 44 - type: integer 
+	Parameter G_AXI_AWLEN_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWLOCK_INDEX bound to: 48 - type: integer 
+	Parameter G_AXI_AWLOCK_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_AWID_INDEX bound to: 50 - type: integer 
+	Parameter G_AXI_AWID_WIDTH bound to: 12 - type: integer 
+	Parameter G_AXI_AWQOS_INDEX bound to: 62 - type: integer 
+	Parameter G_AXI_AWQOS_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWREGION_INDEX bound to: 66 - type: integer 
+	Parameter G_AXI_AWREGION_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWUSER_INDEX bound to: 66 - type: integer 
+	Parameter G_AXI_AWUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWPAYLOAD_WIDTH bound to: 66 - type: integer 
+	Parameter G_AXI_ARADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_ARADDR_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_ARPROT_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_ARPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_ARSIZE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARSIZE_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_ARBURST_INDEX bound to: 38 - type: integer 
+	Parameter G_AXI_ARBURST_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_ARCACHE_INDEX bound to: 40 - type: integer 
+	Parameter G_AXI_ARCACHE_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARLEN_INDEX bound to: 44 - type: integer 
+	Parameter G_AXI_ARLEN_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARLOCK_INDEX bound to: 48 - type: integer 
+	Parameter G_AXI_ARLOCK_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_ARID_INDEX bound to: 50 - type: integer 
+	Parameter G_AXI_ARID_WIDTH bound to: 12 - type: integer 
+	Parameter G_AXI_ARQOS_INDEX bound to: 62 - type: integer 
+	Parameter G_AXI_ARQOS_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARREGION_INDEX bound to: 66 - type: integer 
+	Parameter G_AXI_ARREGION_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARUSER_INDEX bound to: 66 - type: integer 
+	Parameter G_AXI_ARUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARPAYLOAD_WIDTH bound to: 66 - type: integer 
+	Parameter G_AXI_WDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_WDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_WLAST_INDEX bound to: 36 - type: integer 
+	Parameter G_AXI_WLAST_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_WID_INDEX bound to: 37 - type: integer 
+	Parameter G_AXI_WID_WIDTH bound to: 12 - type: integer 
+	Parameter G_AXI_WUSER_INDEX bound to: 49 - type: integer 
+	Parameter G_AXI_WUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WPAYLOAD_WIDTH bound to: 49 - type: integer 
+	Parameter G_AXI_BRESP_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_BRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_BID_INDEX bound to: 2 - type: integer 
+	Parameter G_AXI_BID_WIDTH bound to: 12 - type: integer 
+	Parameter G_AXI_BUSER_INDEX bound to: 14 - type: integer 
+	Parameter G_AXI_BUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_BPAYLOAD_WIDTH bound to: 14 - type: integer 
+	Parameter G_AXI_RDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_RDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_RLAST_INDEX bound to: 34 - type: integer 
+	Parameter G_AXI_RLAST_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_RID_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_RID_WIDTH bound to: 12 - type: integer 
+	Parameter G_AXI_RUSER_INDEX bound to: 47 - type: integer 
+	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 47 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' (29#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+	Parameter C_FAMILY bound to: virtex6 - type: string 
+	Parameter C_DATA_WIDTH bound to: 66 - type: integer 
+	Parameter C_REG_CONFIG bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice' (30#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized0' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+	Parameter C_FAMILY bound to: virtex6 - type: string 
+	Parameter C_DATA_WIDTH bound to: 49 - type: integer 
+	Parameter C_REG_CONFIG bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized0' (30#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized1' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+	Parameter C_FAMILY bound to: virtex6 - type: string 
+	Parameter C_DATA_WIDTH bound to: 14 - type: integer 
+	Parameter C_REG_CONFIG bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized1' (30#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized2' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+	Parameter C_FAMILY bound to: virtex6 - type: string 
+	Parameter C_DATA_WIDTH bound to: 47 - type: integer 
+	Parameter C_REG_CONFIG bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized2' (30#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axi_register_slice' (31#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:3704]
+WARNING: [Synth 8-7023] instance 'SI_REG' of module 'axi_register_slice_v2_1_20_axi_register_slice' has 93 connections declared, but only 92 given [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4392]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axi_register_slice__parameterized0' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:3704]
+	Parameter C_FAMILY bound to: virtex6 - type: string 
+	Parameter C_AXI_PROTOCOL bound to: 2 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_SUPPORTS_USER_SIGNALS bound to: 0 - type: integer 
+	Parameter C_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_REG_CONFIG_AW bound to: 0 - type: integer 
+	Parameter C_REG_CONFIG_W bound to: 0 - type: integer 
+	Parameter C_REG_CONFIG_B bound to: 0 - type: integer 
+	Parameter C_REG_CONFIG_AR bound to: 0 - type: integer 
+	Parameter C_REG_CONFIG_R bound to: 0 - type: integer 
+	Parameter C_RESERVE_MODE bound to: 0 - type: integer 
+	Parameter C_NUM_SLR_CROSSINGS bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MASTER_AW bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MASTER_W bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MASTER_B bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MASTER_AR bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MASTER_R bound to: 0 - type: integer 
+	Parameter C_PIPELINES_SLAVE_AW bound to: 0 - type: integer 
+	Parameter C_PIPELINES_SLAVE_W bound to: 0 - type: integer 
+	Parameter C_PIPELINES_SLAVE_B bound to: 0 - type: integer 
+	Parameter C_PIPELINES_SLAVE_AR bound to: 0 - type: integer 
+	Parameter C_PIPELINES_SLAVE_R bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MIDDLE_AW bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MIDDLE_W bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MIDDLE_B bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MIDDLE_AR bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MIDDLE_R bound to: 0 - type: integer 
+	Parameter C_AXI_SUPPORTS_REGION_SIGNALS bound to: 0 - type: integer 
+	Parameter P_FORWARD bound to: 0 - type: integer 
+	Parameter P_RESPONSE bound to: 1 - type: integer 
+	Parameter G_AXI_AWADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_AWADDR_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_AWPROT_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_AWPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_AWSIZE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWSIZE_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWBURST_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWBURST_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWCACHE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWCACHE_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWLEN_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWLEN_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWLOCK_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWLOCK_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWID_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWQOS_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWQOS_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWREGION_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWREGION_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWUSER_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWPAYLOAD_WIDTH bound to: 35 - type: integer 
+	Parameter G_AXI_ARADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_ARADDR_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_ARPROT_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_ARPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_ARSIZE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARSIZE_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARBURST_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARBURST_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARCACHE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARCACHE_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARLEN_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARLEN_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARLOCK_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARLOCK_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARID_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARQOS_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARQOS_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARREGION_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARREGION_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARUSER_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARPAYLOAD_WIDTH bound to: 35 - type: integer 
+	Parameter G_AXI_WDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_WDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_WLAST_INDEX bound to: 36 - type: integer 
+	Parameter G_AXI_WLAST_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WID_INDEX bound to: 36 - type: integer 
+	Parameter G_AXI_WID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WUSER_INDEX bound to: 36 - type: integer 
+	Parameter G_AXI_WUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WPAYLOAD_WIDTH bound to: 36 - type: integer 
+	Parameter G_AXI_BRESP_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_BRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_BID_INDEX bound to: 2 - type: integer 
+	Parameter G_AXI_BID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_BUSER_INDEX bound to: 2 - type: integer 
+	Parameter G_AXI_BUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_BPAYLOAD_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_RDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_RDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_RLAST_INDEX bound to: 34 - type: integer 
+	Parameter G_AXI_RLAST_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_RID_INDEX bound to: 34 - type: integer 
+	Parameter G_AXI_RID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_RUSER_INDEX bound to: 34 - type: integer 
+	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 34 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_axi2vector__parameterized0' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
+	Parameter C_AXI_PROTOCOL bound to: 2 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_SUPPORTS_USER_SIGNALS bound to: 0 - type: integer 
+	Parameter C_AXI_SUPPORTS_REGION_SIGNALS bound to: 0 - type: integer 
+	Parameter C_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AWPAYLOAD_WIDTH bound to: 35 - type: integer 
+	Parameter C_WPAYLOAD_WIDTH bound to: 36 - type: integer 
+	Parameter C_BPAYLOAD_WIDTH bound to: 2 - type: integer 
+	Parameter C_ARPAYLOAD_WIDTH bound to: 35 - type: integer 
+	Parameter C_RPAYLOAD_WIDTH bound to: 34 - type: integer 
+	Parameter G_AXI_AWADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_AWADDR_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_AWPROT_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_AWPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_AWSIZE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWSIZE_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWBURST_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWBURST_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWCACHE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWCACHE_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWLEN_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWLEN_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWLOCK_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWLOCK_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWID_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWQOS_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWQOS_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWREGION_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWREGION_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWUSER_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWPAYLOAD_WIDTH bound to: 35 - type: integer 
+	Parameter G_AXI_ARADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_ARADDR_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_ARPROT_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_ARPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_ARSIZE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARSIZE_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARBURST_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARBURST_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARCACHE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARCACHE_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARLEN_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARLEN_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARLOCK_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARLOCK_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARID_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARQOS_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARQOS_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARREGION_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARREGION_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARUSER_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARPAYLOAD_WIDTH bound to: 35 - type: integer 
+	Parameter G_AXI_WDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_WDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_WLAST_INDEX bound to: 36 - type: integer 
+	Parameter G_AXI_WLAST_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WID_INDEX bound to: 36 - type: integer 
+	Parameter G_AXI_WID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WUSER_INDEX bound to: 36 - type: integer 
+	Parameter G_AXI_WUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WPAYLOAD_WIDTH bound to: 36 - type: integer 
+	Parameter G_AXI_BRESP_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_BRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_BID_INDEX bound to: 2 - type: integer 
+	Parameter G_AXI_BID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_BUSER_INDEX bound to: 2 - type: integer 
+	Parameter G_AXI_BUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_BPAYLOAD_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_RDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_RDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_RLAST_INDEX bound to: 34 - type: integer 
+	Parameter G_AXI_RLAST_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_RID_INDEX bound to: 34 - type: integer 
+	Parameter G_AXI_RID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_RUSER_INDEX bound to: 34 - type: integer 
+	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 34 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_axi2vector__parameterized0' (31#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
+INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_vector2axi__parameterized0' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
+	Parameter C_AXI_PROTOCOL bound to: 2 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_SUPPORTS_USER_SIGNALS bound to: 0 - type: integer 
+	Parameter C_AXI_SUPPORTS_REGION_SIGNALS bound to: 0 - type: integer 
+	Parameter C_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AWPAYLOAD_WIDTH bound to: 35 - type: integer 
+	Parameter C_WPAYLOAD_WIDTH bound to: 36 - type: integer 
+	Parameter C_BPAYLOAD_WIDTH bound to: 2 - type: integer 
+	Parameter C_ARPAYLOAD_WIDTH bound to: 35 - type: integer 
+	Parameter C_RPAYLOAD_WIDTH bound to: 34 - type: integer 
+	Parameter G_AXI_AWADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_AWADDR_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_AWPROT_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_AWPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_AWSIZE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWSIZE_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWBURST_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWBURST_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWCACHE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWCACHE_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWLEN_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWLEN_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWLOCK_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWLOCK_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWID_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWQOS_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWQOS_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWREGION_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWREGION_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWUSER_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWPAYLOAD_WIDTH bound to: 35 - type: integer 
+	Parameter G_AXI_ARADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_ARADDR_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_ARPROT_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_ARPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_ARSIZE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARSIZE_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARBURST_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARBURST_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARCACHE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARCACHE_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARLEN_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARLEN_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARLOCK_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARLOCK_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARID_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARQOS_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARQOS_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARREGION_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARREGION_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARUSER_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARPAYLOAD_WIDTH bound to: 35 - type: integer 
+	Parameter G_AXI_WDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_WDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_WLAST_INDEX bound to: 36 - type: integer 
+	Parameter G_AXI_WLAST_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WID_INDEX bound to: 36 - type: integer 
+	Parameter G_AXI_WID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WUSER_INDEX bound to: 36 - type: integer 
+	Parameter G_AXI_WUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WPAYLOAD_WIDTH bound to: 36 - type: integer 
+	Parameter G_AXI_BRESP_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_BRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_BID_INDEX bound to: 2 - type: integer 
+	Parameter G_AXI_BID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_BUSER_INDEX bound to: 2 - type: integer 
+	Parameter G_AXI_BUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_BPAYLOAD_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_RDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_RDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_RLAST_INDEX bound to: 34 - type: integer 
+	Parameter G_AXI_RLAST_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_RID_INDEX bound to: 34 - type: integer 
+	Parameter G_AXI_RID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_RUSER_INDEX bound to: 34 - type: integer 
+	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 34 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_vector2axi__parameterized0' (31#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized3' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+	Parameter C_FAMILY bound to: virtex6 - type: string 
+	Parameter C_DATA_WIDTH bound to: 35 - type: integer 
+	Parameter C_REG_CONFIG bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized3' (31#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized4' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+	Parameter C_FAMILY bound to: virtex6 - type: string 
+	Parameter C_DATA_WIDTH bound to: 36 - type: integer 
+	Parameter C_REG_CONFIG bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized4' (31#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized5' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+	Parameter C_FAMILY bound to: virtex6 - type: string 
+	Parameter C_DATA_WIDTH bound to: 2 - type: integer 
+	Parameter C_REG_CONFIG bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized5' (31#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized6' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+	Parameter C_FAMILY bound to: virtex6 - type: string 
+	Parameter C_DATA_WIDTH bound to: 34 - type: integer 
+	Parameter C_REG_CONFIG bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized6' (31#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axi_register_slice__parameterized0' (31#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:3704]
+WARNING: [Synth 8-7023] instance 'MI_REG' of module 'axi_register_slice_v2_1_20_axi_register_slice' has 93 connections declared, but only 92 given [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4647]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s' (32#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4226]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_axi_protocol_converter' (33#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4808]
+INFO: [Synth 8-6155] done synthesizing module 'system_auto_pc_0' (34#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ip/system_auto_pc_0/synth/system_auto_pc_0.v:58]
+WARNING: [Synth 8-7023] instance 'auto_pc' of module 'system_auto_pc_0' has 59 connections declared, but only 57 given [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/synth/system.v:247]
+INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_1OVXGTK' (35#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/synth/system.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'system_ps_0_axi_periph_2' (36#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/synth/system.v:724]
+INFO: [Synth 8-638] synthesizing module 'system_rst_0_2' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ip/system_rst_0_2/synth/system_rst_0_2.vhd:74]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_EXT_RST_WIDTH bound to: 4 - type: integer 
+	Parameter C_AUX_RST_WIDTH bound to: 4 - type: integer 
+	Parameter C_EXT_RESET_HIGH bound to: 1'b0 
+	Parameter C_AUX_RESET_HIGH bound to: 1'b0 
+	Parameter C_NUM_BUS_RST bound to: 1 - type: integer 
+	Parameter C_NUM_PERP_RST bound to: 1 - type: integer 
+	Parameter C_NUM_INTERCONNECT_ARESETN bound to: 1 - type: integer 
+	Parameter C_NUM_PERP_ARESETN bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'proc_sys_reset' declared at '/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1264' bound to instance 'U0' of component 'proc_sys_reset' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ip/system_rst_0_2/synth/system_rst_0_2.vhd:129]
+INFO: [Synth 8-638] synthesizing module 'proc_sys_reset' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1323]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_EXT_RST_WIDTH bound to: 4 - type: integer 
+	Parameter C_AUX_RST_WIDTH bound to: 4 - type: integer 
+	Parameter C_EXT_RESET_HIGH bound to: 1'b0 
+	Parameter C_AUX_RESET_HIGH bound to: 1'b0 
+	Parameter C_NUM_BUS_RST bound to: 1 - type: integer 
+	Parameter C_NUM_PERP_RST bound to: 1 - type: integer 
+	Parameter C_NUM_INTERCONNECT_ARESETN bound to: 1 - type: integer 
+	Parameter C_NUM_PERP_ARESETN bound to: 1 - type: integer 
+	Parameter INIT bound to: 1'b1 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'FDRE_inst' to cell 'FDRE' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1392]
+	Parameter INIT bound to: 1'b1 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'FDRE_BSR' to cell 'FDRE' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1408]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'FDRE_BSR_N' to cell 'FDRE' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1434]
+	Parameter INIT bound to: 1'b1 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'FDRE_PER' to cell 'FDRE' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1457]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'FDRE_PER_N' to cell 'FDRE' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1481]
+INFO: [Synth 8-638] synthesizing module 'lpf' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:816]
+	Parameter C_EXT_RST_WIDTH bound to: 4 - type: integer 
+	Parameter C_AUX_RST_WIDTH bound to: 4 - type: integer 
+	Parameter C_EXT_RESET_HIGH bound to: 1'b0 
+	Parameter C_AUX_RESET_HIGH bound to: 1'b0 
+INFO: [Synth 8-3491] module 'SRL16' declared at '/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:77949' bound to instance 'POR_SRL_I' of component 'SRL16' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:868]
+INFO: [Synth 8-6157] synthesizing module 'SRL16' [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:77949]
+	Parameter INIT bound to: 16'b0000000000000000 
+INFO: [Synth 8-6155] done synthesizing module 'SRL16' (37#1) [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:77949]
+INFO: [Synth 8-638] synthesizing module 'cdc_sync' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+	Parameter C_CDC_TYPE bound to: 1 - type: integer 
+	Parameter C_RESET_STATE bound to: 0 - type: integer 
+	Parameter C_SINGLE_BIT bound to: 1 - type: integer 
+	Parameter C_FLOP_INPUT bound to: 0 - type: integer 
+	Parameter C_VECTOR_WIDTH bound to: 2 - type: integer 
+	Parameter C_MTBF_STAGES bound to: 4 - type: integer 
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:514]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2' to cell 'FDR' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:545]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d3' to cell 'FDR' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:554]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d4' to cell 'FDR' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:564]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d5' to cell 'FDR' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:574]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d6' to cell 'FDR' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:584]
+INFO: [Synth 8-256] done synthesizing module 'cdc_sync' (38#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+INFO: [Synth 8-256] done synthesizing module 'lpf' (39#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:816]
+INFO: [Synth 8-638] synthesizing module 'sequence_psr' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:301]
+INFO: [Synth 8-638] synthesizing module 'upcnt_n' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:125]
+	Parameter C_SIZE bound to: 6 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'upcnt_n' (40#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:125]
+INFO: [Synth 8-256] done synthesizing module 'sequence_psr' (41#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:301]
+INFO: [Synth 8-256] done synthesizing module 'proc_sys_reset' (42#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1323]
+INFO: [Synth 8-256] done synthesizing module 'system_rst_0_2' (43#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ip/system_rst_0_2/synth/system_rst_0_2.vhd:74]
+WARNING: [Synth 8-7023] instance 'rst_0' of module 'system_rst_0_2' has 10 connections declared, but only 6 given [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/synth/system.v:688]
+INFO: [Synth 8-6157] synthesizing module 'system_slice_3_2' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ip/system_slice_3_2/synth/system_slice_3_2.v:57]
+INFO: [Synth 8-6157] synthesizing module 'port_slicer' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/8bd6/src/port_slicer.v:4]
+	Parameter DIN_WIDTH bound to: 256 - type: integer 
+	Parameter DIN_FROM bound to: 2 - type: integer 
+	Parameter DIN_TO bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'port_slicer' (44#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/8bd6/src/port_slicer.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'system_slice_3_2' (45#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ip/system_slice_3_2/synth/system_slice_3_2.v:57]
+INFO: [Synth 8-6157] synthesizing module 'system_writer_0_2' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ip/system_writer_0_2/synth/system_writer_0_2.v:57]
+INFO: [Synth 8-6157] synthesizing module 'axis_ram_writer' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/edca/src/axis_ram_writer.v:4]
+	Parameter ADDR_WIDTH bound to: 25 - type: integer 
+	Parameter AXI_ID_WIDTH bound to: 6 - type: integer 
+	Parameter AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter AXI_DATA_WIDTH bound to: 64 - type: integer 
+	Parameter AXIS_TDATA_WIDTH bound to: 64 - type: integer 
+	Parameter ADDR_SIZE bound to: 3 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'FIFO36E1' [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:14358]
+	Parameter ALMOST_EMPTY_OFFSET bound to: 13'b0000000001111 
+	Parameter ALMOST_FULL_OFFSET bound to: 13'b0000010000000 
+	Parameter DATA_WIDTH bound to: 72 - type: integer 
+	Parameter DO_REG bound to: 1 - type: integer 
+	Parameter EN_ECC_READ bound to: FALSE - type: string 
+	Parameter EN_ECC_WRITE bound to: FALSE - type: string 
+	Parameter EN_SYN bound to: FALSE - type: string 
+	Parameter FIFO_MODE bound to: FIFO36_72 - type: string 
+	Parameter FIRST_WORD_FALL_THROUGH bound to: TRUE - type: string 
+	Parameter INIT bound to: 72'b000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter IS_RDCLK_INVERTED bound to: 1'b0 
+	Parameter IS_RDEN_INVERTED bound to: 1'b0 
+	Parameter IS_RSTREG_INVERTED bound to: 1'b0 
+	Parameter IS_RST_INVERTED bound to: 1'b0 
+	Parameter IS_WRCLK_INVERTED bound to: 1'b0 
+	Parameter IS_WREN_INVERTED bound to: 1'b0 
+	Parameter SIM_DEVICE bound to: 7SERIES - type: string 
+	Parameter SRVAL bound to: 72'b000000000000000000000000000000000000000000000000000000000000000000000000 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO36E1' (46#1) [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:14358]
+WARNING: [Synth 8-689] width (72) of port connection 'DI' does not match port width (64) of module 'FIFO36E1' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/edca/src/axis_ram_writer.v:74]
+WARNING: [Synth 8-689] width (72) of port connection 'DO' does not match port width (64) of module 'FIFO36E1' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/edca/src/axis_ram_writer.v:77]
+WARNING: [Synth 8-7023] instance 'fifo_0' of module 'FIFO36E1' has 24 connections declared, but only 9 given [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/edca/src/axis_ram_writer.v:68]
+INFO: [Synth 8-6155] done synthesizing module 'axis_ram_writer' (47#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/edca/src/axis_ram_writer.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'system_writer_0_2' (48#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ip/system_writer_0_2/synth/system_writer_0_2.v:57]
+WARNING: [Synth 8-7023] instance 'writer_0' of module 'system_writer_0_2' has 23 connections declared, but only 21 given [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/synth/system.v:698]
+INFO: [Synth 8-6157] synthesizing module 'system_xlconstant_0_0' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ip/system_xlconstant_0_0/synth/system_xlconstant_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_6_xlconstant__parameterized1' [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/34f7/hdl/xlconstant_v1_1_vl_rfs.v:23]
+	Parameter CONST_VAL bound to: 64'b0000000000000000000000000000000000000000000000000001010000011111 
+	Parameter CONST_WIDTH bound to: 64 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_6_xlconstant__parameterized1' (48#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/34f7/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'system_xlconstant_0_0' (49#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ip/system_xlconstant_0_0/synth/system_xlconstant_0_0.v:57]
+WARNING: [Synth 8-3848] Net adc_csn_o in module/entity system does not have driver. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/synth/system.v:369]
+WARNING: [Synth 8-3848] Net adc_enc_n_o in module/entity system does not have driver. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/synth/system.v:372]
+WARNING: [Synth 8-3848] Net adc_enc_p_o in module/entity system does not have driver. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/synth/system.v:373]
+WARNING: [Synth 8-3848] Net dac_clk_o in module/entity system does not have driver. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/synth/system.v:374]
+WARNING: [Synth 8-3848] Net dac_dat_o in module/entity system does not have driver. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/synth/system.v:375]
+WARNING: [Synth 8-3848] Net dac_pwm_o in module/entity system does not have driver. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/synth/system.v:376]
+WARNING: [Synth 8-3848] Net dac_rst_o in module/entity system does not have driver. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/synth/system.v:377]
+WARNING: [Synth 8-3848] Net dac_sel_o in module/entity system does not have driver. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/synth/system.v:378]
+WARNING: [Synth 8-3848] Net dac_wrt_o in module/entity system does not have driver. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/synth/system.v:379]
+WARNING: [Synth 8-3848] Net exp_p_tri_io in module/entity system does not have driver. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/synth/system.v:381]
+WARNING: [Synth 8-3848] Net led_o in module/entity system does not have driver. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/synth/system.v:382]
+INFO: [Synth 8-6155] done synthesizing module 'system' (50#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/synth/system.v:308]
+INFO: [Synth 8-6155] done synthesizing module 'system_wrapper' (51#1) [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/imports/hdl/system_wrapper.v:12]
+WARNING: [Synth 8-3331] design axis_ram_writer has unconnected port m_axi_bvalid
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[255]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[254]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[253]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[252]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[251]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[250]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[249]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[248]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[247]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[246]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[245]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[244]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[243]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[242]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[241]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[240]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[239]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[238]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[237]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[236]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[235]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[234]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[233]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[232]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[231]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[230]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[229]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[228]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[227]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[226]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[225]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[224]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[223]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[222]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[221]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[220]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[219]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[218]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[217]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[216]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[215]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[214]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[213]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[212]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[211]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[210]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[209]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[208]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[207]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[206]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[205]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[204]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[203]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[202]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[201]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[200]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[199]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[198]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[197]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[196]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[195]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[194]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[193]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[192]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[191]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[190]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[189]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[188]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[187]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[186]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[185]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[184]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[183]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[182]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[181]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[180]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[179]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[178]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[177]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[176]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[175]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[174]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[173]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[172]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[171]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[170]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[169]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[168]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[167]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[166]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[165]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[164]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[163]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[162]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[161]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[160]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[159]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[158]
+WARNING: [Synth 8-3331] design port_slicer has unconnected port din[157]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:17 ; elapsed = 00:00:34 . Memory (MB): peak = 2083.270 ; gain = 362.375 ; free physical = 574 ; free virtual = 3094
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:36 . Memory (MB): peak = 2089.207 ; gain = 368.312 ; free physical = 538 ; free virtual = 3058
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:36 . Memory (MB): peak = 2089.207 ; gain = 368.312 ; free physical = 538 ; free virtual = 3058
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.07 . Memory (MB): peak = 2095.145 ; gain = 0.000 ; free physical = 530 ; free virtual = 3050
+INFO: [Netlist 29-17] Analyzing 16 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ip/system_pll_0_2/system_pll_0_2_board.xdc] for cell 'system_i/pll_0/inst'
+Finished Parsing XDC File [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ip/system_pll_0_2/system_pll_0_2_board.xdc] for cell 'system_i/pll_0/inst'
+Parsing XDC File [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ip/system_pll_0_2/system_pll_0_2.xdc] for cell 'system_i/pll_0/inst'
+Finished Parsing XDC File [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ip/system_pll_0_2/system_pll_0_2.xdc] for cell 'system_i/pll_0/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ip/system_pll_0_2/system_pll_0_2.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/system_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/system_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ip/system_ps_0_2/system_ps_0_2.xdc] for cell 'system_i/ps_0/inst'
+Finished Parsing XDC File [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ip/system_ps_0_2/system_ps_0_2.xdc] for cell 'system_i/ps_0/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ip/system_ps_0_2/system_ps_0_2.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/system_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/system_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ip/system_rst_0_2/system_rst_0_2_board.xdc] for cell 'system_i/rst_0/U0'
+Finished Parsing XDC File [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ip/system_rst_0_2/system_rst_0_2_board.xdc] for cell 'system_i/rst_0/U0'
+Parsing XDC File [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ip/system_rst_0_2/system_rst_0_2.xdc] for cell 'system_i/rst_0/U0'
+Finished Parsing XDC File [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ip/system_rst_0_2/system_rst_0_2.xdc] for cell 'system_i/rst_0/U0'
+INFO: [Timing 38-2] Deriving generated clocks
+Parsing XDC File [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/clocks.xdc]
+Finished Parsing XDC File [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/clocks.xdc]
+Parsing XDC File [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc]
+WARNING: [Vivado 12-584] No ports matched 'adc_dat_a_i[14]'. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:26]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:26]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'adc_dat_a_i[15]'. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:27]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:27]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'adc_dat_b_i[14]'. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:46]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:46]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'adc_dat_b_i[15]'. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:47]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:47]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'Vp_Vn_v_p'. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:127]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:127]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'Vp_Vn_v_n'. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:128]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:128]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'Vaux0_v_p'. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:129]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:129]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'Vaux0_v_n'. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:130]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:130]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'Vaux1_v_p'. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:131]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:131]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'Vaux1_v_n'. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:132]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:132]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'Vaux8_v_p'. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:133]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:133]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'Vaux8_v_n'. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:134]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:134]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'Vaux9_v_p'. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:135]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:135]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'Vaux9_v_n'. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:136]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:136]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'Vp_Vn_v_p'. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:138]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:138]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'Vp_Vn_v_n'. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:139]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:139]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'Vaux0_v_p'. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:140]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:140]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'Vaux0_v_n'. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:141]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:141]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'Vaux1_v_p'. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:142]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:142]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'Vaux1_v_n'. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:143]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:143]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'Vaux8_v_p'. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:144]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:144]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'Vaux8_v_n'. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:145]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:145]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'Vaux9_v_p'. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:146]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:146]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'Vaux9_v_n'. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:147]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:147]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'daisy_p_o[*]'. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:177]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:177]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'daisy_n_o[*]'. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:178]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:178]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'daisy_p_i[*]'. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:180]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:180]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'daisy_n_i[*]'. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:181]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:181]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'daisy_p_o[0]'. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:183]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:183]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'daisy_n_o[0]'. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:184]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:184]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'daisy_p_o[1]'. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:186]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:186]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'daisy_n_o[1]'. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:187]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:187]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'daisy_p_i[0]'. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:189]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:189]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'daisy_n_i[0]'. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:190]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:190]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'daisy_p_i[1]'. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:192]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:192]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'daisy_n_i[1]'. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:193]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc:193]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/constrs_1/imports/cfg/ports.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/system_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/system_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.runs/synth_1/dont_touch.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.runs/synth_1/dont_touch.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/system_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/system_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2195.973 ; gain = 0.000 ; free physical = 465 ; free virtual = 2997
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 13 instances were transformed.
+  FDR => FDRE: 12 instances
+  SRL16 => SRL16E: 1 instance 
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2195.973 ; gain = 0.000 ; free physical = 465 ; free virtual = 2997
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:26 ; elapsed = 00:00:45 . Memory (MB): peak = 2195.973 ; gain = 475.078 ; free physical = 546 ; free virtual = 3079
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:26 ; elapsed = 00:00:45 . Memory (MB): peak = 2195.973 ; gain = 475.078 ; free physical = 546 ; free virtual = 3079
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for system_i/pll_0/inst. (constraint file  /home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.runs/synth_1/dont_touch.xdc, line 48).
+Applied set_property DONT_TOUCH = true for system_i/ps_0/inst. (constraint file  /home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.runs/synth_1/dont_touch.xdc, line 56).
+Applied set_property DONT_TOUCH = true for system_i/rst_0/U0. (constraint file  /home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.runs/synth_1/dont_touch.xdc, line 59).
+Applied set_property DONT_TOUCH = true for system_i. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/Waveform_Offset_Addr. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/cfg_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/const_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/pll_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/ps_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/ps_0_axi_periph. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/rst_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/slice_3. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/writer_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/axis_constant_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/xlconstant_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/ps_0_axi_periph/s00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:45 . Memory (MB): peak = 2195.973 ; gain = 475.078 ; free physical = 545 ; free virtual = 3078
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'axi_protocol_converter_v2_1_20_b2s_rd_cmd_fsm'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 SM_IDLE |                             0010 |                               00
+               SM_CMD_EN |                             1000 |                               01
+         SM_CMD_ACCEPTED |                             0100 |                               10
+                 SM_DONE |                             0001 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'axi_protocol_converter_v2_1_20_b2s_rd_cmd_fsm'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:28 ; elapsed = 00:00:47 . Memory (MB): peak = 2195.973 ; gain = 475.078 ; free physical = 538 ; free virtual = 3072
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input     12 Bit       Adders := 8     
+	   2 Input      9 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 2     
+	   2 Input      5 Bit       Adders := 6     
+	   2 Input      4 Bit       Adders := 4     
+	   2 Input      2 Bit       Adders := 2     
++---Registers : 
+	               66 Bit    Registers := 4     
+	               47 Bit    Registers := 2     
+	               32 Bit    Registers := 4     
+	               20 Bit    Registers := 4     
+	               14 Bit    Registers := 2     
+	               12 Bit    Registers := 9     
+	                9 Bit    Registers := 2     
+	                8 Bit    Registers := 2     
+	                6 Bit    Registers := 2     
+	                5 Bit    Registers := 4     
+	                4 Bit    Registers := 7     
+	                3 Bit    Registers := 3     
+	                2 Bit    Registers := 12    
+	                1 Bit    Registers := 44    
++---Muxes : 
+	   2 Input     66 Bit        Muxes := 4     
+	   2 Input     47 Bit        Muxes := 2     
+	   2 Input     32 Bit        Muxes := 9     
+	   4 Input     20 Bit        Muxes := 1     
+	   2 Input     14 Bit        Muxes := 2     
+	   2 Input     12 Bit        Muxes := 6     
+	   2 Input      9 Bit        Muxes := 4     
+	   2 Input      6 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 8     
+	   2 Input      4 Bit        Muxes := 34    
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 8     
+	   4 Input      2 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 36    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module axi_cfg_register 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 4     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 12    
+Module axi_protocol_converter_v2_1_20_b2s_incr_cmd 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     12 Bit       Adders := 3     
+	   2 Input      9 Bit       Adders := 1     
++---Registers : 
+	               12 Bit    Registers := 1     
+	                9 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+Module axi_protocol_converter_v2_1_20_b2s_wrap_cmd 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     12 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 2     
++---Registers : 
+	               12 Bit    Registers := 2     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 3     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     12 Bit        Muxes := 2     
+	   2 Input      5 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 8     
+	   2 Input      1 Bit        Muxes := 4     
+Module axi_protocol_converter_v2_1_20_b2s_cmd_translator 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 4     
+Module axi_protocol_converter_v2_1_20_b2s_wr_cmd_fsm 
+Detailed RTL Component Info : 
++---Registers : 
+	                2 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 4     
+	   4 Input      2 Bit        Muxes := 2     
+Module axi_protocol_converter_v2_1_20_b2s_aw_channel 
+Detailed RTL Component Info : 
++---Registers : 
+	               12 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+Module axi_protocol_converter_v2_1_20_b2s_simple_fifo 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               20 Bit    Registers := 4     
+	                2 Bit    Registers := 1     
++---Muxes : 
+	   4 Input     20 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module axi_protocol_converter_v2_1_20_b2s_simple_fifo__parameterized0 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	                2 Bit    Registers := 5     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module axi_protocol_converter_v2_1_20_b2s_b_channel 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
+Module axi_protocol_converter_v2_1_20_b2s_rd_cmd_fsm 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 4     
+	   2 Input      2 Bit        Muxes := 2     
+	   4 Input      2 Bit        Muxes := 1     
+Module axi_protocol_converter_v2_1_20_b2s_ar_channel 
+Detailed RTL Component Info : 
++---Registers : 
+	               12 Bit    Registers := 1     
+Module axi_protocol_converter_v2_1_20_b2s_simple_fifo__parameterized1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 2     
++---Registers : 
+	                5 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module axi_protocol_converter_v2_1_20_b2s_simple_fifo__parameterized2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 2     
++---Registers : 
+	                5 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module axi_protocol_converter_v2_1_20_b2s_r_channel 
+Detailed RTL Component Info : 
++---Registers : 
+	               12 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
+Module axi_register_slice_v2_1_20_axic_register_slice 
+Detailed RTL Component Info : 
++---Registers : 
+	               66 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     66 Bit        Muxes := 2     
+Module axi_register_slice_v2_1_20_axic_register_slice__parameterized1 
+Detailed RTL Component Info : 
++---Registers : 
+	               14 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     14 Bit        Muxes := 2     
+Module axi_register_slice_v2_1_20_axic_register_slice__parameterized2 
+Detailed RTL Component Info : 
++---Registers : 
+	               47 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     47 Bit        Muxes := 2     
+Module axi_protocol_converter_v2_1_20_b2s 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module lpf 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 3     
+Module upcnt_n 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      6 Bit       Adders := 1     
++---Registers : 
+	                6 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      6 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module sequence_psr 
+Detailed RTL Component Info : 
++---Registers : 
+	                3 Bit    Registers := 3     
+	                1 Bit    Registers := 6     
+Module axis_ram_writer 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
++---Registers : 
+	                6 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 7     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-3936] Found unconnected internal register 'inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw.aw_pipe/m_payload_i_reg' and it is trimmed from '66' to '62' bits. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1709]
+INFO: [Synth 8-3936] Found unconnected internal register 'inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/ar.ar_pipe/m_payload_i_reg' and it is trimmed from '66' to '62' bits. [/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1709]
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[0][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[0][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[0][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[0][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[1][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[1][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[1][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[1][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[2][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[2][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[2][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[2][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][5] )
+WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d5) is unused and will be removed from module proc_sys_reset.
+WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d6) is unused and will be removed from module proc_sys_reset.
+WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d5) is unused and will be removed from module proc_sys_reset.
+WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d6) is unused and will be removed from module proc_sys_reset.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:50 . Memory (MB): peak = 2195.973 ; gain = 475.078 ; free physical = 511 ; free virtual = 3052
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:38 ; elapsed = 00:00:59 . Memory (MB): peak = 2248.973 ; gain = 528.078 ; free physical = 233 ; free virtual = 2781
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:01:02 . Memory (MB): peak = 2314.012 ; gain = 593.117 ; free physical = 189 ; free virtual = 2737
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:42 ; elapsed = 00:01:04 . Memory (MB): peak = 2314.012 ; gain = 593.117 ; free physical = 189 ; free virtual = 2738
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:46 ; elapsed = 00:01:08 . Memory (MB): peak = 2317.980 ; gain = 597.086 ; free physical = 189 ; free virtual = 2737
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:46 ; elapsed = 00:01:08 . Memory (MB): peak = 2317.980 ; gain = 597.086 ; free physical = 189 ; free virtual = 2737
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:46 ; elapsed = 00:01:08 . Memory (MB): peak = 2317.980 ; gain = 597.086 ; free physical = 189 ; free virtual = 2737
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:46 ; elapsed = 00:01:08 . Memory (MB): peak = 2317.980 ; gain = 597.086 ; free physical = 189 ; free virtual = 2737
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:46 ; elapsed = 00:01:08 . Memory (MB): peak = 2317.980 ; gain = 597.086 ; free physical = 189 ; free virtual = 2737
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:46 ; elapsed = 00:01:08 . Memory (MB): peak = 2317.980 ; gain = 597.086 ; free physical = 189 ; free virtual = 2737
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Dynamic Shift Register Report:
++------------+----------------+--------+------------+--------+---------+--------+--------+--------+
+|Module Name | RTL Name       | Length | Data Width | SRL16E | SRLC32E | Mux F7 | Mux F8 | Mux F9 | 
++------------+----------------+--------+------------+--------+---------+--------+--------+--------+
+|dsrl        | memory_reg[31] | 34     | 34         | 0      | 34      | 0      | 0      | 0      | 
+|dsrl__1     | memory_reg[31] | 13     | 13         | 0      | 13      | 0      | 0      | 0      | 
++------------+----------------+--------+------------+--------+---------+--------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+----------+------+
+|      |Cell      |Count |
++------+----------+------+
+|1     |BIBUF     |   130|
+|2     |BUFG      |     4|
+|3     |CARRY4    |    33|
+|4     |FIFO36E1  |     1|
+|5     |LUT1      |   129|
+|6     |LUT2      |    58|
+|7     |LUT3      |   270|
+|8     |LUT4      |    40|
+|9     |LUT5      |    96|
+|10    |LUT6      |   235|
+|11    |MUXF7     |    32|
+|12    |PLLE2_ADV |     1|
+|13    |PS7       |     1|
+|14    |SRL16     |     1|
+|15    |SRLC32E   |    47|
+|16    |FDR       |     8|
+|17    |FDRE      |  1020|
+|18    |FDSE      |    23|
+|19    |IBUF      |     8|
+|20    |IBUFDS    |     1|
+|21    |OBUFT     |    41|
++------+----------+------+
+
+Report Instance Areas: 
++------+---------------------------------------------------+---------------------------------------------------------------+------+
+|      |Instance                                           |Module                                                         |Cells |
++------+---------------------------------------------------+---------------------------------------------------------------+------+
+|1     |top                                                |                                                               |  2179|
+|2     |  system_i                                         |system                                                         |  2130|
+|3     |    Waveform_Offset_Addr                           |system_Waveform_Offset_Addr_1                                  |     0|
+|4     |    axis_constant_0                                |system_axis_constant_0_0                                       |     0|
+|5     |    cfg_0                                          |system_cfg_0_2                                                 |   513|
+|6     |      inst                                         |axi_cfg_register                                               |   513|
+|7     |    const_0                                        |system_const_0_2                                               |     0|
+|8     |    pll_0                                          |system_pll_0_2                                                 |     5|
+|9     |      inst                                         |system_pll_0_2_clk_wiz                                         |     5|
+|10    |    ps_0                                           |system_ps_0_2                                                  |   244|
+|11    |      inst                                         |processing_system7_v5_5_processing_system7                     |   244|
+|12    |    ps_0_axi_periph                                |system_ps_0_axi_periph_2                                       |  1209|
+|13    |      s00_couplers                                 |s00_couplers_imp_1OVXGTK                                       |  1209|
+|14    |        auto_pc                                    |system_auto_pc_0                                               |  1209|
+|15    |          inst                                     |axi_protocol_converter_v2_1_20_axi_protocol_converter          |  1209|
+|16    |            \gen_axilite.gen_b2s_conv.axilite_b2s  |axi_protocol_converter_v2_1_20_b2s                             |  1209|
+|17    |              \RD.ar_channel_0                     |axi_protocol_converter_v2_1_20_b2s_ar_channel                  |   162|
+|18    |                ar_cmd_fsm_0                       |axi_protocol_converter_v2_1_20_b2s_rd_cmd_fsm                  |    14|
+|19    |                cmd_translator_0                   |axi_protocol_converter_v2_1_20_b2s_cmd_translator_2            |   136|
+|20    |                  incr_cmd_0                       |axi_protocol_converter_v2_1_20_b2s_incr_cmd_3                  |    57|
+|21    |                  wrap_cmd_0                       |axi_protocol_converter_v2_1_20_b2s_wrap_cmd_4                  |    72|
+|22    |              \RD.r_channel_0                      |axi_protocol_converter_v2_1_20_b2s_r_channel                   |    92|
+|23    |                rd_data_fifo_0                     |axi_protocol_converter_v2_1_20_b2s_simple_fifo__parameterized1 |    53|
+|24    |                transaction_fifo_0                 |axi_protocol_converter_v2_1_20_b2s_simple_fifo__parameterized2 |    25|
+|25    |              SI_REG                               |axi_register_slice_v2_1_20_axi_register_slice                  |   622|
+|26    |                \ar.ar_pipe                        |axi_register_slice_v2_1_20_axic_register_slice                 |   226|
+|27    |                \aw.aw_pipe                        |axi_register_slice_v2_1_20_axic_register_slice_1               |   211|
+|28    |                \b.b_pipe                          |axi_register_slice_v2_1_20_axic_register_slice__parameterized1 |    36|
+|29    |                \r.r_pipe                          |axi_register_slice_v2_1_20_axic_register_slice__parameterized2 |   149|
+|30    |              \WR.aw_channel_0                     |axi_protocol_converter_v2_1_20_b2s_aw_channel                  |   179|
+|31    |                aw_cmd_fsm_0                       |axi_protocol_converter_v2_1_20_b2s_wr_cmd_fsm                  |    34|
+|32    |                cmd_translator_0                   |axi_protocol_converter_v2_1_20_b2s_cmd_translator              |   129|
+|33    |                  incr_cmd_0                       |axi_protocol_converter_v2_1_20_b2s_incr_cmd                    |    55|
+|34    |                  wrap_cmd_0                       |axi_protocol_converter_v2_1_20_b2s_wrap_cmd                    |    70|
+|35    |              \WR.b_channel_0                      |axi_protocol_converter_v2_1_20_b2s_b_channel                   |   153|
+|36    |                bid_fifo_0                         |axi_protocol_converter_v2_1_20_b2s_simple_fifo                 |   108|
+|37    |                bresp_fifo_0                       |axi_protocol_converter_v2_1_20_b2s_simple_fifo__parameterized0 |    21|
+|38    |    rst_0                                          |system_rst_0_2                                                 |    70|
+|39    |      U0                                           |proc_sys_reset                                                 |    70|
+|40    |        EXT_LPF                                    |lpf                                                            |    23|
+|41    |          \ACTIVE_LOW_AUX.ACT_LO_AUX               |cdc_sync                                                       |     6|
+|42    |          \ACTIVE_LOW_EXT.ACT_LO_EXT               |cdc_sync_0                                                     |     6|
+|43    |        SEQ                                        |sequence_psr                                                   |    42|
+|44    |          SEQ_COUNTER                              |upcnt_n                                                        |    13|
+|45    |    slice_3                                        |system_slice_3_2                                               |     0|
+|46    |    writer_0                                       |system_writer_0_2                                              |    89|
+|47    |      inst                                         |axis_ram_writer                                                |    89|
+|48    |    xlconstant_0                                   |system_xlconstant_0_0                                          |     0|
++------+---------------------------------------------------+---------------------------------------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:46 ; elapsed = 00:01:08 . Memory (MB): peak = 2317.980 ; gain = 597.086 ; free physical = 189 ; free virtual = 2737
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 454 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:43 ; elapsed = 00:01:04 . Memory (MB): peak = 2317.980 ; gain = 490.320 ; free physical = 243 ; free virtual = 2791
+Synthesis Optimization Complete : Time (s): cpu = 00:00:46 ; elapsed = 00:01:08 . Memory (MB): peak = 2317.988 ; gain = 597.086 ; free physical = 243 ; free virtual = 2791
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2317.988 ; gain = 0.000 ; free physical = 312 ; free virtual = 2860
+INFO: [Netlist 29-17] Analyzing 77 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2326.887 ; gain = 0.000 ; free physical = 253 ; free virtual = 2801
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 9 instances were transformed.
+  FDR => FDRE: 8 instances
+  SRL16 => SRL16E: 1 instance 
+
+INFO: [Common 17-83] Releasing license: Synthesis
+192 Infos, 165 Warnings, 36 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:56 ; elapsed = 00:01:19 . Memory (MB): peak = 2326.887 ; gain = 836.297 ; free physical = 552 ; free virtual = 3100
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2326.887 ; gain = 0.000 ; free physical = 552 ; free virtual = 3101
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint '/home/lars/Documents/Github/DSP/projects/ram_writer_test/ram_writer_test.runs/synth_1/system_wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file system_wrapper_utilization_synth.rpt -pb system_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Jun 28 17:22:34 2021...
