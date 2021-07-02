@@ -3,6 +3,8 @@
 
 #include "network.h"
 
+#include <string>
+
 void WindowManager::renderImGui() {
     static const int n = 10000;
     // Our state variables
@@ -11,6 +13,8 @@ void WindowManager::renderImGui() {
     static int32_t data[n];
     
     static client c = client();
+    static char ip[16] = "192.168.1.10";
+    static char port[6] = "42069";
 
     static bool init = false;
     static bool connected = false;
@@ -20,7 +24,12 @@ void WindowManager::renderImGui() {
         for (int i = 0; i < n; i++) {
             x_data[i] = i;
         }
+        
+        // try once to connect upon initialization
+        connected = c.connect_to(ip, std::stoi(port)) == 0;
     }
+    
+    // retrieve data from FPGA
     if (connected){
         c.get_frame(data, 0, 0, n, 125000000/1000);
         for (int i = 0; i < n; i++) 
@@ -28,7 +37,7 @@ void WindowManager::renderImGui() {
     }
     //Make logic to connect on button click
     else{
-        connected = c.connect_to("192.168.1.10", 42069) == 0;
+        
     }
 
 
@@ -50,15 +59,15 @@ void WindowManager::renderImGui() {
     ImGui::Text("Application average %.3f ms/frame\n(%.1f FPS) Vsync: %s", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate, vsync ? "On" : "Off");
     ImGui::PopTextWrapPos();
     
+    ImGui::Text("Status: %s", connected ? "Connected" : "No connection");
+    
     if (ImGui::CollapsingHeader("Connection", ImGuiTreeNodeFlags_DefaultOpen)) {
-        static char ip[16];
         ImGui::Text("Target IP: ");
         ImGui::SameLine();
         ImGui::PushItemWidth(-1.0f);
         ImGui::InputText("##target ip", ip, IM_ARRAYSIZE(ip));
         ImGui::PushItemWidth(0.0f);
         
-        static char port[6];
         ImGui::Text("Target Port: ");
         ImGui::SameLine();
         ImGui::PushItemWidth(-1.0f);
@@ -66,8 +75,8 @@ void WindowManager::renderImGui() {
         ImGui::PushItemWidth(0.0f);
         
         if (ImGui::Button(string_format("Connect to %s:%s", (strcmp(ip, "") == 0) ? "xxx.xxx.xxx.xxx" : ip, (strcmp(port, "") == 0) ? "xxxxx" : port).c_str())) {
-            if (strcmp(ip, "") == 0) {
-                
+            if (strcmp(ip, "") != 0) {
+                connected = c.connect_to(ip, std::stoi(port)) == 0;
             }
         }
     }

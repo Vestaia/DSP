@@ -12,13 +12,13 @@ pwp_fpga::~pwp_fpga(){
 }
 
 int pwp_fpga::set_coef(int32_t *coef, size_t size){
-    for (int i = 0; i < size/sizeof(coef); i++)
+    for (unsigned long i = 0; i < size/sizeof(coef); i++)
         cfg->coef[i] = coef[i];
     return 0;
 }
 
 int pwp_fpga::set_delay(uint16_t *delay, size_t size){
-    for (int i = 0; i < size/sizeof(delay); i++)
+    for (unsigned long i = 0; i < size/sizeof(delay); i++)
         cfg->delay[i] = delay[i];
     return 0;
 }

@@ -13,7 +13,7 @@ struct request{
 
 class server{
     int server_fd, client_fd;
-    struct sockaddr_in s, c;
+    struct sockaddr_in s;
     socklen_t sockaddr_size = sizeof(s);
 
     public:
@@ -23,8 +23,8 @@ class server{
     //Attach to a local interface and port
     int attach(uint ipv4_interface_addr, ushort ipv4_interface_port);
     int attach(const char* ipv4_interface_addr, ushort ipv4_interface_port);
-    int send(void* data, size_t size);
-    int recieve(void* data, size_t size);
+    int send(void* data, ssize_t size);
+    int recieve(void* data, ssize_t size);
     int read_request(request* req);
 };
 
@@ -39,8 +39,8 @@ class client{
 
     int connect_to(uint ipv4_remote_addr, ushort ipv4_remote_port);
     int connect_to(const char* ipv4_remote_addr, ushort ipv4_remote_port);
-    int send(void* data, size_t size);
-    int recieve(void* data, size_t size);
+    int send(void* data, ssize_t size);
+    int recieve(void* data, ssize_t size);
     template <class T>
     int get_frame(T* data, uint8_t flags, uint32_t samples_offset, uint32_t nsamples, uint32_t rate);
 };
@@ -63,6 +63,8 @@ int client::get_frame(
         perror("Send request:");
         return -1;
     }
-    if (recieve(data, sizeof(T) * nsamples) < 0);
+    if (recieve(data, sizeof(T) * nsamples) < 0) {
+        return -1;
+    }
     return 0;
 }

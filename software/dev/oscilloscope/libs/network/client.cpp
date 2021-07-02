@@ -37,17 +37,17 @@ int client::connect_to(
 
 int client::send(
         void *data, 
-        size_t size
+        ssize_t size
     ){
     return (write(server_fd, data, size) == size) - 1;
 }
 
 int client::recieve(
         void *data, 
-        size_t size
+        ssize_t size
     ){
-    size_t status;
-    size_t recd = 0;
+    ssize_t status;
+    ssize_t recd = 0;
 
     while (recd < size && (status = read(server_fd, (uint8_t*)data + recd, size)) >= 0){
         recd += status;

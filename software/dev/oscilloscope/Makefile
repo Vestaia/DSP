@@ -130,21 +130,21 @@ all:
 release: $(REL_EXE)
 
 $(REL_EXE): $(REL_OBJS)
-	@printf "${BPURPLE}Compiling final executable:${BWHITE} $@${NC}\n"
+	@printf "${BCYAN}Compiling final executable:${BWHITE} $@${NC}\n"
 	$(COMPILER) -o $(REL_EXE) $^ $(COMPILE_FLAGS) $(LINK_FLAGS) $(REL_FLAGS)
-	@printf "${BPURPLE}Compilation complete:${BWHITE} $@${NC}\n"
+	@printf "${BCYAN}Compilation complete:${BWHITE} $@${NC}\n"
 
 $(REL_DIR)/objs/%.o: %.cpp
 	$(call MKDIR_P, $(dir $@))
-	@printf "${BPURPLE}Compiling object:${BWHITE} $@${NC}\n"
+	@printf "${BCYAN}Compiling object:${BWHITE} $@${NC}\n"
 	$(COMPILER) -c -o $@ $< $(COMPILE_FLAGS) $(REL_FLAGS)
-	@printf "${BPURPLE}Compilation complete:${BWHITE} $@${NC}\n"
+	@printf "${BCYAN}Compilation complete:${BWHITE} $@${NC}\n"
 
 $(REL_DIR)/objs/%.o: %.c
 	$(call MKDIR_P, $(dir $@))
-	@printf "${BPURPLE}Compiling object:${BWHITE} $@${NC}\n"
+	@printf "${BCYAN}Compiling object:${BWHITE} $@${NC}\n"
 	$(COMPILER) -c -o $@ $< $(COMPILE_FLAGS) $(REL_FLAGS)
-	@printf "${BPURPLE}Compilation complete:${BWHITE} $@${NC}\n"
+	@printf "${BCYAN}Compilation complete:${BWHITE} $@${NC}\n"
 
 
 #
