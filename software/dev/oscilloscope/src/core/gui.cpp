@@ -8,7 +8,7 @@ void WindowManager::renderImGui() {
     // Our state variables
     static float x_data[n];
     static float y_data[n];
-    static int16_t data[n];
+    static int32_t data[n];
     
     static client c = client();
 
@@ -18,11 +18,11 @@ void WindowManager::renderImGui() {
         init = true;
         
         for (int i = 0; i < n; i++) {
-            x_data[i] = 0.0f + 0.01f * i;
+            x_data[i] = i;
         }
     }
     if (connected){
-        c.get_frame(data, 0, 0, n, 1);
+        c.get_frame(data, 0, 0, n, 125000000/1000);
         for (int i = 0; i < n; i++) 
             y_data[i] = (float) data[i];
     }
@@ -79,7 +79,7 @@ void WindowManager::renderImGui() {
     
     ImGui::Begin("Plot", nullptr, window_flags);
     if (ImPlot::BeginPlot("My Plot", 0, 0, ImVec2(-1.0f, -1.0f), 0)) {
-        ImPlot::PlotLine("My Line Plot", x_data, y_data, 1000);
+        ImPlot::PlotLine("My Line Plot", x_data, y_data, n);
         ImPlot::EndPlot();
     }
     ImGui::End();

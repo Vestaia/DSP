@@ -35,22 +35,23 @@ int client::connect_to(
         return connect_to(ip, ipv4_remote_port);
     }
 
-int client::get_frame(
-        int16_t*    data,
-        uint8_t     flags,
-        uint32_t    t_offset,
-        uint32_t    nsamples,
-        uint32_t    rate
+int client::send(
+        void *data, 
+        size_t size
     ){
-    request req;
-    req.flags = flags;
-    req.t_offset = t_offset;
-    req.nsamples = nsamples;
-    req.rate = rate;
-    if (send(&req, sizeof(req)) < 0){
-        perror("Send request:");
-        return -1;
+    return (write(server_fd, data, size) == size) - 1;
+}
+
+int client::recieve(
+        void *data, 
+        size_t size
+    ){
+    size_t status;
+    size_t recd = 0;
+
+    while (recd < size && (status = read(server_fd, (uint8_t*)data + recd, size)) >= 0){
+        recd += status;
+        //printf("Bytes Recieved: %d \t Bytes Remaining: %d\n", recd, size - recd);
     }
-    if (recieve(data, sizeof(int16_t) * nsamples) < 0);
-    return 0;
+    return (recd == size) - 1;
 }
