@@ -1,0 +1,35 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"1.0",
+   "Default View_TopLeft":"-254,-49",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0.21  2019-05-29 bk=1.5064 VDI=41 GEI=36 GUI=JA:9.0 TLS
+#  -string -flagsOSRD
+preplace port S_AXI -pg 1 -lvl 0 -x 0 -y 60 -defaultsOSRD
+preplace port aclk -pg 1 -lvl 0 -x 0 -y 80 -defaultsOSRD
+preplace port aresetn -pg 1 -lvl 0 -x 0 -y 100 -defaultsOSRD
+preplace portBus dout -pg 1 -lvl 3 -x 560 -y 370 -defaultsOSRD
+preplace portBus dout1 -pg 1 -lvl 3 -x 560 -y 170 -defaultsOSRD
+preplace portBus dout2 -pg 1 -lvl 3 -x 560 -y 270 -defaultsOSRD
+preplace portBus dout3 -pg 1 -lvl 3 -x 560 -y 470 -defaultsOSRD
+preplace portBus dout4 -pg 1 -lvl 3 -x 560 -y 60 -defaultsOSRD
+preplace inst writer_reset -pg 1 -lvl 2 -x 410 -y 370 -defaultsOSRD
+preplace inst filter_reset -pg 1 -lvl 2 -x 410 -y 170 -defaultsOSRD
+preplace inst cfg_0 -pg 1 -lvl 1 -x 150 -y 80 -defaultsOSRD
+preplace inst port_slicer_0 -pg 1 -lvl 2 -x 410 -y 270 -defaultsOSRD
+preplace inst port_slicer_1 -pg 1 -lvl 2 -x 410 -y 470 -defaultsOSRD
+preplace inst gen_exp_decay -pg 1 -lvl 2 -x 410 -y 60 -defaultsOSRD -resize 220 88
+preplace netloc cfg_0_cfg_data 1 1 1 280 60n
+preplace netloc slice_3_dout 1 2 1 NJ 370
+preplace netloc slice_2_dout 1 2 1 NJ 170
+preplace netloc pll_0_clk_out1 1 0 1 NJ 80
+preplace netloc rst_0_peripheral_aresetn 1 0 1 NJ 100
+preplace netloc port_slicer_0_dout 1 2 1 NJ 270
+preplace netloc port_slicer_1_dout 1 2 1 NJ 470
+preplace netloc gen_exp_decay_dout 1 2 1 NJ 60
+preplace netloc ps_0_axi_periph_M00_AXI 1 0 1 NJ 60
+levelinfo -pg 1 0 150 410 560
+pagesize -pg 1 -db -bbox -sgen -110 0 720 530
+"
+}
+

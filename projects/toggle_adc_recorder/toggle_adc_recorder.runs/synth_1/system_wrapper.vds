@@ -1,0 +1,2070 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Fri Jul  2 14:05:40 2021
+# Process ID: 5925
+# Current directory: /home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.runs/synth_1
+# Command line: vivado -log system_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_wrapper.tcl
+# Log file: /home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.runs/synth_1/system_wrapper.vds
+# Journal file: /home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source system_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository '/home/lars/Documents/Github/filters'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/lars/Documents/Github/DSP/pavel-cores'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/lars/Documents/Github/DSP/cores'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2019.2/data/ip'.
+Command: synth_design -top system_wrapper -part xc7z010clg400-1 -fanout_limit 400 -directive PerformanceOptimized -fsm_extraction one_hot -keep_equivalent_registers -resource_sharing off -no_lc -shreg_min_size 5
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 6026 
+WARNING: [Synth 8-2611] redeclaration of ansi port pulse is not allowed [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/0f35/pulse_gen.v:13]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:28 . Memory (MB): peak = 1935.488 ; gain = 211.594 ; free physical = 142 ; free virtual = 3211
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'system_wrapper' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/hdl/system_wrapper.v:12]
+INFO: [Synth 8-6157] synthesizing module 'system' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/synth/system.v:308]
+INFO: [Synth 8-6157] synthesizing module 'system_Waveform_Offset_Addr_1' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_Waveform_Offset_Addr_1/synth/system_Waveform_Offset_Addr_1.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_6_xlconstant' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/34f7/hdl/xlconstant_v1_1_vl_rfs.v:23]
+	Parameter CONST_VAL bound to: 402653184 - type: integer 
+	Parameter CONST_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_6_xlconstant' (1#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/34f7/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'system_Waveform_Offset_Addr_1' (2#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_Waveform_Offset_Addr_1/synth/system_Waveform_Offset_Addr_1.v:57]
+INFO: [Synth 8-6157] synthesizing module 'system_Waveform_Offset_Addr_2' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_Waveform_Offset_Addr_2/synth/system_Waveform_Offset_Addr_2.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_6_xlconstant__parameterized0' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/34f7/hdl/xlconstant_v1_1_vl_rfs.v:23]
+	Parameter CONST_VAL bound to: 268435456 - type: integer 
+	Parameter CONST_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_6_xlconstant__parameterized0' (2#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/34f7/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'system_Waveform_Offset_Addr_2' (3#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_Waveform_Offset_Addr_2/synth/system_Waveform_Offset_Addr_2.v:57]
+INFO: [Synth 8-6157] synthesizing module 'system_adc_0_0' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_adc_0_0/synth/system_adc_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'axis_red_pitaya_adc' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/fda5/src/axis_red_pitaya_adc.v:4]
+	Parameter ADC_DATA_WIDTH bound to: 14 - type: integer 
+	Parameter AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter PADDING_WIDTH bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axis_red_pitaya_adc' (4#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/fda5/src/axis_red_pitaya_adc.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'system_adc_0_0' (5#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_adc_0_0/synth/system_adc_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'system_axis_broadcaster_0_0' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_axis_broadcaster_0_0/synth/system_axis_broadcaster_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'top_system_axis_broadcaster_0_0' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_axis_broadcaster_0_0/hdl/top_system_axis_broadcaster_0_0.v:60]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_NUM_MI_SLOTS bound to: 2 - type: integer 
+	Parameter C_S_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXIS_TDATA_WIDTH bound to: 16 - type: integer 
+	Parameter C_AXIS_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXIS_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXIS_SIGNAL_SET bound to: 2 - type: integer 
+	Parameter G_INDX_SS_TREADY bound to: 0 - type: integer 
+	Parameter G_INDX_SS_TDATA bound to: 1 - type: integer 
+	Parameter G_INDX_SS_TSTRB bound to: 2 - type: integer 
+	Parameter G_INDX_SS_TKEEP bound to: 3 - type: integer 
+	Parameter G_INDX_SS_TLAST bound to: 4 - type: integer 
+	Parameter G_INDX_SS_TID bound to: 5 - type: integer 
+	Parameter G_INDX_SS_TDEST bound to: 6 - type: integer 
+	Parameter G_INDX_SS_TUSER bound to: 7 - type: integer 
+	Parameter G_MASK_SS_TREADY bound to: 1 - type: integer 
+	Parameter G_MASK_SS_TDATA bound to: 2 - type: integer 
+	Parameter G_MASK_SS_TSTRB bound to: 4 - type: integer 
+	Parameter G_MASK_SS_TKEEP bound to: 8 - type: integer 
+	Parameter G_MASK_SS_TLAST bound to: 16 - type: integer 
+	Parameter G_MASK_SS_TID bound to: 32 - type: integer 
+	Parameter G_MASK_SS_TDEST bound to: 64 - type: integer 
+	Parameter G_MASK_SS_TUSER bound to: 128 - type: integer 
+	Parameter G_TASK_SEVERITY_ERR bound to: 2 - type: integer 
+	Parameter G_TASK_SEVERITY_WARNING bound to: 1 - type: integer 
+	Parameter G_TASK_SEVERITY_INFO bound to: 0 - type: integer 
+	Parameter P_TPAYLOAD_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axis_broadcaster_v1_1_19_core' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/d7e4/hdl/axis_broadcaster_v1_1_vl_rfs.v:59]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXIS_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXIS_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXIS_SIGNAL_SET bound to: 2 - type: integer 
+	Parameter C_NUM_MI_SLOTS bound to: 2 - type: integer 
+	Parameter G_INDX_SS_TREADY bound to: 0 - type: integer 
+	Parameter G_INDX_SS_TDATA bound to: 1 - type: integer 
+	Parameter G_INDX_SS_TSTRB bound to: 2 - type: integer 
+	Parameter G_INDX_SS_TKEEP bound to: 3 - type: integer 
+	Parameter G_INDX_SS_TLAST bound to: 4 - type: integer 
+	Parameter G_INDX_SS_TID bound to: 5 - type: integer 
+	Parameter G_INDX_SS_TDEST bound to: 6 - type: integer 
+	Parameter G_INDX_SS_TUSER bound to: 7 - type: integer 
+	Parameter G_MASK_SS_TREADY bound to: 1 - type: integer 
+	Parameter G_MASK_SS_TDATA bound to: 2 - type: integer 
+	Parameter G_MASK_SS_TSTRB bound to: 4 - type: integer 
+	Parameter G_MASK_SS_TKEEP bound to: 8 - type: integer 
+	Parameter G_MASK_SS_TLAST bound to: 16 - type: integer 
+	Parameter G_MASK_SS_TID bound to: 32 - type: integer 
+	Parameter G_MASK_SS_TDEST bound to: 64 - type: integer 
+	Parameter G_MASK_SS_TUSER bound to: 128 - type: integer 
+	Parameter G_TASK_SEVERITY_ERR bound to: 2 - type: integer 
+	Parameter G_TASK_SEVERITY_WARNING bound to: 1 - type: integer 
+	Parameter G_TASK_SEVERITY_INFO bound to: 0 - type: integer 
+	Parameter P_TPAYLOAD_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axis_infrastructure_v1_1_0_util_vector2axis' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/8713/hdl/axis_infrastructure_v1_1_vl_rfs.v:992]
+	Parameter C_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_TPAYLOAD_WIDTH bound to: 32 - type: integer 
+	Parameter C_SIGNAL_SET bound to: 2 - type: integer 
+	Parameter G_INDX_SS_TREADY bound to: 0 - type: integer 
+	Parameter G_INDX_SS_TDATA bound to: 1 - type: integer 
+	Parameter G_INDX_SS_TSTRB bound to: 2 - type: integer 
+	Parameter G_INDX_SS_TKEEP bound to: 3 - type: integer 
+	Parameter G_INDX_SS_TLAST bound to: 4 - type: integer 
+	Parameter G_INDX_SS_TID bound to: 5 - type: integer 
+	Parameter G_INDX_SS_TDEST bound to: 6 - type: integer 
+	Parameter G_INDX_SS_TUSER bound to: 7 - type: integer 
+	Parameter G_MASK_SS_TREADY bound to: 1 - type: integer 
+	Parameter G_MASK_SS_TDATA bound to: 2 - type: integer 
+	Parameter G_MASK_SS_TSTRB bound to: 4 - type: integer 
+	Parameter G_MASK_SS_TKEEP bound to: 8 - type: integer 
+	Parameter G_MASK_SS_TLAST bound to: 16 - type: integer 
+	Parameter G_MASK_SS_TID bound to: 32 - type: integer 
+	Parameter G_MASK_SS_TDEST bound to: 64 - type: integer 
+	Parameter G_MASK_SS_TUSER bound to: 128 - type: integer 
+	Parameter G_TASK_SEVERITY_ERR bound to: 2 - type: integer 
+	Parameter G_TASK_SEVERITY_WARNING bound to: 1 - type: integer 
+	Parameter G_TASK_SEVERITY_INFO bound to: 0 - type: integer 
+	Parameter P_TDATA_INDX bound to: 0 - type: integer 
+	Parameter P_TSTRB_INDX bound to: 32 - type: integer 
+	Parameter P_TKEEP_INDX bound to: 32 - type: integer 
+	Parameter P_TLAST_INDX bound to: 32 - type: integer 
+	Parameter P_TID_INDX bound to: 32 - type: integer 
+	Parameter P_TDEST_INDX bound to: 32 - type: integer 
+	Parameter P_TUSER_INDX bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axis_infrastructure_v1_1_0_util_vector2axis' (6#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/8713/hdl/axis_infrastructure_v1_1_vl_rfs.v:992]
+INFO: [Synth 8-6157] synthesizing module 'axis_infrastructure_v1_1_0_util_axis2vector' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/8713/hdl/axis_infrastructure_v1_1_vl_rfs.v:810]
+	Parameter C_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_TPAYLOAD_WIDTH bound to: 32 - type: integer 
+	Parameter C_SIGNAL_SET bound to: 2 - type: integer 
+	Parameter G_INDX_SS_TREADY bound to: 0 - type: integer 
+	Parameter G_INDX_SS_TDATA bound to: 1 - type: integer 
+	Parameter G_INDX_SS_TSTRB bound to: 2 - type: integer 
+	Parameter G_INDX_SS_TKEEP bound to: 3 - type: integer 
+	Parameter G_INDX_SS_TLAST bound to: 4 - type: integer 
+	Parameter G_INDX_SS_TID bound to: 5 - type: integer 
+	Parameter G_INDX_SS_TDEST bound to: 6 - type: integer 
+	Parameter G_INDX_SS_TUSER bound to: 7 - type: integer 
+	Parameter G_MASK_SS_TREADY bound to: 1 - type: integer 
+	Parameter G_MASK_SS_TDATA bound to: 2 - type: integer 
+	Parameter G_MASK_SS_TSTRB bound to: 4 - type: integer 
+	Parameter G_MASK_SS_TKEEP bound to: 8 - type: integer 
+	Parameter G_MASK_SS_TLAST bound to: 16 - type: integer 
+	Parameter G_MASK_SS_TID bound to: 32 - type: integer 
+	Parameter G_MASK_SS_TDEST bound to: 64 - type: integer 
+	Parameter G_MASK_SS_TUSER bound to: 128 - type: integer 
+	Parameter G_TASK_SEVERITY_ERR bound to: 2 - type: integer 
+	Parameter G_TASK_SEVERITY_WARNING bound to: 1 - type: integer 
+	Parameter G_TASK_SEVERITY_INFO bound to: 0 - type: integer 
+	Parameter P_TDATA_INDX bound to: 0 - type: integer 
+	Parameter P_TSTRB_INDX bound to: 32 - type: integer 
+	Parameter P_TKEEP_INDX bound to: 32 - type: integer 
+	Parameter P_TLAST_INDX bound to: 32 - type: integer 
+	Parameter P_TID_INDX bound to: 32 - type: integer 
+	Parameter P_TDEST_INDX bound to: 32 - type: integer 
+	Parameter P_TUSER_INDX bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axis_infrastructure_v1_1_0_util_axis2vector' (7#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/8713/hdl/axis_infrastructure_v1_1_vl_rfs.v:810]
+INFO: [Synth 8-6155] done synthesizing module 'axis_broadcaster_v1_1_19_core' (8#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/d7e4/hdl/axis_broadcaster_v1_1_vl_rfs.v:59]
+INFO: [Synth 8-6157] synthesizing module 'tdata_system_axis_broadcaster_0_0' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_axis_broadcaster_0_0/hdl/tdata_system_axis_broadcaster_0_0.v:49]
+	Parameter C_S_AXIS_TDATA_WIDTH bound to: 64 - type: integer 
+	Parameter C_M_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'tdata_system_axis_broadcaster_0_0' (9#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_axis_broadcaster_0_0/hdl/tdata_system_axis_broadcaster_0_0.v:49]
+INFO: [Synth 8-6157] synthesizing module 'tuser_system_axis_broadcaster_0_0' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_axis_broadcaster_0_0/hdl/tuser_system_axis_broadcaster_0_0.v:49]
+	Parameter C_S_AXIS_TUSER_WIDTH bound to: 2 - type: integer 
+	Parameter C_M_AXIS_TUSER_WIDTH bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'tuser_system_axis_broadcaster_0_0' (10#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_axis_broadcaster_0_0/hdl/tuser_system_axis_broadcaster_0_0.v:49]
+INFO: [Synth 8-6155] done synthesizing module 'top_system_axis_broadcaster_0_0' (11#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_axis_broadcaster_0_0/hdl/top_system_axis_broadcaster_0_0.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'system_axis_broadcaster_0_0' (12#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_axis_broadcaster_0_0/synth/system_axis_broadcaster_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'system_axis_combiner_0_0' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_axis_combiner_0_0/synth/system_axis_combiner_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'axis_combiner_v1_1_18_top' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/ddc9/hdl/axis_combiner_v1_1_vl_rfs.v:56]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_AXIS_TDATA_WIDTH bound to: 16 - type: integer 
+	Parameter C_AXIS_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXIS_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXIS_SIGNAL_SET bound to: 3 - type: integer 
+	Parameter C_MASTER_PORT_NUM bound to: 0 - type: integer 
+	Parameter C_NUM_SI_SLOTS bound to: 2 - type: integer 
+	Parameter G_INDX_SS_TREADY bound to: 0 - type: integer 
+	Parameter G_INDX_SS_TDATA bound to: 1 - type: integer 
+	Parameter G_INDX_SS_TSTRB bound to: 2 - type: integer 
+	Parameter G_INDX_SS_TKEEP bound to: 3 - type: integer 
+	Parameter G_INDX_SS_TLAST bound to: 4 - type: integer 
+	Parameter G_INDX_SS_TID bound to: 5 - type: integer 
+	Parameter G_INDX_SS_TDEST bound to: 6 - type: integer 
+	Parameter G_INDX_SS_TUSER bound to: 7 - type: integer 
+	Parameter G_MASK_SS_TREADY bound to: 1 - type: integer 
+	Parameter G_MASK_SS_TDATA bound to: 2 - type: integer 
+	Parameter G_MASK_SS_TSTRB bound to: 4 - type: integer 
+	Parameter G_MASK_SS_TKEEP bound to: 8 - type: integer 
+	Parameter G_MASK_SS_TLAST bound to: 16 - type: integer 
+	Parameter G_MASK_SS_TID bound to: 32 - type: integer 
+	Parameter G_MASK_SS_TDEST bound to: 64 - type: integer 
+	Parameter G_MASK_SS_TUSER bound to: 128 - type: integer 
+	Parameter G_TASK_SEVERITY_ERR bound to: 2 - type: integer 
+	Parameter G_TASK_SEVERITY_WARNING bound to: 1 - type: integer 
+	Parameter G_TASK_SEVERITY_INFO bound to: 0 - type: integer 
+	Parameter P_TPAYLOAD_WIDTH bound to: 32 - type: integer 
+	Parameter P_MASTER_PORT_NUM bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axis_infrastructure_v1_1_0_util_axis2vector__parameterized0' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/8713/hdl/axis_infrastructure_v1_1_vl_rfs.v:810]
+	Parameter C_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_TUSER_WIDTH bound to: 2 - type: integer 
+	Parameter C_TPAYLOAD_WIDTH bound to: 32 - type: integer 
+	Parameter C_SIGNAL_SET bound to: 3 - type: integer 
+	Parameter G_INDX_SS_TREADY bound to: 0 - type: integer 
+	Parameter G_INDX_SS_TDATA bound to: 1 - type: integer 
+	Parameter G_INDX_SS_TSTRB bound to: 2 - type: integer 
+	Parameter G_INDX_SS_TKEEP bound to: 3 - type: integer 
+	Parameter G_INDX_SS_TLAST bound to: 4 - type: integer 
+	Parameter G_INDX_SS_TID bound to: 5 - type: integer 
+	Parameter G_INDX_SS_TDEST bound to: 6 - type: integer 
+	Parameter G_INDX_SS_TUSER bound to: 7 - type: integer 
+	Parameter G_MASK_SS_TREADY bound to: 1 - type: integer 
+	Parameter G_MASK_SS_TDATA bound to: 2 - type: integer 
+	Parameter G_MASK_SS_TSTRB bound to: 4 - type: integer 
+	Parameter G_MASK_SS_TKEEP bound to: 8 - type: integer 
+	Parameter G_MASK_SS_TLAST bound to: 16 - type: integer 
+	Parameter G_MASK_SS_TID bound to: 32 - type: integer 
+	Parameter G_MASK_SS_TDEST bound to: 64 - type: integer 
+	Parameter G_MASK_SS_TUSER bound to: 128 - type: integer 
+	Parameter G_TASK_SEVERITY_ERR bound to: 2 - type: integer 
+	Parameter G_TASK_SEVERITY_WARNING bound to: 1 - type: integer 
+	Parameter G_TASK_SEVERITY_INFO bound to: 0 - type: integer 
+	Parameter P_TDATA_INDX bound to: 0 - type: integer 
+	Parameter P_TSTRB_INDX bound to: 32 - type: integer 
+	Parameter P_TKEEP_INDX bound to: 32 - type: integer 
+	Parameter P_TLAST_INDX bound to: 32 - type: integer 
+	Parameter P_TID_INDX bound to: 32 - type: integer 
+	Parameter P_TDEST_INDX bound to: 32 - type: integer 
+	Parameter P_TUSER_INDX bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axis_infrastructure_v1_1_0_util_axis2vector__parameterized0' (12#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/8713/hdl/axis_infrastructure_v1_1_vl_rfs.v:810]
+INFO: [Synth 8-6157] synthesizing module 'axis_infrastructure_v1_1_0_util_vector2axis__parameterized0' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/8713/hdl/axis_infrastructure_v1_1_vl_rfs.v:992]
+	Parameter C_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_TUSER_WIDTH bound to: 2 - type: integer 
+	Parameter C_TPAYLOAD_WIDTH bound to: 32 - type: integer 
+	Parameter C_SIGNAL_SET bound to: 3 - type: integer 
+	Parameter G_INDX_SS_TREADY bound to: 0 - type: integer 
+	Parameter G_INDX_SS_TDATA bound to: 1 - type: integer 
+	Parameter G_INDX_SS_TSTRB bound to: 2 - type: integer 
+	Parameter G_INDX_SS_TKEEP bound to: 3 - type: integer 
+	Parameter G_INDX_SS_TLAST bound to: 4 - type: integer 
+	Parameter G_INDX_SS_TID bound to: 5 - type: integer 
+	Parameter G_INDX_SS_TDEST bound to: 6 - type: integer 
+	Parameter G_INDX_SS_TUSER bound to: 7 - type: integer 
+	Parameter G_MASK_SS_TREADY bound to: 1 - type: integer 
+	Parameter G_MASK_SS_TDATA bound to: 2 - type: integer 
+	Parameter G_MASK_SS_TSTRB bound to: 4 - type: integer 
+	Parameter G_MASK_SS_TKEEP bound to: 8 - type: integer 
+	Parameter G_MASK_SS_TLAST bound to: 16 - type: integer 
+	Parameter G_MASK_SS_TID bound to: 32 - type: integer 
+	Parameter G_MASK_SS_TDEST bound to: 64 - type: integer 
+	Parameter G_MASK_SS_TUSER bound to: 128 - type: integer 
+	Parameter G_TASK_SEVERITY_ERR bound to: 2 - type: integer 
+	Parameter G_TASK_SEVERITY_WARNING bound to: 1 - type: integer 
+	Parameter G_TASK_SEVERITY_INFO bound to: 0 - type: integer 
+	Parameter P_TDATA_INDX bound to: 0 - type: integer 
+	Parameter P_TSTRB_INDX bound to: 32 - type: integer 
+	Parameter P_TKEEP_INDX bound to: 32 - type: integer 
+	Parameter P_TLAST_INDX bound to: 32 - type: integer 
+	Parameter P_TID_INDX bound to: 32 - type: integer 
+	Parameter P_TDEST_INDX bound to: 32 - type: integer 
+	Parameter P_TUSER_INDX bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axis_infrastructure_v1_1_0_util_vector2axis__parameterized0' (12#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/8713/hdl/axis_infrastructure_v1_1_vl_rfs.v:992]
+INFO: [Synth 8-6155] done synthesizing module 'axis_combiner_v1_1_18_top' (13#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/ddc9/hdl/axis_combiner_v1_1_vl_rfs.v:56]
+INFO: [Synth 8-6155] done synthesizing module 'system_axis_combiner_0_0' (14#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_axis_combiner_0_0/synth/system_axis_combiner_0_0.v:57]
+WARNING: [Synth 8-7023] instance 'axis_combiner_0' of module 'system_axis_combiner_0_0' has 8 connections declared, but only 6 given [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/synth/system.v:562]
+INFO: [Synth 8-6157] synthesizing module 'system_axis_red_pitaya_dac_0_0' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_axis_red_pitaya_dac_0_0/synth/system_axis_red_pitaya_dac_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'axis_red_pitaya_dac' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/ab40/src/axis_red_pitaya_dac.v:4]
+	Parameter DAC_DATA_WIDTH bound to: 14 - type: integer 
+	Parameter AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'ODDR' [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:49681]
+	Parameter DDR_CLK_EDGE bound to: OPPOSITE_EDGE - type: string 
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D1_INVERTED bound to: 1'b0 
+	Parameter IS_D2_INVERTED bound to: 1'b0 
+	Parameter SRTYPE bound to: SYNC - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'ODDR' (15#1) [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:49681]
+INFO: [Synth 8-6155] done synthesizing module 'axis_red_pitaya_dac' (16#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/ab40/src/axis_red_pitaya_dac.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'system_axis_red_pitaya_dac_0_0' (17#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_axis_red_pitaya_dac_0_0/synth/system_axis_red_pitaya_dac_0_0.v:57]
+WARNING: [Synth 8-7023] instance 'axis_red_pitaya_dac_0' of module 'system_axis_red_pitaya_dac_0_0' has 11 connections declared, but only 10 given [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/synth/system.v:569]
+INFO: [Synth 8-638] synthesizing module 'system_c_counter_binary_0_0' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_c_counter_binary_0_0/synth/system_c_counter_binary_0_0.vhd:66]
+	Parameter C_IMPLEMENTATION bound to: 1 - type: integer 
+	Parameter C_VERBOSITY bound to: 0 - type: integer 
+	Parameter C_XDEVICEFAMILY bound to: zynq - type: string 
+	Parameter C_WIDTH bound to: 48 - type: integer 
+	Parameter C_HAS_CE bound to: 0 - type: integer 
+	Parameter C_HAS_SCLR bound to: 0 - type: integer 
+	Parameter C_RESTRICT_COUNT bound to: 0 - type: integer 
+	Parameter C_COUNT_TO bound to: 1 - type: string 
+	Parameter C_COUNT_BY bound to: 1 - type: string 
+	Parameter C_COUNT_MODE bound to: 0 - type: integer 
+	Parameter C_THRESH0_VALUE bound to: 1 - type: string 
+	Parameter C_CE_OVERRIDES_SYNC bound to: 0 - type: integer 
+	Parameter C_HAS_THRESH0 bound to: 0 - type: integer 
+	Parameter C_HAS_LOAD bound to: 0 - type: integer 
+	Parameter C_LOAD_LOW bound to: 0 - type: integer 
+	Parameter C_LATENCY bound to: 1 - type: integer 
+	Parameter C_FB_LATENCY bound to: 0 - type: integer 
+	Parameter C_AINIT_VAL bound to: 0 - type: string 
+	Parameter C_SINIT_VAL bound to: 0 - type: string 
+	Parameter C_SCLR_OVERRIDES_SSET bound to: 1 - type: integer 
+	Parameter C_HAS_SSET bound to: 0 - type: integer 
+	Parameter C_HAS_SINIT bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'c_counter_binary_v12_0_14' declared at '/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/1f12/hdl/c_counter_binary_v12_0_vh_rfs.vhd:2146' bound to instance 'U0' of component 'c_counter_binary_v12_0_14' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_c_counter_binary_0_0/synth/system_c_counter_binary_0_0.vhd:122]
+INFO: [Synth 8-256] done synthesizing module 'system_c_counter_binary_0_0' (24#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_c_counter_binary_0_0/synth/system_c_counter_binary_0_0.vhd:66]
+INFO: [Synth 8-6157] synthesizing module 'system_concat_0_0' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_concat_0_0/synth/system_concat_0_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
+	Parameter IN0_WIDTH bound to: 1 - type: integer 
+	Parameter IN1_WIDTH bound to: 7 - type: integer 
+	Parameter IN2_WIDTH bound to: 1 - type: integer 
+	Parameter IN3_WIDTH bound to: 1 - type: integer 
+	Parameter IN4_WIDTH bound to: 1 - type: integer 
+	Parameter IN5_WIDTH bound to: 1 - type: integer 
+	Parameter IN6_WIDTH bound to: 1 - type: integer 
+	Parameter IN7_WIDTH bound to: 1 - type: integer 
+	Parameter IN8_WIDTH bound to: 1 - type: integer 
+	Parameter IN9_WIDTH bound to: 1 - type: integer 
+	Parameter IN10_WIDTH bound to: 1 - type: integer 
+	Parameter IN11_WIDTH bound to: 1 - type: integer 
+	Parameter IN12_WIDTH bound to: 1 - type: integer 
+	Parameter IN13_WIDTH bound to: 1 - type: integer 
+	Parameter IN14_WIDTH bound to: 1 - type: integer 
+	Parameter IN15_WIDTH bound to: 1 - type: integer 
+	Parameter IN16_WIDTH bound to: 1 - type: integer 
+	Parameter IN17_WIDTH bound to: 1 - type: integer 
+	Parameter IN18_WIDTH bound to: 1 - type: integer 
+	Parameter IN19_WIDTH bound to: 1 - type: integer 
+	Parameter IN20_WIDTH bound to: 1 - type: integer 
+	Parameter IN21_WIDTH bound to: 1 - type: integer 
+	Parameter IN22_WIDTH bound to: 1 - type: integer 
+	Parameter IN23_WIDTH bound to: 1 - type: integer 
+	Parameter IN24_WIDTH bound to: 1 - type: integer 
+	Parameter IN25_WIDTH bound to: 1 - type: integer 
+	Parameter IN26_WIDTH bound to: 1 - type: integer 
+	Parameter IN27_WIDTH bound to: 1 - type: integer 
+	Parameter IN28_WIDTH bound to: 1 - type: integer 
+	Parameter IN29_WIDTH bound to: 1 - type: integer 
+	Parameter IN30_WIDTH bound to: 1 - type: integer 
+	Parameter IN31_WIDTH bound to: 1 - type: integer 
+	Parameter dout_width bound to: 8 - type: integer 
+	Parameter NUM_PORTS bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_3_xlconcat' (25#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'system_concat_0_0' (26#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_concat_0_0/synth/system_concat_0_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'system_const_0_0' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_const_0_0/synth/system_const_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_6_xlconstant__parameterized1' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/34f7/hdl/xlconstant_v1_1_vl_rfs.v:23]
+	Parameter CONST_VAL bound to: 1 - type: integer 
+	Parameter CONST_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_6_xlconstant__parameterized1' (26#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/34f7/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'system_const_0_0' (27#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_const_0_0/synth/system_const_0_0.v:57]
+INFO: [Synth 8-638] synthesizing module 'system_mult_gen_0_0' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_mult_gen_0_0/synth/system_mult_gen_0_0.vhd:68]
+WARNING: [Synth 8-5640] Port 'zero_detect' is missing in component declaration [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_mult_gen_0_0/synth/system_mult_gen_0_0.vhd:71]
+WARNING: [Synth 8-5640] Port 'pcasc' is missing in component declaration [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_mult_gen_0_0/synth/system_mult_gen_0_0.vhd:71]
+	Parameter C_VERBOSITY bound to: 0 - type: integer 
+	Parameter C_MODEL_TYPE bound to: 0 - type: integer 
+	Parameter C_OPTIMIZE_GOAL bound to: 1 - type: integer 
+	Parameter C_XDEVICEFAMILY bound to: zynq - type: string 
+	Parameter C_HAS_CE bound to: 0 - type: integer 
+	Parameter C_HAS_SCLR bound to: 0 - type: integer 
+	Parameter C_LATENCY bound to: 1 - type: integer 
+	Parameter C_A_WIDTH bound to: 1 - type: integer 
+	Parameter C_A_TYPE bound to: 1 - type: integer 
+	Parameter C_B_WIDTH bound to: 1 - type: integer 
+	Parameter C_B_TYPE bound to: 1 - type: integer 
+	Parameter C_OUT_HIGH bound to: 1 - type: integer 
+	Parameter C_OUT_LOW bound to: 0 - type: integer 
+	Parameter C_MULT_TYPE bound to: 0 - type: integer 
+	Parameter C_CE_OVERRIDES_SCLR bound to: 0 - type: integer 
+	Parameter C_CCM_IMP bound to: 0 - type: integer 
+	Parameter C_B_VALUE bound to: 10000001 - type: string 
+	Parameter C_HAS_ZERO_DETECT bound to: 0 - type: integer 
+	Parameter C_ROUND_OUTPUT bound to: 0 - type: integer 
+	Parameter C_ROUND_PT bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'mult_gen_v12_0_16' declared at '/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/ce84/hdl/mult_gen_v12_0_vh_rfs.vhd:21013' bound to instance 'U0' of component 'mult_gen_v12_0_16' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_mult_gen_0_0/synth/system_mult_gen_0_0.vhd:121]
+INFO: [Synth 8-256] done synthesizing module 'system_mult_gen_0_0' (32#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_mult_gen_0_0/synth/system_mult_gen_0_0.vhd:68]
+INFO: [Synth 8-6157] synthesizing module 'system_not_0_0' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_not_0_0/synth/system_not_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'util_vector_logic_v2_0_1_util_vector_logic' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/2137/hdl/util_vector_logic_v2_0_vl_rfs.v:45]
+	Parameter C_OPERATION bound to: not - type: string 
+	Parameter C_SIZE bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'util_vector_logic_v2_0_1_util_vector_logic' (33#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/2137/hdl/util_vector_logic_v2_0_vl_rfs.v:45]
+INFO: [Synth 8-6155] done synthesizing module 'system_not_0_0' (34#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_not_0_0/synth/system_not_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'system_pll_0_0' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0.v:71]
+INFO: [Synth 8-6157] synthesizing module 'system_pll_0_0_clk_wiz' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0_clk_wiz.v:69]
+INFO: [Synth 8-6157] synthesizing module 'IBUFDS' [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:32952]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter DIFF_TERM bound to: FALSE - type: string 
+	Parameter DQS_BIAS bound to: FALSE - type: string 
+	Parameter IBUF_DELAY_VALUE bound to: 0 - type: string 
+	Parameter IBUF_LOW_PWR bound to: TRUE - type: string 
+	Parameter IFD_DELAY_VALUE bound to: AUTO - type: string 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'IBUFDS' (35#1) [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:32952]
+INFO: [Synth 8-6157] synthesizing module 'PLLE2_ADV' [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:61416]
+	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
+	Parameter CLKFBOUT_MULT bound to: 8 - type: integer 
+	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKIN1_PERIOD bound to: 8.000000 - type: double 
+	Parameter CLKIN2_PERIOD bound to: 0.000000 - type: double 
+	Parameter CLKOUT0_DIVIDE bound to: 8 - type: integer 
+	Parameter CLKOUT0_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT0_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT1_DIVIDE bound to: 4 - type: integer 
+	Parameter CLKOUT1_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT1_PHASE bound to: -90.000000 - type: double 
+	Parameter CLKOUT2_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT2_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT2_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT3_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT3_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT3_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT4_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT4_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT4_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT5_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT5_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT5_PHASE bound to: 0.000000 - type: double 
+	Parameter COMPENSATION bound to: ZHOLD - type: string 
+	Parameter DIVCLK_DIVIDE bound to: 1 - type: integer 
+	Parameter IS_CLKINSEL_INVERTED bound to: 1'b0 
+	Parameter IS_PWRDWN_INVERTED bound to: 1'b0 
+	Parameter IS_RST_INVERTED bound to: 1'b0 
+	Parameter REF_JITTER1 bound to: 0.010000 - type: double 
+	Parameter REF_JITTER2 bound to: 0.010000 - type: double 
+	Parameter STARTUP_WAIT bound to: FALSE - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'PLLE2_ADV' (36#1) [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:61416]
+INFO: [Synth 8-6157] synthesizing module 'BUFG' [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:1075]
+INFO: [Synth 8-6155] done synthesizing module 'BUFG' (37#1) [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:1075]
+INFO: [Synth 8-6155] done synthesizing module 'system_pll_0_0_clk_wiz' (38#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0_clk_wiz.v:69]
+INFO: [Synth 8-6155] done synthesizing module 'system_pll_0_0' (39#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0.v:71]
+INFO: [Synth 8-6157] synthesizing module 'system_port_slicer_4_0' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_port_slicer_4_0/synth/system_port_slicer_4_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'port_slicer' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/8bd6/src/port_slicer.v:4]
+	Parameter DIN_WIDTH bound to: 48 - type: integer 
+	Parameter DIN_FROM bound to: 16 - type: integer 
+	Parameter DIN_TO bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'port_slicer' (40#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/8bd6/src/port_slicer.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'system_port_slicer_4_0' (41#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_port_slicer_4_0/synth/system_port_slicer_4_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'system_ps_0_2' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/synth/system_ps_0_2.v:60]
+INFO: [Synth 8-6157] synthesizing module 'processing_system7_v5_5_processing_system7' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/hdl/verilog/processing_system7_v5_5_processing_system7.v:161]
+	Parameter C_USE_DEFAULT_ACP_USER_VAL bound to: 0 - type: integer 
+	Parameter C_S_AXI_ACP_ARUSER_VAL bound to: 31 - type: integer 
+	Parameter C_S_AXI_ACP_AWUSER_VAL bound to: 31 - type: integer 
+	Parameter C_M_AXI_GP0_THREAD_ID_WIDTH bound to: 12 - type: integer 
+	Parameter C_M_AXI_GP1_THREAD_ID_WIDTH bound to: 12 - type: integer 
+	Parameter C_M_AXI_GP0_ENABLE_STATIC_REMAP bound to: 0 - type: integer 
+	Parameter C_M_AXI_GP1_ENABLE_STATIC_REMAP bound to: 0 - type: integer 
+	Parameter C_M_AXI_GP0_ID_WIDTH bound to: 12 - type: integer 
+	Parameter C_M_AXI_GP1_ID_WIDTH bound to: 12 - type: integer 
+	Parameter C_S_AXI_GP0_ID_WIDTH bound to: 6 - type: integer 
+	Parameter C_S_AXI_GP1_ID_WIDTH bound to: 6 - type: integer 
+	Parameter C_S_AXI_HP0_ID_WIDTH bound to: 6 - type: integer 
+	Parameter C_S_AXI_HP1_ID_WIDTH bound to: 6 - type: integer 
+	Parameter C_S_AXI_HP2_ID_WIDTH bound to: 6 - type: integer 
+	Parameter C_S_AXI_HP3_ID_WIDTH bound to: 6 - type: integer 
+	Parameter C_S_AXI_ACP_ID_WIDTH bound to: 3 - type: integer 
+	Parameter C_S_AXI_HP0_DATA_WIDTH bound to: 64 - type: integer 
+	Parameter C_S_AXI_HP1_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_HP2_DATA_WIDTH bound to: 64 - type: integer 
+	Parameter C_S_AXI_HP3_DATA_WIDTH bound to: 64 - type: integer 
+	Parameter C_INCLUDE_ACP_TRANS_CHECK bound to: 0 - type: integer 
+	Parameter C_NUM_F2P_INTR_INPUTS bound to: 1 - type: integer 
+	Parameter C_FCLK_CLK0_BUF bound to: TRUE - type: string 
+	Parameter C_FCLK_CLK1_BUF bound to: FALSE - type: string 
+	Parameter C_FCLK_CLK2_BUF bound to: FALSE - type: string 
+	Parameter C_FCLK_CLK3_BUF bound to: FALSE - type: string 
+	Parameter C_EMIO_GPIO_WIDTH bound to: 64 - type: integer 
+	Parameter C_INCLUDE_TRACE_BUFFER bound to: 0 - type: integer 
+	Parameter C_TRACE_BUFFER_FIFO_SIZE bound to: 128 - type: integer 
+	Parameter C_TRACE_BUFFER_CLOCK_DELAY bound to: 12 - type: integer 
+	Parameter USE_TRACE_DATA_EDGE_DETECTOR bound to: 0 - type: integer 
+	Parameter C_TRACE_PIPELINE_WIDTH bound to: 8 - type: integer 
+	Parameter C_PS7_SI_REV bound to: PRODUCTION - type: string 
+	Parameter C_EN_EMIO_ENET0 bound to: 0 - type: integer 
+	Parameter C_EN_EMIO_ENET1 bound to: 0 - type: integer 
+	Parameter C_EN_EMIO_TRACE bound to: 0 - type: integer 
+	Parameter C_DQ_WIDTH bound to: 32 - type: integer 
+	Parameter C_DQS_WIDTH bound to: 4 - type: integer 
+	Parameter C_DM_WIDTH bound to: 4 - type: integer 
+	Parameter C_MIO_PRIMITIVE bound to: 54 - type: integer 
+	Parameter C_PACKAGE_NAME bound to: clg400 - type: string 
+	Parameter C_IRQ_F2P_MODE bound to: DIRECT - type: string 
+	Parameter C_TRACE_INTERNAL_WIDTH bound to: 2 - type: integer 
+	Parameter C_EN_EMIO_PJTAG bound to: 0 - type: integer 
+	Parameter C_USE_AXI_NONSECURE bound to: 0 - type: integer 
+	Parameter C_USE_S_AXI_HP0 bound to: 1 - type: integer 
+	Parameter C_USE_S_AXI_HP1 bound to: 1 - type: integer 
+	Parameter C_USE_S_AXI_HP2 bound to: 0 - type: integer 
+	Parameter C_USE_S_AXI_HP3 bound to: 0 - type: integer 
+	Parameter C_USE_M_AXI_GP0 bound to: 1 - type: integer 
+	Parameter C_USE_M_AXI_GP1 bound to: 0 - type: integer 
+	Parameter C_USE_S_AXI_GP0 bound to: 0 - type: integer 
+	Parameter C_USE_S_AXI_GP1 bound to: 0 - type: integer 
+	Parameter C_USE_S_AXI_ACP bound to: 0 - type: integer 
+	Parameter C_GP0_EN_MODIFIABLE_TXN bound to: 1 - type: integer 
+	Parameter C_GP1_EN_MODIFIABLE_TXN bound to: 1 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/hdl/verilog/processing_system7_v5_5_processing_system7.v:1347]
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/hdl/verilog/processing_system7_v5_5_processing_system7.v:1348]
+INFO: [Synth 8-6157] synthesizing module 'BIBUF' [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:722]
+INFO: [Synth 8-6155] done synthesizing module 'BIBUF' (42#1) [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:722]
+INFO: [Synth 8-6157] synthesizing module 'PS7' [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:61924]
+INFO: [Synth 8-6155] done synthesizing module 'PS7' (43#1) [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:61924]
+INFO: [Synth 8-6155] done synthesizing module 'processing_system7_v5_5_processing_system7' (44#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/hdl/verilog/processing_system7_v5_5_processing_system7.v:161]
+WARNING: [Synth 8-7023] instance 'inst' of module 'processing_system7_v5_5_processing_system7' has 685 connections declared, but only 672 given [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/synth/system_ps_0_2.v:650]
+INFO: [Synth 8-6155] done synthesizing module 'system_ps_0_2' (45#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/synth/system_ps_0_2.v:60]
+WARNING: [Synth 8-7023] instance 'ps_0' of module 'system_ps_0_2' has 172 connections declared, but only 132 given [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/synth/system.v:606]
+INFO: [Synth 8-6157] synthesizing module 'system_ps_0_axi_periph_0' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/synth/system.v:1041]
+INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_1OVXGTK' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/synth/system.v:12]
+INFO: [Synth 8-6157] synthesizing module 'system_auto_pc_0' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_auto_pc_0/synth/system_auto_pc_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_axi_protocol_converter' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4808]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_M_AXI_PROTOCOL bound to: 2 - type: integer 
+	Parameter C_S_AXI_PROTOCOL bound to: 1 - type: integer 
+	Parameter C_IGNORE_ID bound to: 0 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 12 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_SUPPORTS_WRITE bound to: 1 - type: integer 
+	Parameter C_AXI_SUPPORTS_READ bound to: 1 - type: integer 
+	Parameter C_AXI_SUPPORTS_USER_SIGNALS bound to: 0 - type: integer 
+	Parameter C_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_TRANSLATION_MODE bound to: 2 - type: integer 
+	Parameter P_AXI4 bound to: 0 - type: integer 
+	Parameter P_AXI3 bound to: 1 - type: integer 
+	Parameter P_AXILITE bound to: 2 - type: integer 
+	Parameter P_AXILITE_SIZE bound to: 3'b010 
+	Parameter P_INCR bound to: 2'b01 
+	Parameter P_DECERR bound to: 2'b11 
+	Parameter P_SLVERR bound to: 2'b10 
+	Parameter P_PROTECTION bound to: 1 - type: integer 
+	Parameter P_CONVERSION bound to: 2 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4226]
+	Parameter C_S_AXI_PROTOCOL bound to: 1 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 12 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_SUPPORTS_WRITE bound to: 1 - type: integer 
+	Parameter C_AXI_SUPPORTS_READ bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_aw_channel' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3971]
+	Parameter C_ID_WIDTH bound to: 12 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_cmd_translator' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3464]
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter P_AXBURST_FIXED bound to: 2'b00 
+	Parameter P_AXBURST_INCR bound to: 2'b01 
+	Parameter P_AXBURST_WRAP bound to: 2'b10 
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_incr_cmd' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3092]
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter L_AXI_ADDR_LOW_BIT bound to: 12 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_incr_cmd' (46#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3092]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_wrap_cmd' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2902]
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter L_AXI_ADDR_LOW_BIT bound to: 12 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_wrap_cmd' (47#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2902]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_cmd_translator' (48#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3464]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_wr_cmd_fsm' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3224]
+	Parameter SM_IDLE bound to: 2'b00 
+	Parameter SM_CMD_EN bound to: 2'b01 
+	Parameter SM_CMD_ACCEPTED bound to: 2'b10 
+	Parameter SM_DONE_WAIT bound to: 2'b11 
+INFO: [Synth 8-226] default block is never used [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3277]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_wr_cmd_fsm' (49#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3224]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_aw_channel' (50#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3971]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_b_channel' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3606]
+	Parameter C_ID_WIDTH bound to: 12 - type: integer 
+	Parameter LP_RESP_OKAY bound to: 2'b00 
+	Parameter LP_RESP_EXOKAY bound to: 2'b01 
+	Parameter LP_RESP_SLVERROR bound to: 2'b10 
+	Parameter LP_RESP_DECERR bound to: 2'b11 
+	Parameter P_WIDTH bound to: 20 - type: integer 
+	Parameter P_DEPTH bound to: 4 - type: integer 
+	Parameter P_AWIDTH bound to: 2 - type: integer 
+	Parameter P_RWIDTH bound to: 2 - type: integer 
+	Parameter P_RDEPTH bound to: 4 - type: integer 
+	Parameter P_RAWIDTH bound to: 2 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_simple_fifo' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
+	Parameter C_WIDTH bound to: 20 - type: integer 
+	Parameter C_AWIDTH bound to: 2 - type: integer 
+	Parameter C_DEPTH bound to: 4 - type: integer 
+	Parameter C_EMPTY bound to: 2'b11 
+	Parameter C_EMPTY_PRE bound to: 2'b00 
+	Parameter C_FULL bound to: 2'b10 
+	Parameter C_FULL_PRE bound to: 2'b01 
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_simple_fifo' (51#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_simple_fifo__parameterized0' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
+	Parameter C_WIDTH bound to: 2 - type: integer 
+	Parameter C_AWIDTH bound to: 2 - type: integer 
+	Parameter C_DEPTH bound to: 4 - type: integer 
+	Parameter C_EMPTY bound to: 2'b11 
+	Parameter C_EMPTY_PRE bound to: 2'b00 
+	Parameter C_FULL bound to: 2'b10 
+	Parameter C_FULL_PRE bound to: 2'b01 
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_simple_fifo__parameterized0' (51#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_b_channel' (52#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3606]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_ar_channel' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4082]
+	Parameter C_ID_WIDTH bound to: 12 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_rd_cmd_fsm' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3334]
+	Parameter SM_IDLE bound to: 2'b00 
+	Parameter SM_CMD_EN bound to: 2'b01 
+	Parameter SM_CMD_ACCEPTED bound to: 2'b10 
+	Parameter SM_DONE bound to: 2'b11 
+INFO: [Synth 8-226] default block is never used [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3395]
+WARNING: [Synth 8-6014] Unused sequential element state_r1_reg was removed.  [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3383]
+WARNING: [Synth 8-6014] Unused sequential element s_arlen_r_reg was removed.  [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3384]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_rd_cmd_fsm' (53#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3334]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_ar_channel' (54#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4082]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_r_channel' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3811]
+	Parameter C_ID_WIDTH bound to: 12 - type: integer 
+	Parameter C_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter P_WIDTH bound to: 13 - type: integer 
+	Parameter P_DEPTH bound to: 32 - type: integer 
+	Parameter P_AWIDTH bound to: 5 - type: integer 
+	Parameter P_D_WIDTH bound to: 34 - type: integer 
+	Parameter P_D_DEPTH bound to: 32 - type: integer 
+	Parameter P_D_AWIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_simple_fifo__parameterized1' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
+	Parameter C_WIDTH bound to: 34 - type: integer 
+	Parameter C_AWIDTH bound to: 5 - type: integer 
+	Parameter C_DEPTH bound to: 32 - type: integer 
+	Parameter C_EMPTY bound to: 5'b11111 
+	Parameter C_EMPTY_PRE bound to: 5'b00000 
+	Parameter C_FULL bound to: 5'b11110 
+	Parameter C_FULL_PRE bound to: 5'b11010 
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_simple_fifo__parameterized1' (54#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_simple_fifo__parameterized2' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
+	Parameter C_WIDTH bound to: 13 - type: integer 
+	Parameter C_AWIDTH bound to: 5 - type: integer 
+	Parameter C_DEPTH bound to: 32 - type: integer 
+	Parameter C_EMPTY bound to: 5'b11111 
+	Parameter C_EMPTY_PRE bound to: 5'b00000 
+	Parameter C_FULL bound to: 5'b11110 
+	Parameter C_FULL_PRE bound to: 5'b11010 
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_simple_fifo__parameterized2' (54#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_r_channel' (55#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3811]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axi_register_slice' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:3704]
+	Parameter C_FAMILY bound to: virtex6 - type: string 
+	Parameter C_AXI_PROTOCOL bound to: 1 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 12 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_SUPPORTS_USER_SIGNALS bound to: 0 - type: integer 
+	Parameter C_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_REG_CONFIG_AW bound to: 1 - type: integer 
+	Parameter C_REG_CONFIG_W bound to: 0 - type: integer 
+	Parameter C_REG_CONFIG_B bound to: 1 - type: integer 
+	Parameter C_REG_CONFIG_AR bound to: 1 - type: integer 
+	Parameter C_REG_CONFIG_R bound to: 1 - type: integer 
+	Parameter C_RESERVE_MODE bound to: 0 - type: integer 
+	Parameter C_NUM_SLR_CROSSINGS bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MASTER_AW bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MASTER_W bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MASTER_B bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MASTER_AR bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MASTER_R bound to: 0 - type: integer 
+	Parameter C_PIPELINES_SLAVE_AW bound to: 0 - type: integer 
+	Parameter C_PIPELINES_SLAVE_W bound to: 0 - type: integer 
+	Parameter C_PIPELINES_SLAVE_B bound to: 0 - type: integer 
+	Parameter C_PIPELINES_SLAVE_AR bound to: 0 - type: integer 
+	Parameter C_PIPELINES_SLAVE_R bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MIDDLE_AW bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MIDDLE_W bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MIDDLE_B bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MIDDLE_AR bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MIDDLE_R bound to: 0 - type: integer 
+	Parameter C_AXI_SUPPORTS_REGION_SIGNALS bound to: 0 - type: integer 
+	Parameter P_FORWARD bound to: 0 - type: integer 
+	Parameter P_RESPONSE bound to: 1 - type: integer 
+	Parameter G_AXI_AWADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_AWADDR_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_AWPROT_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_AWPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_AWSIZE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWSIZE_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_AWBURST_INDEX bound to: 38 - type: integer 
+	Parameter G_AXI_AWBURST_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_AWCACHE_INDEX bound to: 40 - type: integer 
+	Parameter G_AXI_AWCACHE_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWLEN_INDEX bound to: 44 - type: integer 
+	Parameter G_AXI_AWLEN_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWLOCK_INDEX bound to: 48 - type: integer 
+	Parameter G_AXI_AWLOCK_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_AWID_INDEX bound to: 50 - type: integer 
+	Parameter G_AXI_AWID_WIDTH bound to: 12 - type: integer 
+	Parameter G_AXI_AWQOS_INDEX bound to: 62 - type: integer 
+	Parameter G_AXI_AWQOS_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWREGION_INDEX bound to: 66 - type: integer 
+	Parameter G_AXI_AWREGION_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWUSER_INDEX bound to: 66 - type: integer 
+	Parameter G_AXI_AWUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWPAYLOAD_WIDTH bound to: 66 - type: integer 
+	Parameter G_AXI_ARADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_ARADDR_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_ARPROT_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_ARPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_ARSIZE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARSIZE_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_ARBURST_INDEX bound to: 38 - type: integer 
+	Parameter G_AXI_ARBURST_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_ARCACHE_INDEX bound to: 40 - type: integer 
+	Parameter G_AXI_ARCACHE_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARLEN_INDEX bound to: 44 - type: integer 
+	Parameter G_AXI_ARLEN_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARLOCK_INDEX bound to: 48 - type: integer 
+	Parameter G_AXI_ARLOCK_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_ARID_INDEX bound to: 50 - type: integer 
+	Parameter G_AXI_ARID_WIDTH bound to: 12 - type: integer 
+	Parameter G_AXI_ARQOS_INDEX bound to: 62 - type: integer 
+	Parameter G_AXI_ARQOS_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARREGION_INDEX bound to: 66 - type: integer 
+	Parameter G_AXI_ARREGION_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARUSER_INDEX bound to: 66 - type: integer 
+	Parameter G_AXI_ARUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARPAYLOAD_WIDTH bound to: 66 - type: integer 
+	Parameter G_AXI_WDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_WDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_WLAST_INDEX bound to: 36 - type: integer 
+	Parameter G_AXI_WLAST_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_WID_INDEX bound to: 37 - type: integer 
+	Parameter G_AXI_WID_WIDTH bound to: 12 - type: integer 
+	Parameter G_AXI_WUSER_INDEX bound to: 49 - type: integer 
+	Parameter G_AXI_WUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WPAYLOAD_WIDTH bound to: 49 - type: integer 
+	Parameter G_AXI_BRESP_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_BRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_BID_INDEX bound to: 2 - type: integer 
+	Parameter G_AXI_BID_WIDTH bound to: 12 - type: integer 
+	Parameter G_AXI_BUSER_INDEX bound to: 14 - type: integer 
+	Parameter G_AXI_BUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_BPAYLOAD_WIDTH bound to: 14 - type: integer 
+	Parameter G_AXI_RDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_RDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_RLAST_INDEX bound to: 34 - type: integer 
+	Parameter G_AXI_RLAST_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_RID_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_RID_WIDTH bound to: 12 - type: integer 
+	Parameter G_AXI_RUSER_INDEX bound to: 47 - type: integer 
+	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 47 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_axi2vector' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
+	Parameter C_AXI_PROTOCOL bound to: 1 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 12 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_SUPPORTS_USER_SIGNALS bound to: 0 - type: integer 
+	Parameter C_AXI_SUPPORTS_REGION_SIGNALS bound to: 0 - type: integer 
+	Parameter C_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AWPAYLOAD_WIDTH bound to: 66 - type: integer 
+	Parameter C_WPAYLOAD_WIDTH bound to: 49 - type: integer 
+	Parameter C_BPAYLOAD_WIDTH bound to: 14 - type: integer 
+	Parameter C_ARPAYLOAD_WIDTH bound to: 66 - type: integer 
+	Parameter C_RPAYLOAD_WIDTH bound to: 47 - type: integer 
+	Parameter G_AXI_AWADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_AWADDR_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_AWPROT_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_AWPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_AWSIZE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWSIZE_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_AWBURST_INDEX bound to: 38 - type: integer 
+	Parameter G_AXI_AWBURST_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_AWCACHE_INDEX bound to: 40 - type: integer 
+	Parameter G_AXI_AWCACHE_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWLEN_INDEX bound to: 44 - type: integer 
+	Parameter G_AXI_AWLEN_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWLOCK_INDEX bound to: 48 - type: integer 
+	Parameter G_AXI_AWLOCK_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_AWID_INDEX bound to: 50 - type: integer 
+	Parameter G_AXI_AWID_WIDTH bound to: 12 - type: integer 
+	Parameter G_AXI_AWQOS_INDEX bound to: 62 - type: integer 
+	Parameter G_AXI_AWQOS_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWREGION_INDEX bound to: 66 - type: integer 
+	Parameter G_AXI_AWREGION_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWUSER_INDEX bound to: 66 - type: integer 
+	Parameter G_AXI_AWUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWPAYLOAD_WIDTH bound to: 66 - type: integer 
+	Parameter G_AXI_ARADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_ARADDR_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_ARPROT_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_ARPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_ARSIZE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARSIZE_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_ARBURST_INDEX bound to: 38 - type: integer 
+	Parameter G_AXI_ARBURST_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_ARCACHE_INDEX bound to: 40 - type: integer 
+	Parameter G_AXI_ARCACHE_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARLEN_INDEX bound to: 44 - type: integer 
+	Parameter G_AXI_ARLEN_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARLOCK_INDEX bound to: 48 - type: integer 
+	Parameter G_AXI_ARLOCK_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_ARID_INDEX bound to: 50 - type: integer 
+	Parameter G_AXI_ARID_WIDTH bound to: 12 - type: integer 
+	Parameter G_AXI_ARQOS_INDEX bound to: 62 - type: integer 
+	Parameter G_AXI_ARQOS_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARREGION_INDEX bound to: 66 - type: integer 
+	Parameter G_AXI_ARREGION_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARUSER_INDEX bound to: 66 - type: integer 
+	Parameter G_AXI_ARUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARPAYLOAD_WIDTH bound to: 66 - type: integer 
+	Parameter G_AXI_WDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_WDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_WLAST_INDEX bound to: 36 - type: integer 
+	Parameter G_AXI_WLAST_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_WID_INDEX bound to: 37 - type: integer 
+	Parameter G_AXI_WID_WIDTH bound to: 12 - type: integer 
+	Parameter G_AXI_WUSER_INDEX bound to: 49 - type: integer 
+	Parameter G_AXI_WUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WPAYLOAD_WIDTH bound to: 49 - type: integer 
+	Parameter G_AXI_BRESP_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_BRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_BID_INDEX bound to: 2 - type: integer 
+	Parameter G_AXI_BID_WIDTH bound to: 12 - type: integer 
+	Parameter G_AXI_BUSER_INDEX bound to: 14 - type: integer 
+	Parameter G_AXI_BUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_BPAYLOAD_WIDTH bound to: 14 - type: integer 
+	Parameter G_AXI_RDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_RDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_RLAST_INDEX bound to: 34 - type: integer 
+	Parameter G_AXI_RLAST_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_RID_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_RID_WIDTH bound to: 12 - type: integer 
+	Parameter G_AXI_RUSER_INDEX bound to: 47 - type: integer 
+	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 47 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_axi2vector' (56#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
+INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
+	Parameter C_AXI_PROTOCOL bound to: 1 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 12 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_SUPPORTS_USER_SIGNALS bound to: 0 - type: integer 
+	Parameter C_AXI_SUPPORTS_REGION_SIGNALS bound to: 0 - type: integer 
+	Parameter C_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AWPAYLOAD_WIDTH bound to: 66 - type: integer 
+	Parameter C_WPAYLOAD_WIDTH bound to: 49 - type: integer 
+	Parameter C_BPAYLOAD_WIDTH bound to: 14 - type: integer 
+	Parameter C_ARPAYLOAD_WIDTH bound to: 66 - type: integer 
+	Parameter C_RPAYLOAD_WIDTH bound to: 47 - type: integer 
+	Parameter G_AXI_AWADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_AWADDR_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_AWPROT_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_AWPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_AWSIZE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWSIZE_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_AWBURST_INDEX bound to: 38 - type: integer 
+	Parameter G_AXI_AWBURST_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_AWCACHE_INDEX bound to: 40 - type: integer 
+	Parameter G_AXI_AWCACHE_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWLEN_INDEX bound to: 44 - type: integer 
+	Parameter G_AXI_AWLEN_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWLOCK_INDEX bound to: 48 - type: integer 
+	Parameter G_AXI_AWLOCK_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_AWID_INDEX bound to: 50 - type: integer 
+	Parameter G_AXI_AWID_WIDTH bound to: 12 - type: integer 
+	Parameter G_AXI_AWQOS_INDEX bound to: 62 - type: integer 
+	Parameter G_AXI_AWQOS_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWREGION_INDEX bound to: 66 - type: integer 
+	Parameter G_AXI_AWREGION_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWUSER_INDEX bound to: 66 - type: integer 
+	Parameter G_AXI_AWUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWPAYLOAD_WIDTH bound to: 66 - type: integer 
+	Parameter G_AXI_ARADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_ARADDR_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_ARPROT_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_ARPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_ARSIZE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARSIZE_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_ARBURST_INDEX bound to: 38 - type: integer 
+	Parameter G_AXI_ARBURST_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_ARCACHE_INDEX bound to: 40 - type: integer 
+	Parameter G_AXI_ARCACHE_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARLEN_INDEX bound to: 44 - type: integer 
+	Parameter G_AXI_ARLEN_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARLOCK_INDEX bound to: 48 - type: integer 
+	Parameter G_AXI_ARLOCK_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_ARID_INDEX bound to: 50 - type: integer 
+	Parameter G_AXI_ARID_WIDTH bound to: 12 - type: integer 
+	Parameter G_AXI_ARQOS_INDEX bound to: 62 - type: integer 
+	Parameter G_AXI_ARQOS_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARREGION_INDEX bound to: 66 - type: integer 
+	Parameter G_AXI_ARREGION_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARUSER_INDEX bound to: 66 - type: integer 
+	Parameter G_AXI_ARUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARPAYLOAD_WIDTH bound to: 66 - type: integer 
+	Parameter G_AXI_WDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_WDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_WLAST_INDEX bound to: 36 - type: integer 
+	Parameter G_AXI_WLAST_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_WID_INDEX bound to: 37 - type: integer 
+	Parameter G_AXI_WID_WIDTH bound to: 12 - type: integer 
+	Parameter G_AXI_WUSER_INDEX bound to: 49 - type: integer 
+	Parameter G_AXI_WUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WPAYLOAD_WIDTH bound to: 49 - type: integer 
+	Parameter G_AXI_BRESP_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_BRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_BID_INDEX bound to: 2 - type: integer 
+	Parameter G_AXI_BID_WIDTH bound to: 12 - type: integer 
+	Parameter G_AXI_BUSER_INDEX bound to: 14 - type: integer 
+	Parameter G_AXI_BUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_BPAYLOAD_WIDTH bound to: 14 - type: integer 
+	Parameter G_AXI_RDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_RDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_RLAST_INDEX bound to: 34 - type: integer 
+	Parameter G_AXI_RLAST_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_RID_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_RID_WIDTH bound to: 12 - type: integer 
+	Parameter G_AXI_RUSER_INDEX bound to: 47 - type: integer 
+	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 47 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' (57#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+	Parameter C_FAMILY bound to: virtex6 - type: string 
+	Parameter C_DATA_WIDTH bound to: 66 - type: integer 
+	Parameter C_REG_CONFIG bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice' (58#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized0' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+	Parameter C_FAMILY bound to: virtex6 - type: string 
+	Parameter C_DATA_WIDTH bound to: 49 - type: integer 
+	Parameter C_REG_CONFIG bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized0' (58#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized1' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+	Parameter C_FAMILY bound to: virtex6 - type: string 
+	Parameter C_DATA_WIDTH bound to: 14 - type: integer 
+	Parameter C_REG_CONFIG bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized1' (58#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized2' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+	Parameter C_FAMILY bound to: virtex6 - type: string 
+	Parameter C_DATA_WIDTH bound to: 47 - type: integer 
+	Parameter C_REG_CONFIG bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized2' (58#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axi_register_slice' (59#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:3704]
+WARNING: [Synth 8-7023] instance 'SI_REG' of module 'axi_register_slice_v2_1_20_axi_register_slice' has 93 connections declared, but only 92 given [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4392]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axi_register_slice__parameterized0' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:3704]
+	Parameter C_FAMILY bound to: virtex6 - type: string 
+	Parameter C_AXI_PROTOCOL bound to: 2 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_SUPPORTS_USER_SIGNALS bound to: 0 - type: integer 
+	Parameter C_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_REG_CONFIG_AW bound to: 0 - type: integer 
+	Parameter C_REG_CONFIG_W bound to: 0 - type: integer 
+	Parameter C_REG_CONFIG_B bound to: 0 - type: integer 
+	Parameter C_REG_CONFIG_AR bound to: 0 - type: integer 
+	Parameter C_REG_CONFIG_R bound to: 0 - type: integer 
+	Parameter C_RESERVE_MODE bound to: 0 - type: integer 
+	Parameter C_NUM_SLR_CROSSINGS bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MASTER_AW bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MASTER_W bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MASTER_B bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MASTER_AR bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MASTER_R bound to: 0 - type: integer 
+	Parameter C_PIPELINES_SLAVE_AW bound to: 0 - type: integer 
+	Parameter C_PIPELINES_SLAVE_W bound to: 0 - type: integer 
+	Parameter C_PIPELINES_SLAVE_B bound to: 0 - type: integer 
+	Parameter C_PIPELINES_SLAVE_AR bound to: 0 - type: integer 
+	Parameter C_PIPELINES_SLAVE_R bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MIDDLE_AW bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MIDDLE_W bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MIDDLE_B bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MIDDLE_AR bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MIDDLE_R bound to: 0 - type: integer 
+	Parameter C_AXI_SUPPORTS_REGION_SIGNALS bound to: 0 - type: integer 
+	Parameter P_FORWARD bound to: 0 - type: integer 
+	Parameter P_RESPONSE bound to: 1 - type: integer 
+	Parameter G_AXI_AWADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_AWADDR_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_AWPROT_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_AWPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_AWSIZE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWSIZE_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWBURST_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWBURST_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWCACHE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWCACHE_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWLEN_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWLEN_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWLOCK_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWLOCK_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWID_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWQOS_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWQOS_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWREGION_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWREGION_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWUSER_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWPAYLOAD_WIDTH bound to: 35 - type: integer 
+	Parameter G_AXI_ARADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_ARADDR_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_ARPROT_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_ARPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_ARSIZE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARSIZE_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARBURST_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARBURST_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARCACHE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARCACHE_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARLEN_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARLEN_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARLOCK_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARLOCK_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARID_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARQOS_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARQOS_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARREGION_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARREGION_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARUSER_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARPAYLOAD_WIDTH bound to: 35 - type: integer 
+	Parameter G_AXI_WDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_WDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_WLAST_INDEX bound to: 36 - type: integer 
+	Parameter G_AXI_WLAST_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WID_INDEX bound to: 36 - type: integer 
+	Parameter G_AXI_WID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WUSER_INDEX bound to: 36 - type: integer 
+	Parameter G_AXI_WUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WPAYLOAD_WIDTH bound to: 36 - type: integer 
+	Parameter G_AXI_BRESP_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_BRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_BID_INDEX bound to: 2 - type: integer 
+	Parameter G_AXI_BID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_BUSER_INDEX bound to: 2 - type: integer 
+	Parameter G_AXI_BUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_BPAYLOAD_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_RDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_RDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_RLAST_INDEX bound to: 34 - type: integer 
+	Parameter G_AXI_RLAST_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_RID_INDEX bound to: 34 - type: integer 
+	Parameter G_AXI_RID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_RUSER_INDEX bound to: 34 - type: integer 
+	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 34 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_axi2vector__parameterized0' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
+	Parameter C_AXI_PROTOCOL bound to: 2 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_SUPPORTS_USER_SIGNALS bound to: 0 - type: integer 
+	Parameter C_AXI_SUPPORTS_REGION_SIGNALS bound to: 0 - type: integer 
+	Parameter C_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AWPAYLOAD_WIDTH bound to: 35 - type: integer 
+	Parameter C_WPAYLOAD_WIDTH bound to: 36 - type: integer 
+	Parameter C_BPAYLOAD_WIDTH bound to: 2 - type: integer 
+	Parameter C_ARPAYLOAD_WIDTH bound to: 35 - type: integer 
+	Parameter C_RPAYLOAD_WIDTH bound to: 34 - type: integer 
+	Parameter G_AXI_AWADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_AWADDR_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_AWPROT_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_AWPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_AWSIZE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWSIZE_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWBURST_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWBURST_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWCACHE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWCACHE_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWLEN_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWLEN_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWLOCK_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWLOCK_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWID_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWQOS_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWQOS_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWREGION_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWREGION_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWUSER_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWPAYLOAD_WIDTH bound to: 35 - type: integer 
+	Parameter G_AXI_ARADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_ARADDR_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_ARPROT_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_ARPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_ARSIZE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARSIZE_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARBURST_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARBURST_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARCACHE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARCACHE_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARLEN_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARLEN_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARLOCK_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARLOCK_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARID_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARQOS_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARQOS_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARREGION_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARREGION_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARUSER_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARPAYLOAD_WIDTH bound to: 35 - type: integer 
+	Parameter G_AXI_WDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_WDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_WLAST_INDEX bound to: 36 - type: integer 
+	Parameter G_AXI_WLAST_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WID_INDEX bound to: 36 - type: integer 
+	Parameter G_AXI_WID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WUSER_INDEX bound to: 36 - type: integer 
+	Parameter G_AXI_WUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WPAYLOAD_WIDTH bound to: 36 - type: integer 
+	Parameter G_AXI_BRESP_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_BRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_BID_INDEX bound to: 2 - type: integer 
+	Parameter G_AXI_BID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_BUSER_INDEX bound to: 2 - type: integer 
+	Parameter G_AXI_BUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_BPAYLOAD_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_RDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_RDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_RLAST_INDEX bound to: 34 - type: integer 
+	Parameter G_AXI_RLAST_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_RID_INDEX bound to: 34 - type: integer 
+	Parameter G_AXI_RID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_RUSER_INDEX bound to: 34 - type: integer 
+	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 34 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_axi2vector__parameterized0' (59#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
+INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_vector2axi__parameterized0' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
+	Parameter C_AXI_PROTOCOL bound to: 2 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_SUPPORTS_USER_SIGNALS bound to: 0 - type: integer 
+	Parameter C_AXI_SUPPORTS_REGION_SIGNALS bound to: 0 - type: integer 
+	Parameter C_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AWPAYLOAD_WIDTH bound to: 35 - type: integer 
+	Parameter C_WPAYLOAD_WIDTH bound to: 36 - type: integer 
+	Parameter C_BPAYLOAD_WIDTH bound to: 2 - type: integer 
+	Parameter C_ARPAYLOAD_WIDTH bound to: 35 - type: integer 
+	Parameter C_RPAYLOAD_WIDTH bound to: 34 - type: integer 
+	Parameter G_AXI_AWADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_AWADDR_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_AWPROT_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_AWPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_AWSIZE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWSIZE_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWBURST_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWBURST_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWCACHE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWCACHE_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWLEN_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWLEN_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWLOCK_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWLOCK_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWID_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWQOS_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWQOS_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWREGION_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWREGION_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWUSER_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWPAYLOAD_WIDTH bound to: 35 - type: integer 
+	Parameter G_AXI_ARADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_ARADDR_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_ARPROT_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_ARPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_ARSIZE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARSIZE_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARBURST_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARBURST_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARCACHE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARCACHE_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARLEN_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARLEN_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARLOCK_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARLOCK_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARID_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARQOS_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARQOS_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARREGION_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARREGION_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARUSER_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARPAYLOAD_WIDTH bound to: 35 - type: integer 
+	Parameter G_AXI_WDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_WDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_WLAST_INDEX bound to: 36 - type: integer 
+	Parameter G_AXI_WLAST_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WID_INDEX bound to: 36 - type: integer 
+	Parameter G_AXI_WID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WUSER_INDEX bound to: 36 - type: integer 
+	Parameter G_AXI_WUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WPAYLOAD_WIDTH bound to: 36 - type: integer 
+	Parameter G_AXI_BRESP_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_BRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_BID_INDEX bound to: 2 - type: integer 
+	Parameter G_AXI_BID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_BUSER_INDEX bound to: 2 - type: integer 
+	Parameter G_AXI_BUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_BPAYLOAD_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_RDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_RDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_RLAST_INDEX bound to: 34 - type: integer 
+	Parameter G_AXI_RLAST_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_RID_INDEX bound to: 34 - type: integer 
+	Parameter G_AXI_RID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_RUSER_INDEX bound to: 34 - type: integer 
+	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 34 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_vector2axi__parameterized0' (59#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized3' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+	Parameter C_FAMILY bound to: virtex6 - type: string 
+	Parameter C_DATA_WIDTH bound to: 35 - type: integer 
+	Parameter C_REG_CONFIG bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized3' (59#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized4' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+	Parameter C_FAMILY bound to: virtex6 - type: string 
+	Parameter C_DATA_WIDTH bound to: 36 - type: integer 
+	Parameter C_REG_CONFIG bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized4' (59#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized5' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+	Parameter C_FAMILY bound to: virtex6 - type: string 
+	Parameter C_DATA_WIDTH bound to: 2 - type: integer 
+	Parameter C_REG_CONFIG bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized5' (59#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized6' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+	Parameter C_FAMILY bound to: virtex6 - type: string 
+	Parameter C_DATA_WIDTH bound to: 34 - type: integer 
+	Parameter C_REG_CONFIG bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized6' (59#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axi_register_slice__parameterized0' (59#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:3704]
+WARNING: [Synth 8-7023] instance 'MI_REG' of module 'axi_register_slice_v2_1_20_axi_register_slice' has 93 connections declared, but only 92 given [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4647]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s' (60#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4226]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_axi_protocol_converter' (61#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4808]
+INFO: [Synth 8-6155] done synthesizing module 'system_auto_pc_0' (62#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_auto_pc_0/synth/system_auto_pc_0.v:58]
+WARNING: [Synth 8-7023] instance 'auto_pc' of module 'system_auto_pc_0' has 59 connections declared, but only 57 given [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/synth/system.v:247]
+INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_1OVXGTK' (63#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/synth/system.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'system_ps_0_axi_periph_0' (64#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/synth/system.v:1041]
+INFO: [Synth 8-6157] synthesizing module 'system_pulse_gen_0_0' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_pulse_gen_0_0/synth/system_pulse_gen_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'pulse_gen' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/0f35/pulse_gen.v:3]
+	Parameter OUTPUT_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pulse_gen' (65#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/0f35/pulse_gen.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'system_pulse_gen_0_0' (66#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_pulse_gen_0_0/synth/system_pulse_gen_0_0.v:57]
+INFO: [Synth 8-638] synthesizing module 'system_rst_0_0' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_rst_0_0/synth/system_rst_0_0.vhd:74]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_EXT_RST_WIDTH bound to: 4 - type: integer 
+	Parameter C_AUX_RST_WIDTH bound to: 4 - type: integer 
+	Parameter C_EXT_RESET_HIGH bound to: 1'b0 
+	Parameter C_AUX_RESET_HIGH bound to: 1'b0 
+	Parameter C_NUM_BUS_RST bound to: 1 - type: integer 
+	Parameter C_NUM_PERP_RST bound to: 1 - type: integer 
+	Parameter C_NUM_INTERCONNECT_ARESETN bound to: 1 - type: integer 
+	Parameter C_NUM_PERP_ARESETN bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'proc_sys_reset' declared at '/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1264' bound to instance 'U0' of component 'proc_sys_reset' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_rst_0_0/synth/system_rst_0_0.vhd:129]
+INFO: [Synth 8-638] synthesizing module 'proc_sys_reset' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1323]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_EXT_RST_WIDTH bound to: 4 - type: integer 
+	Parameter C_AUX_RST_WIDTH bound to: 4 - type: integer 
+	Parameter C_EXT_RESET_HIGH bound to: 1'b0 
+	Parameter C_AUX_RESET_HIGH bound to: 1'b0 
+	Parameter C_NUM_BUS_RST bound to: 1 - type: integer 
+	Parameter C_NUM_PERP_RST bound to: 1 - type: integer 
+	Parameter C_NUM_INTERCONNECT_ARESETN bound to: 1 - type: integer 
+	Parameter C_NUM_PERP_ARESETN bound to: 1 - type: integer 
+	Parameter INIT bound to: 1'b1 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'FDRE_inst' to cell 'FDRE' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1392]
+	Parameter INIT bound to: 1'b1 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'FDRE_BSR' to cell 'FDRE' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1408]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'FDRE_BSR_N' to cell 'FDRE' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1434]
+	Parameter INIT bound to: 1'b1 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'FDRE_PER' to cell 'FDRE' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1457]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'FDRE_PER_N' to cell 'FDRE' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1481]
+INFO: [Synth 8-638] synthesizing module 'lpf' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:816]
+	Parameter C_EXT_RST_WIDTH bound to: 4 - type: integer 
+	Parameter C_AUX_RST_WIDTH bound to: 4 - type: integer 
+	Parameter C_EXT_RESET_HIGH bound to: 1'b0 
+	Parameter C_AUX_RESET_HIGH bound to: 1'b0 
+INFO: [Synth 8-3491] module 'SRL16' declared at '/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:77949' bound to instance 'POR_SRL_I' of component 'SRL16' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:868]
+INFO: [Synth 8-6157] synthesizing module 'SRL16' [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:77949]
+	Parameter INIT bound to: 16'b0000000000000000 
+INFO: [Synth 8-6155] done synthesizing module 'SRL16' (67#1) [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:77949]
+INFO: [Synth 8-638] synthesizing module 'cdc_sync' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+	Parameter C_CDC_TYPE bound to: 1 - type: integer 
+	Parameter C_RESET_STATE bound to: 0 - type: integer 
+	Parameter C_SINGLE_BIT bound to: 1 - type: integer 
+	Parameter C_FLOP_INPUT bound to: 0 - type: integer 
+	Parameter C_VECTOR_WIDTH bound to: 2 - type: integer 
+	Parameter C_MTBF_STAGES bound to: 4 - type: integer 
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:514]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2' to cell 'FDR' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:545]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d3' to cell 'FDR' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:554]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d4' to cell 'FDR' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:564]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d5' to cell 'FDR' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:574]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d6' to cell 'FDR' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:584]
+INFO: [Synth 8-256] done synthesizing module 'cdc_sync' (68#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+INFO: [Synth 8-256] done synthesizing module 'lpf' (69#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:816]
+INFO: [Synth 8-638] synthesizing module 'sequence_psr' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:301]
+INFO: [Synth 8-638] synthesizing module 'upcnt_n' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:125]
+	Parameter C_SIZE bound to: 6 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'upcnt_n' (70#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:125]
+INFO: [Synth 8-256] done synthesizing module 'sequence_psr' (71#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:301]
+INFO: [Synth 8-256] done synthesizing module 'proc_sys_reset' (72#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1323]
+INFO: [Synth 8-256] done synthesizing module 'system_rst_0_0' (73#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_rst_0_0/synth/system_rst_0_0.vhd:74]
+WARNING: [Synth 8-7023] instance 'rst_0' of module 'system_rst_0_0' has 10 connections declared, but only 6 given [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/synth/system.v:805]
+INFO: [Synth 8-6157] synthesizing module 'system_sig_exp_decay_0_0' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_sig_exp_decay_0_0/synth/system_sig_exp_decay_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'sig_exp_decay' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/cf81/exp_decay.v:3]
+	Parameter DAC_WIDTH bound to: 14 - type: integer 
+	Parameter RISE_TIME bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sig_exp_decay' (74#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/cf81/exp_decay.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'system_sig_exp_decay_0_0' (75#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_sig_exp_decay_0_0/synth/system_sig_exp_decay_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'system_configuration_imp_1T0V4NT' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/synth/system.v:903]
+INFO: [Synth 8-6157] synthesizing module 'system_cfg_0_0' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_cfg_0_0/synth/system_cfg_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'axi_cfg_register' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/b7d1/src/axi_cfg_register.v:4]
+	Parameter CFG_DATA_WIDTH bound to: 4096 - type: integer 
+	Parameter AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter ADDR_LSB bound to: 2 - type: integer 
+	Parameter CFG_SIZE bound to: 128 - type: integer 
+	Parameter CFG_WIDTH bound to: 7 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'FDRE' [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:13708]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-6155] done synthesizing module 'FDRE' (76#1) [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:13708]
+INFO: [Synth 8-6155] done synthesizing module 'axi_cfg_register' (77#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/b7d1/src/axi_cfg_register.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'system_cfg_0_0' (78#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_cfg_0_0/synth/system_cfg_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'system_slice_2_0' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_slice_2_0/synth/system_slice_2_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'port_slicer__parameterized0' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/8bd6/src/port_slicer.v:4]
+	Parameter DIN_WIDTH bound to: 4096 - type: integer 
+	Parameter DIN_FROM bound to: 1 - type: integer 
+	Parameter DIN_TO bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'port_slicer__parameterized0' (78#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/8bd6/src/port_slicer.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'system_slice_2_0' (79#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_slice_2_0/synth/system_slice_2_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'system_port_slicer_0_2' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_port_slicer_0_2/synth/system_port_slicer_0_2.v:57]
+INFO: [Synth 8-6157] synthesizing module 'port_slicer__parameterized1' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/8bd6/src/port_slicer.v:4]
+	Parameter DIN_WIDTH bound to: 4096 - type: integer 
+	Parameter DIN_FROM bound to: 0 - type: integer 
+	Parameter DIN_TO bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'port_slicer__parameterized1' (79#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/8bd6/src/port_slicer.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'system_port_slicer_0_2' (80#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_port_slicer_0_2/synth/system_port_slicer_0_2.v:57]
+INFO: [Synth 8-6157] synthesizing module 'system_port_slicer_0_0' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_port_slicer_0_0/synth/system_port_slicer_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'port_slicer__parameterized2' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/8bd6/src/port_slicer.v:4]
+	Parameter DIN_WIDTH bound to: 4096 - type: integer 
+	Parameter DIN_FROM bound to: 2047 - type: integer 
+	Parameter DIN_TO bound to: 1024 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'port_slicer__parameterized2' (80#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/8bd6/src/port_slicer.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'system_port_slicer_0_0' (81#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_port_slicer_0_0/synth/system_port_slicer_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'system_port_slicer_0_1' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_port_slicer_0_1/synth/system_port_slicer_0_1.v:57]
+INFO: [Synth 8-6157] synthesizing module 'port_slicer__parameterized3' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/8bd6/src/port_slicer.v:4]
+	Parameter DIN_WIDTH bound to: 4096 - type: integer 
+	Parameter DIN_FROM bound to: 3071 - type: integer 
+	Parameter DIN_TO bound to: 2048 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'port_slicer__parameterized3' (81#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/8bd6/src/port_slicer.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'system_port_slicer_0_1' (82#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_port_slicer_0_1/synth/system_port_slicer_0_1.v:57]
+INFO: [Synth 8-6157] synthesizing module 'system_slice_3_0' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_slice_3_0/synth/system_slice_3_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'port_slicer__parameterized4' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/8bd6/src/port_slicer.v:4]
+	Parameter DIN_WIDTH bound to: 4096 - type: integer 
+	Parameter DIN_FROM bound to: 2 - type: integer 
+	Parameter DIN_TO bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'port_slicer__parameterized4' (82#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/8bd6/src/port_slicer.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'system_slice_3_0' (83#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_slice_3_0/synth/system_slice_3_0.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'system_configuration_imp_1T0V4NT' (84#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/synth/system.v:903]
+WARNING: [Synth 8-7023] instance 'system_configuration' of module 'system_configuration_imp_1T0V4NT' has 24 connections declared, but only 22 given [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/synth/system.v:818]
+INFO: [Synth 8-6157] synthesizing module 'system_writer_0_2' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_writer_0_2/synth/system_writer_0_2.v:57]
+INFO: [Synth 8-6157] synthesizing module 'axis_ram_writer' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/edca/src/axis_ram_writer.v:4]
+	Parameter ADDR_WIDTH bound to: 24 - type: integer 
+	Parameter AXI_ID_WIDTH bound to: 6 - type: integer 
+	Parameter AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter AXI_DATA_WIDTH bound to: 64 - type: integer 
+	Parameter AXIS_TDATA_WIDTH bound to: 64 - type: integer 
+	Parameter ADDR_SIZE bound to: 3 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'FIFO36E1' [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:14358]
+	Parameter ALMOST_EMPTY_OFFSET bound to: 13'b0000000001111 
+	Parameter ALMOST_FULL_OFFSET bound to: 13'b0000010000000 
+	Parameter DATA_WIDTH bound to: 72 - type: integer 
+	Parameter DO_REG bound to: 1 - type: integer 
+	Parameter EN_ECC_READ bound to: FALSE - type: string 
+	Parameter EN_ECC_WRITE bound to: FALSE - type: string 
+	Parameter EN_SYN bound to: FALSE - type: string 
+	Parameter FIFO_MODE bound to: FIFO36_72 - type: string 
+	Parameter FIRST_WORD_FALL_THROUGH bound to: TRUE - type: string 
+	Parameter INIT bound to: 72'b000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter IS_RDCLK_INVERTED bound to: 1'b0 
+	Parameter IS_RDEN_INVERTED bound to: 1'b0 
+	Parameter IS_RSTREG_INVERTED bound to: 1'b0 
+	Parameter IS_RST_INVERTED bound to: 1'b0 
+	Parameter IS_WRCLK_INVERTED bound to: 1'b0 
+	Parameter IS_WREN_INVERTED bound to: 1'b0 
+	Parameter SIM_DEVICE bound to: 7SERIES - type: string 
+	Parameter SRVAL bound to: 72'b000000000000000000000000000000000000000000000000000000000000000000000000 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO36E1' (85#1) [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:14358]
+WARNING: [Synth 8-689] width (72) of port connection 'DI' does not match port width (64) of module 'FIFO36E1' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/edca/src/axis_ram_writer.v:74]
+WARNING: [Synth 8-689] width (72) of port connection 'DO' does not match port width (64) of module 'FIFO36E1' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/edca/src/axis_ram_writer.v:77]
+WARNING: [Synth 8-7023] instance 'fifo_0' of module 'FIFO36E1' has 24 connections declared, but only 9 given [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/edca/src/axis_ram_writer.v:68]
+INFO: [Synth 8-6155] done synthesizing module 'axis_ram_writer' (86#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/edca/src/axis_ram_writer.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'system_writer_0_2' (87#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_writer_0_2/synth/system_writer_0_2.v:57]
+INFO: [Synth 8-6157] synthesizing module 'system_writer_0_3' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_writer_0_3/synth/system_writer_0_3.v:57]
+INFO: [Synth 8-6157] synthesizing module 'axis_ram_writer__parameterized0' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/edca/src/axis_ram_writer.v:4]
+	Parameter ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter AXI_ID_WIDTH bound to: 6 - type: integer 
+	Parameter AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter ADDR_SIZE bound to: 2 - type: integer 
+WARNING: [Synth 8-689] width (72) of port connection 'DI' does not match port width (64) of module 'FIFO36E1' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/edca/src/axis_ram_writer.v:74]
+WARNING: [Synth 8-689] width (72) of port connection 'DO' does not match port width (64) of module 'FIFO36E1' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/edca/src/axis_ram_writer.v:77]
+WARNING: [Synth 8-7023] instance 'fifo_0' of module 'FIFO36E1' has 24 connections declared, but only 9 given [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/edca/src/axis_ram_writer.v:68]
+INFO: [Synth 8-6155] done synthesizing module 'axis_ram_writer__parameterized0' (87#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/edca/src/axis_ram_writer.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'system_writer_0_3' (88#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_writer_0_3/synth/system_writer_0_3.v:57]
+WARNING: [Synth 8-7023] instance 'writer_1' of module 'system_writer_0_3' has 23 connections declared, but only 21 given [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/synth/system.v:865]
+INFO: [Synth 8-6157] synthesizing module 'system_xlconcat_0_0' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_xlconcat_0_0/synth/system_xlconcat_0_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat__parameterized0' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
+	Parameter IN0_WIDTH bound to: 32 - type: integer 
+	Parameter IN1_WIDTH bound to: 32 - type: integer 
+	Parameter IN2_WIDTH bound to: 1 - type: integer 
+	Parameter IN3_WIDTH bound to: 1 - type: integer 
+	Parameter IN4_WIDTH bound to: 1 - type: integer 
+	Parameter IN5_WIDTH bound to: 1 - type: integer 
+	Parameter IN6_WIDTH bound to: 1 - type: integer 
+	Parameter IN7_WIDTH bound to: 1 - type: integer 
+	Parameter IN8_WIDTH bound to: 1 - type: integer 
+	Parameter IN9_WIDTH bound to: 1 - type: integer 
+	Parameter IN10_WIDTH bound to: 1 - type: integer 
+	Parameter IN11_WIDTH bound to: 1 - type: integer 
+	Parameter IN12_WIDTH bound to: 1 - type: integer 
+	Parameter IN13_WIDTH bound to: 1 - type: integer 
+	Parameter IN14_WIDTH bound to: 1 - type: integer 
+	Parameter IN15_WIDTH bound to: 1 - type: integer 
+	Parameter IN16_WIDTH bound to: 1 - type: integer 
+	Parameter IN17_WIDTH bound to: 1 - type: integer 
+	Parameter IN18_WIDTH bound to: 1 - type: integer 
+	Parameter IN19_WIDTH bound to: 1 - type: integer 
+	Parameter IN20_WIDTH bound to: 1 - type: integer 
+	Parameter IN21_WIDTH bound to: 1 - type: integer 
+	Parameter IN22_WIDTH bound to: 1 - type: integer 
+	Parameter IN23_WIDTH bound to: 1 - type: integer 
+	Parameter IN24_WIDTH bound to: 1 - type: integer 
+	Parameter IN25_WIDTH bound to: 1 - type: integer 
+	Parameter IN26_WIDTH bound to: 1 - type: integer 
+	Parameter IN27_WIDTH bound to: 1 - type: integer 
+	Parameter IN28_WIDTH bound to: 1 - type: integer 
+	Parameter IN29_WIDTH bound to: 1 - type: integer 
+	Parameter IN30_WIDTH bound to: 1 - type: integer 
+	Parameter IN31_WIDTH bound to: 1 - type: integer 
+	Parameter dout_width bound to: 64 - type: integer 
+	Parameter NUM_PORTS bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_3_xlconcat__parameterized0' (88#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'system_xlconcat_0_0' (89#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_xlconcat_0_0/synth/system_xlconcat_0_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'system_xlconcat_2_0' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_xlconcat_2_0/synth/system_xlconcat_2_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat__parameterized1' [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
+	Parameter IN0_WIDTH bound to: 1 - type: integer 
+	Parameter IN1_WIDTH bound to: 1 - type: integer 
+	Parameter IN2_WIDTH bound to: 1 - type: integer 
+	Parameter IN3_WIDTH bound to: 1 - type: integer 
+	Parameter IN4_WIDTH bound to: 1 - type: integer 
+	Parameter IN5_WIDTH bound to: 1 - type: integer 
+	Parameter IN6_WIDTH bound to: 1 - type: integer 
+	Parameter IN7_WIDTH bound to: 1 - type: integer 
+	Parameter IN8_WIDTH bound to: 1 - type: integer 
+	Parameter IN9_WIDTH bound to: 1 - type: integer 
+	Parameter IN10_WIDTH bound to: 1 - type: integer 
+	Parameter IN11_WIDTH bound to: 1 - type: integer 
+	Parameter IN12_WIDTH bound to: 1 - type: integer 
+	Parameter IN13_WIDTH bound to: 1 - type: integer 
+	Parameter IN14_WIDTH bound to: 1 - type: integer 
+	Parameter IN15_WIDTH bound to: 1 - type: integer 
+	Parameter IN16_WIDTH bound to: 1 - type: integer 
+	Parameter IN17_WIDTH bound to: 1 - type: integer 
+	Parameter IN18_WIDTH bound to: 1 - type: integer 
+	Parameter IN19_WIDTH bound to: 1 - type: integer 
+	Parameter IN20_WIDTH bound to: 1 - type: integer 
+	Parameter IN21_WIDTH bound to: 1 - type: integer 
+	Parameter IN22_WIDTH bound to: 1 - type: integer 
+	Parameter IN23_WIDTH bound to: 1 - type: integer 
+	Parameter IN24_WIDTH bound to: 1 - type: integer 
+	Parameter IN25_WIDTH bound to: 1 - type: integer 
+	Parameter IN26_WIDTH bound to: 1 - type: integer 
+	Parameter IN27_WIDTH bound to: 1 - type: integer 
+	Parameter IN28_WIDTH bound to: 1 - type: integer 
+	Parameter IN29_WIDTH bound to: 1 - type: integer 
+	Parameter IN30_WIDTH bound to: 1 - type: integer 
+	Parameter IN31_WIDTH bound to: 1 - type: integer 
+	Parameter dout_width bound to: 8 - type: integer 
+	Parameter NUM_PORTS bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_3_xlconcat__parameterized1' (89#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'system_xlconcat_2_0' (90#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_xlconcat_2_0/synth/system_xlconcat_2_0.v:58]
+WARNING: [Synth 8-3848] Net adc_enc_n_o in module/entity system does not have driver. [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/synth/system.v:372]
+WARNING: [Synth 8-3848] Net adc_enc_p_o in module/entity system does not have driver. [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/synth/system.v:373]
+WARNING: [Synth 8-3848] Net dac_pwm_o in module/entity system does not have driver. [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/synth/system.v:376]
+INFO: [Synth 8-6155] done synthesizing module 'system' (91#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/synth/system.v:308]
+INFO: [Synth 8-6155] done synthesizing module 'system_wrapper' (92#1) [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/hdl/system_wrapper.v:12]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized1 has unconnected port In8[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized1 has unconnected port In9[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized1 has unconnected port In10[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized1 has unconnected port In11[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized1 has unconnected port In12[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized1 has unconnected port In13[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized1 has unconnected port In14[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized1 has unconnected port In15[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized1 has unconnected port In16[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized1 has unconnected port In17[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized1 has unconnected port In18[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized1 has unconnected port In19[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized1 has unconnected port In20[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized1 has unconnected port In21[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized1 has unconnected port In22[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized1 has unconnected port In23[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized1 has unconnected port In24[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized1 has unconnected port In25[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized1 has unconnected port In26[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized1 has unconnected port In27[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized1 has unconnected port In28[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized1 has unconnected port In29[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized1 has unconnected port In30[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized1 has unconnected port In31[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In2[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In3[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In4[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In5[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In6[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In7[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In8[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In9[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In10[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In11[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In12[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In13[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In14[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In15[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In16[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In17[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In18[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In19[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In20[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In21[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In22[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In23[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In24[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In25[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In26[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In27[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In28[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In29[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In30[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In31[0]
+WARNING: [Synth 8-3331] design axis_ram_writer__parameterized0 has unconnected port m_axi_bvalid
+WARNING: [Synth 8-3331] design axis_ram_writer has unconnected port m_axi_bvalid
+WARNING: [Synth 8-3331] design port_slicer__parameterized4 has unconnected port din[4095]
+WARNING: [Synth 8-3331] design port_slicer__parameterized4 has unconnected port din[4094]
+WARNING: [Synth 8-3331] design port_slicer__parameterized4 has unconnected port din[4093]
+WARNING: [Synth 8-3331] design port_slicer__parameterized4 has unconnected port din[4092]
+WARNING: [Synth 8-3331] design port_slicer__parameterized4 has unconnected port din[4091]
+WARNING: [Synth 8-3331] design port_slicer__parameterized4 has unconnected port din[4090]
+WARNING: [Synth 8-3331] design port_slicer__parameterized4 has unconnected port din[4089]
+WARNING: [Synth 8-3331] design port_slicer__parameterized4 has unconnected port din[4088]
+WARNING: [Synth 8-3331] design port_slicer__parameterized4 has unconnected port din[4087]
+WARNING: [Synth 8-3331] design port_slicer__parameterized4 has unconnected port din[4086]
+WARNING: [Synth 8-3331] design port_slicer__parameterized4 has unconnected port din[4085]
+WARNING: [Synth 8-3331] design port_slicer__parameterized4 has unconnected port din[4084]
+WARNING: [Synth 8-3331] design port_slicer__parameterized4 has unconnected port din[4083]
+WARNING: [Synth 8-3331] design port_slicer__parameterized4 has unconnected port din[4082]
+WARNING: [Synth 8-3331] design port_slicer__parameterized4 has unconnected port din[4081]
+WARNING: [Synth 8-3331] design port_slicer__parameterized4 has unconnected port din[4080]
+WARNING: [Synth 8-3331] design port_slicer__parameterized4 has unconnected port din[4079]
+WARNING: [Synth 8-3331] design port_slicer__parameterized4 has unconnected port din[4078]
+WARNING: [Synth 8-3331] design port_slicer__parameterized4 has unconnected port din[4077]
+WARNING: [Synth 8-3331] design port_slicer__parameterized4 has unconnected port din[4076]
+WARNING: [Synth 8-3331] design port_slicer__parameterized4 has unconnected port din[4075]
+WARNING: [Synth 8-3331] design port_slicer__parameterized4 has unconnected port din[4074]
+WARNING: [Synth 8-3331] design port_slicer__parameterized4 has unconnected port din[4073]
+WARNING: [Synth 8-3331] design port_slicer__parameterized4 has unconnected port din[4072]
+WARNING: [Synth 8-3331] design port_slicer__parameterized4 has unconnected port din[4071]
+WARNING: [Synth 8-3331] design port_slicer__parameterized4 has unconnected port din[4070]
+WARNING: [Synth 8-3331] design port_slicer__parameterized4 has unconnected port din[4069]
+WARNING: [Synth 8-3331] design port_slicer__parameterized4 has unconnected port din[4068]
+WARNING: [Synth 8-3331] design port_slicer__parameterized4 has unconnected port din[4067]
+WARNING: [Synth 8-3331] design port_slicer__parameterized4 has unconnected port din[4066]
+WARNING: [Synth 8-3331] design port_slicer__parameterized4 has unconnected port din[4065]
+WARNING: [Synth 8-3331] design port_slicer__parameterized4 has unconnected port din[4064]
+WARNING: [Synth 8-3331] design port_slicer__parameterized4 has unconnected port din[4063]
+WARNING: [Synth 8-3331] design port_slicer__parameterized4 has unconnected port din[4062]
+WARNING: [Synth 8-3331] design port_slicer__parameterized4 has unconnected port din[4061]
+WARNING: [Synth 8-3331] design port_slicer__parameterized4 has unconnected port din[4060]
+WARNING: [Synth 8-3331] design port_slicer__parameterized4 has unconnected port din[4059]
+WARNING: [Synth 8-3331] design port_slicer__parameterized4 has unconnected port din[4058]
+WARNING: [Synth 8-3331] design port_slicer__parameterized4 has unconnected port din[4057]
+WARNING: [Synth 8-3331] design port_slicer__parameterized4 has unconnected port din[4056]
+WARNING: [Synth 8-3331] design port_slicer__parameterized4 has unconnected port din[4055]
+WARNING: [Synth 8-3331] design port_slicer__parameterized4 has unconnected port din[4054]
+WARNING: [Synth 8-3331] design port_slicer__parameterized4 has unconnected port din[4053]
+WARNING: [Synth 8-3331] design port_slicer__parameterized4 has unconnected port din[4052]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:29 ; elapsed = 00:00:53 . Memory (MB): peak = 2162.363 ; gain = 438.469 ; free physical = 320 ; free virtual = 3177
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:30 ; elapsed = 00:00:54 . Memory (MB): peak = 2177.207 ; gain = 453.312 ; free physical = 344 ; free virtual = 3202
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:30 ; elapsed = 00:00:54 . Memory (MB): peak = 2177.207 ; gain = 453.312 ; free physical = 344 ; free virtual = 3202
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.16 ; elapsed = 00:00:00.17 . Memory (MB): peak = 2177.207 ; gain = 0.000 ; free physical = 318 ; free virtual = 3181
+INFO: [Netlist 29-17] Analyzing 36 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/system_ps_0_2.xdc] for cell 'system_i/ps_0/inst'
+Finished Parsing XDC File [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/system_ps_0_2.xdc] for cell 'system_i/ps_0/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/system_ps_0_2.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/system_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/system_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0_board.xdc] for cell 'system_i/pll_0/inst'
+Finished Parsing XDC File [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0_board.xdc] for cell 'system_i/pll_0/inst'
+Parsing XDC File [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0.xdc] for cell 'system_i/pll_0/inst'
+Finished Parsing XDC File [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0.xdc] for cell 'system_i/pll_0/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/system_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/system_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_rst_0_0/system_rst_0_0_board.xdc] for cell 'system_i/rst_0/U0'
+Finished Parsing XDC File [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_rst_0_0/system_rst_0_0_board.xdc] for cell 'system_i/rst_0/U0'
+Parsing XDC File [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_rst_0_0/system_rst_0_0.xdc] for cell 'system_i/rst_0/U0'
+Finished Parsing XDC File [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ip/system_rst_0_0/system_rst_0_0.xdc] for cell 'system_i/rst_0/U0'
+INFO: [Timing 38-2] Deriving generated clocks
+Parsing XDC File [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/constrs_1/imports/cfg/clocks.xdc]
+Finished Parsing XDC File [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/constrs_1/imports/cfg/clocks.xdc]
+Parsing XDC File [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/constrs_1/imports/cfg/ports.xdc]
+WARNING: [Vivado 12-584] No ports matched 'adc_dat_a_i[14]'. [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/constrs_1/imports/cfg/ports.xdc:26]
+WARNING: [Vivado 12-584] No ports matched 'adc_dat_a_i[15]'. [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/constrs_1/imports/cfg/ports.xdc:27]
+WARNING: [Vivado 12-584] No ports matched 'adc_dat_b_i[14]'. [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/constrs_1/imports/cfg/ports.xdc:46]
+WARNING: [Vivado 12-584] No ports matched 'adc_dat_b_i[15]'. [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/constrs_1/imports/cfg/ports.xdc:47]
+WARNING: [Vivado 12-584] No ports matched 'Vp_Vn_v_p'. [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/constrs_1/imports/cfg/ports.xdc:127]
+WARNING: [Vivado 12-584] No ports matched 'Vp_Vn_v_n'. [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/constrs_1/imports/cfg/ports.xdc:128]
+WARNING: [Vivado 12-584] No ports matched 'Vaux0_v_p'. [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/constrs_1/imports/cfg/ports.xdc:129]
+WARNING: [Vivado 12-584] No ports matched 'Vaux0_v_n'. [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/constrs_1/imports/cfg/ports.xdc:130]
+WARNING: [Vivado 12-584] No ports matched 'Vaux1_v_p'. [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/constrs_1/imports/cfg/ports.xdc:131]
+WARNING: [Vivado 12-584] No ports matched 'Vaux1_v_n'. [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/constrs_1/imports/cfg/ports.xdc:132]
+WARNING: [Vivado 12-584] No ports matched 'Vaux8_v_p'. [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/constrs_1/imports/cfg/ports.xdc:133]
+WARNING: [Vivado 12-584] No ports matched 'Vaux8_v_n'. [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/constrs_1/imports/cfg/ports.xdc:134]
+WARNING: [Vivado 12-584] No ports matched 'Vaux9_v_p'. [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/constrs_1/imports/cfg/ports.xdc:135]
+WARNING: [Vivado 12-584] No ports matched 'Vaux9_v_n'. [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/constrs_1/imports/cfg/ports.xdc:136]
+WARNING: [Vivado 12-584] No ports matched 'Vp_Vn_v_p'. [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/constrs_1/imports/cfg/ports.xdc:138]
+WARNING: [Vivado 12-584] No ports matched 'Vp_Vn_v_n'. [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/constrs_1/imports/cfg/ports.xdc:139]
+WARNING: [Vivado 12-584] No ports matched 'Vaux0_v_p'. [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/constrs_1/imports/cfg/ports.xdc:140]
+WARNING: [Vivado 12-584] No ports matched 'Vaux0_v_n'. [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/constrs_1/imports/cfg/ports.xdc:141]
+WARNING: [Vivado 12-584] No ports matched 'Vaux1_v_p'. [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/constrs_1/imports/cfg/ports.xdc:142]
+WARNING: [Vivado 12-584] No ports matched 'Vaux1_v_n'. [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/constrs_1/imports/cfg/ports.xdc:143]
+WARNING: [Vivado 12-584] No ports matched 'Vaux8_v_p'. [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/constrs_1/imports/cfg/ports.xdc:144]
+WARNING: [Vivado 12-584] No ports matched 'Vaux8_v_n'. [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/constrs_1/imports/cfg/ports.xdc:145]
+WARNING: [Vivado 12-584] No ports matched 'Vaux9_v_p'. [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/constrs_1/imports/cfg/ports.xdc:146]
+WARNING: [Vivado 12-584] No ports matched 'Vaux9_v_n'. [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/constrs_1/imports/cfg/ports.xdc:147]
+WARNING: [Vivado 12-584] No ports matched 'daisy_p_o[*]'. [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/constrs_1/imports/cfg/ports.xdc:177]
+WARNING: [Vivado 12-584] No ports matched 'daisy_n_o[*]'. [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/constrs_1/imports/cfg/ports.xdc:178]
+WARNING: [Vivado 12-584] No ports matched 'daisy_p_i[*]'. [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/constrs_1/imports/cfg/ports.xdc:180]
+WARNING: [Vivado 12-584] No ports matched 'daisy_n_i[*]'. [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/constrs_1/imports/cfg/ports.xdc:181]
+WARNING: [Vivado 12-584] No ports matched 'daisy_p_o[0]'. [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/constrs_1/imports/cfg/ports.xdc:183]
+WARNING: [Vivado 12-584] No ports matched 'daisy_n_o[0]'. [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/constrs_1/imports/cfg/ports.xdc:184]
+WARNING: [Vivado 12-584] No ports matched 'daisy_p_o[1]'. [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/constrs_1/imports/cfg/ports.xdc:186]
+WARNING: [Vivado 12-584] No ports matched 'daisy_n_o[1]'. [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/constrs_1/imports/cfg/ports.xdc:187]
+WARNING: [Vivado 12-584] No ports matched 'daisy_p_i[0]'. [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/constrs_1/imports/cfg/ports.xdc:189]
+WARNING: [Vivado 12-584] No ports matched 'daisy_n_i[0]'. [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/constrs_1/imports/cfg/ports.xdc:190]
+WARNING: [Vivado 12-584] No ports matched 'daisy_p_i[1]'. [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/constrs_1/imports/cfg/ports.xdc:192]
+WARNING: [Vivado 12-584] No ports matched 'daisy_n_i[1]'. [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/constrs_1/imports/cfg/ports.xdc:193]
+Finished Parsing XDC File [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/constrs_1/imports/cfg/ports.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/constrs_1/imports/cfg/ports.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/system_wrapper_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/constrs_1/imports/cfg/ports.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/system_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/system_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.runs/synth_1/dont_touch.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.runs/synth_1/dont_touch.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/system_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/system_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2230.035 ; gain = 0.000 ; free physical = 188 ; free virtual = 3073
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 13 instances were transformed.
+  FDR => FDRE: 12 instances
+  SRL16 => SRL16E: 1 instance 
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.09 . Memory (MB): peak = 2230.035 ; gain = 0.000 ; free physical = 188 ; free virtual = 3073
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:41 ; elapsed = 00:01:08 . Memory (MB): peak = 2230.035 ; gain = 506.141 ; free physical = 295 ; free virtual = 3182
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:41 ; elapsed = 00:01:08 . Memory (MB): peak = 2230.035 ; gain = 506.141 ; free physical = 295 ; free virtual = 3181
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for system_i/ps_0/inst. (constraint file  /home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.runs/synth_1/dont_touch.xdc, line 99).
+Applied set_property DONT_TOUCH = true for system_i/pll_0/inst. (constraint file  /home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.runs/synth_1/dont_touch.xdc, line 104).
+Applied set_property DONT_TOUCH = true for system_i/rst_0/U0. (constraint file  /home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.runs/synth_1/dont_touch.xdc, line 112).
+Applied set_property DONT_TOUCH = true for system_i. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/Waveform_Offset_Addr. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/ps_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/writer_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/writer_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/Waveform_Offset_Addr1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/adc_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/axis_red_pitaya_dac_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/c_counter_binary_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/system_configuration/cfg_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/concat_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/const_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/not_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/pll_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/port_slicer_4. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/ps_0_axi_periph. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/pulse_gen_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/rst_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/sig_exp_decay_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/system_configuration/filter_reset. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/system_configuration/writer_reset. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/xlconcat_2. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/xlconcat_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/system_configuration/port_slicer_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/system_configuration/port_slicer_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/axis_broadcaster_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/axis_combiner_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/system_configuration/gen_exp_decay. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/mult_gen_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/ps_0_axi_periph/s00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:42 ; elapsed = 00:01:09 . Memory (MB): peak = 2230.035 ; gain = 506.141 ; free physical = 298 ; free virtual = 3185
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'axi_protocol_converter_v2_1_20_b2s_rd_cmd_fsm'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 SM_IDLE |                             0010 |                               00
+               SM_CMD_EN |                             1000 |                               01
+         SM_CMD_ACCEPTED |                             0100 |                               10
+                 SM_DONE |                             0001 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'axi_protocol_converter_v2_1_20_b2s_rd_cmd_fsm'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:48 ; elapsed = 00:01:16 . Memory (MB): peak = 2230.035 ; gain = 506.141 ; free physical = 289 ; free virtual = 3178
+---------------------------------------------------------------------------------
+INFO: [Synth 8-223] decloning instance 'system_i/axis_broadcaster_0/inst/broadcaster_core/MI_SLOT[0].util_vector2axis' (axis_infrastructure_v1_1_0_util_vector2axis) to 'system_i/axis_broadcaster_0/inst/broadcaster_core/MI_SLOT[1].util_vector2axis'
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-3936] Found unconnected internal register 'inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw.aw_pipe/m_payload_i_reg' and it is trimmed from '66' to '62' bits. [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1709]
+INFO: [Synth 8-3936] Found unconnected internal register 'inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/ar.ar_pipe/m_payload_i_reg' and it is trimmed from '66' to '62' bits. [/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1709]
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/axis_broadcaster_0/\inst/broadcaster_core/m_ready_d_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/axis_broadcaster_0/\inst/broadcaster_core/m_ready_d_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/mult_gen_0/U0/i_mult/\gLUT.gLUT_speed.iLUT/Nx1_mult.and_loop[1].pipeline_mult.pi_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[0][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[0][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[0][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[0][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[1][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[1][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[1][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[1][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[2][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[2][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[2][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[2][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][5] )
+WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d5) is unused and will be removed from module proc_sys_reset.
+WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d6) is unused and will be removed from module proc_sys_reset.
+WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d5) is unused and will be removed from module proc_sys_reset.
+WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d6) is unused and will be removed from module proc_sys_reset.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:02 ; elapsed = 00:01:30 . Memory (MB): peak = 2263.285 ; gain = 539.391 ; free physical = 299 ; free virtual = 3148
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:11 ; elapsed = 00:01:42 . Memory (MB): peak = 2320.285 ; gain = 596.391 ; free physical = 120 ; free virtual = 2853
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:16 ; elapsed = 00:01:48 . Memory (MB): peak = 2385.324 ; gain = 661.430 ; free physical = 122 ; free virtual = 2812
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/axis_combiner_0/\inst/m_ready_d_reg )
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:21 ; elapsed = 00:01:54 . Memory (MB): peak = 2393.332 ; gain = 669.438 ; free physical = 136 ; free virtual = 2806
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:26 ; elapsed = 00:01:58 . Memory (MB): peak = 2397.301 ; gain = 673.406 ; free physical = 136 ; free virtual = 2807
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:26 ; elapsed = 00:01:58 . Memory (MB): peak = 2397.301 ; gain = 673.406 ; free physical = 135 ; free virtual = 2806
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:26 ; elapsed = 00:01:58 . Memory (MB): peak = 2397.301 ; gain = 673.406 ; free physical = 137 ; free virtual = 2807
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:26 ; elapsed = 00:01:58 . Memory (MB): peak = 2397.301 ; gain = 673.406 ; free physical = 137 ; free virtual = 2807
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:26 ; elapsed = 00:01:58 . Memory (MB): peak = 2397.301 ; gain = 673.406 ; free physical = 137 ; free virtual = 2807
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:26 ; elapsed = 00:01:58 . Memory (MB): peak = 2397.301 ; gain = 673.406 ; free physical = 137 ; free virtual = 2807
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+----------+------+
+|      |Cell      |Count |
++------+----------+------+
+|1     |BIBUF     |   130|
+|2     |BUFG      |     4|
+|3     |CARRY4    |    75|
+|4     |DSP48E1   |     1|
+|5     |FIFO36E1  |     2|
+|6     |LUT1      |   255|
+|7     |LUT2      |   504|
+|8     |LUT3      |   299|
+|9     |LUT4      |    47|
+|10    |LUT5      |   102|
+|11    |LUT6      |  1516|
+|12    |MUXF7     |   544|
+|13    |MUXF8     |   256|
+|14    |ODDR      |    18|
+|15    |PLLE2_ADV |     1|
+|16    |PS7       |     1|
+|17    |SRL16     |     1|
+|18    |SRLC32E   |    47|
+|19    |FDR       |     8|
+|20    |FDRE      |  5020|
+|21    |FDSE      |    24|
+|22    |IBUF      |    36|
+|23    |IBUFDS    |     1|
+|24    |OBUF      |    35|
+|25    |OBUFT     |     6|
++------+----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:26 ; elapsed = 00:01:58 . Memory (MB): peak = 2397.301 ; gain = 673.406 ; free physical = 137 ; free virtual = 2807
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 18640 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:21 ; elapsed = 00:01:52 . Memory (MB): peak = 2397.301 ; gain = 620.578 ; free physical = 205 ; free virtual = 2876
+Synthesis Optimization Complete : Time (s): cpu = 00:01:26 ; elapsed = 00:01:58 . Memory (MB): peak = 2397.309 ; gain = 673.406 ; free physical = 205 ; free virtual = 2876
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.13 ; elapsed = 00:00:00.13 . Memory (MB): peak = 2397.309 ; gain = 0.000 ; free physical = 269 ; free virtual = 2947
+INFO: [Netlist 29-17] Analyzing 907 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2397.309 ; gain = 0.000 ; free physical = 209 ; free virtual = 2888
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 9 instances were transformed.
+  FDR => FDRE: 8 instances
+  SRL16 => SRL16E: 1 instance 
+
+INFO: [Common 17-83] Releasing license: Synthesis
+281 Infos, 166 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:38 ; elapsed = 00:02:12 . Memory (MB): peak = 2397.309 ; gain = 908.688 ; free physical = 517 ; free virtual = 3196
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2397.309 ; gain = 0.000 ; free physical = 517 ; free virtual = 3197
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint '/home/lars/Documents/Github/DSP/projects/toggle_adc_recorder/toggle_adc_recorder.runs/synth_1/system_wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file system_wrapper_utilization_synth.rpt -pb system_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Jul  2 14:08:08 2021...
