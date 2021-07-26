@@ -39,6 +39,24 @@ int main(){
     //         std::chrono::duration_cast<std::chrono::milliseconds>(t_send - t_start).count());
     // }
 
+    uint nsamples = 10000;
+    uint period = 1000;
+    uint iters = 50;
+    uint count = 0;
+    uint32_t* data = new uint32_t[nsamples * iters];
+    sample* samples = new sample[nsamples];
+    for (uint i = 0; i < iters; i++){
+        rp.capture_n_continuous(samples, nsamples, period);
+        for (uint i = 0; i < nsamples; i++)
+            data[count++] = samples[i].time;
+    }
+
+    for (uint i = 1; i < iters * nsamples; i++){
+        //printf("%u\n", data[i]);
+        if (data[i] - data[i-1] != period)
+            printf("%d\n", data[i] - data[i-1]);
+    }
     
+
     return 0;
 }

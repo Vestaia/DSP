@@ -87,7 +87,7 @@ void fpga<fpga_cfg,sample>::capture_n_continuous(sample* data, uint n, uint peri
     uint64_t* buffer = (uint64_t*)data;
     static uint start = *ring_wptr;
     uint end = start + n * period;
-    usleep((end - start) / period * 1000000.0 / CLOCK_FREQ);
+    usleep((end - *ring_wptr) * 1000000.0 / CLOCK_FREQ);
     if (end > ring_size){
         end -= ring_size;
         uint i = start;
