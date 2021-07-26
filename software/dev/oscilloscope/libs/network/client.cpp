@@ -4,7 +4,9 @@ client::client(){
     server_fd = socket(AF_INET, SOCK_STREAM, 0);
 }
 client::~client(){
+    printf("Destroying Client\n");
     close(server_fd);
+    printf("Client Exited\n");
 }
 
 
@@ -35,17 +37,17 @@ int client::connect_to(
 
 int client::send(
         void *data, 
-        ssize_t size
+        size_t size
     ){
     return (write(server_fd, data, size) == size) - 1;
 }
 
 int client::recieve(
         void *data, 
-        ssize_t size
+        size_t size
     ){
-    ssize_t status;
-    ssize_t recd = 0;
+    size_t status;
+    size_t recd = 0;
 
     while (recd < size && (status = read(server_fd, (uint8_t*)data + recd, size)) >= 0){
         recd += status;

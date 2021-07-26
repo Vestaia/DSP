@@ -48,14 +48,14 @@ int server::read_request(request* req){
 
 int server::send(
         void *data, 
-        ssize_t size
+        size_t size
     ){
     return (write(client_fd, data, size) == size) - 1;
 }
 
 int server::recieve(
         void *data, 
-        ssize_t size
+        size_t size
     ){
     return (recv(client_fd, data, size, MSG_WAITALL) == size) - 1;
 }

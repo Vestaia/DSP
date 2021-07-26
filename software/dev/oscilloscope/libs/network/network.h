@@ -8,7 +8,7 @@ struct request{
     uint8_t flags; // Valid | Trigger | ...
     uint32_t t_offset;
     uint32_t nsamples;
-    uint32_t rate;
+    uint32_t period;
 };
 
 class server{
@@ -23,8 +23,8 @@ class server{
     //Attach to a local interface and port
     int attach(uint ipv4_interface_addr, ushort ipv4_interface_port);
     int attach(const char* ipv4_interface_addr, ushort ipv4_interface_port);
-    int send(void* data, ssize_t size);
-    int recieve(void* data, ssize_t size);
+    int send(void* data, size_t size);
+    int recieve(void* data, size_t size);
     int read_request(request* req);
 };
 
@@ -39,10 +39,10 @@ class client{
 
     int connect_to(uint ipv4_remote_addr, ushort ipv4_remote_port);
     int connect_to(const char* ipv4_remote_addr, ushort ipv4_remote_port);
-    int send(void* data, ssize_t size);
-    int recieve(void* data, ssize_t size);
+    int send(void* data, size_t size);
+    int recieve(void* data, size_t size);
     template <class T>
-    int get_frame(T* data, uint8_t flags, uint32_t samples_offset, uint32_t nsamples, uint32_t rate);
+    int get_frame(T* data, uint8_t flags, uint32_t samples_offset, uint32_t nsamples, uint32_t period);
 };
 
 
@@ -52,13 +52,13 @@ int client::get_frame(
         uint8_t     flags,
         uint32_t    t_offset,
         uint32_t    nsamples,
-        uint32_t    rate
+        uint32_t    period
     ){
     request req;
     req.flags = flags;
     req.t_offset = t_offset;
     req.nsamples = nsamples;
-    req.rate = rate;
+    req.period = period;
     if (send(&req, sizeof(req)) < 0){
         perror("Send request:");
         return -1;

@@ -1,0 +1,20 @@
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|       Launch Clock       |      Capture Clock       |                                                 Pin                                                      |
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|  clk_out1_system_pll_0_0 |  clk_out3_system_pll_0_0 |                                                                      system_i/writer_0/inst/fifo_0/DI[20]|
+|  clk_out1_system_pll_0_0 |  clk_out3_system_pll_0_0 |                                                                      system_i/writer_0/inst/fifo_0/DI[23]|
+|  clk_out1_system_pll_0_0 |  clk_out3_system_pll_0_0 |                                                                       system_i/writer_0/inst/fifo_0/DI[0]|
+|  clk_out1_system_pll_0_0 |  clk_out3_system_pll_0_0 |                                                                       system_i/writer_0/inst/fifo_0/DI[4]|
+|  clk_out1_system_pll_0_0 |  clk_out3_system_pll_0_0 |                                                                      system_i/writer_0/inst/fifo_0/DI[31]|
+|  clk_out1_system_pll_0_0 |  clk_out3_system_pll_0_0 |                                                                       system_i/writer_0/inst/fifo_0/DI[7]|
+|  clk_out1_system_pll_0_0 |  clk_out3_system_pll_0_0 |                                                                      system_i/writer_0/inst/fifo_0/DI[18]|
+|  clk_out1_system_pll_0_0 |  clk_out3_system_pll_0_0 |                                                                      system_i/writer_0/inst/fifo_0/DI[45]|
+|  clk_out1_system_pll_0_0 |  clk_out3_system_pll_0_0 |                                                                      system_i/writer_0/inst/fifo_0/DI[47]|
+|  clk_out1_system_pll_0_0 |  clk_out3_system_pll_0_0 |                                                                      system_i/writer_0/inst/fifo_0/DI[46]|
+|  clk_out1_system_pll_0_0 |  clk_out3_system_pll_0_0 |                                                                      system_i/writer_0/inst/fifo_0/DI[32]|
+|  clk_out1_system_pll_0_0 |  clk_out3_system_pll_0_0 |                                                                      system_i/writer_0/inst/fifo_0/DI[35]|
+|  clk_out1_system_pll_0_0 |  clk_out3_system_pll_0_0 |                                                                      system_i/writer_0/inst/fifo_0/DI[11]|
+|  clk_out3_system_pll_0_0 |  clk_out3_system_pll_0_0 |                                                              system_i/writer_0/inst/int_awvalid_reg_reg/D|
+|  clk_out3_system_pll_0_0 |  clk_out3_system_pll_0_0 |                                                               system_i/writer_0/inst/int_wvalid_reg_reg/D|
+|  clk_out3_system_pll_0_0 |  clk_out3_system_pll_0_0 |system_i/axis_clock_converter_0/inst/gen_sync_ck_conv.axisc_sync_clock_converter_0/gen_sync_clock_converter.m_valid_r_reg/D|
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+

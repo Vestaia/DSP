@@ -2,9 +2,9 @@
 #include "common.h"
 
 pwp_fpga::pwp_fpga(){
-    ring_buf  = (volatile uint8_t*)  mmap(NULL, DATA_RING_SIZE, PROT_READ|PROT_WRITE, MAP_SHARED, fd, DATA_RING_ADDR);
+    ring_buf  = (volatile uint64_t*)  mmap(NULL, DATA_RING_SIZE, PROT_READ|PROT_WRITE, MAP_SHARED, fd, DATA_RING_ADDR);
     ring_wptr = (volatile uint32_t*)  mmap(NULL, 4, PROT_READ|PROT_WRITE, MAP_SHARED, fd, DATA_RING_WPTR);
-    ring_size = DATA_RING_SIZE;
+    ring_size = DATA_RING_SIZE/8;
 }
 
 pwp_fpga::~pwp_fpga(){

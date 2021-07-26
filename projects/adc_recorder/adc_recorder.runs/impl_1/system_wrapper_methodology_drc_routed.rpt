@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date         : Thu Jul  1 11:29:02 2021
-| Host         : evermist running 64-bit Ubuntu 18.04.4 LTS
+| Tool Version : Vivado v.2019.2.1 (lin64) Build 2729669 Thu Dec  5 04:48:12 MST 2019
+| Date         : Wed Jul 21 14:01:57 2021
+| Host         : chromatic running 64-bit Ubuntu 20.04.2 LTS
 | Command      : report_methodology -file system_wrapper_methodology_drc_routed.rpt -pb system_wrapper_methodology_drc_routed.pb -rpx system_wrapper_methodology_drc_routed.rpx
 | Design       : system_wrapper
 | Device       : xc7z010clg400-1
@@ -266,35 +266,35 @@ Related violations: <none>
 
 ULMTCS-1#1 Warning
 Control Sets use limits recommend reduction  
-This design uses 552 control sets (vs. available limit of 4400, determined by 1 control set per CLB). This exceeds the control set use guideline of 7.5 percent. This is at a level where reduction is RECOMMENDED (see UG949). Use report_control_sets to get more details.
+This design uses 550 control sets (vs. available limit of 4400, determined by 1 control set per CLB). This exceeds the control set use guideline of 7.5 percent. This is at a level where reduction is RECOMMENDED (see UG949). Use report_control_sets to get more details.
 Related violations: <none>
 
 XDCC-5#1 Warning
 User Non-Timing constraint/property overwritten  
 A new XDC property IOSTANDARD on dac_pwm_o[0] overrides a previous user property.
-New Source: /home/ywang/Code/red-pitaya-notes/cfg/ports.xdc (Line: 111)
-Previous Source: /home/ywang/Code/red-pitaya-notes/cfg/ports.xdc (Line: 99)
+New Source: /home/koko/git/DSP/cfg/ports.xdc (Line: 115)
+Previous Source: /home/koko/git/DSP/cfg/ports.xdc (Line: 103)
 Related violations: <none>
 
 XDCC-5#2 Warning
 User Non-Timing constraint/property overwritten  
 A new XDC property IOSTANDARD on dac_pwm_o[1] overrides a previous user property.
-New Source: /home/ywang/Code/red-pitaya-notes/cfg/ports.xdc (Line: 111)
-Previous Source: /home/ywang/Code/red-pitaya-notes/cfg/ports.xdc (Line: 99)
+New Source: /home/koko/git/DSP/cfg/ports.xdc (Line: 115)
+Previous Source: /home/koko/git/DSP/cfg/ports.xdc (Line: 103)
 Related violations: <none>
 
 XDCC-5#3 Warning
 User Non-Timing constraint/property overwritten  
 A new XDC property IOSTANDARD on dac_pwm_o[2] overrides a previous user property.
-New Source: /home/ywang/Code/red-pitaya-notes/cfg/ports.xdc (Line: 111)
-Previous Source: /home/ywang/Code/red-pitaya-notes/cfg/ports.xdc (Line: 99)
+New Source: /home/koko/git/DSP/cfg/ports.xdc (Line: 115)
+Previous Source: /home/koko/git/DSP/cfg/ports.xdc (Line: 103)
 Related violations: <none>
 
 XDCC-5#4 Warning
 User Non-Timing constraint/property overwritten  
 A new XDC property IOSTANDARD on dac_pwm_o[3] overrides a previous user property.
-New Source: /home/ywang/Code/red-pitaya-notes/cfg/ports.xdc (Line: 111)
-Previous Source: /home/ywang/Code/red-pitaya-notes/cfg/ports.xdc (Line: 99)
+New Source: /home/koko/git/DSP/cfg/ports.xdc (Line: 115)
+Previous Source: /home/koko/git/DSP/cfg/ports.xdc (Line: 103)
 Related violations: <none>
 
 

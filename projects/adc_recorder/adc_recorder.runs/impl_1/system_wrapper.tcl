@@ -69,20 +69,23 @@ set rc [catch {
   create_project -in_memory -part xc7z010clg400-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir /home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.cache/wt [current_project]
-  set_property parent.project_path /home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.xpr [current_project]
-  set_property ip_repo_paths /home/ywang/Code/filters [current_project]
+  set_property webtalk.parent_dir /home/koko/git/DSP/projects/adc_recorder/adc_recorder.cache/wt [current_project]
+  set_property parent.project_path /home/koko/git/DSP/projects/adc_recorder/adc_recorder.xpr [current_project]
+  set_property ip_repo_paths {
+  /home/koko/git/DSP/pavel-cores
+  /home/koko/git/DSP/cores
+} [current_project]
   update_ip_catalog
-  set_property ip_output_repo /home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.cache/ip [current_project]
+  set_property ip_output_repo /home/koko/git/DSP/projects/adc_recorder/adc_recorder.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
-  add_files -quiet /home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.runs/synth_1/system_wrapper.dcp
+  add_files -quiet /home/koko/git/DSP/projects/adc_recorder/adc_recorder.runs/synth_1/system_wrapper.dcp
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
-  add_files /home/ywang/Code/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/system.bd
+  add_files /home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/system.bd
   set_param project.isImplRun false
-  read_xdc /home/ywang/Code/red-pitaya-notes/cfg/ports.xdc
-  read_xdc /home/ywang/Code/red-pitaya-notes/cfg/clocks.xdc
+  read_xdc /home/koko/git/DSP/cfg/clocks.xdc
+  read_xdc /home/koko/git/DSP/cfg/ports.xdc
   set_param project.isImplRun true
   link_design -top system_wrapper -part xc7z010clg400-1
   set_param project.isImplRun false

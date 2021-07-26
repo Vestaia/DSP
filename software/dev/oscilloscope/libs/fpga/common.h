@@ -12,22 +12,22 @@ class fpga {
     int fd;
     volatile uint32_t *slcr, *hp0;
     volatile fpga_cfg* cfg;
-    volatile uint8_t* ring_buf;
+    volatile uint64_t* ring_buf;
     volatile uint32_t* ring_wptr; 
     int32_t ring_size;
     fpga();
     ~fpga();
 
     //Obtain n raw samples starting now
-    void capture_n_raw(sample* data, unsigned int n);
-
-    void capture_n_raw(sample* data, unsigned int n, unsigned int rate);
+    void capture_n_raw(sample* data, uint n, uint period = 1);
     
     //Obtain raw samples for t seconds
-    void capture_t_raw(sample* data, float t);
+    void capture_t_raw(sample* data, float t, uint period = 1);
+
+    void capture_n_continuous(sample* data, uint n, uint period = 1);
 
     //Obtain n events starting now
-    void capture_n_events(sample* data, unsigned int n);
+    void capture_n_events(sample* data, uint n);
 
     //Obtain events for t seconds
     void capture_t_events(sample* data, float t);
@@ -58,80 +58,63 @@ fpga<fpga_cfg,sample>::~fpga(){
     close(fd);
 }
 
-//Note: This segfaults, check copy bounds
-template <class fpga_cfg, class sample>
-void fpga<fpga_cfg,sample>::capture_n_raw(sample* data, unsigned int n){
-    if ((n * sizeof(sample)) > ring_size) return;
-    uint8_t* dest = (uint8_t*)data;
-    volatile uint8_t* end = *ring_wptr / 8 * 8 + ring_buf;
-    volatile uint8_t* start = end - (n * sizeof(sample));
-    volatile uint8_t* ring_end = ring_buf + ring_size;
-    // printf("Ring_start:%x\nRing_end:%x\nStart:%x\nEnd:%x\nOffset:%x\n",ring_buf, ring_end, start, end, *ring_wptr);
-    if (start < ring_buf){
-        start += ring_size;
-        std::copy(start, ring_end, dest);
-        std::copy(ring_buf, end, dest + (start - ring_end));
-    }
-    else{
-        std::copy(start, end, dest);
-    }
 
-    // for (int i = 0; i < n; i++){
-    //     data[i].ch_a = i;
-    // }
-
-}
 //Implement averaging
 template <class fpga_cfg, class sample>
-void fpga<fpga_cfg,sample>::capture_n_raw(sample* data, unsigned int n, unsigned rate){
-    double period = CLOCK_FREQ / (double)rate;
-    if ((n * sizeof(sample)) > ring_size) return;
-    double end = *ring_wptr;
-    double start = ceil(end - n * period);
-    int index = 0;
-    int ring_samples = ring_size / sizeof(sample);
-    // printf("Start: %f\n", start);
-    // printf("End: %f\n", end);
-    // printf("Total: %d\n", ring_samples);
-    if(start < 0){
-        // printf("A\n");
-        start += ring_samples;
-        double i;
-        for (i = start; i < ring_samples; i += period)
-            data[index++] = ((sample*)ring_buf)[(int)i];
-        // printf("Index: %d\n", index);
-        // printf("i = %f\n", i);
-        for (i = i - ring_samples; i < end; i += period){
-            // if(i > (end - period))
-            //     printf("i = %f\n", i);
-            data[index++] = ((sample*)ring_buf)[(int)i];
-    }
-            
-
+void fpga<fpga_cfg,sample>::capture_n_raw(sample* data, uint n, uint period){
+    uint count = 0;
+    uint end = *ring_wptr;
+    uint64_t* buffer = (uint64_t*)data;
+    if (n * period > end){
+        uint i = ring_size + end - n * period;
+        for (i; i < ring_size; i += period){
+            buffer[count++] = ring_buf[i];
+        }
+        for (i = i - ring_size; i < end; i += period){
+            buffer[count++] = ring_buf[i];
+        }
     }
     else{
-        // printf("B\n");
-        for (float i = start; i < end; i+= period)
-            data[index++] = ((sample*)ring_buf)[(int)i];
+        for (uint i = end - n * period; i < end; i += period){
+            buffer[count++] = ring_buf[i];
+        }
     }
-    // printf("Index: %d\n", index);
-    // static int test = 0;
-    // for (int i = 0; i < n; i+= 1)
-    //     data[i].ch_a = test;
-    // test++;
-    
+}
 
+template <class fpga_cfg, class sample>
+void fpga<fpga_cfg,sample>::capture_n_continuous(sample* data, uint n, uint period){
+    uint count = 0;
+    uint64_t* buffer = (uint64_t*)data;
+    static uint start = *ring_wptr;
+    uint end = start + n * period;
+    usleep((end - start) / period * 1000000.0 / CLOCK_FREQ);
+    if (end > ring_size){
+        end -= ring_size;
+        uint i = start;
+        for (i; i < ring_size; i += period){
+            buffer[count++] = ring_buf[i];
+        }
+        for (i = i - ring_size; i < end; i += period){
+            buffer[count++] = ring_buf[i];
+        }
+    }
+    else{
+        for (uint i = end - n * period; i < end; i += period){
+            buffer[count++] = ring_buf[i];
+        }
+    }
+    start = end;
 }
 
 
 template <class fpga_cfg, class sample>
-void fpga<fpga_cfg,sample>::capture_t_raw(sample* data, float t){
-    fpga::capture_n_raw(data, t * CLOCK_FREQ);
+void fpga<fpga_cfg,sample>::capture_t_raw(sample* data, float t, uint period){
+    fpga::capture_n_raw(data, t * CLOCK_FREQ / period, period);
 }
 
 //TODO: Implement this
 template <class fpga_cfg, class sample>
-void fpga<fpga_cfg,sample>::capture_n_events(sample* data, unsigned int n){
+void fpga<fpga_cfg,sample>::capture_n_events(sample* data, uint n){
 }
 
 template <class fpga_cfg, class sample>
