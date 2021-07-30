@@ -17,6 +17,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param chipscope.maxJobs 1
 create_project -in_memory -part xc7z010clg400-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -46,9 +47,9 @@ set_property used_in_implementation false [get_files -all /home/koko/git/DSP/pro
 set_property used_in_implementation false [get_files -all /home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_rst_0_0/system_rst_0_0_board.xdc]
 set_property used_in_implementation false [get_files -all /home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_rst_0_0/system_rst_0_0.xdc]
 set_property used_in_implementation false [get_files -all /home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_rst_0_0/system_rst_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_clock_converter_0_0/system_axis_clock_converter_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_broadcaster_0_0/system_axis_broadcaster_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_combiner_0_0/system_axis_combiner_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_clock_converter_0_0/system_axis_clock_converter_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/system_ooc.xdc]
 
@@ -71,7 +72,7 @@ set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 
-synth_design -top system_wrapper -part xc7z010clg400-1 -fanout_limit 400 -directive PerformanceOptimized -fsm_extraction one_hot -keep_equivalent_registers -resource_sharing off -no_lc -shreg_min_size 5
+synth_design -top system_wrapper -part xc7z010clg400-1 -directive AreaOptimized_high -control_set_opt_threshold 1
 
 
 # disable binary constraint mode for synth run checkpoints

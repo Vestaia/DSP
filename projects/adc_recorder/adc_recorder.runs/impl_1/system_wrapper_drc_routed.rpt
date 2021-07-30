@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2019.2.1 (lin64) Build 2729669 Thu Dec  5 04:48:12 MST 2019
-| Date         : Wed Jul 21 14:01:54 2021
+| Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
+| Date         : Fri Jul 30 13:24:12 2021
 | Host         : chromatic running 64-bit Ubuntu 20.04.2 LTS
 | Command      : report_drc -file system_wrapper_drc_routed.rpt -pb system_wrapper_drc_routed.pb -rpx system_wrapper_drc_routed.rpx
 | Design       : system_wrapper
@@ -24,15 +24,51 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 1
+             Violations found: 8
 +--------+----------+-----------------------------------------------------------------+------------+
 | Rule   | Severity | Description                                                     | Violations |
 +--------+----------+-----------------------------------------------------------------+------------+
+| DPIP-1 | Warning  | Input pipelining                                                | 7          |
 | AVAL-5 | Advisory | enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND | 1          |
 +--------+----------+-----------------------------------------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
+DPIP-1#1 Warning
+Input pipelining  
+DSP system_i/fir_poly_0/inst/macc_piece[0].macc_order[1].mac/macc_del_reg input system_i/fir_poly_0/inst/macc_piece[0].macc_order[1].mac/macc_del_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#2 Warning
+Input pipelining  
+DSP system_i/fir_poly_0/inst/macc_piece[0].macc_order[1].mac/macc_del_reg input system_i/fir_poly_0/inst/macc_piece[0].macc_order[1].mac/macc_del_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#3 Warning
+Input pipelining  
+DSP system_i/fir_poly_0/inst/macc_piece[0].macc_order[1].mac/macc_out_reg input system_i/fir_poly_0/inst/macc_piece[0].macc_order[1].mac/macc_out_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#4 Warning
+Input pipelining  
+DSP system_i/fir_poly_0/inst/macc_piece[0].macc_order[2].mac/macc_out_reg input system_i/fir_poly_0/inst/macc_piece[0].macc_order[2].mac/macc_out_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#5 Warning
+Input pipelining  
+DSP system_i/fir_poly_0/inst/macc_piece[1].macc_order[1].mac/macc_del_reg input system_i/fir_poly_0/inst/macc_piece[1].macc_order[1].mac/macc_del_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#6 Warning
+Input pipelining  
+DSP system_i/fir_poly_0/inst/macc_piece[1].macc_order[1].mac/macc_out_reg input system_i/fir_poly_0/inst/macc_piece[1].macc_order[1].mac/macc_out_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#7 Warning
+Input pipelining  
+DSP system_i/fir_poly_0/inst/macc_piece[1].macc_order[2].mac/macc_out_reg input system_i/fir_poly_0/inst/macc_piece[1].macc_order[2].mac/macc_out_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
 AVAL-5#1 Advisory
 enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND  
 system_i/c_counter_binary_0/U0/i_synth/i_baseip.i_xbip_counter/i_dsp48.i_dsp/i_vx7.i_dsp48e_wrap/i_primitive: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.

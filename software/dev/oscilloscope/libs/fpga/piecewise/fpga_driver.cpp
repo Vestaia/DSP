@@ -8,7 +8,11 @@ pwp_fpga::pwp_fpga(){
 }
 
 pwp_fpga::~pwp_fpga(){
+    cfg->reset &= ~RESET_DAQ;
+    usleep(1000); 
+    cfg->reset &= ~RESET_WRITER;
     munmap((void*)ring_buf, DATA_RING_SIZE);
+    munmap((void*)ring_wptr, 4);
 }
 
 int pwp_fpga::set_coef(int32_t *coef, size_t size){
@@ -25,8 +29,6 @@ int pwp_fpga::set_delay(uint16_t *delay, size_t size){
 
 int pwp_fpga::reset(){
     cfg->reset &= ~RESET_DAQ;
-    //DMA will deadlock without wait
-    //No idea why
     usleep(1000); 
     cfg->reset &= ~RESET_WRITER;
     cfg->reset |= RESET_WRITER;

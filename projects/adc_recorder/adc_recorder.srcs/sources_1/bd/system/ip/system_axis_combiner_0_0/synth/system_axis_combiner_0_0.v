@@ -50,9 +50,9 @@
 // IP VLNV: xilinx.com:ip:axis_combiner:1.1
 // IP Revision: 18
 
-(* X_CORE_INFO = "axis_combiner_v1_1_18_top,Vivado 2019.2" *)
+(* X_CORE_INFO = "axis_combiner_v1_1_18_top,Vivado 2019.2.1" *)
 (* CHECK_LICENSE_TYPE = "system_axis_combiner_0_0,axis_combiner_v1_1_18_top,{}" *)
-(* CORE_GENERATION_INFO = "system_axis_combiner_0_0,axis_combiner_v1_1_18_top,{x_ipProduct=Vivado 2019.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axis_combiner,x_ipVersion=1.1,x_ipCoreRevision=18,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_FAMILY=zynq,C_AXIS_TDATA_WIDTH=16,C_AXIS_TID_WIDTH=1,C_AXIS_TDEST_WIDTH=1,C_AXIS_TUSER_WIDTH=1,C_AXIS_SIGNAL_SET=0b00000000000000000000000000000011,C_MASTER_PORT_NUM=0,C_NUM_SI_SLOTS=2}" *)
+(* CORE_GENERATION_INFO = "system_axis_combiner_0_0,axis_combiner_v1_1_18_top,{x_ipProduct=Vivado 2019.2.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axis_combiner,x_ipVersion=1.1,x_ipCoreRevision=18,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_FAMILY=zynq,C_AXIS_TDATA_WIDTH=16,C_AXIS_TID_WIDTH=1,C_AXIS_TDEST_WIDTH=1,C_AXIS_TUSER_WIDTH=1,C_AXIS_SIGNAL_SET=0b00000000000000000000000000000011,C_MASTER_PORT_NUM=0,C_NUM_SI_SLOTS=2}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module system_axis_combiner_0_0 (
   aclk,
