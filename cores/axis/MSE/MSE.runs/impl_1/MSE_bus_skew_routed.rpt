@@ -1,0 +1,15 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2.1 (lin64) Build 2729669 Thu Dec  5 04:48:12 MST 2019
+| Date         : Wed Aug  4 17:43:26 2021
+| Host         : chromatic running 64-bit Ubuntu 20.04.2 LTS
+| Command      : report_bus_skew -warn_on_violation -file MSE_bus_skew_routed.rpt -pb MSE_bus_skew_routed.pb -rpx MSE_bus_skew_routed.rpx
+| Design       : MSE
+| Device       : 7z010-clg400
+| Speed File   : -1  PRODUCTION 1.12 2019-11-22
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Bus Skew Report
+
+No bus skew constraints
+

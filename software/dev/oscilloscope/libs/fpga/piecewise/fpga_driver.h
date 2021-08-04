@@ -39,6 +39,9 @@ class pwp_fpga : public fpga<fpga_cfg, sample> {
     pwp_fpga();
     ~pwp_fpga();
 
+    //Set coefficients using FIR coefficients
+    int set_coef_fir(int32_t *coef, size_t size);
+
     //Set coefficients using IIR coefficients
     int set_coef(int32_t *coef, size_t size);
 

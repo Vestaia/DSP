@@ -5,8 +5,9 @@
 int main(){
     pwp_fpga rp = pwp_fpga();
     server s = server();
-    int32_t coef[6] = {1, 0, 0, -1, 0, 0};
-    uint16_t delay[1] = {1};
+    int32_t coef[6] = {0, 0, 1, -4, 4, -1};
+    //{0, 1, 0, 2, -1, 0};
+    uint16_t delay[1] = {2};
     rp.set_coef(coef, sizeof(coef));
     rp.set_delay(delay, sizeof(delay));
     rp.reset();
