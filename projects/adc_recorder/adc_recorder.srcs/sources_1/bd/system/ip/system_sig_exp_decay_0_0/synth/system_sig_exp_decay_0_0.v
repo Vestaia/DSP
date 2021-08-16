@@ -48,7 +48,7 @@
 
 
 // IP VLNV: user.org:user:sig_exp_decay:1.0
-// IP Revision: 1
+// IP Revision: 2
 
 (* X_CORE_INFO = "sig_exp_decay,Vivado 2019.2.1" *)
 (* CHECK_LICENSE_TYPE = "system_sig_exp_decay_0_0,sig_exp_decay,{}" *)
@@ -77,7 +77,8 @@ output wire m_axis_tvalid;
 
   sig_exp_decay #(
     .DAC_WIDTH(14),
-    .RISE_TIME(10)
+    .RISE_TIME(4),
+    .DECAY_TIME(8)
   ) inst (
     .clk(clk),
     .rst(rst),

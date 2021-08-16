@@ -48,7 +48,7 @@
 
 
 // IP VLNV: user.org:user:sig_exp_decay:1.0
-// IP Revision: 1
+// IP Revision: 2
 
 `timescale 1ns/1ps
 
@@ -77,7 +77,8 @@ output wire m_axis_tvalid;
 
   sig_exp_decay #(
     .DAC_WIDTH(14),
-    .RISE_TIME(10)
+    .RISE_TIME(4),
+    .DECAY_TIME(8)
   ) inst (
     .clk(clk),
     .rst(rst),

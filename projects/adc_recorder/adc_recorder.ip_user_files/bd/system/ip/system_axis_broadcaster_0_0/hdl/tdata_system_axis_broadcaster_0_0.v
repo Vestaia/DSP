@@ -55,5 +55,5 @@ module tdata_system_axis_broadcaster_0_0 #
    input  wire [C_S_AXIS_TDATA_WIDTH-1:0] tdata,
    output wire [C_M_AXIS_TDATA_WIDTH-1:0] tdata_out
   );
-  assign tdata_out = {tdata[15:0],tdata[15:0]};
+  assign tdata_out = {tdata[15:0],tdata[15:0],tdata[15:0]};
 endmodule

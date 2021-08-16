@@ -20,16 +20,16 @@ struct fpga_cfg {
     volatile uint8_t  reset;                    
     volatile uint8_t  reserved[127];
     volatile uint32_t coef[32];  
-    volatile uint16_t delay[64];
+    volatile uint16_t delay[32];
 };
 #pragma pack(pop)
 
 //Structure of single sample from DAQ
 #pragma pack(push, 1)
 struct sample {
-    volatile uint32_t time;
     volatile int16_t  ch_a;
-    volatile int16_t  ch_b;
+    volatile int16_t  error;
+    volatile int32_t  fit;
 };
 #pragma pack(pop)
 

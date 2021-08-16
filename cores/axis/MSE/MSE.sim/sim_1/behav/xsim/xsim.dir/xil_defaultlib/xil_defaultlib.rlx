@@ -3,5 +3,6 @@
 Dec  5 2019
 04:51:02
 /home/koko/git/DSP/cores/axis/MSE/MSE.sim/sim_1/behav/xsim/glbl.v,1573089660,verilog,,,,glbl,,,,,,,,
-/home/koko/git/DSP/cores/axis/MSE/MSE.srcs/sim_1/new/MSE_tb.v,1628112019,verilog,,,,MSE_tb,,,,,,,,
-/home/koko/git/DSP/cores/axis/MSE/MSE.srcs/sources_1/new/MSE.v,1628113077,verilog,,/home/koko/git/DSP/cores/axis/MSE/MSE.srcs/sim_1/new/MSE_tb.v,,MSE,,,,,,,,
+/home/koko/git/DSP/cores/axis/MSE/MSE.srcs/sim_1/new/MSE_tb.v,1628189144,verilog,,,,MSE_tb,,,,,,,,
+/home/koko/git/DSP/cores/axis/MSE/MSE.srcs/sources_1/imports/new/bram.v,1626882242,verilog,,/home/koko/git/DSP/cores/axis/MSE/MSE.srcs/sim_1/new/MSE_tb.v,,bram,,,,,,,,
+/home/koko/git/DSP/cores/axis/MSE/MSE.srcs/sources_1/new/MSE.v,1628523219,verilog,,/home/koko/git/DSP/cores/axis/MSE/MSE.srcs/sources_1/imports/new/bram.v,,MSE,,,,,,,,

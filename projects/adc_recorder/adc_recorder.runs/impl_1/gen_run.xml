@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z010clg400-1" LaunchTime="1627665310">
+<GenRun Id="impl_1" LaunchPart="xc7z010clg400-1" LaunchTime="1628882800">
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <File Type="BITSTR-SYSDEF" Name="system_wrapper.sysdef"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
@@ -122,16 +122,16 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Performance_NetDelay_high" Flow="Vivado Implementation 2019"/>
+    <StratHandle Name="Performance_ExtraTimingOpt" Flow="Vivado Implementation 2019"/>
     <Step Id="init_design"/>
     <Step Id="opt_design"/>
     <Step Id="power_opt_design"/>
     <Step Id="place_design">
-      <Option Id="Directive">2</Option>
+      <Option Id="Directive">8</Option>
     </Step>
     <Step Id="post_place_power_opt_design"/>
     <Step Id="phys_opt_design" EnableStepBool="1">
-      <Option Id="Directive">2</Option>
+      <Option Id="Directive">0</Option>
     </Step>
     <Step Id="route_design">
       <Option Id="Directive">1</Option>

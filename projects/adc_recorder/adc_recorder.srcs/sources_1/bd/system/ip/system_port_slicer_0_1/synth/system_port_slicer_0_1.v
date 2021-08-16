@@ -50,7 +50,7 @@
 // IP VLNV: pavel-demin:user:port_slicer:1.0
 // IP Revision: 3
 
-(* X_CORE_INFO = "port_slicer,Vivado 2019.2" *)
+(* X_CORE_INFO = "port_slicer,Vivado 2019.2.1" *)
 (* CHECK_LICENSE_TYPE = "system_port_slicer_0_1,port_slicer,{}" *)
 (* IP_DEFINITION_SOURCE = "package_project" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
@@ -60,11 +60,11 @@ module system_port_slicer_0_1 (
 );
 
 input wire [4095 : 0] din;
-output wire [1023 : 0] dout;
+output wire [511 : 0] dout;
 
   port_slicer #(
     .DIN_WIDTH(4096),
-    .DIN_FROM(3071),
+    .DIN_FROM(2559),
     .DIN_TO(2048)
   ) inst (
     .din(din),

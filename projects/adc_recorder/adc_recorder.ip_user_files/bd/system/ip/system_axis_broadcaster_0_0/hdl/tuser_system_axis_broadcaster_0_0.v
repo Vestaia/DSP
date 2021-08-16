@@ -55,5 +55,5 @@ module tuser_system_axis_broadcaster_0_0 #
    input  wire [C_S_AXIS_TUSER_WIDTH-1:0] tuser,
    output wire [C_M_AXIS_TUSER_WIDTH-1:0] tuser_out
   );
-  assign tuser_out = {1'b0,1'b0};
+  assign tuser_out = {1'b0,1'b0,1'b0};
 endmodule

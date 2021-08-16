@@ -59,11 +59,11 @@ module system_port_slicer_1_1 (
   dout
 );
 
-input wire [191 : 0] din;
+input wire [15 : 0] din;
 output wire [7 : 0] dout;
 
   port_slicer #(
-    .DIN_WIDTH(192),
+    .DIN_WIDTH(16),
     .DIN_FROM(7),
     .DIN_TO(0)
   ) inst (

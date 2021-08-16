@@ -1,0 +1,1475 @@
+#-----------------------------------------------------------
+# Vivado v2019.2.1 (64-bit)
+# SW Build 2729669 on Thu Dec  5 04:48:12 MST 2019
+# IP Build 2729494 on Thu Dec  5 07:38:25 MST 2019
+# Start of session at: Fri Aug 13 15:09:54 2021
+# Process ID: 604211
+# Current directory: /home/koko/git/DSP/projects/adc_recorder/adc_recorder.runs/impl_1
+# Command line: vivado -log system_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source system_wrapper.tcl -notrace
+# Log file: /home/koko/git/DSP/projects/adc_recorder/adc_recorder.runs/impl_1/system_wrapper.vdi
+# Journal file: /home/koko/git/DSP/projects/adc_recorder/adc_recorder.runs/impl_1/vivado.jou
+#-----------------------------------------------------------
+source system_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/koko/git/DSP/pavel-cores'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/koko/git/DSP/cores'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2019.2/data/ip'.
+Command: link_design -top system_wrapper -part xc7z010clg400-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+Netlist sorting complete. Time (s): cpu = 00:00:00.13 ; elapsed = 00:00:00.12 . Memory (MB): peak = 1661.273 ; gain = 0.000 ; free physical = 2364 ; free virtual = 6865
+INFO: [Netlist 29-17] Analyzing 1013 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2019.2.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/system_ps_0_2.xdc] for cell 'system_i/ps_0/inst'
+Finished Parsing XDC File [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/system_ps_0_2.xdc] for cell 'system_i/ps_0/inst'
+Parsing XDC File [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0_board.xdc] for cell 'system_i/pll_0/inst'
+Finished Parsing XDC File [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0_board.xdc] for cell 'system_i/pll_0/inst'
+Parsing XDC File [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0.xdc] for cell 'system_i/pll_0/inst'
+INFO: [Timing 38-35] Done setting XDC timing constraints. [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0.xdc:57]
+INFO: [Timing 38-2] Deriving generated clocks [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0.xdc:57]
+get_clocks: Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 2269.594 ; gain = 495.820 ; free physical = 1879 ; free virtual = 6380
+Finished Parsing XDC File [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0.xdc] for cell 'system_i/pll_0/inst'
+Parsing XDC File [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_rst_0_0/system_rst_0_0_board.xdc] for cell 'system_i/rst_0/U0'
+Finished Parsing XDC File [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_rst_0_0/system_rst_0_0_board.xdc] for cell 'system_i/rst_0/U0'
+Parsing XDC File [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_rst_0_0/system_rst_0_0.xdc] for cell 'system_i/rst_0/U0'
+Finished Parsing XDC File [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_rst_0_0/system_rst_0_0.xdc] for cell 'system_i/rst_0/U0'
+Parsing XDC File [/home/koko/git/DSP/cfg/clocks.xdc]
+Finished Parsing XDC File [/home/koko/git/DSP/cfg/clocks.xdc]
+Parsing XDC File [/home/koko/git/DSP/cfg/ports.xdc]
+WARNING: [Vivado 12-584] No ports matched 'Vp_Vn_v_p'. [/home/koko/git/DSP/cfg/ports.xdc:123]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/koko/git/DSP/cfg/ports.xdc:123]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'Vp_Vn_v_n'. [/home/koko/git/DSP/cfg/ports.xdc:124]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/koko/git/DSP/cfg/ports.xdc:124]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'Vaux0_v_p'. [/home/koko/git/DSP/cfg/ports.xdc:125]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/koko/git/DSP/cfg/ports.xdc:125]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'Vaux0_v_n'. [/home/koko/git/DSP/cfg/ports.xdc:126]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/koko/git/DSP/cfg/ports.xdc:126]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'Vaux1_v_p'. [/home/koko/git/DSP/cfg/ports.xdc:127]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/koko/git/DSP/cfg/ports.xdc:127]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'Vaux1_v_n'. [/home/koko/git/DSP/cfg/ports.xdc:128]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/koko/git/DSP/cfg/ports.xdc:128]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'Vaux8_v_p'. [/home/koko/git/DSP/cfg/ports.xdc:129]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/koko/git/DSP/cfg/ports.xdc:129]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'Vaux8_v_n'. [/home/koko/git/DSP/cfg/ports.xdc:130]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/koko/git/DSP/cfg/ports.xdc:130]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'Vaux9_v_p'. [/home/koko/git/DSP/cfg/ports.xdc:131]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/koko/git/DSP/cfg/ports.xdc:131]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'Vaux9_v_n'. [/home/koko/git/DSP/cfg/ports.xdc:132]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/koko/git/DSP/cfg/ports.xdc:132]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'Vp_Vn_v_p'. [/home/koko/git/DSP/cfg/ports.xdc:134]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/koko/git/DSP/cfg/ports.xdc:134]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'Vp_Vn_v_n'. [/home/koko/git/DSP/cfg/ports.xdc:135]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/koko/git/DSP/cfg/ports.xdc:135]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'Vaux0_v_p'. [/home/koko/git/DSP/cfg/ports.xdc:136]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/koko/git/DSP/cfg/ports.xdc:136]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'Vaux0_v_n'. [/home/koko/git/DSP/cfg/ports.xdc:137]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/koko/git/DSP/cfg/ports.xdc:137]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'Vaux1_v_p'. [/home/koko/git/DSP/cfg/ports.xdc:138]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/koko/git/DSP/cfg/ports.xdc:138]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'Vaux1_v_n'. [/home/koko/git/DSP/cfg/ports.xdc:139]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/koko/git/DSP/cfg/ports.xdc:139]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'Vaux8_v_p'. [/home/koko/git/DSP/cfg/ports.xdc:140]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/koko/git/DSP/cfg/ports.xdc:140]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'Vaux8_v_n'. [/home/koko/git/DSP/cfg/ports.xdc:141]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/koko/git/DSP/cfg/ports.xdc:141]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'Vaux9_v_p'. [/home/koko/git/DSP/cfg/ports.xdc:142]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/koko/git/DSP/cfg/ports.xdc:142]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'Vaux9_v_n'. [/home/koko/git/DSP/cfg/ports.xdc:143]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/koko/git/DSP/cfg/ports.xdc:143]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'daisy_p_o[*]'. [/home/koko/git/DSP/cfg/ports.xdc:173]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/koko/git/DSP/cfg/ports.xdc:173]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'daisy_n_o[*]'. [/home/koko/git/DSP/cfg/ports.xdc:174]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/koko/git/DSP/cfg/ports.xdc:174]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'daisy_p_i[*]'. [/home/koko/git/DSP/cfg/ports.xdc:176]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/koko/git/DSP/cfg/ports.xdc:176]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'daisy_n_i[*]'. [/home/koko/git/DSP/cfg/ports.xdc:177]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/koko/git/DSP/cfg/ports.xdc:177]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'daisy_p_o[0]'. [/home/koko/git/DSP/cfg/ports.xdc:179]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/koko/git/DSP/cfg/ports.xdc:179]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'daisy_n_o[0]'. [/home/koko/git/DSP/cfg/ports.xdc:180]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/koko/git/DSP/cfg/ports.xdc:180]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'daisy_p_o[1]'. [/home/koko/git/DSP/cfg/ports.xdc:182]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/koko/git/DSP/cfg/ports.xdc:182]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'daisy_n_o[1]'. [/home/koko/git/DSP/cfg/ports.xdc:183]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/koko/git/DSP/cfg/ports.xdc:183]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'daisy_p_i[0]'. [/home/koko/git/DSP/cfg/ports.xdc:185]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/koko/git/DSP/cfg/ports.xdc:185]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'daisy_n_i[0]'. [/home/koko/git/DSP/cfg/ports.xdc:186]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/koko/git/DSP/cfg/ports.xdc:186]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'daisy_p_i[1]'. [/home/koko/git/DSP/cfg/ports.xdc:188]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/koko/git/DSP/cfg/ports.xdc:188]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'daisy_n_i[1]'. [/home/koko/git/DSP/cfg/ports.xdc:189]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/koko/git/DSP/cfg/ports.xdc:189]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [/home/koko/git/DSP/cfg/ports.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2621.766 ; gain = 0.000 ; free physical = 1888 ; free virtual = 6389
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 3 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 3 instances
+
+13 Infos, 32 Warnings, 32 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:34 . Memory (MB): peak = 2621.766 ; gain = 1185.891 ; free physical = 1888 ; free virtual = 6389
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z010'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 6 threads
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port exp_n_tri_io[0] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port exp_n_tri_io[1] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port exp_n_tri_io[2] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port exp_n_tri_io[3] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port exp_n_tri_io[4] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port exp_n_tri_io[5] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port exp_n_tri_io[6] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port exp_n_tri_io[7] expects both input and output buffering but the buffers are incomplete.
+INFO: [Project 1-461] DRC finished with 0 Errors, 8 Warnings
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2621.766 ; gain = 0.000 ; free physical = 1882 ; free virtual = 6383
+
+Starting Cache Timing Information Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Cache Timing Information Task | Checksum: 12fc811aa
+
+Time (s): cpu = 00:00:00.79 ; elapsed = 00:00:00.45 . Memory (MB): peak = 2621.766 ; gain = 0.000 ; free physical = 1875 ; free virtual = 6376
+
+Starting Logic Optimization Task
+
+Phase 1 Retarget
+INFO: [Opt 31-138] Pushed 3 inverter(s) to 72 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: 14b320a3b
+
+Time (s): cpu = 00:00:00.94 ; elapsed = 00:00:00.68 . Memory (MB): peak = 2621.766 ; gain = 0.000 ; free physical = 1722 ; free virtual = 6224
+INFO: [Opt 31-389] Phase Retarget created 69 cells and removed 170 cells
+INFO: [Opt 31-1021] In phase Retarget, 1 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 2 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 2 Constant propagation | Checksum: 11fd7b784
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.87 . Memory (MB): peak = 2621.766 ; gain = 0.000 ; free physical = 1722 ; free virtual = 6224
+INFO: [Opt 31-389] Phase Constant propagation created 3 cells and removed 67 cells
+
+Phase 3 Sweep
+Phase 3 Sweep | Checksum: 16c0da847
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2621.766 ; gain = 0.000 ; free physical = 1725 ; free virtual = 6226
+INFO: [Opt 31-389] Phase Sweep created 8 cells and removed 344 cells
+
+Phase 4 BUFG optimization
+INFO: [Opt 31-1112] Starts optimizing BUFG(s) with a common MMCM/DPLL/XPLL driver.
+INFO: [Opt 31-1112] Starts optimizing BUFG(s) with a common driver.
+INFO: [Opt 31-1092] Phase BUFG optimization transformed 0 BUFG(s) to MBUFG(s).
+Phase 4 BUFG optimization | Checksum: 16c0da847
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2621.766 ; gain = 0.000 ; free physical = 1725 ; free virtual = 6226
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 5 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 5 Shift Register Optimization | Checksum: 16c0da847
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2621.766 ; gain = 0.000 ; free physical = 1725 ; free virtual = 6227
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 6 Post Processing Netlist
+Phase 6 Post Processing Netlist | Checksum: 1ca5616e3
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 2621.766 ; gain = 0.000 ; free physical = 1725 ; free virtual = 6227
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |              69  |             170  |                                              1  |
+|  Constant propagation         |               3  |              67  |                                              0  |
+|  Sweep                        |               8  |             344  |                                              0  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                              0  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2621.766 ; gain = 0.000 ; free physical = 1724 ; free virtual = 6226
+Ending Logic Optimization Task | Checksum: 127f2033c
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2621.766 ; gain = 0.000 ; free physical = 1724 ; free virtual = 6226
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.183 | TNS=-0.366 |
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 1 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-201] Structural ODC has moved 0 WE to EN ports
+Number of BRAM Ports augmented: 0 newly gated: 0 Total Ports: 2
+Ending PowerOpt Patch Enables Task | Checksum: 127f2033c
+
+Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1706 ; free virtual = 6208
+Ending Power Optimization Task | Checksum: 127f2033c
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:03 . Memory (MB): peak = 2746.004 ; gain = 124.238 ; free physical = 1714 ; free virtual = 6215
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: 127f2033c
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1714 ; free virtual = 6215
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1714 ; free virtual = 6215
+Ending Netlist Obfuscation Task | Checksum: 127f2033c
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1714 ; free virtual = 6215
+INFO: [Common 17-83] Releasing license: Implementation
+40 Infos, 40 Warnings, 32 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:12 . Memory (MB): peak = 2746.004 ; gain = 124.238 ; free physical = 1714 ; free virtual = 6215
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1711 ; free virtual = 6213
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.15 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1702 ; free virtual = 6206
+INFO: [Common 17-1381] The checkpoint '/home/koko/git/DSP/projects/adc_recorder/adc_recorder.runs/impl_1/system_wrapper_opt.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_drc -file system_wrapper_drc_opted.rpt -pb system_wrapper_drc_opted.pb -rpx system_wrapper_drc_opted.rpx
+Command: report_drc -file system_wrapper_drc_opted.rpt -pb system_wrapper_drc_opted.pb -rpx system_wrapper_drc_opted.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 6 threads
+INFO: [Coretcl 2-168] The results of DRC are in file /home/koko/git/DSP/projects/adc_recorder/adc_recorder.runs/impl_1/system_wrapper_drc_opted.rpt.
+report_drc completed successfully
+Command: place_design -directive ExtraTimingOpt
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z010'
+INFO: [DRC 23-27] Running DRC with 6 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 6 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 46-5] The placer was invoked with the 'ExtraTimingOpt' directive.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 6 CPUs
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1691 ; free virtual = 6196
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 124576e55
+
+Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1691 ; free virtual = 6196
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1691 ; free virtual = 6196
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 1904f1638
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.88 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1692 ; free virtual = 6197
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 1a7da499c
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1682 ; free virtual = 6186
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 1a7da499c
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1682 ; free virtual = 6186
+Phase 1 Placer Initialization | Checksum: 1a7da499c
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1682 ; free virtual = 6186
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: 15e73a4b0
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1674 ; free virtual = 6179
+
+Phase 2.2 Global Placement Core
+
+Phase 2.2.1 Physical Synthesis In Placer
+INFO: [Physopt 32-1018] Found 606 candidate LUT instances to create LUTNM shape
+INFO: [Physopt 32-775] End 1 Pass. Optimized 286 nets or cells. Created 0 new cell, deleted 286 existing cells and moved 0 existing cell
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-677] No candidate cells for Shift Register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-526] No candidate cells for BRAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-949] No candidate nets found for HD net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1664 ; free virtual = 6169
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  LUT Combining                                    |            0  |            286  |                   286  |           0  |           1  |  00:00:01  |
+|  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  DSP Register                                     |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register                                   |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  BRAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                                            |            0  |            286  |                   286  |           0  |           7  |  00:00:01  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.2.1 Physical Synthesis In Placer | Checksum: 12021fcc8
+
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:15 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1663 ; free virtual = 6168
+Phase 2.2 Global Placement Core | Checksum: 10b0bfa48
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:16 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1662 ; free virtual = 6167
+Phase 2 Global Placement | Checksum: 10b0bfa48
+
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:16 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1664 ; free virtual = 6169
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 15cd4a474
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:17 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1664 ; free virtual = 6169
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 18573cfad
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:19 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1664 ; free virtual = 6169
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 10ee95507
+
+Time (s): cpu = 00:00:39 ; elapsed = 00:00:19 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1664 ; free virtual = 6169
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 1a3695cae
+
+Time (s): cpu = 00:00:39 ; elapsed = 00:00:19 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1664 ; free virtual = 6169
+
+Phase 3.5 Fast Optimization
+Phase 3.5 Fast Optimization | Checksum: 18c61994d
+
+Time (s): cpu = 00:00:43 ; elapsed = 00:00:22 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1663 ; free virtual = 6168
+
+Phase 3.6 Small Shape Detail Placement
+Phase 3.6 Small Shape Detail Placement | Checksum: 113052159
+
+Time (s): cpu = 00:00:53 ; elapsed = 00:00:39 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1656 ; free virtual = 6161
+
+Phase 3.7 Re-assign LUT pins
+Phase 3.7 Re-assign LUT pins | Checksum: 78f4b2ac
+
+Time (s): cpu = 00:00:53 ; elapsed = 00:00:39 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1657 ; free virtual = 6162
+
+Phase 3.8 Pipeline Register Optimization
+Phase 3.8 Pipeline Register Optimization | Checksum: d4bb4cdc
+
+Time (s): cpu = 00:00:53 ; elapsed = 00:00:39 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1657 ; free virtual = 6162
+
+Phase 3.9 Fast Optimization
+Phase 3.9 Fast Optimization | Checksum: 16e5b28d1
+
+Time (s): cpu = 00:00:59 ; elapsed = 00:00:44 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1656 ; free virtual = 6161
+Phase 3 Detail Placement | Checksum: 16e5b28d1
+
+Time (s): cpu = 00:00:59 ; elapsed = 00:00:44 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1656 ; free virtual = 6161
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: fbbb2c88
+
+Phase 4.1.1.1 BUFG Insertion
+INFO: [Place 46-33] Processed net system_i/system_configuration/cfg_0/inst/p_4_in, BUFG insertion was skipped due to placement/routing conflicts.
+INFO: [Place 46-56] BUFG insertion identified 1 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 1, Skipped due to Timing Degradation: 0, Skipped due to Illegal Netlist: 0.
+Phase 4.1.1.1 BUFG Insertion | Checksum: fbbb2c88
+
+Time (s): cpu = 00:01:05 ; elapsed = 00:00:46 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1659 ; free virtual = 6164
+INFO: [Place 30-746] Post Placement Timing Summary WNS=-0.082. For the most accurate timing information please run report_timing.
+Phase 4.1.1 Post Placement Optimization | Checksum: 1d8a35538
+
+Time (s): cpu = 00:02:09 ; elapsed = 00:01:46 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1652 ; free virtual = 6157
+Phase 4.1 Post Commit Optimization | Checksum: 1d8a35538
+
+Time (s): cpu = 00:02:10 ; elapsed = 00:01:46 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1652 ; free virtual = 6157
+Post Placement Optimization Initialization | Checksum: 13c5395f2
+INFO: [Place 46-33] Processed net system_i/system_configuration/cfg_0/inst/p_4_in, BUFG insertion was skipped due to placement/routing conflicts.
+INFO: [Place 46-56] BUFG insertion identified 1 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 1, Skipped due to Timing Degradation: 0, Skipped due to Illegal Netlist: 0.
+INFO: [Place 30-746] Post Placement Timing Summary WNS=-0.311. For the most accurate timing information please run report_timing.
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 1081d0cb2
+
+Time (s): cpu = 00:02:56 ; elapsed = 00:02:25 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1651 ; free virtual = 6156
+
+Phase 4.3 Placer Reporting
+Phase 4.3 Placer Reporting | Checksum: 1081d0cb2
+
+Time (s): cpu = 00:02:56 ; elapsed = 00:02:25 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1650 ; free virtual = 6156
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1650 ; free virtual = 6156
+Phase 4.4 Final Placement Cleanup | Checksum: 136797191
+
+Time (s): cpu = 00:02:56 ; elapsed = 00:02:25 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1650 ; free virtual = 6156
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 136797191
+
+Time (s): cpu = 00:02:56 ; elapsed = 00:02:25 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1650 ; free virtual = 6156
+Ending Placer Task | Checksum: cc3ddfb6
+
+Time (s): cpu = 00:02:56 ; elapsed = 00:02:25 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1650 ; free virtual = 6156
+INFO: [Common 17-83] Releasing license: Implementation
+78 Infos, 40 Warnings, 32 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:03:00 ; elapsed = 00:02:27 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1653 ; free virtual = 6158
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1653 ; free virtual = 6158
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.61 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1631 ; free virtual = 6150
+INFO: [Common 17-1381] The checkpoint '/home/koko/git/DSP/projects/adc_recorder/adc_recorder.runs/impl_1/system_wrapper_placed.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_io -file system_wrapper_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00.19 ; elapsed = 00:00:00.26 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1639 ; free virtual = 6148
+INFO: [runtcl-4] Executing : report_utilization -file system_wrapper_utilization_placed.rpt -pb system_wrapper_utilization_placed.pb
+INFO: [runtcl-4] Executing : report_control_sets -verbose -file system_wrapper_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.18 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1648 ; free virtual = 6157
+Command: phys_opt_design -directive Explore
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z010'
+INFO: [Vivado_Tcl 4-137] Directive used for phys_opt_design is: Explore
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1629 ; free virtual = 6138
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 6 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.311 | TNS=-0.338 |
+Phase 1 Physical Synthesis Initialization | Checksum: b67feb78
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:02 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1626 ; free virtual = 6135
+
+Phase 2 SLR Crossing Optimization
+Phase 2 SLR Crossing Optimization | Checksum: b67feb78
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:02 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1626 ; free virtual = 6135
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.311 | TNS=-0.338 |
+
+Phase 3 Fanout Optimization
+INFO: [Physopt 32-76] Pass 1. Identified 4 candidate nets for fanout optimization.
+INFO: [Physopt 32-572] Net system_i/system_configuration/cfg_0/inst/p_1167_in was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-81] Processed net system_i/axis_clock_converter_0/inst/gen_sync_ck_conv.axisc_sync_clock_converter_0/gen_sync_clock_converter.load_payload. Replicated 1 times.
+INFO: [Physopt 32-81] Processed net system_i/system_configuration/cfg_0/inst/int_rdata_reg[27]_i_61_n_0. Replicated 1 times.
+INFO: [Physopt 32-81] Processed net system_i/system_configuration/cfg_0/inst/sel0[1]. Replicated 1 times.
+INFO: [Physopt 32-232] Optimized 3 nets. Created 3 new instances.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 3 nets or cells. Created 3 new cells, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.311 | TNS=-0.338 |
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1626 ; free virtual = 6135
+Phase 3 Fanout Optimization | Checksum: 1f372cc06
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:03 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1626 ; free virtual = 6135
+
+Phase 4 Single Cell Placement Optimization
+INFO: [Physopt 32-660] Identified 214 candidate nets for placement-based optimization.
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2].  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[0].BITS[2].FDRE_inst
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/CE0443_out.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[72].BITS[7].FDRE_inst_i_1
+INFO: [Physopt 32-662] Processed net system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw.aw_pipe/m_axi_awaddr[11]_INST_0_i_1_n_0.  Did not re-place instance system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw.aw_pipe/m_axi_awaddr[11]_INST_0_i_1
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/WORDS[80].BITS[31].FDRE_inst_i_3_n_0.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[80].BITS[31].FDRE_inst_i_3
+INFO: [Physopt 32-662] Processed net system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw.aw_pipe/m_axi_awaddr[4].  Did not re-place instance system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw.aw_pipe/m_axi_awaddr[4]_INST_0
+INFO: [Physopt 32-663] Processed net system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw.aw_pipe/m_payload_i_reg[61]_0[38].  Re-placed instance system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw.aw_pipe/m_payload_i_reg[39]
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/int_ce_wire_72.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[72].BITS[31].FDRE_inst_i_2
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2304].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[72].BITS[0].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2305].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[72].BITS[1].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2306].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[72].BITS[2].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2308].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[72].BITS[4].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2309].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[72].BITS[5].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2310].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[72].BITS[6].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2311].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[72].BITS[7].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/p_1167_in.  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[127].BITS[31].FDRE_inst_i_8
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/CE0431_out.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[74].BITS[23].FDRE_inst_i_1
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/int_ce_wire_74.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[74].BITS[31].FDRE_inst_i_2
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2385].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[74].BITS[17].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2386].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[74].BITS[18].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2388].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[74].BITS[20].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw.aw_pipe/m_axi_awaddr[6].  Did not re-place instance system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw.aw_pipe/m_axi_awaddr[6]_INST_0
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/CE055_out.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[121].BITS[23].FDRE_inst_i_1
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/int_ce_wire_121.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[121].BITS[31].FDRE_inst_i_2
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/WORDS[122].BITS[31].FDRE_inst_i_3_n_0.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[122].BITS[31].FDRE_inst_i_3
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[3889].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[121].BITS[17].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[3891].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[121].BITS[19].FDRE_inst
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/CE0617_out.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[51].BITS[31].FDRE_inst_i_1
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/int_ce_wire_51.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[51].BITS[31].FDRE_inst_i_2
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[1659].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[51].BITS[27].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[1661].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[51].BITS[29].FDRE_inst
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/CE0505_out.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[65].BITS[31].FDRE_inst_i_1
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/int_ce_wire_65.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[65].BITS[31].FDRE_inst_i_2
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2105].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[65].BITS[25].FDRE_inst
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/CE0399_out.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[78].BITS[23].FDRE_inst_i_1
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/int_ce_wire_78.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[78].BITS[31].FDRE_inst_i_2
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2512].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[78].BITS[16].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2515].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[78].BITS[19].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2518].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[78].BITS[22].FDRE_inst
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/CE0491_out.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[66].BITS[7].FDRE_inst_i_1
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/int_ce_wire_66.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[66].BITS[31].FDRE_inst_i_2
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2112].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[66].BITS[0].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2113].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[66].BITS[1].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2114].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[66].BITS[2].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2115].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[66].BITS[3].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2116].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[66].BITS[4].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2117].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[66].BITS[5].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2118].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[66].BITS[6].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2119].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[66].BITS[7].FDRE_inst
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/CE0835_out.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[23].BITS[7].FDRE_inst_i_1
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/int_ce_wire_23.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[23].BITS[31].FDRE_inst_i_2
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[737].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[23].BITS[1].FDRE_inst
+INFO: [Physopt 32-663] Processed net system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw.aw_pipe/m_axi_awaddr[3].  Re-placed instance system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw.aw_pipe/m_axi_awaddr[3]_INST_0
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/WORDS[19].BITS[31].FDRE_inst_i_2_n_0.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[19].BITS[31].FDRE_inst_i_2
+INFO: [Physopt 32-663] Processed net system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.aw_channel_0/cmd_translator_0/wrap_cmd_0/sel_first_reg_0.  Re-placed instance system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.aw_channel_0/cmd_translator_0/wrap_cmd_0/m_axi_awaddr[11]_INST_0_i_3
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/CE0529_out.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[62].BITS[31].FDRE_inst_i_1
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/int_ce_wire_62.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[62].BITS[31].FDRE_inst_i_2
+INFO: [Physopt 32-662] Processed net system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.aw_channel_0/cmd_translator_0/wrap_cmd_0/sel_first.  Did not re-place instance system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.aw_channel_0/cmd_translator_0/wrap_cmd_0/sel_first_reg
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2011].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[62].BITS[27].FDRE_inst
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/CE0849_out.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[22].BITS[31].FDRE_inst_i_1
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/int_ce_wire_22.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[22].BITS[31].FDRE_inst_i_2
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[729].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[22].BITS[25].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[730].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[22].BITS[26].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[731].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[22].BITS[27].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[734].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[22].BITS[30].FDRE_inst
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/CE0481_out.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[68].BITS[31].FDRE_inst_i_1
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/p_0_in[6].  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[127].BITS[31].FDRE_inst_i_4
+INFO: [Physopt 32-662] Processed net system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw.aw_pipe/m_axi_awaddr[8].  Did not re-place instance system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw.aw_pipe/m_axi_awaddr[8]_INST_0
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/int_ce_wire_68.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[68].BITS[31].FDRE_inst_i_2
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2200].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[68].BITS[24].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2201].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[68].BITS[25].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2202].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[68].BITS[26].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2204].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[68].BITS[28].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2205].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[68].BITS[29].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2206].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[68].BITS[30].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2207].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[68].BITS[31].FDRE_inst
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/int_ce_wire_116.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[116].BITS[31].FDRE_inst_i_2
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/CE095_out.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[116].BITS[23].FDRE_inst_i_1
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[3735].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[116].BITS[23].FDRE_inst
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/CE0459_out.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[70].BITS[7].FDRE_inst_i_1
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/WORDS[102].BITS[31].FDRE_inst_i_4_n_0.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[102].BITS[31].FDRE_inst_i_4
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/int_ce_wire_701103_out.  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[70].BITS[31].FDRE_inst_i_2
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2240].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[70].BITS[0].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2241].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[70].BITS[1].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2242].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[70].BITS[2].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2243].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[70].BITS[3].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2244].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[70].BITS[4].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2245].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[70].BITS[5].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2247].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[70].BITS[7].FDRE_inst
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/CE0475_out.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[68].BITS[7].FDRE_inst_i_1
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2176].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[68].BITS[0].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2177].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[68].BITS[1].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2178].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[68].BITS[2].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2179].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[68].BITS[3].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2180].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[68].BITS[4].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2181].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[68].BITS[5].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2182].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[68].BITS[6].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2183].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[68].BITS[7].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2203].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[68].BITS[27].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2384].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[74].BITS[16].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2389].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[74].BITS[21].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2390].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[74].BITS[22].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw.aw_pipe/m_payload_i_reg[61]_0[37].  Did not re-place instance system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw.aw_pipe/m_payload_i_reg[38]
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/CE0231_out.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[99].BITS[23].FDRE_inst_i_1
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/int_ce_wire_99.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[99].BITS[31].FDRE_inst_i_2
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[3184].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[99].BITS[16].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2108].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[65].BITS[28].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2110].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[65].BITS[30].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2111].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[65].BITS[31].FDRE_inst
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/CE0303_out.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[90].BITS[23].FDRE_inst_i_1
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/int_ce_wire_901125_out.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[90].BITS[31].FDRE_inst_i_2
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2897].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[90].BITS[17].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2898].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[90].BITS[18].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2900].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[90].BITS[20].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.aw_channel_0/cmd_translator_0/incr_cmd_0/sel_first_reg_0.  Did not re-place instance system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.aw_channel_0/cmd_translator_0/incr_cmd_0/sel_first_reg
+INFO: [Physopt 32-662] Processed net system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.ar_channel_0/cmd_translator_0/wrap_cmd_0/sel_first_reg_1.  Did not re-place instance system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.ar_channel_0/cmd_translator_0/wrap_cmd_0/m_axi_araddr[11]_INST_0_i_3
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/int_rdata_reg[7]_i_28_n_0.  Re-placed instance system_i/system_configuration/cfg_0/inst/int_rdata_reg[7]_i_28
+INFO: [Physopt 32-662] Processed net system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/ar.ar_pipe/m_axi_araddr[4].  Did not re-place instance system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/ar.ar_pipe/m_axi_araddr[4]_INST_0
+INFO: [Physopt 32-662] Processed net system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.ar_channel_0/cmd_translator_0/wrap_cmd_0/sel_first_reg_0.  Did not re-place instance system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.ar_channel_0/cmd_translator_0/wrap_cmd_0/sel_first_reg
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/int_rdata_reg[2]_i_2_n_0.  Did not re-place instance system_i/system_configuration/cfg_0/inst/int_rdata_reg[2]_i_2
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/s_axi_rdata[2].  Did not re-place instance system_i/system_configuration/cfg_0/inst/int_rdata_reg_reg[2]
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/CE0441_out.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[73].BITS[31].FDRE_inst_i_1
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/int_ce_wire_73.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[73].BITS[31].FDRE_inst_i_2
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2361].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[73].BITS[25].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2362].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[73].BITS[26].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2366].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[73].BITS[30].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.aw_channel_0/aw_cmd_fsm_0/Q[1].  Did not re-place instance system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.aw_channel_0/aw_cmd_fsm_0/state_reg[1]
+INFO: [Physopt 32-663] Processed net system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.aw_channel_0/aw_cmd_fsm_0/m_axi_awvalid.  Re-placed instance system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.aw_channel_0/aw_cmd_fsm_0/m_axi_awvalid_INST_0
+INFO: [Physopt 32-663] Processed net system_i/axis_clock_converter_0/inst/gen_sync_ck_conv.axisc_sync_clock_converter_0/gen_sync_clock_converter.load_payload_repN.  Re-placed instance system_i/axis_clock_converter_0/inst/gen_sync_ck_conv.axisc_sync_clock_converter_0/gen_sync_clock_converter.m_payload_r[63]_i_1_replica
+INFO: [Physopt 32-662] Processed net system_i/axis_clock_converter_0/inst/gen_sync_ck_conv.axisc_sync_clock_converter_0/m_axis_tdata[27].  Did not re-place instance system_i/axis_clock_converter_0/inst/gen_sync_ck_conv.axisc_sync_clock_converter_0/gen_sync_clock_converter.m_payload_r_reg[27]
+INFO: [Physopt 32-662] Processed net system_i/axis_clock_converter_0/inst/gen_sync_ck_conv.axisc_sync_clock_converter_0/m_axis_tdata[45].  Did not re-place instance system_i/axis_clock_converter_0/inst/gen_sync_ck_conv.axisc_sync_clock_converter_0/gen_sync_clock_converter.m_payload_r_reg[45]
+INFO: [Physopt 32-662] Processed net system_i/axis_clock_converter_0/inst/gen_sync_ck_conv.axisc_sync_clock_converter_0/m_axis_tdata[47].  Did not re-place instance system_i/axis_clock_converter_0/inst/gen_sync_ck_conv.axisc_sync_clock_converter_0/gen_sync_clock_converter.m_payload_r_reg[47]
+INFO: [Physopt 32-662] Processed net system_i/axis_clock_converter_0/inst/gen_sync_ck_conv.axisc_sync_clock_converter_0/m_axis_tdata[54].  Did not re-place instance system_i/axis_clock_converter_0/inst/gen_sync_ck_conv.axisc_sync_clock_converter_0/gen_sync_clock_converter.m_payload_r_reg[54]
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/CE079_out.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[118].BITS[23].FDRE_inst_i_1
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/int_ce_wire_118.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[118].BITS[31].FDRE_inst_i_2
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[3792].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[118].BITS[16].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[3793].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[118].BITS[17].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[3794].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[118].BITS[18].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[3795].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[118].BITS[19].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[3797].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[118].BITS[21].FDRE_inst
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/CE0845_out.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[22].BITS[15].FDRE_inst_i_1
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[717].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[22].BITS[13].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[719].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[22].BITS[15].FDRE_inst
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/CE057_out.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[121].BITS[31].FDRE_inst_i_1
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[3896].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[121].BITS[24].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[3897].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[121].BITS[25].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[3898].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[121].BITS[26].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[3899].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[121].BITS[27].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[3900].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[121].BITS[28].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[3901].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[121].BITS[29].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[3902].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[121].BITS[30].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[3903].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[121].BITS[31].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.ar_channel_0/cmd_translator_0/incr_cmd_0/sel_first_reg_0.  Did not re-place instance system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.ar_channel_0/cmd_translator_0/incr_cmd_0/sel_first_reg
+INFO: [Physopt 32-662] Processed net system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/ar.ar_pipe/m_axi_araddr[11]_INST_0_i_1_n_0.  Did not re-place instance system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/ar.ar_pipe/m_axi_araddr[11]_INST_0_i_1
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/CE0553_out.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[59].BITS[31].FDRE_inst_i_1
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/CE0615_out.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[51].BITS[23].FDRE_inst_i_1
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/int_ce_wire_59.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[59].BITS[31].FDRE_inst_i_2
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[1649].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[51].BITS[17].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[1655].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[51].BITS[23].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[1912].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[59].BITS[24].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[1913].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[59].BITS[25].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[1914].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[59].BITS[26].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[1915].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[59].BITS[27].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[1916].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[59].BITS[28].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[1917].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[59].BITS[29].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[1918].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[59].BITS[30].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/axis_clock_converter_0/inst/gen_sync_ck_conv.axisc_sync_clock_converter_0/m_axis_tdata[19].  Did not re-place instance system_i/axis_clock_converter_0/inst/gen_sync_ck_conv.axisc_sync_clock_converter_0/gen_sync_clock_converter.m_payload_r_reg[19]
+INFO: [Physopt 32-662] Processed net system_i/axis_clock_converter_0/inst/gen_sync_ck_conv.axisc_sync_clock_converter_0/m_axis_tdata[21].  Did not re-place instance system_i/axis_clock_converter_0/inst/gen_sync_ck_conv.axisc_sync_clock_converter_0/gen_sync_clock_converter.m_payload_r_reg[21]
+INFO: [Physopt 32-662] Processed net system_i/axis_clock_converter_0/inst/gen_sync_ck_conv.axisc_sync_clock_converter_0/m_axis_tdata[24].  Did not re-place instance system_i/axis_clock_converter_0/inst/gen_sync_ck_conv.axisc_sync_clock_converter_0/gen_sync_clock_converter.m_payload_r_reg[24]
+INFO: [Physopt 32-662] Processed net system_i/axis_clock_converter_0/inst/gen_sync_ck_conv.axisc_sync_clock_converter_0/m_axis_tdata[43].  Did not re-place instance system_i/axis_clock_converter_0/inst/gen_sync_ck_conv.axisc_sync_clock_converter_0/gen_sync_clock_converter.m_payload_r_reg[43]
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/CE0449_out.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[72].BITS[31].FDRE_inst_i_1
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2328].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[72].BITS[24].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[1648].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[51].BITS[16].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[1651].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[51].BITS[19].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[1653].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[51].BITS[21].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[1654].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[51].BITS[22].FDRE_inst
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/CE091_out.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[116].BITS[7].FDRE_inst_i_1
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[3712].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[116].BITS[0].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[3717].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[116].BITS[5].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[3718].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[116].BITS[6].FDRE_inst
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/CE0763_out.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[32].BITS[7].FDRE_inst_i_1
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/int_ce_wire_32.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[32].BITS[31].FDRE_inst_i_2
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[1024].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[32].BITS[0].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[1025].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[32].BITS[1].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[1026].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[32].BITS[2].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[1027].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[32].BITS[3].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[1028].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[32].BITS[4].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[1030].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[32].BITS[6].FDRE_inst
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/CE0497_out.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[66].BITS[31].FDRE_inst_i_1
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2136].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[66].BITS[24].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2137].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[66].BITS[25].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2138].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[66].BITS[26].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2139].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[66].BITS[27].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2140].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[66].BITS[28].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2141].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[66].BITS[29].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2142].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[66].BITS[30].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[2143].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[66].BITS[31].FDRE_inst
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/CE0681_out.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[43].BITS[31].FDRE_inst_i_1
+INFO: [Physopt 32-662] Processed net system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw.aw_pipe/m_axi_awaddr[5].  Did not re-place instance system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw.aw_pipe/m_axi_awaddr[5]_INST_0
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/WORDS[105].BITS[31].FDRE_inst_i_3_n_0.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[105].BITS[31].FDRE_inst_i_3
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/int_ce_wire_43.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[43].BITS[31].FDRE_inst_i_2
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[1403].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[43].BITS[27].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[1405].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[43].BITS[29].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[1406].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[43].BITS[30].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[1407].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[43].BITS[31].FDRE_inst
+INFO: [Physopt 32-662] Processed net system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw.aw_pipe/m_axi_awaddr[7].  Did not re-place instance system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw.aw_pipe/m_axi_awaddr[7]_INST_0
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/WORDS[102].BITS[31].FDRE_inst_i_5_n_0.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[102].BITS[31].FDRE_inst_i_5
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/CE0159_out.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[108].BITS[23].FDRE_inst_i_1
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/int_ce_wire_108.  Re-placed instance system_i/system_configuration/cfg_0/inst/WORDS[108].BITS[31].FDRE_inst_i_2
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/cfg_data[3473].  Did not re-place instance system_i/system_configuration/cfg_0/inst/WORDS[108].BITS[17].FDRE_inst
+INFO: [Physopt 32-663] Processed net system_i/system_configuration/cfg_0/inst/int_rdata_reg[15]_i_62_n_0.  Re-placed instance system_i/system_configuration/cfg_0/inst/int_rdata_reg[15]_i_62
+INFO: [Physopt 32-662] Processed net system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/ar.ar_pipe/m_axi_araddr[3].  Did not re-place instance system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/ar.ar_pipe/m_axi_araddr[3]_INST_0
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/int_rdata_reg[13]_i_2_n_0.  Did not re-place instance system_i/system_configuration/cfg_0/inst/int_rdata_reg[13]_i_2
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/int_rdata_reg[13]_i_31_n_0.  Did not re-place instance system_i/system_configuration/cfg_0/inst/int_rdata_reg[13]_i_31
+INFO: [Physopt 32-662] Processed net system_i/system_configuration/cfg_0/inst/s_axi_rdata[13].  Did not re-place instance system_i/system_configuration/cfg_0/inst/int_rdata_reg_reg[13]
+INFO: [Physopt 32-661] Optimized 63 nets.  Re-placed 63 instances.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 63 nets or cells. Created 0 new cell, deleted 0 existing cell and moved 63 existing cells
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=0.043 | TNS=0.000 |
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1623 ; free virtual = 6132
+Phase 4 Single Cell Placement Optimization | Checksum: 1bb61c863
+
+Time (s): cpu = 00:00:59 ; elapsed = 00:00:16 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1624 ; free virtual = 6133
+
+Phase 5 Multi Cell Placement Optimization
+INFO: [Physopt 32-670] No setup violation found.  Multi Cell Placement Optimization was not performed.
+Phase 5 Multi Cell Placement Optimization | Checksum: 1bb61c863
+
+Time (s): cpu = 00:00:59 ; elapsed = 00:00:16 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1624 ; free virtual = 6133
+
+Phase 6 Rewire
+INFO: [Physopt 32-670] No setup violation found.  Rewire was not performed.
+Phase 6 Rewire | Checksum: 1bb61c863
+
+Time (s): cpu = 00:00:59 ; elapsed = 00:00:16 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1624 ; free virtual = 6133
+
+Phase 7 Critical Cell Optimization
+INFO: [Physopt 32-670] No setup violation found.  Critical Cell Optimization was not performed.
+Phase 7 Critical Cell Optimization | Checksum: 1bb61c863
+
+Time (s): cpu = 00:00:59 ; elapsed = 00:00:16 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1624 ; free virtual = 6133
+
+Phase 8 Fanout Optimization
+INFO: [Physopt 32-670] No setup violation found.  Fanout Optimization was not performed.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1624 ; free virtual = 6133
+Phase 8 Fanout Optimization | Checksum: 1bb61c863
+
+Time (s): cpu = 00:00:59 ; elapsed = 00:00:16 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1624 ; free virtual = 6133
+
+Phase 9 Single Cell Placement Optimization
+INFO: [Physopt 32-670] No setup violation found.  Single Cell Placement Optimization was not performed.
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1624 ; free virtual = 6133
+Phase 9 Single Cell Placement Optimization | Checksum: 1bb61c863
+
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:16 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1624 ; free virtual = 6133
+
+Phase 10 Multi Cell Placement Optimization
+INFO: [Physopt 32-670] No setup violation found.  Multi Cell Placement Optimization was not performed.
+Phase 10 Multi Cell Placement Optimization | Checksum: 1bb61c863
+
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:16 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1624 ; free virtual = 6133
+
+Phase 11 Rewire
+INFO: [Physopt 32-670] No setup violation found.  Rewire was not performed.
+Phase 11 Rewire | Checksum: 1bb61c863
+
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:16 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1624 ; free virtual = 6133
+
+Phase 12 Critical Cell Optimization
+INFO: [Physopt 32-670] No setup violation found.  Critical Cell Optimization was not performed.
+Phase 12 Critical Cell Optimization | Checksum: 1bb61c863
+
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:16 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1624 ; free virtual = 6133
+
+Phase 13 SLR Crossing Optimization
+Phase 13 SLR Crossing Optimization | Checksum: 1bb61c863
+
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:16 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1624 ; free virtual = 6133
+
+Phase 14 Fanout Optimization
+INFO: [Physopt 32-670] No setup violation found.  Fanout Optimization was not performed.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1624 ; free virtual = 6133
+Phase 14 Fanout Optimization | Checksum: 1bb61c863
+
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:16 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1624 ; free virtual = 6133
+
+Phase 15 Single Cell Placement Optimization
+INFO: [Physopt 32-670] No setup violation found.  Single Cell Placement Optimization was not performed.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1624 ; free virtual = 6133
+Phase 15 Single Cell Placement Optimization | Checksum: 1bb61c863
+
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:16 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1624 ; free virtual = 6133
+
+Phase 16 Multi Cell Placement Optimization
+INFO: [Physopt 32-670] No setup violation found.  Multi Cell Placement Optimization was not performed.
+Phase 16 Multi Cell Placement Optimization | Checksum: 1bb61c863
+
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:16 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1624 ; free virtual = 6133
+
+Phase 17 Rewire
+INFO: [Physopt 32-670] No setup violation found.  Rewire was not performed.
+Phase 17 Rewire | Checksum: 1bb61c863
+
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:16 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1624 ; free virtual = 6133
+
+Phase 18 Critical Cell Optimization
+INFO: [Physopt 32-670] No setup violation found.  Critical Cell Optimization was not performed.
+Phase 18 Critical Cell Optimization | Checksum: 1bb61c863
+
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:16 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1624 ; free virtual = 6133
+
+Phase 19 DSP Register Optimization
+INFO: [Physopt 32-670] No setup violation found.  DSP Register Optimization was not performed.
+Phase 19 DSP Register Optimization | Checksum: 1bb61c863
+
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:16 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1624 ; free virtual = 6133
+
+Phase 20 BRAM Register Optimization
+INFO: [Physopt 32-670] No setup violation found.  BRAM Register Optimization was not performed.
+Phase 20 BRAM Register Optimization | Checksum: 1bb61c863
+
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:16 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1624 ; free virtual = 6133
+
+Phase 21 URAM Register Optimization
+INFO: [Physopt 32-670] No setup violation found.  URAM Register Optimization was not performed.
+Phase 21 URAM Register Optimization | Checksum: 1bb61c863
+
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:16 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1624 ; free virtual = 6133
+
+Phase 22 Shift Register Optimization
+INFO: [Physopt 32-670] No setup violation found.  Shift Register Optimization was not performed.
+Phase 22 Shift Register Optimization | Checksum: 1bb61c863
+
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:16 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1624 ; free virtual = 6133
+
+Phase 23 DSP Register Optimization
+INFO: [Physopt 32-670] No setup violation found.  DSP Register Optimization was not performed.
+Phase 23 DSP Register Optimization | Checksum: 1bb61c863
+
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:16 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1624 ; free virtual = 6133
+
+Phase 24 BRAM Register Optimization
+INFO: [Physopt 32-670] No setup violation found.  BRAM Register Optimization was not performed.
+Phase 24 BRAM Register Optimization | Checksum: 1bb61c863
+
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:16 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1624 ; free virtual = 6133
+
+Phase 25 URAM Register Optimization
+INFO: [Physopt 32-670] No setup violation found.  URAM Register Optimization was not performed.
+Phase 25 URAM Register Optimization | Checksum: 1bb61c863
+
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:16 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1624 ; free virtual = 6133
+
+Phase 26 Shift Register Optimization
+INFO: [Physopt 32-670] No setup violation found.  Shift Register Optimization was not performed.
+Phase 26 Shift Register Optimization | Checksum: 1bb61c863
+
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:16 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1624 ; free virtual = 6133
+
+Phase 27 Critical Pin Optimization
+INFO: [Physopt 32-670] No setup violation found.  Critical Pin Optimization was not performed.
+Phase 27 Critical Pin Optimization | Checksum: 1bb61c863
+
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:16 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1624 ; free virtual = 6133
+
+Phase 28 Very High Fanout Optimization
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Phase 28 Very High Fanout Optimization | Checksum: 1bb61c863
+
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:16 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1624 ; free virtual = 6133
+
+Phase 29 Single Cell Placement Optimization
+INFO: [Physopt 32-670] No setup violation found.  Single Cell Placement Optimization was not performed.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1624 ; free virtual = 6133
+Phase 29 Single Cell Placement Optimization | Checksum: 1bb61c863
+
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:16 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1624 ; free virtual = 6133
+
+Phase 30 Multi Cell Placement Optimization
+INFO: [Physopt 32-670] No setup violation found.  Multi Cell Placement Optimization was not performed.
+Phase 30 Multi Cell Placement Optimization | Checksum: 1bb61c863
+
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:16 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1624 ; free virtual = 6133
+
+Phase 31 SLR Crossing Optimization
+Phase 31 SLR Crossing Optimization | Checksum: 1bb61c863
+
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:16 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1624 ; free virtual = 6133
+
+Phase 32 Critical Path Optimization
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=0.043 | TNS=0.000 |
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=0.043 | TNS=0.000 |
+Phase 32 Critical Path Optimization | Checksum: 1bb61c863
+
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:16 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1624 ; free virtual = 6133
+
+Phase 33 BRAM Enable Optimization
+Phase 33 BRAM Enable Optimization | Checksum: 1bb61c863
+
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:16 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1624 ; free virtual = 6133
+INFO: [Physopt 32-960] Skip hold-fix as initial WHS does not violate hold threshold 250 ps
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1624 ; free virtual = 6134
+INFO: [Physopt 32-603] Post Physical Optimization Timing Summary | WNS=0.043 | TNS=0.000 |
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization            |  WNS Gain (ns)  |  TNS Gain (ns)  |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Fanout                  |          0.000  |          0.000  |            3  |              0  |                     3  |           0  |           1  |  00:00:01  |
+|  Single Cell Placement   |          0.354  |          0.338  |            0  |              0  |                    63  |           0  |           1  |  00:00:13  |
+|  Multi Cell Placement    |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Rewire                  |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Critical Cell           |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  SLR Crossing            |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           3  |  00:00:00  |
+|  DSP Register            |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  BRAM Register           |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  URAM Register           |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Shift Register          |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Critical Pin            |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Very High Fanout        |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  BRAM Enable             |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Critical Path           |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                   |          0.354  |          0.338  |            3  |              0  |                    66  |           0  |           8  |  00:00:14  |
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1624 ; free virtual = 6134
+Ending Physical Synthesis Task | Checksum: 18f814e1f
+
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:16 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1624 ; free virtual = 6134
+INFO: [Common 17-83] Releasing license: Implementation
+346 Infos, 40 Warnings, 32 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+phys_opt_design: Time (s): cpu = 00:01:06 ; elapsed = 00:00:18 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1627 ; free virtual = 6137
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1627 ; free virtual = 6137
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.64 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1599 ; free virtual = 6122
+INFO: [Common 17-1381] The checkpoint '/home/koko/git/DSP/projects/adc_recorder/adc_recorder.runs/impl_1/system_wrapper_physopt.dcp' has been generated.
+Command: route_design -directive NoTimingRelaxation
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z010'
+INFO: [DRC 23-27] Running DRC with 6 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 6 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-270] Using Router directive 'NoTimingRelaxation'.
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 6 CPUs
+Checksum: PlaceDB: 1de09 ConstDB: 0 ShapeSum: ab044101 RouteDB: 0
+
+Phase 1 Build RT Design
+Phase 1 Build RT Design | Checksum: 72f02f2a
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:10 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1548 ; free virtual = 6061
+Post Restoration Checksum: NetGraph: 333800c4 NumContArr: 3fb82e66 Constraints: 0 Timing: 0
+
+Phase 2 Router Initialization
+
+Phase 2.1 Create Timer
+Phase 2.1 Create Timer | Checksum: 72f02f2a
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:10 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1550 ; free virtual = 6063
+
+Phase 2.2 Fix Topology Constraints
+Phase 2.2 Fix Topology Constraints | Checksum: 72f02f2a
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:10 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1526 ; free virtual = 6039
+
+Phase 2.3 Pre Route Cleanup
+Phase 2.3 Pre Route Cleanup | Checksum: 72f02f2a
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:10 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1526 ; free virtual = 6039
+ Number of Nodes with overlaps = 0
+
+Phase 2.4 Update Timing
+Phase 2.4 Update Timing | Checksum: 256300068
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:13 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1511 ; free virtual = 6024
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.014  | TNS=0.000  | WHS=-0.500 | THS=-77.082|
+
+Phase 2 Router Initialization | Checksum: 1ff582294
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:14 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1511 ; free virtual = 6024
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0 %
+  Global Horizontal Routing Utilization  = 0 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 8248
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 8248
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+
+Phase 3 Initial Routing
+Phase 3 Initial Routing | Checksum: 2161c063d
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:17 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1505 ; free virtual = 6018
+INFO: [Route 35-580] Design has 6 pins with tight setup and hold constraints.
+
+The top 5 pins with tight setup and hold constraints:
+
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|       Launch Clock       |      Capture Clock       |                                                 Pin                                                      |
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|  clk_out3_system_pll_0_0 |  clk_out3_system_pll_0_0 |system_i/axis_clock_converter_0/inst/gen_sync_ck_conv.axisc_sync_clock_converter_0/gen_sync_clock_converter.m_valid_r_reg/D|
+|  clk_out3_system_pll_0_0 |  clk_out3_system_pll_0_0 |                                                              system_i/writer_1/inst/int_awvalid_reg_reg/D|
+|  clk_out3_system_pll_0_0 |  clk_out1_system_pll_0_0 |system_i/axis_clock_converter_0/inst/gen_sync_ck_conv.axisc_sync_clock_converter_0/FSM_onehot_gen_sync_clock_converter.state_reg[1]/D|
+|  clk_out3_system_pll_0_0 |  clk_out3_system_pll_0_0 |                                                               system_i/writer_1/inst/int_wvalid_reg_reg/D|
+|  clk_out3_system_pll_0_0 |  clk_out1_system_pll_0_0 |system_i/axis_clock_converter_0/inst/gen_sync_ck_conv.axisc_sync_clock_converter_0/FSM_onehot_gen_sync_clock_converter.state_reg[2]/D|
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+
+File with complete list of pins: tight_setup_hold_pins.txt
+
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 1604
+ Number of Nodes with overlaps = 595
+ Number of Nodes with overlaps = 322
+ Number of Nodes with overlaps = 206
+ Number of Nodes with overlaps = 115
+ Number of Nodes with overlaps = 66
+ Number of Nodes with overlaps = 34
+ Number of Nodes with overlaps = 12
+ Number of Nodes with overlaps = 6
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.016 | TNS=-0.019 | WHS=N/A    | THS=N/A    |
+
+Phase 4.1 Global Iteration 0 | Checksum: 16a528421
+
+Time (s): cpu = 00:01:26 ; elapsed = 00:00:46 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1501 ; free virtual = 6014
+
+Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 107
+ Number of Nodes with overlaps = 109
+ Number of Nodes with overlaps = 76
+ Number of Nodes with overlaps = 54
+ Number of Nodes with overlaps = 52
+ Number of Nodes with overlaps = 41
+ Number of Nodes with overlaps = 24
+ Number of Nodes with overlaps = 11
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.016 | TNS=-0.016 | WHS=N/A    | THS=N/A    |
+
+Phase 4.2 Global Iteration 1 | Checksum: 287fb3a5d
+
+Time (s): cpu = 00:01:49 ; elapsed = 00:01:02 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1501 ; free virtual = 6014
+Phase 4 Rip-up And Reroute | Checksum: 287fb3a5d
+
+Time (s): cpu = 00:01:49 ; elapsed = 00:01:02 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1501 ; free virtual = 6014
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+
+Phase 5.1.1 Update Timing
+Phase 5.1.1 Update Timing | Checksum: 21b54b46a
+
+Time (s): cpu = 00:01:50 ; elapsed = 00:01:03 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1500 ; free virtual = 6013
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.016 | TNS=-0.016 | WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+Phase 5.1 Delay CleanUp | Checksum: 2261a0649
+
+Time (s): cpu = 00:01:51 ; elapsed = 00:01:03 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1496 ; free virtual = 6009
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 2261a0649
+
+Time (s): cpu = 00:01:51 ; elapsed = 00:01:03 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1496 ; free virtual = 6009
+Phase 5 Delay and Skew Optimization | Checksum: 2261a0649
+
+Time (s): cpu = 00:01:51 ; elapsed = 00:01:03 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1496 ; free virtual = 6009
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 18fa0a93f
+
+Time (s): cpu = 00:01:52 ; elapsed = 00:01:04 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1497 ; free virtual = 6010
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.016 | TNS=-0.016 | WHS=0.049  | THS=0.000  |
+
+Phase 6.1 Hold Fix Iter | Checksum: 151d20ff4
+
+Time (s): cpu = 00:01:52 ; elapsed = 00:01:04 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1497 ; free virtual = 6010
+Phase 6 Post Hold Fix | Checksum: 151d20ff4
+
+Time (s): cpu = 00:01:52 ; elapsed = 00:01:04 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1497 ; free virtual = 6010
+
+Phase 7 Timing Verification
+
+Phase 7.1 Update Timing
+Phase 7.1 Update Timing | Checksum: 22181fc14
+
+Time (s): cpu = 00:01:55 ; elapsed = 00:01:05 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1497 ; free virtual = 6010
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.016 | TNS=-0.016 | WHS=N/A    | THS=N/A    |
+
+Phase 7 Timing Verification | Checksum: 22181fc14
+
+Time (s): cpu = 00:01:55 ; elapsed = 00:01:05 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1497 ; free virtual = 6010
+
+Phase 8 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 8.39879 %
+  Global Horizontal Routing Utilization  = 9.33778 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Congestion Report
+North Dir 1x1 Area, Max Cong = 80.1802%, No Congested Regions.
+South Dir 1x1 Area, Max Cong = 79.2793%, No Congested Regions.
+East Dir 1x1 Area, Max Cong = 89.7059%, Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
+   INT_L_X12Y58 -> INT_L_X12Y58
+   INT_R_X13Y57 -> INT_R_X13Y57
+West Dir 1x1 Area, Max Cong = 72.0588%, No Congested Regions.
+
+------------------------------
+Reporting congestion hotspots
+------------------------------
+Direction: North
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: South
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: East
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 1
+Direction: West
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+
+Phase 8 Route finalize | Checksum: 22181fc14
+
+Time (s): cpu = 00:01:55 ; elapsed = 00:01:05 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1497 ; free virtual = 6010
+
+Phase 9 Verifying routed nets
+
+ Verification completed successfully
+Phase 9 Verifying routed nets | Checksum: 22181fc14
+
+Time (s): cpu = 00:01:55 ; elapsed = 00:01:05 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1496 ; free virtual = 6009
+
+Phase 10 Depositing Routes
+Phase 10 Depositing Routes | Checksum: 1fd72a8dd
+
+Time (s): cpu = 00:01:55 ; elapsed = 00:01:05 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1498 ; free virtual = 6011
+
+Phase 11 Incr Placement Change
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1526 ; free virtual = 6040
+INFO: [Place 30-746] Post Placement Timing Summary WNS=-0.017. For the most accurate timing information please run report_timing.
+Ending IncrPlace Task | Checksum: 3c70172e
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:14 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1540 ; free virtual = 6053
+Phase 11 Incr Placement Change | Checksum: 1fd72a8dd
+
+Time (s): cpu = 00:02:15 ; elapsed = 00:01:19 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1540 ; free virtual = 6053
+
+Phase 12 Build RT Design
+Phase 12 Build RT Design | Checksum: 9f4c2086
+
+Time (s): cpu = 00:02:17 ; elapsed = 00:01:21 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1539 ; free virtual = 6052
+Post Restoration Checksum: NetGraph: 913cf2f0 NumContArr: c35bec2a Constraints: 0 Timing: 0
+
+Phase 13 Router Initialization
+
+Phase 13.1 Create Timer
+Phase 13.1 Create Timer | Checksum: 15498df1a
+
+Time (s): cpu = 00:02:18 ; elapsed = 00:01:22 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1516 ; free virtual = 6029
+
+Phase 13.2 Fix Topology Constraints
+Phase 13.2 Fix Topology Constraints | Checksum: 15498df1a
+
+Time (s): cpu = 00:02:18 ; elapsed = 00:01:22 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1494 ; free virtual = 6007
+
+Phase 13.3 Pre Route Cleanup
+Phase 13.3 Pre Route Cleanup | Checksum: 15498df1a
+
+Time (s): cpu = 00:02:18 ; elapsed = 00:01:22 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1494 ; free virtual = 6007
+
+Phase 13.4 Timing Verification
+
+Phase 13.4.1 Update Timing
+Phase 13.4.1 Update Timing | Checksum: 1689e6c28
+
+Time (s): cpu = 00:02:25 ; elapsed = 00:01:24 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1490 ; free virtual = 6003
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.017 | TNS=-0.017 | WHS=0.049  | THS=0.000  |
+
+Phase 13.4 Timing Verification | Checksum: 1689e6c28
+
+Time (s): cpu = 00:02:25 ; elapsed = 00:01:24 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1490 ; free virtual = 6003
+ Number of Nodes with overlaps = 0
+
+Phase 13.5 Update Timing
+Phase 13.5 Update Timing | Checksum: 1d03da796
+
+Time (s): cpu = 00:02:33 ; elapsed = 00:01:28 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1481 ; free virtual = 5994
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.017 | TNS=-0.017 | WHS=-0.500 | THS=-76.872|
+
+Phase 13 Router Initialization | Checksum: 191b830f0
+
+Time (s): cpu = 00:02:36 ; elapsed = 00:01:29 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1481 ; free virtual = 5994
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 8.39879 %
+  Global Horizontal Routing Utilization  = 9.33778 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+
+Phase 14 Initial Routing
+ Number of Nodes with overlaps = 0
+Phase 14 Initial Routing | Checksum: 18cc479bd
+
+Time (s): cpu = 00:02:36 ; elapsed = 00:01:30 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1480 ; free virtual = 5993
+INFO: [Route 35-580] Design has 93 pins with tight setup and hold constraints.
+
+The top 5 pins with tight setup and hold constraints:
+
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|       Launch Clock       |      Capture Clock       |                                                 Pin                                                      |
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|  clk_out1_system_pll_0_0 |  clk_out3_system_pll_0_0 |                                                                      system_i/writer_0/inst/fifo_0/DI[55]|
+|  clk_out1_system_pll_0_0 |  clk_out3_system_pll_0_0 |                                                                      system_i/writer_0/inst/fifo_0/DI[51]|
+|  clk_out1_system_pll_0_0 |  clk_out3_system_pll_0_0 |                                                                      system_i/writer_0/inst/fifo_0/DI[31]|
+|  clk_out1_system_pll_0_0 |  clk_out3_system_pll_0_0 |                                                                      system_i/writer_0/inst/fifo_0/DI[47]|
+|  clk_out1_system_pll_0_0 |  clk_out3_system_pll_0_0 |                                                                      system_i/writer_0/inst/fifo_0/DI[43]|
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+
+File with complete list of pins: tight_setup_hold_pins.txt
+
+
+Phase 15 Rip-up And Reroute
+
+Phase 15.1 Global Iteration 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.016 | TNS=-0.016 | WHS=N/A    | THS=N/A    |
+
+Phase 15.1 Global Iteration 0 | Checksum: 1a26ce761
+
+Time (s): cpu = 00:02:40 ; elapsed = 00:01:32 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1483 ; free virtual = 5996
+
+Phase 15.2 Global Iteration 1
+ Number of Nodes with overlaps = 122
+ Number of Nodes with overlaps = 104
+ Number of Nodes with overlaps = 114
+ Number of Nodes with overlaps = 123
+ Number of Nodes with overlaps = 118
+ Number of Nodes with overlaps = 95
+ Number of Nodes with overlaps = 81
+ Number of Nodes with overlaps = 82
+ Number of Nodes with overlaps = 68
+ Number of Nodes with overlaps = 46
+ Number of Nodes with overlaps = 33
+ Number of Nodes with overlaps = 51
+ Number of Nodes with overlaps = 47
+ Number of Nodes with overlaps = 38
+ Number of Nodes with overlaps = 19
+ Number of Nodes with overlaps = 9
+ Number of Nodes with overlaps = 5
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.016 | TNS=-0.016 | WHS=N/A    | THS=N/A    |
+
+Phase 15.2 Global Iteration 1 | Checksum: 1b74164d0
+
+Time (s): cpu = 00:03:22 ; elapsed = 00:02:00 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1482 ; free virtual = 5995
+Phase 15 Rip-up And Reroute | Checksum: 1b74164d0
+
+Time (s): cpu = 00:03:22 ; elapsed = 00:02:00 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1482 ; free virtual = 5995
+
+Phase 16 Delay and Skew Optimization
+
+Phase 16.1 Delay CleanUp
+
+Phase 16.1.1 Update Timing
+Phase 16.1.1 Update Timing | Checksum: 17aedc4a1
+
+Time (s): cpu = 00:03:23 ; elapsed = 00:02:01 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1483 ; free virtual = 5996
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.016 | TNS=-0.016 | WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+Phase 16.1 Delay CleanUp | Checksum: 19285bf59
+
+Time (s): cpu = 00:03:24 ; elapsed = 00:02:01 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1480 ; free virtual = 5994
+
+Phase 16.2 Clock Skew Optimization
+Phase 16.2 Clock Skew Optimization | Checksum: 19285bf59
+
+Time (s): cpu = 00:03:24 ; elapsed = 00:02:01 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1480 ; free virtual = 5994
+Phase 16 Delay and Skew Optimization | Checksum: 19285bf59
+
+Time (s): cpu = 00:03:24 ; elapsed = 00:02:01 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1480 ; free virtual = 5994
+
+Phase 17 Post Hold Fix
+
+Phase 17.1 Hold Fix Iter
+
+Phase 17.1.1 Update Timing
+Phase 17.1.1 Update Timing | Checksum: 135385d2c
+
+Time (s): cpu = 00:03:25 ; elapsed = 00:02:02 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1480 ; free virtual = 5993
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.016 | TNS=-0.016 | WHS=0.049  | THS=0.000  |
+
+Phase 17.1 Hold Fix Iter | Checksum: fb86c577
+
+Time (s): cpu = 00:03:25 ; elapsed = 00:02:02 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1480 ; free virtual = 5993
+Phase 17 Post Hold Fix | Checksum: fb86c577
+
+Time (s): cpu = 00:03:25 ; elapsed = 00:02:02 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1480 ; free virtual = 5993
+
+Phase 18 Timing Verification
+
+Phase 18.1 Update Timing
+Phase 18.1 Update Timing | Checksum: 181b1f16f
+
+Time (s): cpu = 00:03:28 ; elapsed = 00:02:03 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1480 ; free virtual = 5993
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.016 | TNS=-0.016 | WHS=N/A    | THS=N/A    |
+
+Phase 18 Timing Verification | Checksum: 181b1f16f
+
+Time (s): cpu = 00:03:28 ; elapsed = 00:02:03 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1480 ; free virtual = 5993
+
+Phase 19 Reset Design
+INFO: [Route 35-307] 8259 nets already restored were skipped.
+Post Restoration Checksum: NetGraph: f9b3bf5f NumContArr: bd3523e9 Constraints: 0 Timing: e51bac70
+Phase 19 Reset Design | Checksum: 29c048fb8
+
+Time (s): cpu = 00:03:31 ; elapsed = 00:02:04 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1492 ; free virtual = 6006
+
+Phase 20 Post Router Timing
+INFO: [Route 35-62] Timer settings changed to match sign-off timing analysis. Setup and Hold analysis on slow, fast Corners with nearest common node skew is enabled.
+INFO: [Route 35-20] Post Routing Timing Summary | WNS=-0.017 | TNS=-0.017 | WHS=0.049  | THS=0.000  |
+
+CRITICAL WARNING: [Route 35-39] The design did not meet timing requirements. Please run report_timing_summary for detailed reports.
+Resolution: Verify that the timing was met or had small violations at all previous steps (synthesis, placement, power_opt, and phys_opt). Run report_timing_summary and analyze individual timing paths.
+INFO: [Route 35-253] TNS is the sum of the worst slack violation on every endpoint in the design. Review the paths with the biggest WNS violations in the timing reports and modify your constraints or your design to improve both WNS and TNS.
+Phase 20 Post Router Timing | Checksum: 1ed908a2d
+
+Time (s): cpu = 00:03:37 ; elapsed = 00:02:05 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1491 ; free virtual = 6004
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:03:37 ; elapsed = 00:02:05 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1550 ; free virtual = 6063
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+379 Infos, 40 Warnings, 33 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:03:41 ; elapsed = 00:02:08 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1550 ; free virtual = 6063
+INFO: [Common 17-600] The following parameters have non-default value.
+general.maxThreads
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1550 ; free virtual = 6063
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.73 . Memory (MB): peak = 2746.004 ; gain = 0.000 ; free physical = 1525 ; free virtual = 6054
+INFO: [Common 17-1381] The checkpoint '/home/koko/git/DSP/projects/adc_recorder/adc_recorder.runs/impl_1/system_wrapper_routed.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_drc -file system_wrapper_drc_routed.rpt -pb system_wrapper_drc_routed.pb -rpx system_wrapper_drc_routed.rpx
+Command: report_drc -file system_wrapper_drc_routed.rpt -pb system_wrapper_drc_routed.pb -rpx system_wrapper_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 6 threads
+INFO: [Coretcl 2-168] The results of DRC are in file /home/koko/git/DSP/projects/adc_recorder/adc_recorder.runs/impl_1/system_wrapper_drc_routed.rpt.
+report_drc completed successfully
+INFO: [runtcl-4] Executing : report_methodology -file system_wrapper_methodology_drc_routed.rpt -pb system_wrapper_methodology_drc_routed.pb -rpx system_wrapper_methodology_drc_routed.rpx
+Command: report_methodology -file system_wrapper_methodology_drc_routed.rpt -pb system_wrapper_methodology_drc_routed.pb -rpx system_wrapper_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 6 threads
+INFO: [Coretcl 2-1520] The results of Report Methodology are in file /home/koko/git/DSP/projects/adc_recorder/adc_recorder.runs/impl_1/system_wrapper_methodology_drc_routed.rpt.
+report_methodology completed successfully
+INFO: [runtcl-4] Executing : report_power -file system_wrapper_power_routed.rpt -pb system_wrapper_power_summary_routed.pb -rpx system_wrapper_power_routed.rpx
+Command: report_power -file system_wrapper_power_routed.rpt -pb system_wrapper_power_summary_routed.pb -rpx system_wrapper_power_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+WARNING: [Power 33-332] Found switching activity that implies high-fanout reset nets being asserted for excessive periods of time which may result in inaccurate power analysis.
+Resolution: To review and fix problems, please run Power Constraints Advisor in the GUI from Tools > Power Constraints Advisor or run report_power with the -advisory option to generate a text report.
+392 Infos, 41 Warnings, 33 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+INFO: [runtcl-4] Executing : report_route_status -file system_wrapper_route_status.rpt -pb system_wrapper_route_status.pb
+INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -file system_wrapper_timing_summary_routed.rpt -pb system_wrapper_timing_summary_routed.pb -rpx system_wrapper_timing_summary_routed.rpx -warn_on_violation 
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 6 CPUs
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+INFO: [runtcl-4] Executing : report_incremental_reuse -file system_wrapper_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
+INFO: [runtcl-4] Executing : report_clock_utilization -file system_wrapper_clock_utilization_routed.rpt
+INFO: [runtcl-4] Executing : report_bus_skew -warn_on_violation -file system_wrapper_bus_skew_routed.rpt -pb system_wrapper_bus_skew_routed.pb -rpx system_wrapper_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 6 CPUs
+INFO: [Common 17-206] Exiting Vivado at Fri Aug 13 15:16:12 2021...

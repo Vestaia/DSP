@@ -64,8 +64,8 @@ output wire [0 : 0] dout;
 
   port_slicer #(
     .DIN_WIDTH(48),
-    .DIN_FROM(16),
-    .DIN_TO(16)
+    .DIN_FROM(10),
+    .DIN_TO(10)
   ) inst (
     .din(din),
     .dout(dout)

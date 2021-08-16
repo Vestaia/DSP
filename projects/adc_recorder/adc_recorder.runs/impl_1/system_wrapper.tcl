@@ -60,6 +60,7 @@ proc step_failed { step } {
   close $ch
 }
 
+set_msg_config -id {HDL-1065} -limit 10000
 
 start_step init_design
 set ACTIVE_STEP init_design
@@ -124,7 +125,7 @@ set rc [catch {
   if { [llength [get_debug_cores -quiet] ] > 0 }  { 
     implement_debug_core 
   } 
-  place_design -directive ExtraNetDelay_high
+  place_design -directive ExtraTimingOpt
   write_checkpoint -force system_wrapper_placed.dcp
   create_report "impl_1_place_report_io_0" "report_io -file system_wrapper_io_placed.rpt"
   create_report "impl_1_place_report_utilization_0" "report_utilization -file system_wrapper_utilization_placed.rpt -pb system_wrapper_utilization_placed.pb"
@@ -143,7 +144,7 @@ start_step phys_opt_design
 set ACTIVE_STEP phys_opt_design
 set rc [catch {
   create_msg_db phys_opt_design.pb
-  phys_opt_design -directive AggressiveExplore
+  phys_opt_design -directive Explore
   write_checkpoint -force system_wrapper_physopt.dcp
   close_msg_db -file phys_opt_design.pb
 } RESULT]

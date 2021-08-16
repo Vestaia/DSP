@@ -31,7 +31,7 @@
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>TDATA_NUM_BYTES</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXIS.TDATA_NUM_BYTES">2</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXIS.TDATA_NUM_BYTES">4</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -398,11 +398,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Jul 28 20:01:45 UTC 2021</spirit:value>
+            <spirit:value>Fri Aug 13 19:06:17 UTC 2021</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:bb199296</spirit:value>
+            <spirit:value>9:ef3ae293</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -413,7 +413,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:bb199296</spirit:value>
+            <spirit:value>9:ef3ae293</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -429,11 +429,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Jul 28 20:01:45 UTC 2021</spirit:value>
+            <spirit:value>Fri Aug 13 19:06:17 UTC 2021</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:bb199296</spirit:value>
+            <spirit:value>9:ef3ae293</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -448,11 +448,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Jul 28 20:01:45 UTC 2021</spirit:value>
+            <spirit:value>Fri Aug 13 19:06:17 UTC 2021</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:57c7edb2</spirit:value>
+            <spirit:value>9:221a7b3b</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -468,11 +468,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Jul 28 20:01:45 UTC 2021</spirit:value>
+            <spirit:value>Fri Aug 13 19:06:17 UTC 2021</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:57c7edb2</spirit:value>
+            <spirit:value>9:221a7b3b</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -589,7 +589,7 @@
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.OUTPUT_WIDTH&apos;)) - 1)">15</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.OUTPUT_WIDTH&apos;)) - 1)">31</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -631,7 +631,7 @@
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>OUTPUT_WIDTH</spirit:name>
         <spirit:displayName>Output Width</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.OUTPUT_WIDTH">16</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.OUTPUT_WIDTH">32</spirit:value>
       </spirit:modelParameter>
     </spirit:modelParameters>
   </spirit:model>
@@ -646,15 +646,15 @@
     <spirit:fileSet>
       <spirit:name>xilinx_anylanguagesynthesis_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/3d46/bram.v</spirit:name>
+        <spirit:name>../../ipshared/f2e8/bram.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/3d46/macc_sum.v</spirit:name>
+        <spirit:name>../../ipshared/f2e8/macc_sum.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/3d46/fir_poly.v</spirit:name>
+        <spirit:name>../../ipshared/f2e8/fir_poly.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -669,15 +669,15 @@
     <spirit:fileSet>
       <spirit:name>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/3d46/bram.v</spirit:name>
+        <spirit:name>../../ipshared/f2e8/bram.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/3d46/macc_sum.v</spirit:name>
+        <spirit:name>../../ipshared/f2e8/macc_sum.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/3d46/fir_poly.v</spirit:name>
+        <spirit:name>../../ipshared/f2e8/fir_poly.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -724,14 +724,14 @@
     <spirit:parameter>
       <spirit:name>OUTPUT_WIDTH</spirit:name>
       <spirit:displayName>Output Width</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.OUTPUT_WIDTH">16</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.OUTPUT_WIDTH">32</spirit:value>
     </spirit:parameter>
   </spirit:parameters>
   <spirit:vendorExtensions>
     <xilinx:coreExtensions>
       <xilinx:displayName>fir_poly_v1_0</xilinx:displayName>
       <xilinx:definitionSource>package_project</xilinx:definitionSource>
-      <xilinx:coreRevision>7</xilinx:coreRevision>
+      <xilinx:coreRevision>19</xilinx:coreRevision>
       <xilinx:tags>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@32fb2cb_ARCHIVE_LOCATION">/home/ywang/Code/filters/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@45a51842_ARCHIVE_LOCATION">/home/ywang/Code/filters/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
@@ -850,6 +850,151 @@
         <xilinx:tag xilinx:name="ui.data.coregen.dd@f74e8a1_ARCHIVE_LOCATION">/home/ywang/Code/filters/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@6ed580f7_ARCHIVE_LOCATION">/home/ywang/Code/filters/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@248dfc20_ARCHIVE_LOCATION">/home/ywang/Code/filters/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@528f8bd1_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@50dbd553_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@606d55e9_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@ce954a_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1ee2c744_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a37039c_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@77d0d6b9_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a2eced1_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@21a59891_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b982034_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@67d9e1bb_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c1caf54_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3ece63c3_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@11e68cd5_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@38dd015_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@247435a_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@14672fbe_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@705e37d4_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@76e92aca_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1630bf40_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4d8a9d98_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4d583e50_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d06774a_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@f308fc7_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@34a716d8_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@e8b3ba9_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5c2a821a_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@21f19034_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6de23cdf_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c46f78a_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@522fde06_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c20d4b_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@409f497_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@72fb1f73_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@75cfacc2_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@36347c4b_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@73adf69c_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1d73b8eb_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@e0ee1b9_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d3ebbf4_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5e3fe289_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@22194f4_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@79ae8f34_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c16f53f_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1504be4e_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b000ab4_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ff8a006_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3477596b_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@c920524_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@79cf596f_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@30a57dff_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c27cf22_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b0c7da1_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@18174120_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c5a1f71_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@58c73b1d_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@ad3cd85_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@27b8b388_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7889b48b_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@636c662b_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@495d8ee2_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7367fcd0_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@792d3ad5_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3c6aed08_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3004ba5a_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@66afd9ef_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@d7cc406_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@a7cb6d9_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7b0785c9_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@415ce8c2_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@75dcdb7b_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a038789_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@27d787c2_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@11451d8_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3c15f65_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1129f861_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4f1d741_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a2331bb_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d37f0d6_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2885cc23_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@b62d0fe_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3d3b3cde_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@95c97ea_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@69ad9b95_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@766f5719_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@536b94f9_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2bb1e0b0_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@30f2aa36_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@70026580_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f1a5abb_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@24bbbb42_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@da5a19c_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@789d7787_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3b0d0419_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@60c33512_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a361b11_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e6e30cf_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@50259cf6_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@e68095e_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2fa4f5f5_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d5c87d7_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@578093f7_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@22e641c1_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3992edc7_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b0c70a7_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@128bbf25_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@67bead6e_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2c8e70b1_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1f464272_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b7f5f1d_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@631de109_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@70868e1d_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@70ab075d_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1cdbe691_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5ceb908_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@41efedac_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ef06b55_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4365a6cf_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5d57fc2e_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@37e420b8_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4cb1e82d_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6afef0d9_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1c5e4d3e_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@35537042_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c2d74ae_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@44711b41_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@670c78b1_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@72fb817f_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@257a25fe_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@42d0fffc_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2e154ba3_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5e369036_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@43acfd14_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@44679a98_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@11f9f7f9_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7f566cfd_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@42410bcd_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@730ffb9_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a9316df_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3afdfc10_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@63305825_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@53954fa1_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@78bc1376_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2a392111_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3208f36f_ARCHIVE_LOCATION">/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new</xilinx:tag>
       </xilinx:tags>
       <xilinx:configElementInfos>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.ACLK.ASSOCIATED_BUSIF" xilinx:valuePermission="bd_and_user"/>
@@ -883,12 +1028,13 @@
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXIS.TID_WIDTH" xilinx:valueSource="constant" xilinx:valuePermission="bd_and_user"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXIS.TUSER_WIDTH" xilinx:valueSource="constant" xilinx:valuePermission="bd_and_user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.ORDER" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.OUTPUT_WIDTH" xilinx:valueSource="user"/>
       </xilinx:configElementInfos>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
-      <xilinx:xilinxVersion>2019.2</xilinx:xilinxVersion>
+      <xilinx:xilinxVersion>2019.2.1</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="8005bf8b"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="7e8cfa6e"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="bfcc629c"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="abd0c8b3"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="52a2aa01"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="0c954278"/>

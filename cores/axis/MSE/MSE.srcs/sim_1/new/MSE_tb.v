@@ -2,7 +2,7 @@
 
 module MSE_tb # (
         parameter integer AXIS_TDATA_WIDTH = 16,
-        parameter integer PARAMETERS = 3
+        parameter integer PARAMETERS = 4
     )
     ();
     reg clk;
@@ -11,6 +11,7 @@ module MSE_tb # (
     reg valid;
     reg [PARAMETERS * 32 - 1 : 0] param;
     reg [PARAMETERS * PARAMETERS * 32 - 1 : 0] cov_matrix;
+    reg [16 * 2 - 1 : 0] delays;
     wire [AXIS_TDATA_WIDTH - 1 : 0] chi_sq;
     wire val;
     
@@ -22,7 +23,8 @@ module MSE_tb # (
     MSE #(
         .PARAMETERS(PARAMETERS),
         .PARAM_WIDTH(32),
-        .MAT_WIDTH(32)
+        .MAT_WIDTH(32),
+        .DELAYS(2)
     )
     chi (
         .aclk(clk),
@@ -33,23 +35,31 @@ module MSE_tb # (
         .s_axis_param_tvalid(valid),
         .inv_cov_mat(cov_matrix),
         .m_axis_tdata(chi_sq),
-        .m_axis_tvalid(val)
+        .m_axis_tvalid(val),
+        .delay_flat(delays)
     );
         
     initial begin
         clk = 0;
         reset = 0;
         valid = 1;
-        #10
-        param = {2, 3, 5};
+        delays = {16'd5, 16'd10};
+        param = {5,3,2};
         cov_matrix = 
         {
-        2, 3, 5, 
-        3, 7, 11, 
-        5, 11, 13
+        13, 11, 5,
+             7, 3,
+                2
         };
+        data = 0;
+        #101
         reset = 1;
+        #10
+        data = 1;
+        #10
+        data = 0;
         #100
+        //Should output 862 (0x035e)
         $finish;
     end
     

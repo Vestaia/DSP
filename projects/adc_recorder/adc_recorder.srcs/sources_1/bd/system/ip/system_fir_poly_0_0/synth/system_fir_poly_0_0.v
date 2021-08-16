@@ -48,7 +48,7 @@
 
 
 // IP VLNV: user.org:user:fir_poly:1.0
-// IP Revision: 7
+// IP Revision: 19
 
 (* X_CORE_INFO = "fir_poly,Vivado 2019.2.1" *)
 (* CHECK_LICENSE_TYPE = "system_fir_poly_0_0,fir_poly,{}" *)
@@ -80,9 +80,9 @@ input wire [191 : 0] coef_flat;
 input wire [15 : 0] delay_flat;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TVALID" *)
 output wire m_axis_tvalid;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m_axis, TDATA_NUM_BYTES 2, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 0, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 0, FREQ_HZ 125000000, PHASE 0.0, CLK_DOMAIN system_pll_0_0_clk_out1, LAYERED_METADATA undef, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m_axis, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 0, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 0, FREQ_HZ 125000000, PHASE 0.0, CLK_DOMAIN system_pll_0_0_clk_out1, LAYERED_METADATA undef, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TDATA" *)
-output wire [15 : 0] m_axis_tdata;
+output wire [31 : 0] m_axis_tdata;
 
   fir_poly #(
     .AXIS_TDATA_WIDTH(16),
@@ -90,7 +90,7 @@ output wire [15 : 0] m_axis_tdata;
     .COEF_WIDTH(16),
     .ORDER(2),
     .PIECES(2),
-    .OUTPUT_WIDTH(16)
+    .OUTPUT_WIDTH(32)
   ) inst (
     .aclk(aclk),
     .aresetn(aresetn),

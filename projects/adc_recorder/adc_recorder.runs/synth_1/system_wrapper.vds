@@ -1,9 +1,9 @@
 #-----------------------------------------------------------
-# Vivado v2019.2 (64-bit)
-# SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
-# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Fri Jul 30 13:15:13 2021
-# Process ID: 258407
+# Vivado v2019.2.1 (64-bit)
+# SW Build 2729669 on Thu Dec  5 04:48:12 MST 2019
+# IP Build 2729494 on Thu Dec  5 07:38:25 MST 2019
+# Start of session at: Fri Aug 13 15:26:42 2021
+# Process ID: 615166
 # Current directory: /home/koko/git/DSP/projects/adc_recorder/adc_recorder.runs/synth_1
 # Command line: vivado -log system_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_wrapper.tcl
 # Log file: /home/koko/git/DSP/projects/adc_recorder/adc_recorder.runs/synth_1/system_wrapper.vds
@@ -13,44 +13,64 @@ source system_wrapper.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/koko/git/DSP/pavel-cores'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/koko/git/DSP/cores'.
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/media/koko/Research/Xilinx/Vivado/2019.2/data/ip'.
-Command: synth_design -top system_wrapper -part xc7z010clg400-1 -directive AreaOptimized_high -control_set_opt_threshold 1
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2019.2/data/ip'.
+Command: synth_design -top system_wrapper -part xc7z010clg400-1 -fanout_limit 400 -directive PerformanceOptimized -fsm_extraction one_hot -keep_equivalent_registers -resource_sharing off -no_lc -shreg_min_size 5
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 258534 
+INFO: Helper process launched with PID 615329 
 WARNING: [Synth 8-2611] redeclaration of ansi port pulse is not allowed [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/0f35/pulse_gen.v:13]
-WARNING: [Synth 8-2611] redeclaration of ansi port dob is not allowed [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/3d46/bram.v:17]
+WARNING: [Synth 8-2611] redeclaration of ansi port dob is not allowed [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/f2e8/bram.v:17]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:21 . Memory (MB): peak = 1954.230 ; gain = 210.594 ; free physical = 899 ; free virtual = 6360
+Starting RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:22 . Memory (MB): peak = 1866.930 ; gain = 211.625 ; free physical = 2045 ; free virtual = 6547
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'system_wrapper' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/hdl/system_wrapper.v:12]
 INFO: [Synth 8-6157] synthesizing module 'system' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:308]
+INFO: [Synth 8-6157] synthesizing module 'system_MSE_0_0' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_MSE_0_0/synth/system_MSE_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'MSE' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/0718/sources_1/new/MSE.v:4]
+	Parameter AXIS_TDATA_WIDTH bound to: 16 - type: integer 
+	Parameter PARAMETERS bound to: 1 - type: integer 
+	Parameter PARAM_WIDTH bound to: 32 - type: integer 
+	Parameter MAT_WIDTH bound to: 16 - type: integer 
+	Parameter OUTPUT_WIDTH bound to: 16 - type: integer 
+	Parameter DELAYS bound to: 1 - type: integer 
+	Parameter BUFFER_LENGTH bound to: 6 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'bram' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/f2e8/bram.v:1]
+	Parameter ADDR_LEN bound to: 6 - type: integer 
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'bram' (1#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/f2e8/bram.v:1]
+WARNING: [Synth 8-324] index -10 out of range [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/0718/sources_1/new/MSE.v:79]
+WARNING: [Synth 8-5856] 3D RAM delay_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
+WARNING: [Synth 8-5856] 3D RAM int_inv_cov_mat_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
+WARNING: [Synth 8-6014] Unused sequential element genblk3[0].delay_reg[0][0] was removed.  [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/0718/sources_1/new/MSE.v:94]
+INFO: [Synth 8-6155] done synthesizing module 'MSE' (2#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/0718/sources_1/new/MSE.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'system_MSE_0_0' (3#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_MSE_0_0/synth/system_MSE_0_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'system_Waveform_Offset_Addr_1' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_Waveform_Offset_Addr_1/synth/system_Waveform_Offset_Addr_1.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_6_xlconstant' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/34f7/hdl/xlconstant_v1_1_vl_rfs.v:23]
 	Parameter CONST_VAL bound to: 402653184 - type: integer 
 	Parameter CONST_WIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_6_xlconstant' (1#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/34f7/hdl/xlconstant_v1_1_vl_rfs.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'system_Waveform_Offset_Addr_1' (2#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_Waveform_Offset_Addr_1/synth/system_Waveform_Offset_Addr_1.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_6_xlconstant' (4#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/34f7/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'system_Waveform_Offset_Addr_1' (5#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_Waveform_Offset_Addr_1/synth/system_Waveform_Offset_Addr_1.v:57]
 INFO: [Synth 8-6157] synthesizing module 'system_Waveform_Offset_Addr_2' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_Waveform_Offset_Addr_2/synth/system_Waveform_Offset_Addr_2.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_6_xlconstant__parameterized0' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/34f7/hdl/xlconstant_v1_1_vl_rfs.v:23]
 	Parameter CONST_VAL bound to: 268435456 - type: integer 
 	Parameter CONST_WIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_6_xlconstant__parameterized0' (2#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/34f7/hdl/xlconstant_v1_1_vl_rfs.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'system_Waveform_Offset_Addr_2' (3#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_Waveform_Offset_Addr_2/synth/system_Waveform_Offset_Addr_2.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_6_xlconstant__parameterized0' (5#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/34f7/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'system_Waveform_Offset_Addr_2' (6#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_Waveform_Offset_Addr_2/synth/system_Waveform_Offset_Addr_2.v:57]
 INFO: [Synth 8-6157] synthesizing module 'system_adc_0_0' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_adc_0_0/synth/system_adc_0_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'axis_red_pitaya_adc' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/fda5/src/axis_red_pitaya_adc.v:4]
 	Parameter ADC_DATA_WIDTH bound to: 14 - type: integer 
 	Parameter AXIS_TDATA_WIDTH bound to: 32 - type: integer 
 	Parameter PADDING_WIDTH bound to: 2 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axis_red_pitaya_adc' (4#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/fda5/src/axis_red_pitaya_adc.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'system_adc_0_0' (5#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_adc_0_0/synth/system_adc_0_0.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'axis_red_pitaya_adc' (7#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/fda5/src/axis_red_pitaya_adc.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'system_adc_0_0' (8#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_adc_0_0/synth/system_adc_0_0.v:57]
+WARNING: [Synth 8-7023] instance 'adc_0' of module 'system_adc_0_0' has 6 connections declared, but only 5 given [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:578]
 INFO: [Synth 8-6157] synthesizing module 'system_axis_broadcaster_0_0' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_broadcaster_0_0/synth/system_axis_broadcaster_0_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'top_system_axis_broadcaster_0_0' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_broadcaster_0_0/hdl/top_system_axis_broadcaster_0_0.v:60]
 	Parameter C_FAMILY bound to: zynq - type: string 
-	Parameter C_NUM_MI_SLOTS bound to: 2 - type: integer 
+	Parameter C_NUM_MI_SLOTS bound to: 3 - type: integer 
 	Parameter C_S_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_M_AXIS_TDATA_WIDTH bound to: 16 - type: integer 
 	Parameter C_AXIS_TID_WIDTH bound to: 1 - type: integer 
@@ -85,7 +105,7 @@ INFO: [Synth 8-6157] synthesizing module 'axis_broadcaster_v1_1_19_core' [/home/
 	Parameter C_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
 	Parameter C_AXIS_TUSER_WIDTH bound to: 1 - type: integer 
 	Parameter C_AXIS_SIGNAL_SET bound to: 2 - type: integer 
-	Parameter C_NUM_MI_SLOTS bound to: 2 - type: integer 
+	Parameter C_NUM_MI_SLOTS bound to: 3 - type: integer 
 	Parameter G_INDX_SS_TREADY bound to: 0 - type: integer 
 	Parameter G_INDX_SS_TDATA bound to: 1 - type: integer 
 	Parameter G_INDX_SS_TSTRB bound to: 2 - type: integer 
@@ -139,7 +159,7 @@ INFO: [Synth 8-6157] synthesizing module 'axis_infrastructure_v1_1_0_util_vector
 	Parameter P_TID_INDX bound to: 32 - type: integer 
 	Parameter P_TDEST_INDX bound to: 32 - type: integer 
 	Parameter P_TUSER_INDX bound to: 32 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axis_infrastructure_v1_1_0_util_vector2axis' (6#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8713/hdl/axis_infrastructure_v1_1_vl_rfs.v:992]
+INFO: [Synth 8-6155] done synthesizing module 'axis_infrastructure_v1_1_0_util_vector2axis' (9#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8713/hdl/axis_infrastructure_v1_1_vl_rfs.v:992]
 INFO: [Synth 8-6157] synthesizing module 'axis_infrastructure_v1_1_0_util_axis2vector' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8713/hdl/axis_infrastructure_v1_1_vl_rfs.v:810]
 	Parameter C_TDATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_TID_WIDTH bound to: 1 - type: integer 
@@ -173,18 +193,88 @@ INFO: [Synth 8-6157] synthesizing module 'axis_infrastructure_v1_1_0_util_axis2v
 	Parameter P_TID_INDX bound to: 32 - type: integer 
 	Parameter P_TDEST_INDX bound to: 32 - type: integer 
 	Parameter P_TUSER_INDX bound to: 32 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axis_infrastructure_v1_1_0_util_axis2vector' (7#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8713/hdl/axis_infrastructure_v1_1_vl_rfs.v:810]
-INFO: [Synth 8-6155] done synthesizing module 'axis_broadcaster_v1_1_19_core' (8#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/d7e4/hdl/axis_broadcaster_v1_1_vl_rfs.v:59]
+INFO: [Synth 8-6155] done synthesizing module 'axis_infrastructure_v1_1_0_util_axis2vector' (10#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8713/hdl/axis_infrastructure_v1_1_vl_rfs.v:810]
+INFO: [Synth 8-6155] done synthesizing module 'axis_broadcaster_v1_1_19_core' (11#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/d7e4/hdl/axis_broadcaster_v1_1_vl_rfs.v:59]
 INFO: [Synth 8-6157] synthesizing module 'tdata_system_axis_broadcaster_0_0' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_broadcaster_0_0/hdl/tdata_system_axis_broadcaster_0_0.v:49]
-	Parameter C_S_AXIS_TDATA_WIDTH bound to: 64 - type: integer 
-	Parameter C_M_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'tdata_system_axis_broadcaster_0_0' (9#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_broadcaster_0_0/hdl/tdata_system_axis_broadcaster_0_0.v:49]
+	Parameter C_S_AXIS_TDATA_WIDTH bound to: 96 - type: integer 
+	Parameter C_M_AXIS_TDATA_WIDTH bound to: 48 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'tdata_system_axis_broadcaster_0_0' (12#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_broadcaster_0_0/hdl/tdata_system_axis_broadcaster_0_0.v:49]
 INFO: [Synth 8-6157] synthesizing module 'tuser_system_axis_broadcaster_0_0' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_broadcaster_0_0/hdl/tuser_system_axis_broadcaster_0_0.v:49]
+	Parameter C_S_AXIS_TUSER_WIDTH bound to: 3 - type: integer 
+	Parameter C_M_AXIS_TUSER_WIDTH bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'tuser_system_axis_broadcaster_0_0' (13#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_broadcaster_0_0/hdl/tuser_system_axis_broadcaster_0_0.v:49]
+INFO: [Synth 8-6155] done synthesizing module 'top_system_axis_broadcaster_0_0' (14#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_broadcaster_0_0/hdl/top_system_axis_broadcaster_0_0.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'system_axis_broadcaster_0_0' (15#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_broadcaster_0_0/synth/system_axis_broadcaster_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'system_axis_broadcaster_1_0' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_broadcaster_1_0/synth/system_axis_broadcaster_1_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'top_system_axis_broadcaster_1_0' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_broadcaster_1_0/hdl/top_system_axis_broadcaster_1_0.v:60]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_NUM_MI_SLOTS bound to: 2 - type: integer 
+	Parameter C_S_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXIS_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXIS_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXIS_SIGNAL_SET bound to: 2 - type: integer 
+	Parameter G_INDX_SS_TREADY bound to: 0 - type: integer 
+	Parameter G_INDX_SS_TDATA bound to: 1 - type: integer 
+	Parameter G_INDX_SS_TSTRB bound to: 2 - type: integer 
+	Parameter G_INDX_SS_TKEEP bound to: 3 - type: integer 
+	Parameter G_INDX_SS_TLAST bound to: 4 - type: integer 
+	Parameter G_INDX_SS_TID bound to: 5 - type: integer 
+	Parameter G_INDX_SS_TDEST bound to: 6 - type: integer 
+	Parameter G_INDX_SS_TUSER bound to: 7 - type: integer 
+	Parameter G_MASK_SS_TREADY bound to: 1 - type: integer 
+	Parameter G_MASK_SS_TDATA bound to: 2 - type: integer 
+	Parameter G_MASK_SS_TSTRB bound to: 4 - type: integer 
+	Parameter G_MASK_SS_TKEEP bound to: 8 - type: integer 
+	Parameter G_MASK_SS_TLAST bound to: 16 - type: integer 
+	Parameter G_MASK_SS_TID bound to: 32 - type: integer 
+	Parameter G_MASK_SS_TDEST bound to: 64 - type: integer 
+	Parameter G_MASK_SS_TUSER bound to: 128 - type: integer 
+	Parameter G_TASK_SEVERITY_ERR bound to: 2 - type: integer 
+	Parameter G_TASK_SEVERITY_WARNING bound to: 1 - type: integer 
+	Parameter G_TASK_SEVERITY_INFO bound to: 0 - type: integer 
+	Parameter P_TPAYLOAD_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axis_broadcaster_v1_1_19_core__parameterized0' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/d7e4/hdl/axis_broadcaster_v1_1_vl_rfs.v:59]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXIS_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXIS_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXIS_SIGNAL_SET bound to: 2 - type: integer 
+	Parameter C_NUM_MI_SLOTS bound to: 2 - type: integer 
+	Parameter G_INDX_SS_TREADY bound to: 0 - type: integer 
+	Parameter G_INDX_SS_TDATA bound to: 1 - type: integer 
+	Parameter G_INDX_SS_TSTRB bound to: 2 - type: integer 
+	Parameter G_INDX_SS_TKEEP bound to: 3 - type: integer 
+	Parameter G_INDX_SS_TLAST bound to: 4 - type: integer 
+	Parameter G_INDX_SS_TID bound to: 5 - type: integer 
+	Parameter G_INDX_SS_TDEST bound to: 6 - type: integer 
+	Parameter G_INDX_SS_TUSER bound to: 7 - type: integer 
+	Parameter G_MASK_SS_TREADY bound to: 1 - type: integer 
+	Parameter G_MASK_SS_TDATA bound to: 2 - type: integer 
+	Parameter G_MASK_SS_TSTRB bound to: 4 - type: integer 
+	Parameter G_MASK_SS_TKEEP bound to: 8 - type: integer 
+	Parameter G_MASK_SS_TLAST bound to: 16 - type: integer 
+	Parameter G_MASK_SS_TID bound to: 32 - type: integer 
+	Parameter G_MASK_SS_TDEST bound to: 64 - type: integer 
+	Parameter G_MASK_SS_TUSER bound to: 128 - type: integer 
+	Parameter G_TASK_SEVERITY_ERR bound to: 2 - type: integer 
+	Parameter G_TASK_SEVERITY_WARNING bound to: 1 - type: integer 
+	Parameter G_TASK_SEVERITY_INFO bound to: 0 - type: integer 
+	Parameter P_TPAYLOAD_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axis_broadcaster_v1_1_19_core__parameterized0' (15#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/d7e4/hdl/axis_broadcaster_v1_1_vl_rfs.v:59]
+INFO: [Synth 8-6157] synthesizing module 'tdata_system_axis_broadcaster_1_0' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_broadcaster_1_0/hdl/tdata_system_axis_broadcaster_1_0.v:49]
+	Parameter C_S_AXIS_TDATA_WIDTH bound to: 64 - type: integer 
+	Parameter C_M_AXIS_TDATA_WIDTH bound to: 64 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'tdata_system_axis_broadcaster_1_0' (16#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_broadcaster_1_0/hdl/tdata_system_axis_broadcaster_1_0.v:49]
+INFO: [Synth 8-6157] synthesizing module 'tuser_system_axis_broadcaster_1_0' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_broadcaster_1_0/hdl/tuser_system_axis_broadcaster_1_0.v:49]
 	Parameter C_S_AXIS_TUSER_WIDTH bound to: 2 - type: integer 
 	Parameter C_M_AXIS_TUSER_WIDTH bound to: 2 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'tuser_system_axis_broadcaster_0_0' (10#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_broadcaster_0_0/hdl/tuser_system_axis_broadcaster_0_0.v:49]
-INFO: [Synth 8-6155] done synthesizing module 'top_system_axis_broadcaster_0_0' (11#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_broadcaster_0_0/hdl/top_system_axis_broadcaster_0_0.v:60]
-INFO: [Synth 8-6155] done synthesizing module 'system_axis_broadcaster_0_0' (12#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_broadcaster_0_0/synth/system_axis_broadcaster_0_0.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'tuser_system_axis_broadcaster_1_0' (17#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_broadcaster_1_0/hdl/tuser_system_axis_broadcaster_1_0.v:49]
+INFO: [Synth 8-6155] done synthesizing module 'top_system_axis_broadcaster_1_0' (18#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_broadcaster_1_0/hdl/top_system_axis_broadcaster_1_0.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'system_axis_broadcaster_1_0' (19#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_broadcaster_1_0/synth/system_axis_broadcaster_1_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'system_axis_clock_converter_0_0' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_clock_converter_0_0/synth/system_axis_clock_converter_0_0.v:58]
 INFO: [Synth 8-6157] synthesizing module 'axis_clock_converter_v1_1_21_axis_clock_converter' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/5a68/hdl/axis_clock_converter_v1_1_vl_rfs.v:925]
 	Parameter C_FAMILY bound to: zynq - type: string 
@@ -229,7 +319,7 @@ INFO: [Synth 8-6157] synthesizing module 'axis_clock_converter_v1_1_21_axisc_sam
 	Parameter C_RATIO bound to: 2 - type: integer 
 	Parameter P_DELAY bound to: 1 - type: integer 
 INFO: [Synth 8-5534] Detected attribute (* shreg_extract = "no" *) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/5a68/hdl/axis_clock_converter_v1_1_vl_rfs.v:807]
-INFO: [Synth 8-6155] done synthesizing module 'axis_clock_converter_v1_1_21_axisc_sample_cycle_ratio' (13#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/5a68/hdl/axis_clock_converter_v1_1_vl_rfs.v:774]
+INFO: [Synth 8-6155] done synthesizing module 'axis_clock_converter_v1_1_21_axisc_sample_cycle_ratio' (20#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/5a68/hdl/axis_clock_converter_v1_1_vl_rfs.v:774]
 INFO: [Synth 8-6157] synthesizing module 'axis_clock_converter_v1_1_21_axisc_sync_clock_converter' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/5a68/hdl/axis_clock_converter_v1_1_vl_rfs.v:63]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_PAYLOAD_WIDTH bound to: 64 - type: integer 
@@ -243,7 +333,7 @@ INFO: [Synth 8-6157] synthesizing module 'axis_clock_converter_v1_1_21_axisc_syn
 	Parameter P_LIGHT_WT bound to: 0 - type: integer 
 	Parameter P_FULLY_REG bound to: 1 - type: integer 
 INFO: [Synth 8-226] default block is never used [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/5a68/hdl/axis_clock_converter_v1_1_vl_rfs.v:230]
-INFO: [Synth 8-6155] done synthesizing module 'axis_clock_converter_v1_1_21_axisc_sync_clock_converter' (14#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/5a68/hdl/axis_clock_converter_v1_1_vl_rfs.v:63]
+INFO: [Synth 8-6155] done synthesizing module 'axis_clock_converter_v1_1_21_axisc_sync_clock_converter' (21#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/5a68/hdl/axis_clock_converter_v1_1_vl_rfs.v:63]
 INFO: [Synth 8-6157] synthesizing module 'axis_infrastructure_v1_1_0_util_axis2vector__parameterized0' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8713/hdl/axis_infrastructure_v1_1_vl_rfs.v:810]
 	Parameter C_TDATA_WIDTH bound to: 64 - type: integer 
 	Parameter C_TID_WIDTH bound to: 1 - type: integer 
@@ -277,7 +367,7 @@ INFO: [Synth 8-6157] synthesizing module 'axis_infrastructure_v1_1_0_util_axis2v
 	Parameter P_TID_INDX bound to: 64 - type: integer 
 	Parameter P_TDEST_INDX bound to: 64 - type: integer 
 	Parameter P_TUSER_INDX bound to: 64 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axis_infrastructure_v1_1_0_util_axis2vector__parameterized0' (14#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8713/hdl/axis_infrastructure_v1_1_vl_rfs.v:810]
+INFO: [Synth 8-6155] done synthesizing module 'axis_infrastructure_v1_1_0_util_axis2vector__parameterized0' (21#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8713/hdl/axis_infrastructure_v1_1_vl_rfs.v:810]
 INFO: [Synth 8-6157] synthesizing module 'axis_infrastructure_v1_1_0_util_vector2axis__parameterized0' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8713/hdl/axis_infrastructure_v1_1_vl_rfs.v:992]
 	Parameter C_TDATA_WIDTH bound to: 64 - type: integer 
 	Parameter C_TID_WIDTH bound to: 1 - type: integer 
@@ -311,9 +401,9 @@ INFO: [Synth 8-6157] synthesizing module 'axis_infrastructure_v1_1_0_util_vector
 	Parameter P_TID_INDX bound to: 64 - type: integer 
 	Parameter P_TDEST_INDX bound to: 64 - type: integer 
 	Parameter P_TUSER_INDX bound to: 64 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axis_infrastructure_v1_1_0_util_vector2axis__parameterized0' (14#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8713/hdl/axis_infrastructure_v1_1_vl_rfs.v:992]
-INFO: [Synth 8-6155] done synthesizing module 'axis_clock_converter_v1_1_21_axis_clock_converter' (15#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/5a68/hdl/axis_clock_converter_v1_1_vl_rfs.v:925]
-INFO: [Synth 8-6155] done synthesizing module 'system_axis_clock_converter_0_0' (16#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_clock_converter_0_0/synth/system_axis_clock_converter_0_0.v:58]
+INFO: [Synth 8-6155] done synthesizing module 'axis_infrastructure_v1_1_0_util_vector2axis__parameterized0' (21#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8713/hdl/axis_infrastructure_v1_1_vl_rfs.v:992]
+INFO: [Synth 8-6155] done synthesizing module 'axis_clock_converter_v1_1_21_axis_clock_converter' (22#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/5a68/hdl/axis_clock_converter_v1_1_vl_rfs.v:925]
+INFO: [Synth 8-6155] done synthesizing module 'system_axis_clock_converter_0_0' (23#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_clock_converter_0_0/synth/system_axis_clock_converter_0_0.v:58]
 INFO: [Synth 8-6157] synthesizing module 'system_axis_combiner_0_0' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_combiner_0_0/synth/system_axis_combiner_0_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'axis_combiner_v1_1_18_top' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ddc9/hdl/axis_combiner_v1_1_vl_rfs.v:56]
 	Parameter C_FAMILY bound to: zynq - type: string 
@@ -378,7 +468,7 @@ INFO: [Synth 8-6157] synthesizing module 'axis_infrastructure_v1_1_0_util_axis2v
 	Parameter P_TID_INDX bound to: 32 - type: integer 
 	Parameter P_TDEST_INDX bound to: 32 - type: integer 
 	Parameter P_TUSER_INDX bound to: 32 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axis_infrastructure_v1_1_0_util_axis2vector__parameterized1' (16#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8713/hdl/axis_infrastructure_v1_1_vl_rfs.v:810]
+INFO: [Synth 8-6155] done synthesizing module 'axis_infrastructure_v1_1_0_util_axis2vector__parameterized1' (23#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8713/hdl/axis_infrastructure_v1_1_vl_rfs.v:810]
 INFO: [Synth 8-6157] synthesizing module 'axis_infrastructure_v1_1_0_util_vector2axis__parameterized1' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8713/hdl/axis_infrastructure_v1_1_vl_rfs.v:992]
 	Parameter C_TDATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_TID_WIDTH bound to: 1 - type: integer 
@@ -412,25 +502,127 @@ INFO: [Synth 8-6157] synthesizing module 'axis_infrastructure_v1_1_0_util_vector
 	Parameter P_TID_INDX bound to: 32 - type: integer 
 	Parameter P_TDEST_INDX bound to: 32 - type: integer 
 	Parameter P_TUSER_INDX bound to: 32 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axis_infrastructure_v1_1_0_util_vector2axis__parameterized1' (16#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8713/hdl/axis_infrastructure_v1_1_vl_rfs.v:992]
-INFO: [Synth 8-6155] done synthesizing module 'axis_combiner_v1_1_18_top' (17#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ddc9/hdl/axis_combiner_v1_1_vl_rfs.v:56]
-INFO: [Synth 8-6155] done synthesizing module 'system_axis_combiner_0_0' (18#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_combiner_0_0/synth/system_axis_combiner_0_0.v:57]
-WARNING: [Synth 8-7023] instance 'axis_combiner_0' of module 'system_axis_combiner_0_0' has 8 connections declared, but only 7 given [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:582]
+INFO: [Synth 8-6155] done synthesizing module 'axis_infrastructure_v1_1_0_util_vector2axis__parameterized1' (23#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8713/hdl/axis_infrastructure_v1_1_vl_rfs.v:992]
+INFO: [Synth 8-6155] done synthesizing module 'axis_combiner_v1_1_18_top' (24#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ddc9/hdl/axis_combiner_v1_1_vl_rfs.v:56]
+INFO: [Synth 8-6155] done synthesizing module 'system_axis_combiner_0_0' (25#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_combiner_0_0/synth/system_axis_combiner_0_0.v:57]
+WARNING: [Synth 8-7023] instance 'axis_combiner_0' of module 'system_axis_combiner_0_0' has 8 connections declared, but only 7 given [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:609]
+INFO: [Synth 8-6157] synthesizing module 'system_axis_combiner_1_0' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_combiner_1_0/synth/system_axis_combiner_1_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'axis_combiner_v1_1_18_top__parameterized0' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ddc9/hdl/axis_combiner_v1_1_vl_rfs.v:56]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXIS_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXIS_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXIS_SIGNAL_SET bound to: 3 - type: integer 
+	Parameter C_MASTER_PORT_NUM bound to: 0 - type: integer 
+	Parameter C_NUM_SI_SLOTS bound to: 2 - type: integer 
+	Parameter G_INDX_SS_TREADY bound to: 0 - type: integer 
+	Parameter G_INDX_SS_TDATA bound to: 1 - type: integer 
+	Parameter G_INDX_SS_TSTRB bound to: 2 - type: integer 
+	Parameter G_INDX_SS_TKEEP bound to: 3 - type: integer 
+	Parameter G_INDX_SS_TLAST bound to: 4 - type: integer 
+	Parameter G_INDX_SS_TID bound to: 5 - type: integer 
+	Parameter G_INDX_SS_TDEST bound to: 6 - type: integer 
+	Parameter G_INDX_SS_TUSER bound to: 7 - type: integer 
+	Parameter G_MASK_SS_TREADY bound to: 1 - type: integer 
+	Parameter G_MASK_SS_TDATA bound to: 2 - type: integer 
+	Parameter G_MASK_SS_TSTRB bound to: 4 - type: integer 
+	Parameter G_MASK_SS_TKEEP bound to: 8 - type: integer 
+	Parameter G_MASK_SS_TLAST bound to: 16 - type: integer 
+	Parameter G_MASK_SS_TID bound to: 32 - type: integer 
+	Parameter G_MASK_SS_TDEST bound to: 64 - type: integer 
+	Parameter G_MASK_SS_TUSER bound to: 128 - type: integer 
+	Parameter G_TASK_SEVERITY_ERR bound to: 2 - type: integer 
+	Parameter G_TASK_SEVERITY_WARNING bound to: 1 - type: integer 
+	Parameter G_TASK_SEVERITY_INFO bound to: 0 - type: integer 
+	Parameter P_TPAYLOAD_WIDTH bound to: 64 - type: integer 
+	Parameter P_MASTER_PORT_NUM bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axis_infrastructure_v1_1_0_util_axis2vector__parameterized2' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8713/hdl/axis_infrastructure_v1_1_vl_rfs.v:810]
+	Parameter C_TDATA_WIDTH bound to: 64 - type: integer 
+	Parameter C_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_TUSER_WIDTH bound to: 2 - type: integer 
+	Parameter C_TPAYLOAD_WIDTH bound to: 64 - type: integer 
+	Parameter C_SIGNAL_SET bound to: 3 - type: integer 
+	Parameter G_INDX_SS_TREADY bound to: 0 - type: integer 
+	Parameter G_INDX_SS_TDATA bound to: 1 - type: integer 
+	Parameter G_INDX_SS_TSTRB bound to: 2 - type: integer 
+	Parameter G_INDX_SS_TKEEP bound to: 3 - type: integer 
+	Parameter G_INDX_SS_TLAST bound to: 4 - type: integer 
+	Parameter G_INDX_SS_TID bound to: 5 - type: integer 
+	Parameter G_INDX_SS_TDEST bound to: 6 - type: integer 
+	Parameter G_INDX_SS_TUSER bound to: 7 - type: integer 
+	Parameter G_MASK_SS_TREADY bound to: 1 - type: integer 
+	Parameter G_MASK_SS_TDATA bound to: 2 - type: integer 
+	Parameter G_MASK_SS_TSTRB bound to: 4 - type: integer 
+	Parameter G_MASK_SS_TKEEP bound to: 8 - type: integer 
+	Parameter G_MASK_SS_TLAST bound to: 16 - type: integer 
+	Parameter G_MASK_SS_TID bound to: 32 - type: integer 
+	Parameter G_MASK_SS_TDEST bound to: 64 - type: integer 
+	Parameter G_MASK_SS_TUSER bound to: 128 - type: integer 
+	Parameter G_TASK_SEVERITY_ERR bound to: 2 - type: integer 
+	Parameter G_TASK_SEVERITY_WARNING bound to: 1 - type: integer 
+	Parameter G_TASK_SEVERITY_INFO bound to: 0 - type: integer 
+	Parameter P_TDATA_INDX bound to: 0 - type: integer 
+	Parameter P_TSTRB_INDX bound to: 64 - type: integer 
+	Parameter P_TKEEP_INDX bound to: 64 - type: integer 
+	Parameter P_TLAST_INDX bound to: 64 - type: integer 
+	Parameter P_TID_INDX bound to: 64 - type: integer 
+	Parameter P_TDEST_INDX bound to: 64 - type: integer 
+	Parameter P_TUSER_INDX bound to: 64 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axis_infrastructure_v1_1_0_util_axis2vector__parameterized2' (25#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8713/hdl/axis_infrastructure_v1_1_vl_rfs.v:810]
+INFO: [Synth 8-6157] synthesizing module 'axis_infrastructure_v1_1_0_util_vector2axis__parameterized2' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8713/hdl/axis_infrastructure_v1_1_vl_rfs.v:992]
+	Parameter C_TDATA_WIDTH bound to: 64 - type: integer 
+	Parameter C_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_TUSER_WIDTH bound to: 2 - type: integer 
+	Parameter C_TPAYLOAD_WIDTH bound to: 64 - type: integer 
+	Parameter C_SIGNAL_SET bound to: 3 - type: integer 
+	Parameter G_INDX_SS_TREADY bound to: 0 - type: integer 
+	Parameter G_INDX_SS_TDATA bound to: 1 - type: integer 
+	Parameter G_INDX_SS_TSTRB bound to: 2 - type: integer 
+	Parameter G_INDX_SS_TKEEP bound to: 3 - type: integer 
+	Parameter G_INDX_SS_TLAST bound to: 4 - type: integer 
+	Parameter G_INDX_SS_TID bound to: 5 - type: integer 
+	Parameter G_INDX_SS_TDEST bound to: 6 - type: integer 
+	Parameter G_INDX_SS_TUSER bound to: 7 - type: integer 
+	Parameter G_MASK_SS_TREADY bound to: 1 - type: integer 
+	Parameter G_MASK_SS_TDATA bound to: 2 - type: integer 
+	Parameter G_MASK_SS_TSTRB bound to: 4 - type: integer 
+	Parameter G_MASK_SS_TKEEP bound to: 8 - type: integer 
+	Parameter G_MASK_SS_TLAST bound to: 16 - type: integer 
+	Parameter G_MASK_SS_TID bound to: 32 - type: integer 
+	Parameter G_MASK_SS_TDEST bound to: 64 - type: integer 
+	Parameter G_MASK_SS_TUSER bound to: 128 - type: integer 
+	Parameter G_TASK_SEVERITY_ERR bound to: 2 - type: integer 
+	Parameter G_TASK_SEVERITY_WARNING bound to: 1 - type: integer 
+	Parameter G_TASK_SEVERITY_INFO bound to: 0 - type: integer 
+	Parameter P_TDATA_INDX bound to: 0 - type: integer 
+	Parameter P_TSTRB_INDX bound to: 64 - type: integer 
+	Parameter P_TKEEP_INDX bound to: 64 - type: integer 
+	Parameter P_TLAST_INDX bound to: 64 - type: integer 
+	Parameter P_TID_INDX bound to: 64 - type: integer 
+	Parameter P_TDEST_INDX bound to: 64 - type: integer 
+	Parameter P_TUSER_INDX bound to: 64 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axis_infrastructure_v1_1_0_util_vector2axis__parameterized2' (25#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8713/hdl/axis_infrastructure_v1_1_vl_rfs.v:992]
+INFO: [Synth 8-6155] done synthesizing module 'axis_combiner_v1_1_18_top__parameterized0' (25#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ddc9/hdl/axis_combiner_v1_1_vl_rfs.v:56]
+INFO: [Synth 8-6155] done synthesizing module 'system_axis_combiner_1_0' (26#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_combiner_1_0/synth/system_axis_combiner_1_0.v:57]
+WARNING: [Synth 8-689] width (1) of port connection 's_axis_tready' does not match port width (2) of module 'system_axis_combiner_1_0' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:624]
 INFO: [Synth 8-6157] synthesizing module 'system_axis_red_pitaya_dac_0_0' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_red_pitaya_dac_0_0/synth/system_axis_red_pitaya_dac_0_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'axis_red_pitaya_dac' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ab40/src/axis_red_pitaya_dac.v:4]
 	Parameter DAC_DATA_WIDTH bound to: 14 - type: integer 
 	Parameter AXIS_TDATA_WIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'ODDR' [/media/koko/Research/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:49681]
+INFO: [Synth 8-6157] synthesizing module 'ODDR' [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:49681]
 	Parameter DDR_CLK_EDGE bound to: OPPOSITE_EDGE - type: string 
 	Parameter INIT bound to: 1'b0 
 	Parameter IS_C_INVERTED bound to: 1'b0 
 	Parameter IS_D1_INVERTED bound to: 1'b0 
 	Parameter IS_D2_INVERTED bound to: 1'b0 
 	Parameter SRTYPE bound to: SYNC - type: string 
-INFO: [Synth 8-6155] done synthesizing module 'ODDR' (19#1) [/media/koko/Research/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:49681]
-INFO: [Synth 8-6155] done synthesizing module 'axis_red_pitaya_dac' (20#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ab40/src/axis_red_pitaya_dac.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'system_axis_red_pitaya_dac_0_0' (21#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_red_pitaya_dac_0_0/synth/system_axis_red_pitaya_dac_0_0.v:57]
-WARNING: [Synth 8-7023] instance 'axis_red_pitaya_dac_0' of module 'system_axis_red_pitaya_dac_0_0' has 11 connections declared, but only 10 given [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:590]
+INFO: [Synth 8-6155] done synthesizing module 'ODDR' (27#1) [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:49681]
+INFO: [Synth 8-6155] done synthesizing module 'axis_red_pitaya_dac' (28#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ab40/src/axis_red_pitaya_dac.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'system_axis_red_pitaya_dac_0_0' (29#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_axis_red_pitaya_dac_0_0/synth/system_axis_red_pitaya_dac_0_0.v:57]
+WARNING: [Synth 8-7023] instance 'axis_red_pitaya_dac_0' of module 'system_axis_red_pitaya_dac_0_0' has 11 connections declared, but only 10 given [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:626]
 INFO: [Synth 8-638] synthesizing module 'system_c_counter_binary_0_0' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_c_counter_binary_0_0/synth/system_c_counter_binary_0_0.vhd:66]
 	Parameter C_IMPLEMENTATION bound to: 1 - type: integer 
 	Parameter C_VERBOSITY bound to: 0 - type: integer 
@@ -455,7 +647,7 @@ INFO: [Synth 8-638] synthesizing module 'system_c_counter_binary_0_0' [/home/kok
 	Parameter C_HAS_SSET bound to: 0 - type: integer 
 	Parameter C_HAS_SINIT bound to: 0 - type: integer 
 INFO: [Synth 8-3491] module 'c_counter_binary_v12_0_14' declared at '/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/1f12/hdl/c_counter_binary_v12_0_vh_rfs.vhd:2146' bound to instance 'U0' of component 'c_counter_binary_v12_0_14' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_c_counter_binary_0_0/synth/system_c_counter_binary_0_0.vhd:122]
-INFO: [Synth 8-256] done synthesizing module 'system_c_counter_binary_0_0' (28#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_c_counter_binary_0_0/synth/system_c_counter_binary_0_0.vhd:66]
+INFO: [Synth 8-256] done synthesizing module 'system_c_counter_binary_0_0' (36#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_c_counter_binary_0_0/synth/system_c_counter_binary_0_0.vhd:66]
 INFO: [Synth 8-6157] synthesizing module 'system_concat_0_0' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_concat_0_0/synth/system_concat_0_0.v:58]
 INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
 	Parameter IN0_WIDTH bound to: 1 - type: integer 
@@ -492,49 +684,44 @@ INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat' [/home/koko/
 	Parameter IN31_WIDTH bound to: 1 - type: integer 
 	Parameter dout_width bound to: 8 - type: integer 
 	Parameter NUM_PORTS bound to: 2 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_3_xlconcat' (29#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
-INFO: [Synth 8-6155] done synthesizing module 'system_concat_0_0' (30#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_concat_0_0/synth/system_concat_0_0.v:58]
+INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_3_xlconcat' (37#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'system_concat_0_0' (38#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_concat_0_0/synth/system_concat_0_0.v:58]
 INFO: [Synth 8-6157] synthesizing module 'system_const_0_0' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_const_0_0/synth/system_const_0_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_6_xlconstant__parameterized1' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/34f7/hdl/xlconstant_v1_1_vl_rfs.v:23]
 	Parameter CONST_VAL bound to: 1 - type: integer 
 	Parameter CONST_WIDTH bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_6_xlconstant__parameterized1' (30#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/34f7/hdl/xlconstant_v1_1_vl_rfs.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'system_const_0_0' (31#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_const_0_0/synth/system_const_0_0.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_6_xlconstant__parameterized1' (38#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/34f7/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'system_const_0_0' (39#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_const_0_0/synth/system_const_0_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'system_fir_poly_0_0' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_fir_poly_0_0/synth/system_fir_poly_0_0.v:57]
-INFO: [Synth 8-6157] synthesizing module 'fir_poly' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/3d46/fir_poly.v:3]
+INFO: [Synth 8-6157] synthesizing module 'fir_poly' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/f2e8/fir_poly.v:2]
 	Parameter AXIS_TDATA_WIDTH bound to: 16 - type: integer 
 	Parameter BUFFER_LENGTH bound to: 4 - type: integer 
 	Parameter COEF_WIDTH bound to: 16 - type: integer 
 	Parameter ORDER bound to: 2 - type: integer 
 	Parameter PIECES bound to: 2 - type: integer 
-	Parameter OUTPUT_WIDTH bound to: 16 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'bram' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/3d46/bram.v:1]
+	Parameter OUTPUT_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'bram__parameterized0' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/f2e8/bram.v:1]
 	Parameter ADDR_LEN bound to: 4 - type: integer 
 	Parameter DATA_WIDTH bound to: 16 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'bram' (32#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/3d46/bram.v:1]
-INFO: [Synth 8-6157] synthesizing module 'macc_sum' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/3d46/macc_sum.v:2]
-	Parameter I_ACC_WIDTH bound to: 16 - type: integer 
-	Parameter O_ACC_WIDTH bound to: 20 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'bram__parameterized0' (39#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/f2e8/bram.v:1]
+INFO: [Synth 8-6157] synthesizing module 'macc_sum' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/f2e8/macc_sum.v:1]
+	Parameter I_ACC_WIDTH bound to: 32 - type: integer 
+	Parameter O_ACC_WIDTH bound to: 32 - type: integer 
 	Parameter I_MACC_WIDTH bound to: 32 - type: integer 
 	Parameter COEF_WIDTH bound to: 16 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'macc_sum' (33#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/3d46/macc_sum.v:2]
-INFO: [Synth 8-6157] synthesizing module 'macc_sum__parameterized0' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/3d46/macc_sum.v:2]
-	Parameter I_ACC_WIDTH bound to: 20 - type: integer 
-	Parameter O_ACC_WIDTH bound to: 24 - type: integer 
-	Parameter I_MACC_WIDTH bound to: 36 - type: integer 
-	Parameter COEF_WIDTH bound to: 16 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'macc_sum__parameterized0' (33#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/3d46/macc_sum.v:2]
-INFO: [Synth 8-6155] done synthesizing module 'fir_poly' (34#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/3d46/fir_poly.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'system_fir_poly_0_0' (35#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_fir_poly_0_0/synth/system_fir_poly_0_0.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'macc_sum' (40#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/f2e8/macc_sum.v:1]
+WARNING: [Synth 8-5856] 3D RAM sum_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
+INFO: [Synth 8-6155] done synthesizing module 'fir_poly' (41#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/f2e8/fir_poly.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'system_fir_poly_0_0' (42#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_fir_poly_0_0/synth/system_fir_poly_0_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'system_not_0_0' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_not_0_0/synth/system_not_0_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'util_vector_logic_v2_0_1_util_vector_logic' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/2137/hdl/util_vector_logic_v2_0_vl_rfs.v:45]
 	Parameter C_OPERATION bound to: not - type: string 
 	Parameter C_SIZE bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'util_vector_logic_v2_0_1_util_vector_logic' (36#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/2137/hdl/util_vector_logic_v2_0_vl_rfs.v:45]
-INFO: [Synth 8-6155] done synthesizing module 'system_not_0_0' (37#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_not_0_0/synth/system_not_0_0.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'util_vector_logic_v2_0_1_util_vector_logic' (43#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/2137/hdl/util_vector_logic_v2_0_vl_rfs.v:45]
+INFO: [Synth 8-6155] done synthesizing module 'system_not_0_0' (44#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_not_0_0/synth/system_not_0_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'system_pll_0_0' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0.v:72]
 INFO: [Synth 8-6157] synthesizing module 'system_pll_0_0_clk_wiz' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0_clk_wiz.v:70]
-INFO: [Synth 8-6157] synthesizing module 'IBUFDS' [/media/koko/Research/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:32952]
+INFO: [Synth 8-6157] synthesizing module 'IBUFDS' [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:32952]
 	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
 	Parameter DIFF_TERM bound to: FALSE - type: string 
 	Parameter DQS_BIAS bound to: FALSE - type: string 
@@ -542,8 +729,8 @@ INFO: [Synth 8-6157] synthesizing module 'IBUFDS' [/media/koko/Research/Xilinx/V
 	Parameter IBUF_LOW_PWR bound to: TRUE - type: string 
 	Parameter IFD_DELAY_VALUE bound to: AUTO - type: string 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
-INFO: [Synth 8-6155] done synthesizing module 'IBUFDS' (38#1) [/media/koko/Research/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:32952]
-INFO: [Synth 8-6157] synthesizing module 'PLLE2_ADV' [/media/koko/Research/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:61416]
+INFO: [Synth 8-6155] done synthesizing module 'IBUFDS' (45#1) [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:32952]
+INFO: [Synth 8-6157] synthesizing module 'PLLE2_ADV' [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:61416]
 	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
 	Parameter CLKFBOUT_MULT bound to: 8 - type: integer 
 	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: double 
@@ -575,32 +762,32 @@ INFO: [Synth 8-6157] synthesizing module 'PLLE2_ADV' [/media/koko/Research/Xilin
 	Parameter REF_JITTER1 bound to: 0.010000 - type: double 
 	Parameter REF_JITTER2 bound to: 0.010000 - type: double 
 	Parameter STARTUP_WAIT bound to: FALSE - type: string 
-INFO: [Synth 8-6155] done synthesizing module 'PLLE2_ADV' (39#1) [/media/koko/Research/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:61416]
-INFO: [Synth 8-6157] synthesizing module 'BUFG' [/media/koko/Research/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:1075]
-INFO: [Synth 8-6155] done synthesizing module 'BUFG' (40#1) [/media/koko/Research/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:1075]
-INFO: [Synth 8-6155] done synthesizing module 'system_pll_0_0_clk_wiz' (41#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0_clk_wiz.v:70]
-INFO: [Synth 8-6155] done synthesizing module 'system_pll_0_0' (42#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0.v:72]
+INFO: [Synth 8-6155] done synthesizing module 'PLLE2_ADV' (46#1) [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:61416]
+INFO: [Synth 8-6157] synthesizing module 'BUFG' [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:1075]
+INFO: [Synth 8-6155] done synthesizing module 'BUFG' (47#1) [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:1075]
+INFO: [Synth 8-6155] done synthesizing module 'system_pll_0_0_clk_wiz' (48#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0_clk_wiz.v:70]
+INFO: [Synth 8-6155] done synthesizing module 'system_pll_0_0' (49#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0.v:72]
 INFO: [Synth 8-6157] synthesizing module 'system_port_slicer_0_2' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_port_slicer_0_2/synth/system_port_slicer_0_2.v:57]
 INFO: [Synth 8-6157] synthesizing module 'port_slicer' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8bd6/src/port_slicer.v:4]
 	Parameter DIN_WIDTH bound to: 32 - type: integer 
 	Parameter DIN_FROM bound to: 31 - type: integer 
 	Parameter DIN_TO bound to: 0 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'port_slicer' (43#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8bd6/src/port_slicer.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'system_port_slicer_0_2' (44#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_port_slicer_0_2/synth/system_port_slicer_0_2.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'port_slicer' (50#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8bd6/src/port_slicer.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'system_port_slicer_0_2' (51#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_port_slicer_0_2/synth/system_port_slicer_0_2.v:57]
 INFO: [Synth 8-6157] synthesizing module 'system_port_slicer_1_1' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_port_slicer_1_1/synth/system_port_slicer_1_1.v:57]
 INFO: [Synth 8-6157] synthesizing module 'port_slicer__parameterized0' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8bd6/src/port_slicer.v:4]
-	Parameter DIN_WIDTH bound to: 192 - type: integer 
+	Parameter DIN_WIDTH bound to: 16 - type: integer 
 	Parameter DIN_FROM bound to: 7 - type: integer 
 	Parameter DIN_TO bound to: 0 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'port_slicer__parameterized0' (44#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8bd6/src/port_slicer.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'system_port_slicer_1_1' (45#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_port_slicer_1_1/synth/system_port_slicer_1_1.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'port_slicer__parameterized0' (51#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8bd6/src/port_slicer.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'system_port_slicer_1_1' (52#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_port_slicer_1_1/synth/system_port_slicer_1_1.v:57]
 INFO: [Synth 8-6157] synthesizing module 'system_port_slicer_4_0' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_port_slicer_4_0/synth/system_port_slicer_4_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'port_slicer__parameterized1' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8bd6/src/port_slicer.v:4]
 	Parameter DIN_WIDTH bound to: 48 - type: integer 
-	Parameter DIN_FROM bound to: 16 - type: integer 
-	Parameter DIN_TO bound to: 16 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'port_slicer__parameterized1' (45#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8bd6/src/port_slicer.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'system_port_slicer_4_0' (46#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_port_slicer_4_0/synth/system_port_slicer_4_0.v:57]
+	Parameter DIN_FROM bound to: 10 - type: integer 
+	Parameter DIN_TO bound to: 10 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'port_slicer__parameterized1' (52#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8bd6/src/port_slicer.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'system_port_slicer_4_0' (53#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_port_slicer_4_0/synth/system_port_slicer_4_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'system_ps_0_2' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/synth/system_ps_0_2.v:60]
 INFO: [Synth 8-6157] synthesizing module 'processing_system7_v5_5_processing_system7' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/hdl/verilog/processing_system7_v5_5_processing_system7.v:162]
 	Parameter C_USE_DEFAULT_ACP_USER_VAL bound to: 0 - type: integer 
@@ -661,15 +848,15 @@ INFO: [Synth 8-6157] synthesizing module 'processing_system7_v5_5_processing_sys
 	Parameter C_GP1_EN_MODIFIABLE_TXN bound to: 1 - type: integer 
 INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/hdl/verilog/processing_system7_v5_5_processing_system7.v:1348]
 INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/hdl/verilog/processing_system7_v5_5_processing_system7.v:1349]
-INFO: [Synth 8-6157] synthesizing module 'BIBUF' [/media/koko/Research/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:722]
-INFO: [Synth 8-6155] done synthesizing module 'BIBUF' (47#1) [/media/koko/Research/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:722]
-INFO: [Synth 8-6157] synthesizing module 'PS7' [/media/koko/Research/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:61924]
-INFO: [Synth 8-6155] done synthesizing module 'PS7' (48#1) [/media/koko/Research/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:61924]
-INFO: [Synth 8-6155] done synthesizing module 'processing_system7_v5_5_processing_system7' (49#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/hdl/verilog/processing_system7_v5_5_processing_system7.v:162]
+INFO: [Synth 8-6157] synthesizing module 'BIBUF' [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:722]
+INFO: [Synth 8-6155] done synthesizing module 'BIBUF' (54#1) [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:722]
+INFO: [Synth 8-6157] synthesizing module 'PS7' [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:61924]
+INFO: [Synth 8-6155] done synthesizing module 'PS7' (55#1) [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:61924]
+INFO: [Synth 8-6155] done synthesizing module 'processing_system7_v5_5_processing_system7' (56#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/hdl/verilog/processing_system7_v5_5_processing_system7.v:162]
 WARNING: [Synth 8-7023] instance 'inst' of module 'processing_system7_v5_5_processing_system7' has 685 connections declared, but only 672 given [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/synth/system_ps_0_2.v:650]
-INFO: [Synth 8-6155] done synthesizing module 'system_ps_0_2' (50#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/synth/system_ps_0_2.v:60]
-WARNING: [Synth 8-7023] instance 'ps_0' of module 'system_ps_0_2' has 172 connections declared, but only 132 given [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:638]
-INFO: [Synth 8-6157] synthesizing module 'system_ps_0_axi_periph_0' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:1070]
+INFO: [Synth 8-6155] done synthesizing module 'system_ps_0_2' (57#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_ps_0_2/synth/system_ps_0_2.v:60]
+WARNING: [Synth 8-7023] instance 'ps_0' of module 'system_ps_0_2' has 172 connections declared, but only 132 given [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:674]
+INFO: [Synth 8-6157] synthesizing module 'system_ps_0_axi_periph_0' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:1113]
 INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_1OVXGTK' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:12]
 INFO: [Synth 8-6157] synthesizing module 'system_auto_pc_0' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_auto_pc_0/synth/system_auto_pc_0.v:58]
 INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_axi_protocol_converter' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4808]
@@ -716,20 +903,20 @@ INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_cmd
 INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_incr_cmd' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3092]
 	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
 	Parameter L_AXI_ADDR_LOW_BIT bound to: 12 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_incr_cmd' (51#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3092]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_incr_cmd' (58#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3092]
 INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_wrap_cmd' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2902]
 	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
 	Parameter L_AXI_ADDR_LOW_BIT bound to: 12 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_wrap_cmd' (52#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2902]
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_cmd_translator' (53#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3464]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_wrap_cmd' (59#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2902]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_cmd_translator' (60#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3464]
 INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_wr_cmd_fsm' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3224]
 	Parameter SM_IDLE bound to: 2'b00 
 	Parameter SM_CMD_EN bound to: 2'b01 
 	Parameter SM_CMD_ACCEPTED bound to: 2'b10 
 	Parameter SM_DONE_WAIT bound to: 2'b11 
 INFO: [Synth 8-226] default block is never used [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3277]
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_wr_cmd_fsm' (54#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3224]
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_aw_channel' (55#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3971]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_wr_cmd_fsm' (61#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3224]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_aw_channel' (62#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3971]
 INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_b_channel' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3606]
 	Parameter C_ID_WIDTH bound to: 12 - type: integer 
 	Parameter LP_RESP_OKAY bound to: 2'b00 
@@ -750,7 +937,7 @@ INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_sim
 	Parameter C_EMPTY_PRE bound to: 2'b00 
 	Parameter C_FULL bound to: 2'b10 
 	Parameter C_FULL_PRE bound to: 2'b01 
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_simple_fifo' (56#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_simple_fifo' (63#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
 INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_simple_fifo__parameterized0' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
 	Parameter C_WIDTH bound to: 2 - type: integer 
 	Parameter C_AWIDTH bound to: 2 - type: integer 
@@ -759,8 +946,8 @@ INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_sim
 	Parameter C_EMPTY_PRE bound to: 2'b00 
 	Parameter C_FULL bound to: 2'b10 
 	Parameter C_FULL_PRE bound to: 2'b01 
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_simple_fifo__parameterized0' (56#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_b_channel' (57#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3606]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_simple_fifo__parameterized0' (63#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_b_channel' (64#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3606]
 INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_ar_channel' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4082]
 	Parameter C_ID_WIDTH bound to: 12 - type: integer 
 	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
@@ -772,8 +959,8 @@ INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_rd_
 INFO: [Synth 8-226] default block is never used [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3395]
 WARNING: [Synth 8-6014] Unused sequential element state_r1_reg was removed.  [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3383]
 WARNING: [Synth 8-6014] Unused sequential element s_arlen_r_reg was removed.  [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3384]
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_rd_cmd_fsm' (58#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3334]
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_ar_channel' (59#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4082]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_rd_cmd_fsm' (65#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3334]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_ar_channel' (66#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4082]
 INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_r_channel' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3811]
 	Parameter C_ID_WIDTH bound to: 12 - type: integer 
 	Parameter C_DATA_WIDTH bound to: 32 - type: integer 
@@ -791,7 +978,7 @@ INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_sim
 	Parameter C_EMPTY_PRE bound to: 5'b00000 
 	Parameter C_FULL bound to: 5'b11110 
 	Parameter C_FULL_PRE bound to: 5'b11010 
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_simple_fifo__parameterized1' (59#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_simple_fifo__parameterized1' (66#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
 INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_simple_fifo__parameterized2' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
 	Parameter C_WIDTH bound to: 13 - type: integer 
 	Parameter C_AWIDTH bound to: 5 - type: integer 
@@ -800,8 +987,8 @@ INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_20_b2s_sim
 	Parameter C_EMPTY_PRE bound to: 5'b00000 
 	Parameter C_FULL bound to: 5'b11110 
 	Parameter C_FULL_PRE bound to: 5'b11010 
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_simple_fifo__parameterized2' (59#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_r_channel' (60#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3811]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_simple_fifo__parameterized2' (66#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2816]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s_r_channel' (67#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3811]
 INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axi_register_slice' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:3704]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_AXI_PROTOCOL bound to: 1 - type: integer 
@@ -1006,7 +1193,7 @@ INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_axi2vector' 
 	Parameter G_AXI_RUSER_INDEX bound to: 47 - type: integer 
 	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
 	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 47 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_axi2vector' (61#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_axi2vector' (68#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
 INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
 	Parameter C_AXI_PROTOCOL bound to: 1 - type: integer 
 	Parameter C_AXI_ID_WIDTH bound to: 12 - type: integer 
@@ -1099,28 +1286,28 @@ INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' 
 	Parameter G_AXI_RUSER_INDEX bound to: 47 - type: integer 
 	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
 	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 47 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' (62#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
+INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' (69#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
 INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 66 - type: integer 
 	Parameter C_REG_CONFIG bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice' (63#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice' (70#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
 INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized0' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 49 - type: integer 
 	Parameter C_REG_CONFIG bound to: 0 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized0' (63#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized0' (70#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
 INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized1' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 14 - type: integer 
 	Parameter C_REG_CONFIG bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized1' (63#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized1' (70#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
 INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized2' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 47 - type: integer 
 	Parameter C_REG_CONFIG bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized2' (63#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axi_register_slice' (64#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:3704]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized2' (70#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axi_register_slice' (71#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:3704]
 WARNING: [Synth 8-7023] instance 'SI_REG' of module 'axi_register_slice_v2_1_20_axi_register_slice' has 93 connections declared, but only 92 given [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4392]
 INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axi_register_slice__parameterized0' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:3704]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
@@ -1326,7 +1513,7 @@ INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_axi2vector__
 	Parameter G_AXI_RUSER_INDEX bound to: 34 - type: integer 
 	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
 	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 34 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_axi2vector__parameterized0' (64#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_axi2vector__parameterized0' (71#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
 INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_vector2axi__parameterized0' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
 	Parameter C_AXI_PROTOCOL bound to: 2 - type: integer 
 	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
@@ -1419,40 +1606,40 @@ INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_vector2axi__
 	Parameter G_AXI_RUSER_INDEX bound to: 34 - type: integer 
 	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
 	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 34 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_vector2axi__parameterized0' (64#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
+INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_vector2axi__parameterized0' (71#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
 INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized3' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 35 - type: integer 
 	Parameter C_REG_CONFIG bound to: 0 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized3' (64#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized3' (71#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
 INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized4' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 36 - type: integer 
 	Parameter C_REG_CONFIG bound to: 0 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized4' (64#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized4' (71#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
 INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized5' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 2 - type: integer 
 	Parameter C_REG_CONFIG bound to: 0 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized5' (64#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized5' (71#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
 INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized6' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
 	Parameter C_FAMILY bound to: virtex6 - type: string 
 	Parameter C_DATA_WIDTH bound to: 34 - type: integer 
 	Parameter C_REG_CONFIG bound to: 0 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized6' (64#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axi_register_slice__parameterized0' (64#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:3704]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axic_register_slice__parameterized6' (71#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1476]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_20_axi_register_slice__parameterized0' (71#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:3704]
 WARNING: [Synth 8-7023] instance 'MI_REG' of module 'axi_register_slice_v2_1_20_axi_register_slice' has 93 connections declared, but only 92 given [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4647]
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s' (65#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4226]
-INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_axi_protocol_converter' (66#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4808]
-INFO: [Synth 8-6155] done synthesizing module 'system_auto_pc_0' (67#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_auto_pc_0/synth/system_auto_pc_0.v:58]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_b2s' (72#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4226]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_20_axi_protocol_converter' (73#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4808]
+INFO: [Synth 8-6155] done synthesizing module 'system_auto_pc_0' (74#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_auto_pc_0/synth/system_auto_pc_0.v:58]
 WARNING: [Synth 8-7023] instance 'auto_pc' of module 'system_auto_pc_0' has 59 connections declared, but only 57 given [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:247]
-INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_1OVXGTK' (68#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:12]
-INFO: [Synth 8-6155] done synthesizing module 'system_ps_0_axi_periph_0' (69#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:1070]
+INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_1OVXGTK' (75#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'system_ps_0_axi_periph_0' (76#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:1113]
 INFO: [Synth 8-6157] synthesizing module 'system_pulse_gen_0_0' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pulse_gen_0_0/synth/system_pulse_gen_0_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'pulse_gen' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/0f35/pulse_gen.v:3]
 	Parameter OUTPUT_WIDTH bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'pulse_gen' (70#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/0f35/pulse_gen.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'system_pulse_gen_0_0' (71#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pulse_gen_0_0/synth/system_pulse_gen_0_0.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'pulse_gen' (77#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/0f35/pulse_gen.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'system_pulse_gen_0_0' (78#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_pulse_gen_0_0/synth/system_pulse_gen_0_0.v:57]
 INFO: [Synth 8-638] synthesizing module 'system_rst_0_0' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_rst_0_0/synth/system_rst_0_0.vhd:74]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_EXT_RST_WIDTH bound to: 4 - type: integer 
@@ -1504,10 +1691,11 @@ INFO: [Synth 8-638] synthesizing module 'lpf' [/home/koko/git/DSP/projects/adc_r
 	Parameter C_AUX_RST_WIDTH bound to: 4 - type: integer 
 	Parameter C_EXT_RESET_HIGH bound to: 1'b0 
 	Parameter C_AUX_RESET_HIGH bound to: 1'b0 
-INFO: [Synth 8-3491] module 'SRL16' declared at '/media/koko/Research/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:77949' bound to instance 'POR_SRL_I' of component 'SRL16' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:868]
-INFO: [Synth 8-6157] synthesizing module 'SRL16' [/media/koko/Research/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:77949]
+INFO: [Synth 8-3491] module 'SRL16' declared at '/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:78190' bound to instance 'POR_SRL_I' of component 'SRL16' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:868]
+INFO: [Synth 8-6157] synthesizing module 'SRL16' [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:78190]
+INFO: [Common 17-14] Message 'Synth 8-6157' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 	Parameter INIT bound to: 16'b0000000000000000 
-INFO: [Synth 8-6155] done synthesizing module 'SRL16' (72#1) [/media/koko/Research/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:77949]
+INFO: [Synth 8-6155] done synthesizing module 'SRL16' (79#1) [/tools/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:78190]
 INFO: [Synth 8-638] synthesizing module 'cdc_sync' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
 	Parameter C_CDC_TYPE bound to: 1 - type: integer 
 	Parameter C_RESET_STATE bound to: 0 - type: integer 
@@ -1527,66 +1715,47 @@ INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_o
 INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d5' to cell 'FDR' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:574]
 	Parameter INIT bound to: 1'b0 
 INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d6' to cell 'FDR' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:584]
-INFO: [Synth 8-256] done synthesizing module 'cdc_sync' (73#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
-INFO: [Synth 8-256] done synthesizing module 'lpf' (74#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:816]
+INFO: [Synth 8-256] done synthesizing module 'cdc_sync' (80#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+INFO: [Synth 8-256] done synthesizing module 'lpf' (81#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:816]
 INFO: [Synth 8-638] synthesizing module 'sequence_psr' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:301]
 INFO: [Synth 8-638] synthesizing module 'upcnt_n' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:125]
 	Parameter C_SIZE bound to: 6 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'upcnt_n' (75#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:125]
-INFO: [Synth 8-256] done synthesizing module 'sequence_psr' (76#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:301]
-INFO: [Synth 8-256] done synthesizing module 'proc_sys_reset' (77#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1323]
-INFO: [Synth 8-256] done synthesizing module 'system_rst_0_0' (78#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_rst_0_0/synth/system_rst_0_0.vhd:74]
-WARNING: [Synth 8-7023] instance 'rst_0' of module 'system_rst_0_0' has 10 connections declared, but only 6 given [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:837]
-INFO: [Synth 8-6157] synthesizing module 'system_sig_exp_decay_0_0' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_sig_exp_decay_0_0/synth/system_sig_exp_decay_0_0.v:57]
-INFO: [Synth 8-6157] synthesizing module 'sig_exp_decay' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/cf81/exp_decay.v:3]
+INFO: [Synth 8-256] done synthesizing module 'upcnt_n' (82#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:125]
+INFO: [Synth 8-256] done synthesizing module 'sequence_psr' (83#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:301]
+INFO: [Synth 8-256] done synthesizing module 'proc_sys_reset' (84#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1323]
+INFO: [Synth 8-256] done synthesizing module 'system_rst_0_0' (85#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_rst_0_0/synth/system_rst_0_0.vhd:74]
+WARNING: [Synth 8-7023] instance 'rst_0' of module 'system_rst_0_0' has 10 connections declared, but only 6 given [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:873]
 	Parameter DAC_WIDTH bound to: 14 - type: integer 
-	Parameter RISE_TIME bound to: 10 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'sig_exp_decay' (79#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/cf81/exp_decay.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'system_sig_exp_decay_0_0' (80#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_sig_exp_decay_0_0/synth/system_sig_exp_decay_0_0.v:57]
-INFO: [Synth 8-6157] synthesizing module 'system_configuration_imp_1T0V4NT' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:939]
-INFO: [Synth 8-6157] synthesizing module 'system_cfg_0_0' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_cfg_0_0/synth/system_cfg_0_0.v:57]
-INFO: [Synth 8-6157] synthesizing module 'axi_cfg_register' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/b7d1/src/axi_cfg_register.v:4]
+	Parameter RISE_TIME bound to: 4 - type: integer 
+	Parameter DECAY_TIME bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sig_exp_decay' (86#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/fbde/exp_decay.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'system_sig_exp_decay_0_0' (87#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_sig_exp_decay_0_0/synth/system_sig_exp_decay_0_0.v:57]
+INFO: [Common 17-14] Message 'Synth 8-6155' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 	Parameter CFG_DATA_WIDTH bound to: 4096 - type: integer 
 	Parameter AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter AXI_ADDR_WIDTH bound to: 32 - type: integer 
 	Parameter ADDR_LSB bound to: 2 - type: integer 
 	Parameter CFG_SIZE bound to: 128 - type: integer 
 	Parameter CFG_WIDTH bound to: 7 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'FDRE' [/media/koko/Research/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:13708]
 	Parameter INIT bound to: 1'b0 
 	Parameter IS_C_INVERTED bound to: 1'b0 
 	Parameter IS_D_INVERTED bound to: 1'b0 
 	Parameter IS_R_INVERTED bound to: 1'b0 
-INFO: [Synth 8-6155] done synthesizing module 'FDRE' (81#1) [/media/koko/Research/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:13708]
-INFO: [Synth 8-6155] done synthesizing module 'axi_cfg_register' (82#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/b7d1/src/axi_cfg_register.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'system_cfg_0_0' (83#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_cfg_0_0/synth/system_cfg_0_0.v:57]
-INFO: [Synth 8-6157] synthesizing module 'system_slice_2_0' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_slice_2_0/synth/system_slice_2_0.v:57]
-INFO: [Synth 8-6157] synthesizing module 'port_slicer__parameterized2' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8bd6/src/port_slicer.v:4]
 	Parameter DIN_WIDTH bound to: 4096 - type: integer 
 	Parameter DIN_FROM bound to: 1 - type: integer 
 	Parameter DIN_TO bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'port_slicer__parameterized2' (83#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8bd6/src/port_slicer.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'system_slice_2_0' (84#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_slice_2_0/synth/system_slice_2_0.v:57]
-INFO: [Synth 8-6157] synthesizing module 'system_port_slicer_0_0' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_port_slicer_0_0/synth/system_port_slicer_0_0.v:57]
-INFO: [Synth 8-6157] synthesizing module 'port_slicer__parameterized3' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8bd6/src/port_slicer.v:4]
 	Parameter DIN_WIDTH bound to: 4096 - type: integer 
 	Parameter DIN_FROM bound to: 2047 - type: integer 
 	Parameter DIN_TO bound to: 1024 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'port_slicer__parameterized3' (84#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8bd6/src/port_slicer.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'system_port_slicer_0_0' (85#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_port_slicer_0_0/synth/system_port_slicer_0_0.v:57]
-INFO: [Synth 8-6157] synthesizing module 'system_port_slicer_0_1' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_port_slicer_0_1/synth/system_port_slicer_0_1.v:57]
-INFO: [Common 17-14] Message 'Synth 8-6157' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+	Parameter DIN_WIDTH bound to: 4096 - type: integer 
+	Parameter DIN_FROM bound to: 2559 - type: integer 
+	Parameter DIN_TO bound to: 2048 - type: integer 
 	Parameter DIN_WIDTH bound to: 4096 - type: integer 
 	Parameter DIN_FROM bound to: 3071 - type: integer 
-	Parameter DIN_TO bound to: 2048 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'port_slicer__parameterized4' (85#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8bd6/src/port_slicer.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'system_port_slicer_0_1' (86#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_port_slicer_0_1/synth/system_port_slicer_0_1.v:57]
+	Parameter DIN_TO bound to: 2560 - type: integer 
 	Parameter DIN_WIDTH bound to: 4096 - type: integer 
 	Parameter DIN_FROM bound to: 2 - type: integer 
 	Parameter DIN_TO bound to: 2 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'port_slicer__parameterized5' (86#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8bd6/src/port_slicer.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'system_slice_3_0' (87#1) [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ip/system_slice_3_0/synth/system_slice_3_0.v:57]
-INFO: [Common 17-14] Message 'Synth 8-6155' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 	Parameter C_OPERATION bound to: and - type: string 
 	Parameter C_SIZE bound to: 1 - type: integer 
 	Parameter ADDR_WIDTH bound to: 24 - type: integer 
@@ -1625,7 +1794,8 @@ WARNING: [Synth 8-7023] instance 'fifo_0' of module 'FIFO36E1' has 24 connection
 WARNING: [Synth 8-689] width (72) of port connection 'DI' does not match port width (64) of module 'FIFO36E1' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/edca/src/axis_ram_writer.v:74]
 WARNING: [Synth 8-689] width (72) of port connection 'DO' does not match port width (64) of module 'FIFO36E1' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/edca/src/axis_ram_writer.v:77]
 WARNING: [Synth 8-7023] instance 'fifo_0' of module 'FIFO36E1' has 24 connections declared, but only 9 given [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/edca/src/axis_ram_writer.v:68]
-WARNING: [Synth 8-7023] instance 'writer_1' of module 'system_writer_0_3' has 23 connections declared, but only 21 given [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:902]
+WARNING: [Synth 8-7023] instance 'writer_1' of module 'system_writer_0_3' has 23 connections declared, but only 21 given [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:939]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:961]
 	Parameter IN0_WIDTH bound to: 32 - type: integer 
 	Parameter IN1_WIDTH bound to: 32 - type: integer 
 	Parameter IN2_WIDTH bound to: 1 - type: integer 
@@ -1660,7 +1830,8 @@ WARNING: [Synth 8-7023] instance 'writer_1' of module 'system_writer_0_3' has 23
 	Parameter IN31_WIDTH bound to: 1 - type: integer 
 	Parameter dout_width bound to: 64 - type: integer 
 	Parameter NUM_PORTS bound to: 2 - type: integer 
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:928]
+WARNING: [Synth 8-7023] instance 'xlconcat_0' of module 'system_xlconcat_0_0' has 3 connections declared, but only 2 given [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:961]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:964]
 	Parameter IN0_WIDTH bound to: 1 - type: integer 
 	Parameter IN1_WIDTH bound to: 1 - type: integer 
 	Parameter IN2_WIDTH bound to: 1 - type: integer 
@@ -1695,7 +1866,7 @@ WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic 
 	Parameter IN31_WIDTH bound to: 1 - type: integer 
 	Parameter dout_width bound to: 8 - type: integer 
 	Parameter NUM_PORTS bound to: 8 - type: integer 
-WARNING: [Synth 8-7023] instance 'xlconcat_2' of module 'system_xlconcat_2_0' has 9 connections declared, but only 8 given [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:928]
+WARNING: [Synth 8-7023] instance 'xlconcat_2' of module 'system_xlconcat_2_0' has 9 connections declared, but only 8 given [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:964]
 WARNING: [Synth 8-3848] Net adc_enc_n_o in module/entity system does not have driver. [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:372]
 WARNING: [Synth 8-3848] Net adc_enc_p_o in module/entity system does not have driver. [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:373]
 WARNING: [Synth 8-3848] Net dac_pwm_o in module/entity system does not have driver. [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/synth/system.v:376]
@@ -1755,53 +1926,53 @@ WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unco
 WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In31[0]
 WARNING: [Synth 8-3331] design axis_ram_writer__parameterized0 has unconnected port m_axi_bvalid
 WARNING: [Synth 8-3331] design axis_ram_writer has unconnected port m_axi_bvalid
-WARNING: [Synth 8-3331] design port_slicer__parameterized5 has unconnected port din[4095]
-WARNING: [Synth 8-3331] design port_slicer__parameterized5 has unconnected port din[4094]
-WARNING: [Synth 8-3331] design port_slicer__parameterized5 has unconnected port din[4093]
-WARNING: [Synth 8-3331] design port_slicer__parameterized5 has unconnected port din[4092]
-WARNING: [Synth 8-3331] design port_slicer__parameterized5 has unconnected port din[4091]
-WARNING: [Synth 8-3331] design port_slicer__parameterized5 has unconnected port din[4090]
-WARNING: [Synth 8-3331] design port_slicer__parameterized5 has unconnected port din[4089]
-WARNING: [Synth 8-3331] design port_slicer__parameterized5 has unconnected port din[4088]
-WARNING: [Synth 8-3331] design port_slicer__parameterized5 has unconnected port din[4087]
-WARNING: [Synth 8-3331] design port_slicer__parameterized5 has unconnected port din[4086]
-WARNING: [Synth 8-3331] design port_slicer__parameterized5 has unconnected port din[4085]
-WARNING: [Synth 8-3331] design port_slicer__parameterized5 has unconnected port din[4084]
-WARNING: [Synth 8-3331] design port_slicer__parameterized5 has unconnected port din[4083]
-WARNING: [Synth 8-3331] design port_slicer__parameterized5 has unconnected port din[4082]
-WARNING: [Synth 8-3331] design port_slicer__parameterized5 has unconnected port din[4081]
-WARNING: [Synth 8-3331] design port_slicer__parameterized5 has unconnected port din[4080]
-WARNING: [Synth 8-3331] design port_slicer__parameterized5 has unconnected port din[4079]
-WARNING: [Synth 8-3331] design port_slicer__parameterized5 has unconnected port din[4078]
-WARNING: [Synth 8-3331] design port_slicer__parameterized5 has unconnected port din[4077]
-WARNING: [Synth 8-3331] design port_slicer__parameterized5 has unconnected port din[4076]
-WARNING: [Synth 8-3331] design port_slicer__parameterized5 has unconnected port din[4075]
-WARNING: [Synth 8-3331] design port_slicer__parameterized5 has unconnected port din[4074]
-WARNING: [Synth 8-3331] design port_slicer__parameterized5 has unconnected port din[4073]
-WARNING: [Synth 8-3331] design port_slicer__parameterized5 has unconnected port din[4072]
-WARNING: [Synth 8-3331] design port_slicer__parameterized5 has unconnected port din[4071]
-WARNING: [Synth 8-3331] design port_slicer__parameterized5 has unconnected port din[4070]
-WARNING: [Synth 8-3331] design port_slicer__parameterized5 has unconnected port din[4069]
-WARNING: [Synth 8-3331] design port_slicer__parameterized5 has unconnected port din[4068]
-WARNING: [Synth 8-3331] design port_slicer__parameterized5 has unconnected port din[4067]
-WARNING: [Synth 8-3331] design port_slicer__parameterized5 has unconnected port din[4066]
-WARNING: [Synth 8-3331] design port_slicer__parameterized5 has unconnected port din[4065]
-WARNING: [Synth 8-3331] design port_slicer__parameterized5 has unconnected port din[4064]
-WARNING: [Synth 8-3331] design port_slicer__parameterized5 has unconnected port din[4063]
-WARNING: [Synth 8-3331] design port_slicer__parameterized5 has unconnected port din[4062]
-WARNING: [Synth 8-3331] design port_slicer__parameterized5 has unconnected port din[4061]
-WARNING: [Synth 8-3331] design port_slicer__parameterized5 has unconnected port din[4060]
-WARNING: [Synth 8-3331] design port_slicer__parameterized5 has unconnected port din[4059]
-WARNING: [Synth 8-3331] design port_slicer__parameterized5 has unconnected port din[4058]
-WARNING: [Synth 8-3331] design port_slicer__parameterized5 has unconnected port din[4057]
-WARNING: [Synth 8-3331] design port_slicer__parameterized5 has unconnected port din[4056]
-WARNING: [Synth 8-3331] design port_slicer__parameterized5 has unconnected port din[4055]
-WARNING: [Synth 8-3331] design port_slicer__parameterized5 has unconnected port din[4054]
-WARNING: [Synth 8-3331] design port_slicer__parameterized5 has unconnected port din[4053]
-WARNING: [Synth 8-3331] design port_slicer__parameterized5 has unconnected port din[4052]
+WARNING: [Synth 8-3331] design port_slicer__parameterized6 has unconnected port din[4095]
+WARNING: [Synth 8-3331] design port_slicer__parameterized6 has unconnected port din[4094]
+WARNING: [Synth 8-3331] design port_slicer__parameterized6 has unconnected port din[4093]
+WARNING: [Synth 8-3331] design port_slicer__parameterized6 has unconnected port din[4092]
+WARNING: [Synth 8-3331] design port_slicer__parameterized6 has unconnected port din[4091]
+WARNING: [Synth 8-3331] design port_slicer__parameterized6 has unconnected port din[4090]
+WARNING: [Synth 8-3331] design port_slicer__parameterized6 has unconnected port din[4089]
+WARNING: [Synth 8-3331] design port_slicer__parameterized6 has unconnected port din[4088]
+WARNING: [Synth 8-3331] design port_slicer__parameterized6 has unconnected port din[4087]
+WARNING: [Synth 8-3331] design port_slicer__parameterized6 has unconnected port din[4086]
+WARNING: [Synth 8-3331] design port_slicer__parameterized6 has unconnected port din[4085]
+WARNING: [Synth 8-3331] design port_slicer__parameterized6 has unconnected port din[4084]
+WARNING: [Synth 8-3331] design port_slicer__parameterized6 has unconnected port din[4083]
+WARNING: [Synth 8-3331] design port_slicer__parameterized6 has unconnected port din[4082]
+WARNING: [Synth 8-3331] design port_slicer__parameterized6 has unconnected port din[4081]
+WARNING: [Synth 8-3331] design port_slicer__parameterized6 has unconnected port din[4080]
+WARNING: [Synth 8-3331] design port_slicer__parameterized6 has unconnected port din[4079]
+WARNING: [Synth 8-3331] design port_slicer__parameterized6 has unconnected port din[4078]
+WARNING: [Synth 8-3331] design port_slicer__parameterized6 has unconnected port din[4077]
+WARNING: [Synth 8-3331] design port_slicer__parameterized6 has unconnected port din[4076]
+WARNING: [Synth 8-3331] design port_slicer__parameterized6 has unconnected port din[4075]
+WARNING: [Synth 8-3331] design port_slicer__parameterized6 has unconnected port din[4074]
+WARNING: [Synth 8-3331] design port_slicer__parameterized6 has unconnected port din[4073]
+WARNING: [Synth 8-3331] design port_slicer__parameterized6 has unconnected port din[4072]
+WARNING: [Synth 8-3331] design port_slicer__parameterized6 has unconnected port din[4071]
+WARNING: [Synth 8-3331] design port_slicer__parameterized6 has unconnected port din[4070]
+WARNING: [Synth 8-3331] design port_slicer__parameterized6 has unconnected port din[4069]
+WARNING: [Synth 8-3331] design port_slicer__parameterized6 has unconnected port din[4068]
+WARNING: [Synth 8-3331] design port_slicer__parameterized6 has unconnected port din[4067]
+WARNING: [Synth 8-3331] design port_slicer__parameterized6 has unconnected port din[4066]
+WARNING: [Synth 8-3331] design port_slicer__parameterized6 has unconnected port din[4065]
+WARNING: [Synth 8-3331] design port_slicer__parameterized6 has unconnected port din[4064]
+WARNING: [Synth 8-3331] design port_slicer__parameterized6 has unconnected port din[4063]
+WARNING: [Synth 8-3331] design port_slicer__parameterized6 has unconnected port din[4062]
+WARNING: [Synth 8-3331] design port_slicer__parameterized6 has unconnected port din[4061]
+WARNING: [Synth 8-3331] design port_slicer__parameterized6 has unconnected port din[4060]
+WARNING: [Synth 8-3331] design port_slicer__parameterized6 has unconnected port din[4059]
+WARNING: [Synth 8-3331] design port_slicer__parameterized6 has unconnected port din[4058]
+WARNING: [Synth 8-3331] design port_slicer__parameterized6 has unconnected port din[4057]
+WARNING: [Synth 8-3331] design port_slicer__parameterized6 has unconnected port din[4056]
+WARNING: [Synth 8-3331] design port_slicer__parameterized6 has unconnected port din[4055]
+WARNING: [Synth 8-3331] design port_slicer__parameterized6 has unconnected port din[4054]
+WARNING: [Synth 8-3331] design port_slicer__parameterized6 has unconnected port din[4053]
+WARNING: [Synth 8-3331] design port_slicer__parameterized6 has unconnected port din[4052]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:27 ; elapsed = 00:00:45 . Memory (MB): peak = 2173.074 ; gain = 429.438 ; free physical = 856 ; free virtual = 6320
+Finished RTL Elaboration : Time (s): cpu = 00:00:28 ; elapsed = 00:00:50 . Memory (MB): peak = 2089.805 ; gain = 434.500 ; free physical = 2000 ; free virtual = 6504
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1814,12 +1985,12 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:47 . Memory (MB): peak = 2190.887 ; gain = 447.250 ; free physical = 863 ; free virtual = 6327
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:31 ; elapsed = 00:00:54 . Memory (MB): peak = 2098.711 ; gain = 443.406 ; free physical = 2028 ; free virtual = 6531
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:28 ; elapsed = 00:00:47 . Memory (MB): peak = 2190.887 ; gain = 447.250 ; free physical = 863 ; free virtual = 6327
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:31 ; elapsed = 00:00:54 . Memory (MB): peak = 2098.711 ; gain = 443.406 ; free physical = 2028 ; free virtual = 6531
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.22 ; elapsed = 00:00:00.22 . Memory (MB): peak = 2190.887 ; gain = 0.000 ; free physical = 843 ; free virtual = 6307
+Netlist sorting complete. Time (s): cpu = 00:00:00.25 ; elapsed = 00:00:00.25 . Memory (MB): peak = 2098.711 ; gain = 0.000 ; free physical = 2004 ; free virtual = 6507
 INFO: [Netlist 29-17] Analyzing 36 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -1886,29 +2057,29 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/system_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2247.816 ; gain = 0.000 ; free physical = 747 ; free virtual = 6210
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2164.547 ; gain = 0.000 ; free physical = 1885 ; free virtual = 6389
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 13 instances were transformed.
   FDR => FDRE: 12 instances
   SRL16 => SRL16E: 1 instance 
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.10 ; elapsed = 00:00:00.09 . Memory (MB): peak = 2247.816 ; gain = 0.000 ; free physical = 747 ; free virtual = 6211
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.11 . Memory (MB): peak = 2164.547 ; gain = 0.000 ; free physical = 1885 ; free virtual = 6389
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:40 ; elapsed = 00:01:00 . Memory (MB): peak = 2247.816 ; gain = 504.180 ; free physical = 867 ; free virtual = 6330
+Finished Constraint Validation : Time (s): cpu = 00:00:43 ; elapsed = 00:01:08 . Memory (MB): peak = 2164.547 ; gain = 509.242 ; free physical = 2006 ; free virtual = 6509
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:40 ; elapsed = 00:01:00 . Memory (MB): peak = 2247.816 ; gain = 504.180 ; free physical = 867 ; free virtual = 6330
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:43 ; elapsed = 00:01:08 . Memory (MB): peak = 2164.547 ; gain = 509.242 ; free physical = 2005 ; free virtual = 6509
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property DONT_TOUCH = true for system_i/ps_0/inst. (constraint file  /home/koko/git/DSP/projects/adc_recorder/adc_recorder.runs/synth_1/dont_touch.xdc, line 108).
-Applied set_property DONT_TOUCH = true for system_i/pll_0/inst. (constraint file  /home/koko/git/DSP/projects/adc_recorder/adc_recorder.runs/synth_1/dont_touch.xdc, line 113).
-Applied set_property DONT_TOUCH = true for system_i/rst_0/U0. (constraint file  /home/koko/git/DSP/projects/adc_recorder/adc_recorder.runs/synth_1/dont_touch.xdc, line 121).
+Applied set_property DONT_TOUCH = true for system_i/ps_0/inst. (constraint file  /home/koko/git/DSP/projects/adc_recorder/adc_recorder.runs/synth_1/dont_touch.xdc, line 120).
+Applied set_property DONT_TOUCH = true for system_i/pll_0/inst. (constraint file  /home/koko/git/DSP/projects/adc_recorder/adc_recorder.runs/synth_1/dont_touch.xdc, line 125).
+Applied set_property DONT_TOUCH = true for system_i/rst_0/U0. (constraint file  /home/koko/git/DSP/projects/adc_recorder/adc_recorder.runs/synth_1/dont_touch.xdc, line 133).
 Applied set_property DONT_TOUCH = true for system_i. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/Waveform_Offset_Addr. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/ps_0. (constraint file  auto generated constraint, line ).
@@ -1941,38 +2112,40 @@ Applied set_property DONT_TOUCH = true for system_i/fir_poly_0. (constraint file
 Applied set_property DONT_TOUCH = true for system_i/axis_broadcaster_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/axis_combiner_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/port_slicer_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/system_configuration/port_slicer_2. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/MSE_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/axis_broadcaster_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/axis_combiner_1. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/ps_0_axi_periph/s00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:41 ; elapsed = 00:01:01 . Memory (MB): peak = 2247.816 ; gain = 504.180 ; free physical = 866 ; free virtual = 6330
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:44 ; elapsed = 00:01:09 . Memory (MB): peak = 2164.547 ; gain = 509.242 ; free physical = 2006 ; free virtual = 6510
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'gen_sync_clock_converter.state_reg' in module 'axis_clock_converter_v1_1_21_axisc_sync_clock_converter'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'axi_protocol_converter_v2_1_20_b2s_rd_cmd_fsm'
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2870]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2870]
-INFO: [Synth 8-4471] merging register 'seq_cnt_en_reg' into 'from_sys_reg' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:377]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/cf81/exp_decay.v:22]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-                    INIT |                               00 |                               00
-                    ZERO |                               01 |                               10
-                     ONE |                               10 |                               11
-                    FULL |                               11 |                               01
+                    INIT |                             0001 |                               00
+                    ZERO |                             0010 |                               10
+                     ONE |                             0100 |                               11
+                    FULL |                             1000 |                               01
 ---------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'gen_sync_clock_converter.state_reg' using encoding 'sequential' in module 'axis_clock_converter_v1_1_21_axisc_sync_clock_converter'
+INFO: [Synth 8-3354] encoded FSM with state register 'gen_sync_clock_converter.state_reg' using encoding 'one-hot' in module 'axis_clock_converter_v1_1_21_axisc_sync_clock_converter'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-                 SM_IDLE |                               01 |                               00
-               SM_CMD_EN |                               11 |                               01
-         SM_CMD_ACCEPTED |                               10 |                               10
-                 SM_DONE |                               00 |                               11
+                 SM_IDLE |                             0010 |                               00
+               SM_CMD_EN |                             1000 |                               01
+         SM_CMD_ACCEPTED |                             0100 |                               10
+                 SM_DONE |                             0001 |                               11
 ---------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'axi_protocol_converter_v2_1_20_b2s_rd_cmd_fsm'
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'axi_protocol_converter_v2_1_20_b2s_rd_cmd_fsm'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:48 ; elapsed = 00:01:09 . Memory (MB): peak = 2247.816 ; gain = 504.180 ; free physical = 853 ; free virtual = 6319
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:52 ; elapsed = 00:01:20 . Memory (MB): peak = 2164.547 ; gain = 509.242 ; free physical = 1994 ; free virtual = 6500
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-223] decloning instance 'system_i/axis_broadcaster_0/inst/broadcaster_core/MI_SLOT[0].util_vector2axis' (axis_infrastructure_v1_1_0_util_vector2axis) to 'system_i/axis_broadcaster_0/inst/broadcaster_core/MI_SLOT[1].util_vector2axis'
+INFO: [Synth 8-223] decloning instance 'system_i/axis_broadcaster_0/inst/broadcaster_core/MI_SLOT[0].util_vector2axis' (axis_infrastructure_v1_1_0_util_vector2axis) to 'system_i/axis_broadcaster_0/inst/broadcaster_core/MI_SLOT[2].util_vector2axis'
+INFO: [Synth 8-223] decloning instance 'system_i/axis_broadcaster_1/inst/broadcaster_core/MI_SLOT[0].util_vector2axis' (axis_infrastructure_v1_1_0_util_vector2axis) to 'system_i/axis_broadcaster_1/inst/broadcaster_core/MI_SLOT[1].util_vector2axis'
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -2004,30 +2177,134 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-INFO: [Synth 8-4471] merging register 'inst/macc_piece[0].macc_order[1].mac/accu_reg[19:0]' into 'inst/macc_piece[0].macc_order[1].mac/accu_reg[19:0]' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/3d46/macc_sum.v:27]
-INFO: [Synth 8-4471] merging register 'inst/macc_piece[0].macc_order[2].mac/accu_reg[23:0]' into 'inst/macc_piece[0].macc_order[2].mac/accu_reg[23:0]' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/3d46/macc_sum.v:27]
-INFO: [Synth 8-4471] merging register 'inst/macc_piece[1].macc_order[1].mac/accu_reg[19:0]' into 'inst/macc_piece[1].macc_order[1].mac/accu_reg[19:0]' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/3d46/macc_sum.v:27]
-INFO: [Synth 8-4471] merging register 'inst/macc_piece[1].macc_order[2].mac/accu_reg[23:0]' into 'inst/macc_piece[1].macc_order[2].mac/accu_reg[23:0]' [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/3d46/macc_sum.v:27]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 2 [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/0718/sources_1/new/MSE.v:103]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 6 [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/0718/sources_1/new/MSE.v:128]
 INFO: [Synth 8-3936] Found unconnected internal register 'inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw.aw_pipe/m_payload_i_reg' and it is trimmed from '66' to '62' bits. [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1709]
 INFO: [Synth 8-3936] Found unconnected internal register 'inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/ar.ar_pipe/m_payload_i_reg' and it is trimmed from '66' to '62' bits. [/home/koko/git/DSP/projects/adc_recorder/adc_recorder.srcs/sources_1/bd/system/ipshared/72d4/hdl/axi_register_slice_v2_1_vl_rfs.v:1709]
-INFO: [Synth 8-3886] merging instance 'system_i/axis_broadcaster_0/inst/broadcaster_core/m_ready_d_reg[0]' (FDRE) to 'system_i/axis_broadcaster_0/inst/broadcaster_core/m_ready_d_reg[1]'
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][47]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][46]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][45]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][44]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][43]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][42]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][41]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][40]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][39]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][38]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][37]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][36]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][35]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][34]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][33]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][32]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][31]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][30]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][29]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][28]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][27]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][26]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][25]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][24]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][23]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][22]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][21]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][20]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][19]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][18]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][17]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][16]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][15]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][14]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][13]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][12]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][11]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][10]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][9]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][8]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][7]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][6]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][5]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][4]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][3]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][2]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][1]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[0][0][0][0]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][47]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][46]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][45]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][44]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][43]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][42]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][41]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][40]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][39]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][38]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][37]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][36]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][35]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][34]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][33]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][32]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][31]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][30]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][29]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][28]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][27]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][26]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][25]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][24]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][23]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][22]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][21]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][20]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][19]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][18]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][17]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][16]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][15]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][14]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][13]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][12]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][11]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][10]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][9]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][8]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][7]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][6]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][5]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][4]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][3]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][2]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][1]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][0]) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][47]__0) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][46]__0) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][45]__0) is unused and will be removed from module system_MSE_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/genblk4[0].int_inv_cov_mat_reg[1][0][0][44]__0) is unused and will be removed from module system_MSE_0_0.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/axis_broadcaster_0/\inst/broadcaster_core/m_ready_d_reg[0] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/axis_broadcaster_0/\inst/broadcaster_core/m_ready_d_reg[1] )
-INFO: [Synth 8-3886] merging instance 'system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/r.r_pipe/aresetn_d_reg[0]' (FDR) to 'system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/b.b_pipe/aresetn_d_reg[0]'
-INFO: [Synth 8-3886] merging instance 'system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/b.b_pipe/aresetn_d_reg[0]' (FDR) to 'system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw.aw_pipe/aresetn_d_reg[0]'
-INFO: [Synth 8-3886] merging instance 'system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw.aw_pipe/aresetn_d_reg[1]' (FDR) to 'system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/b.b_pipe/aresetn_d_reg[1]'
-INFO: [Synth 8-3886] merging instance 'system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/r.r_pipe/aresetn_d_reg[1]' (FDR) to 'system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/b.b_pipe/aresetn_d_reg[1]'
-INFO: [Synth 8-3886] merging instance 'system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/ar.ar_pipe/aresetn_d_reg[0]' (FDR) to 'system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw.aw_pipe/aresetn_d_reg[0]'
-INFO: [Synth 8-3886] merging instance 'system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/b.b_pipe/aresetn_d_reg[1]' (FDR) to 'system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/ar.ar_pipe/aresetn_d_reg[1]'
-INFO: [Synth 8-3886] merging instance 'system_i/rst_0/U0/SEQ/pr_dec_reg[1]' (FD) to 'system_i/rst_0/U0/SEQ/bsr_dec_reg[1]'
-INFO: [Synth 8-3886] merging instance 'system_i/rst_0/U0/SEQ/bsr_dec_reg[1]' (FD) to 'system_i/rst_0/U0/SEQ/core_dec_reg[1]'
-WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d5) is unused and will be removed from module proc_sys_reset.
-WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d6) is unused and will be removed from module proc_sys_reset.
-WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d5) is unused and will be removed from module proc_sys_reset.
-WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d6) is unused and will be removed from module proc_sys_reset.
-INFO: [Synth 8-3886] merging instance 'system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.ar_channel_0/cmd_translator_0/incr_cmd_0/sel_first_reg' (FDSE) to 'system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.ar_channel_0/cmd_translator_0/wrap_cmd_0/sel_first_reg'
-INFO: [Synth 8-3886] merging instance 'system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.aw_channel_0/cmd_translator_0/incr_cmd_0/sel_first_reg' (FDSE) to 'system_i/ps_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.aw_channel_0/cmd_translator_0/wrap_cmd_0/sel_first_reg'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/axis_broadcaster_0/\inst/broadcaster_core/m_ready_d_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/axis_broadcaster_1/\inst/broadcaster_core/m_ready_d_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/axis_broadcaster_1/\inst/broadcaster_core/m_ready_d_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[0][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[0][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[0][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[0][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[1][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[1][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[1][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[1][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[2][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[2][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[2][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[2][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/ps_0_axi_periph/\s00_couplers/auto_pc /\inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][5] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:13 ; elapsed = 00:01:36 . Memory (MB): peak = 2277.066 ; gain = 533.430 ; free physical = 816 ; free virtual = 6291
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:13 ; elapsed = 00:01:47 . Memory (MB): peak = 2172.555 ; gain = 517.250 ; free physical = 1953 ; free virtual = 6470
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2039,13 +2316,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:24 ; elapsed = 00:01:49 . Memory (MB): peak = 2350.066 ; gain = 606.430 ; free physical = 517 ; free virtual = 5992
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:24 ; elapsed = 00:02:00 . Memory (MB): peak = 2287.555 ; gain = 632.250 ; free physical = 1633 ; free virtual = 6150
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:27 ; elapsed = 00:01:52 . Memory (MB): peak = 2379.090 ; gain = 635.453 ; free physical = 497 ; free virtual = 5972
+Finished Timing Optimization : Time (s): cpu = 00:01:30 ; elapsed = 00:02:09 . Memory (MB): peak = 2319.578 ; gain = 664.273 ; free physical = 1608 ; free virtual = 6124
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2057,8 +2334,10 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/axis_combiner_0/\inst/m_ready_d_reg )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (system_i/axis_combiner_1/\inst/m_ready_d_reg )
+INFO: [Synth 8-7053] The timing for the instance system_i/MSE_0/inst/ram/ram_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:34 ; elapsed = 00:01:59 . Memory (MB): peak = 2401.090 ; gain = 657.453 ; free physical = 491 ; free virtual = 5967
+Finished Technology Mapping : Time (s): cpu = 00:01:39 ; elapsed = 00:02:20 . Memory (MB): peak = 2339.375 ; gain = 684.070 ; free physical = 1604 ; free virtual = 6120
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2078,18 +2357,17 @@ Finished Flattening Before IO Insertion
 ---------------------------------------------------------------------------------
 Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5365] Flop SEQ/seq_clr_reg is being inverted and renamed to SEQ/seq_clr_reg_inv.
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:39 ; elapsed = 00:02:05 . Memory (MB): peak = 2404.059 ; gain = 660.422 ; free physical = 491 ; free virtual = 5966
+Finished IO Insertion : Time (s): cpu = 00:01:44 ; elapsed = 00:02:26 . Memory (MB): peak = 2346.312 ; gain = 691.008 ; free physical = 1603 ; free virtual = 6119
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:39 ; elapsed = 00:02:05 . Memory (MB): peak = 2404.059 ; gain = 660.422 ; free physical = 492 ; free virtual = 5967
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:44 ; elapsed = 00:02:26 . Memory (MB): peak = 2346.312 ; gain = 691.008 ; free physical = 1603 ; free virtual = 6119
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2108,25 +2386,25 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:40 ; elapsed = 00:02:06 . Memory (MB): peak = 2404.059 ; gain = 660.422 ; free physical = 494 ; free virtual = 5969
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:45 ; elapsed = 00:02:26 . Memory (MB): peak = 2346.312 ; gain = 691.008 ; free physical = 1603 ; free virtual = 6119
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:40 ; elapsed = 00:02:06 . Memory (MB): peak = 2404.059 ; gain = 660.422 ; free physical = 494 ; free virtual = 5969
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:45 ; elapsed = 00:02:26 . Memory (MB): peak = 2346.312 ; gain = 691.008 ; free physical = 1603 ; free virtual = 6119
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:40 ; elapsed = 00:02:06 . Memory (MB): peak = 2404.059 ; gain = 660.422 ; free physical = 493 ; free virtual = 5968
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:45 ; elapsed = 00:02:27 . Memory (MB): peak = 2349.281 ; gain = 693.977 ; free physical = 1603 ; free virtual = 6119
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:40 ; elapsed = 00:02:06 . Memory (MB): peak = 2404.059 ; gain = 660.422 ; free physical = 494 ; free virtual = 5969
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:45 ; elapsed = 00:02:27 . Memory (MB): peak = 2349.281 ; gain = 693.977 ; free physical = 1603 ; free virtual = 6119
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -2144,48 +2422,53 @@ Report Cell Usage:
 +------+----------+------+
 |1     |BIBUF     |   130|
 |2     |BUFG      |     5|
-|3     |CARRY4    |   109|
+|3     |CARRY4    |   168|
 |4     |DSP48E1   |     1|
 |5     |DSP48E1_1 |     1|
-|6     |DSP48E1_2 |     4|
+|6     |DSP48E1_2 |     1|
 |7     |DSP48E1_3 |     1|
-|8     |FIFO36E1  |     2|
-|9     |LUT1      |   232|
-|10    |LUT2      |   482|
-|11    |LUT3      |   373|
-|12    |LUT4      |    82|
-|13    |LUT5      |   145|
-|14    |LUT6      |  1560|
-|15    |MUXF7     |   544|
-|16    |MUXF8     |   256|
-|17    |ODDR      |    18|
-|18    |PLLE2_ADV |     1|
-|19    |PS7       |     1|
-|20    |RAM32M    |     3|
-|21    |SRL16     |     1|
-|22    |SRL16E    |    18|
-|23    |SRLC32E   |    47|
-|24    |FDR       |     8|
-|25    |FDRE      |  5242|
-|26    |FDSE      |    23|
-|27    |IBUF      |    36|
-|28    |IBUFDS    |     1|
-|29    |OBUF      |    35|
-|30    |OBUFT     |     6|
+|8     |DSP48E1_4 |     1|
+|9     |DSP48E1_5 |     1|
+|10    |DSP48E1_6 |     4|
+|11    |DSP48E1_7 |     6|
+|12    |DSP48E1_8 |     1|
+|13    |FIFO36E1  |     2|
+|14    |LUT1      |   262|
+|15    |LUT2      |   870|
+|16    |LUT3      |   302|
+|17    |LUT4      |    61|
+|18    |LUT5      |   170|
+|19    |LUT6      |  1534|
+|20    |MUXF7     |   544|
+|21    |MUXF8     |   256|
+|22    |ODDR      |    18|
+|23    |PLLE2_ADV |     1|
+|24    |PS7       |     1|
+|25    |RAM32M    |     3|
+|26    |RAMB18E1  |     1|
+|27    |SRL16     |     1|
+|28    |SRLC32E   |    47|
+|29    |FDR       |     8|
+|30    |FDRE      |  5803|
+|31    |FDSE      |    24|
+|32    |IBUF      |    36|
+|33    |IBUFDS    |     1|
+|34    |OBUF      |    35|
+|35    |OBUFT     |     6|
 +------+----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:40 ; elapsed = 00:02:06 . Memory (MB): peak = 2404.059 ; gain = 660.422 ; free physical = 493 ; free virtual = 5968
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:45 ; elapsed = 00:02:27 . Memory (MB): peak = 2349.281 ; gain = 693.977 ; free physical = 1603 ; free virtual = 6119
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 14836 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:34 ; elapsed = 00:02:00 . Memory (MB): peak = 2404.059 ; gain = 603.492 ; free physical = 562 ; free virtual = 6037
-Synthesis Optimization Complete : Time (s): cpu = 00:01:41 ; elapsed = 00:02:06 . Memory (MB): peak = 2404.066 ; gain = 660.422 ; free physical = 562 ; free virtual = 6037
+Synthesis finished with 0 errors, 0 critical warnings and 18772 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:39 ; elapsed = 00:02:20 . Memory (MB): peak = 2349.281 ; gain = 628.141 ; free physical = 1678 ; free virtual = 6194
+Synthesis Optimization Complete : Time (s): cpu = 00:01:45 ; elapsed = 00:02:27 . Memory (MB): peak = 2349.289 ; gain = 693.977 ; free physical = 1678 ; free virtual = 6194
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.16 ; elapsed = 00:00:00.16 . Memory (MB): peak = 2404.066 ; gain = 0.000 ; free physical = 630 ; free virtual = 6105
-INFO: [Netlist 29-17] Analyzing 950 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00.18 ; elapsed = 00:00:00.19 . Memory (MB): peak = 2349.289 ; gain = 0.000 ; free physical = 1744 ; free virtual = 6261
+INFO: [Netlist 29-17] Analyzing 1020 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2420.066 ; gain = 0.000 ; free physical = 567 ; free virtual = 6042
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2349.289 ; gain = 0.000 ; free physical = 1684 ; free virtual = 6200
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 12 instances were transformed.
   FDR => FDRE: 8 instances
@@ -2193,12 +2476,12 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   SRL16 => SRL16E: 1 instance 
 
 INFO: [Common 17-83] Releasing license: Synthesis
-288 Infos, 161 Warnings, 0 Critical Warnings and 0 Errors encountered.
+395 Infos, 166 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:52 ; elapsed = 00:02:20 . Memory (MB): peak = 2420.066 ; gain = 916.641 ; free physical = 872 ; free virtual = 6347
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2420.066 ; gain = 0.000 ; free physical = 872 ; free virtual = 6347
+synth_design: Time (s): cpu = 00:01:57 ; elapsed = 00:02:41 . Memory (MB): peak = 2349.289 ; gain = 913.414 ; free physical = 2014 ; free virtual = 6530
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2349.289 ; gain = 0.000 ; free physical = 2014 ; free virtual = 6530
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/home/koko/git/DSP/projects/adc_recorder/adc_recorder.runs/synth_1/system_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file system_wrapper_utilization_synth.rpt -pb system_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Jul 30 13:17:51 2021...
+INFO: [Common 17-206] Exiting Vivado at Fri Aug 13 15:29:39 2021...

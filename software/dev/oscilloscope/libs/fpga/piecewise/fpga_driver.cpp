@@ -16,14 +16,18 @@ pwp_fpga::~pwp_fpga(){
 }
 
 int pwp_fpga::set_coef(int32_t *coef, size_t size){
-    for (unsigned long i = 0; i < size/sizeof(coef); i++)
+    for (unsigned long i = 0; i < size/sizeof(*coef); i++){
+        printf("Coef %d set to %d\n", i, coef[i]);    
         cfg->coef[i] = coef[i];
+    }
     return 0;
 }
 
-int pwp_fpga::set_delay(uint16_t *delay, size_t size){
-    for (unsigned long i = 0; i < size/sizeof(delay); i++)
+int pwp_fpga::set_delay(uint16_t *delay, size_t size){;
+    for (unsigned long i = 0; i < size/sizeof(*delay); i++){
+        printf("Delay %d set to %d\n", i, delay[i]);
         cfg->delay[i] = delay[i];
+    }
     return 0;
 }
 

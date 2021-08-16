@@ -101,6 +101,18 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_axis_com
 # IP: bd/system/ip/system_port_slicer_1_1/system_port_slicer_1_1.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_port_slicer_1_1 || ORIG_REF_NAME==system_port_slicer_1_1} -quiet] -quiet
 
+# IP: bd/system/ip/system_port_slicer_2_0/system_port_slicer_2_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_port_slicer_2_0 || ORIG_REF_NAME==system_port_slicer_2_0} -quiet] -quiet
+
+# IP: bd/system/ip/system_MSE_0_0/system_MSE_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_MSE_0_0 || ORIG_REF_NAME==system_MSE_0_0} -quiet] -quiet
+
+# IP: bd/system/ip/system_axis_broadcaster_1_0/system_axis_broadcaster_1_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_axis_broadcaster_1_0 || ORIG_REF_NAME==system_axis_broadcaster_1_0} -quiet] -quiet
+
+# IP: bd/system/ip/system_axis_combiner_1_0/system_axis_combiner_1_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_axis_combiner_1_0 || ORIG_REF_NAME==system_axis_combiner_1_0} -quiet] -quiet
+
 # IP: bd/system/ip/system_auto_pc_0/system_auto_pc_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_auto_pc_0 || ORIG_REF_NAME==system_auto_pc_0} -quiet] -quiet
 
@@ -130,6 +142,10 @@ set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {R
 # XDC: bd/system/ip/system_axis_broadcaster_0_0/system_axis_broadcaster_0_0_ooc.xdc
 
 # XDC: bd/system/ip/system_axis_combiner_0_0/system_axis_combiner_0_0_ooc.xdc
+
+# XDC: bd/system/ip/system_axis_broadcaster_1_0/system_axis_broadcaster_1_0_ooc.xdc
+
+# XDC: bd/system/ip/system_axis_combiner_1_0/system_axis_combiner_1_0_ooc.xdc
 
 # XDC: bd/system/ip/system_auto_pc_0/system_auto_pc_0_ooc.xdc
 

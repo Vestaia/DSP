@@ -1,5 +1,0 @@
-vhdl xil_defaultlib  \
-"../../../bd/system/ip/system_c_counter_binary_0_0/sim/system_c_counter_binary_0_0.vhd" \
-"../../../bd/system/ip/system_rst_0_0/sim/system_rst_0_0.vhd" \
-
-nosort

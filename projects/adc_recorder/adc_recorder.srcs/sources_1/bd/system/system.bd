@@ -34,18 +34,22 @@
         "filter_reset": "",
         "cfg_0": "",
         "port_slicer_0": "",
-        "port_slicer_1": ""
+        "port_slicer_1": "",
+        "port_slicer_2": ""
       },
       "axis_clock_converter_0": "",
-      "sig_exp_decay_0": "",
       "util_vector_logic_0": "",
       "port_slicer_4": "",
       "port_slicer_0": "",
       "xlconcat_0": "",
-      "fir_poly_0": "",
       "axis_broadcaster_0": "",
       "axis_combiner_0": "",
-      "port_slicer_1": ""
+      "port_slicer_1": "",
+      "sig_exp_decay_0": "",
+      "axis_broadcaster_1": "",
+      "axis_combiner_1": "",
+      "fir_poly_0": "",
+      "MSE_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -2239,16 +2243,16 @@
               }
             },
             "interface_nets": {
-              "s00_couplers_to_auto_pc": {
-                "interface_ports": [
-                  "S_AXI",
-                  "auto_pc/S_AXI"
-                ]
-              },
               "auto_pc_to_s00_couplers": {
                 "interface_ports": [
                   "M_AXI",
                   "auto_pc/M_AXI"
+                ]
+              },
+              "s00_couplers_to_auto_pc": {
+                "interface_ports": [
+                  "S_AXI",
+                  "auto_pc/S_AXI"
                 ]
               }
             },
@@ -2269,16 +2273,16 @@
           }
         },
         "interface_nets": {
-          "ps_0_axi_periph_to_s00_couplers": {
-            "interface_ports": [
-              "S00_AXI",
-              "s00_couplers/S_AXI"
-            ]
-          },
           "s00_couplers_to_ps_0_axi_periph": {
             "interface_ports": [
               "M00_AXI",
               "s00_couplers/M_AXI"
+            ]
+          },
+          "ps_0_axi_periph_to_s00_couplers": {
+            "interface_ports": [
+              "S00_AXI",
+              "s00_couplers/S_AXI"
             ]
           }
         },
@@ -2398,7 +2402,12 @@
           },
           "dout3": {
             "direction": "O",
-            "left": "1023",
+            "left": "511",
+            "right": "0"
+          },
+          "dout4": {
+            "direction": "O",
+            "left": "511",
             "right": "0"
           }
         },
@@ -2468,10 +2477,25 @@
             "xci_name": "system_port_slicer_0_1",
             "parameters": {
               "DIN_FROM": {
-                "value": "3071"
+                "value": "2559"
               },
               "DIN_TO": {
                 "value": "2048"
+              },
+              "DIN_WIDTH": {
+                "value": "4096"
+              }
+            }
+          },
+          "port_slicer_2": {
+            "vlnv": "pavel-demin:user:port_slicer:1.0",
+            "xci_name": "system_port_slicer_2_0",
+            "parameters": {
+              "DIN_FROM": {
+                "value": "3071"
+              },
+              "DIN_TO": {
+                "value": "2560"
               },
               "DIN_WIDTH": {
                 "value": "4096"
@@ -2494,7 +2518,8 @@
               "filter_reset/din",
               "writer_reset/din",
               "port_slicer_0/din",
-              "port_slicer_1/din"
+              "port_slicer_1/din",
+              "port_slicer_2/din"
             ]
           },
           "slice_3_dout": {
@@ -2532,6 +2557,12 @@
               "port_slicer_1/dout",
               "dout3"
             ]
+          },
+          "port_slicer_2_dout": {
+            "ports": [
+              "port_slicer_2/dout",
+              "dout4"
+            ]
           }
         }
       },
@@ -2543,10 +2574,6 @@
             "value": "8"
           }
         }
-      },
-      "sig_exp_decay_0": {
-        "vlnv": "user.org:user:sig_exp_decay:1.0",
-        "xci_name": "system_sig_exp_decay_0_0"
       },
       "util_vector_logic_0": {
         "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
@@ -2562,10 +2589,10 @@
         "xci_name": "system_port_slicer_4_0",
         "parameters": {
           "DIN_FROM": {
-            "value": "16"
+            "value": "10"
           },
           "DIN_TO": {
-            "value": "16"
+            "value": "10"
           },
           "DIN_WIDTH": {
             "value": "48"
@@ -2580,15 +2607,6 @@
         "vlnv": "xilinx.com:ip:xlconcat:2.1",
         "xci_name": "system_xlconcat_0_0"
       },
-      "fir_poly_0": {
-        "vlnv": "user.org:user:fir_poly:1.0",
-        "xci_name": "system_fir_poly_0_0",
-        "parameters": {
-          "ORDER": {
-            "value": "2"
-          }
-        }
-      },
       "axis_broadcaster_0": {
         "vlnv": "xilinx.com:ip:axis_broadcaster:1.1",
         "xci_name": "system_axis_broadcaster_0_0",
@@ -2599,8 +2617,14 @@
           "M01_TDATA_REMAP": {
             "value": "tdata[15:0]"
           },
+          "M02_TDATA_REMAP": {
+            "value": "tdata[15:0]"
+          },
           "M_TDATA_NUM_BYTES": {
             "value": "2"
+          },
+          "NUM_MI": {
+            "value": "3"
           },
           "S_TDATA_NUM_BYTES": {
             "value": "4"
@@ -2619,28 +2643,78 @@
             "value": "7"
           },
           "DIN_WIDTH": {
-            "value": "192"
+            "value": "16"
+          }
+        }
+      },
+      "sig_exp_decay_0": {
+        "vlnv": "user.org:user:sig_exp_decay:1.0",
+        "xci_name": "system_sig_exp_decay_0_0",
+        "parameters": {
+          "RISE_TIME": {
+            "value": "4"
+          }
+        }
+      },
+      "axis_broadcaster_1": {
+        "vlnv": "xilinx.com:ip:axis_broadcaster:1.1",
+        "xci_name": "system_axis_broadcaster_1_0"
+      },
+      "axis_combiner_1": {
+        "vlnv": "xilinx.com:ip:axis_combiner:1.1",
+        "xci_name": "system_axis_combiner_1_0"
+      },
+      "fir_poly_0": {
+        "vlnv": "user.org:user:fir_poly:1.0",
+        "xci_name": "system_fir_poly_0_0",
+        "parameters": {
+          "ORDER": {
+            "value": "2"
+          },
+          "OUTPUT_WIDTH": {
+            "value": "32"
+          }
+        }
+      },
+      "MSE_0": {
+        "vlnv": "user.org:user:MSE:1.0",
+        "xci_name": "system_MSE_0_0",
+        "parameters": {
+          "DELAYS": {
+            "value": "1"
+          },
+          "OUTPUT_WIDTH": {
+            "value": "16"
+          },
+          "PARAM_WIDTH": {
+            "value": "32"
           }
         }
       }
     },
     "interface_nets": {
+      "writer_0_M_AXI": {
+        "interface_ports": [
+          "ps_0/S_AXI_HP0",
+          "writer_0/M_AXI"
+        ]
+      },
+      "axis_broadcaster_1_M01_AXIS": {
+        "interface_ports": [
+          "axis_broadcaster_1/M01_AXIS",
+          "axis_combiner_1/S01_AXIS"
+        ]
+      },
+      "axis_broadcaster_0_M01_AXIS": {
+        "interface_ports": [
+          "axis_broadcaster_0/M01_AXIS",
+          "fir_poly_0/s_axis"
+        ]
+      },
       "axis_clock_converter_0_M_AXIS": {
         "interface_ports": [
           "axis_clock_converter_0/M_AXIS",
           "writer_0/S_AXIS"
-        ]
-      },
-      "fir_poly_0_m_axis": {
-        "interface_ports": [
-          "fir_poly_0/m_axis",
-          "axis_combiner_0/S01_AXIS"
-        ]
-      },
-      "axis_combiner_0_M_AXIS": {
-        "interface_ports": [
-          "axis_combiner_0/M_AXIS",
-          "axis_clock_converter_0/S_AXIS"
         ]
       },
       "ps_0_DDR": {
@@ -2649,10 +2723,10 @@
           "ps_0/DDR"
         ]
       },
-      "axis_broadcaster_0_M01_AXIS": {
+      "axis_broadcaster_0_M02_AXIS": {
         "interface_ports": [
-          "axis_broadcaster_0/M01_AXIS",
-          "fir_poly_0/s_axis"
+          "axis_broadcaster_0/M02_AXIS",
+          "MSE_0/s_axis_data"
         ]
       },
       "axis_broadcaster_0_M00_AXIS": {
@@ -2671,6 +2745,12 @@
         "interface_ports": [
           "ps_0/S_AXI_HP1",
           "writer_1/M_AXI"
+        ]
+      },
+      "axis_combiner_0_M_AXIS": {
+        "interface_ports": [
+          "axis_combiner_0/M_AXIS",
+          "axis_combiner_1/S00_AXIS"
         ]
       },
       "ps_0_FIXED_IO": {
@@ -2697,10 +2777,28 @@
           "sig_exp_decay_0/m_axis"
         ]
       },
-      "writer_0_M_AXI": {
+      "fir_poly_0_m_axis": {
         "interface_ports": [
-          "ps_0/S_AXI_HP0",
-          "writer_0/M_AXI"
+          "fir_poly_0/m_axis",
+          "axis_broadcaster_1/S_AXIS"
+        ]
+      },
+      "axis_combiner_1_M_AXIS": {
+        "interface_ports": [
+          "axis_combiner_1/M_AXIS",
+          "axis_clock_converter_0/S_AXIS"
+        ]
+      },
+      "axis_broadcaster_1_M00_AXIS": {
+        "interface_ports": [
+          "axis_broadcaster_1/M00_AXIS",
+          "MSE_0/s_axis_param"
+        ]
+      },
+      "MSE_0_m_axis": {
+        "interface_ports": [
+          "MSE_0/m_axis",
+          "axis_combiner_0/S01_AXIS"
         ]
       }
     },
@@ -2803,10 +2901,13 @@
           "system_configuration/aclk",
           "axis_clock_converter_0/s_axis_aclk",
           "ps_0/M_AXI_GP0_ACLK",
-          "sig_exp_decay_0/clk",
           "axis_broadcaster_0/aclk",
+          "axis_combiner_0/aclk",
+          "sig_exp_decay_0/clk",
+          "axis_combiner_1/aclk",
+          "axis_broadcaster_1/aclk",
           "fir_poly_0/aclk",
-          "axis_combiner_0/aclk"
+          "MSE_0/aclk"
         ]
       },
       "pll_0_clk_out2": {
@@ -2831,8 +2932,9 @@
       "pulse_gen_0_pulse": {
         "ports": [
           "pulse_gen_0/pulse",
+          "util_vector_logic_0/Op1",
           "sig_exp_decay_0/trigger",
-          "util_vector_logic_0/Op1"
+          "axis_broadcaster_0/s_axis_tdata"
         ]
       },
       "rst_0_peripheral_aresetn": {
@@ -2850,11 +2952,14 @@
           "not_0/Op1",
           "xlconcat_2/In1",
           "axis_clock_converter_0/s_axis_aresetn",
-          "sig_exp_decay_0/rst",
           "util_vector_logic_0/Op2",
-          "fir_poly_0/aresetn",
           "axis_broadcaster_0/aresetn",
-          "axis_combiner_0/aresetn"
+          "axis_combiner_0/aresetn",
+          "sig_exp_decay_0/rst",
+          "axis_combiner_1/aresetn",
+          "axis_broadcaster_1/aresetn",
+          "fir_poly_0/aresetn",
+          "MSE_0/aresetn"
         ]
       },
       "slice_3_dout": {
@@ -2914,35 +3019,30 @@
           "xlconcat_0/In0"
         ]
       },
-      "xlconcat_0_dout": {
-        "ports": [
-          "xlconcat_0/dout",
-          "axis_clock_converter_0/s_axis_tdata"
-        ]
-      },
       "system_configuration_dout2": {
         "ports": [
           "system_configuration/dout2",
-          "fir_poly_0/coef_flat",
-          "port_slicer_1/din"
+          "fir_poly_0/coef_flat"
         ]
       },
       "system_configuration_dout3": {
         "ports": [
           "system_configuration/dout3",
-          "fir_poly_0/delay_flat"
-        ]
-      },
-      "axis_combiner_0_m_axis_tdata": {
-        "ports": [
-          "axis_combiner_0/m_axis_tdata",
-          "xlconcat_0/In1"
+          "port_slicer_1/din",
+          "fir_poly_0/delay_flat",
+          "MSE_0/delay_flat"
         ]
       },
       "port_slicer_1_dout": {
         "ports": [
           "port_slicer_1/dout",
           "led_o"
+        ]
+      },
+      "system_configuration_dout4": {
+        "ports": [
+          "system_configuration/dout4",
+          "MSE_0/inv_cov_mat"
         ]
       }
     },

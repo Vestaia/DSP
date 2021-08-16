@@ -25,7 +25,7 @@ module tb();
   end
   always @ (posedge clk) begin
     cnt = cnt + 1;
-    $display("cnt=%d  rst=%d  data=%d  out=%d", cnt, rst, data, $signed(out));
+    //$display("cnt=%d  rst=%d  data=%d  out=%d", cnt, rst, data, $signed(out));
   end
   initial begin
     clk = 0;
