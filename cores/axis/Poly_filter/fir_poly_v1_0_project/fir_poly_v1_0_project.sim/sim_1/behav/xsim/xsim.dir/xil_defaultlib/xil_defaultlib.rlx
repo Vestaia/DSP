@@ -1,0 +1,9 @@
+0.6
+2019.2
+Dec  5 2019
+04:51:02
+/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new/bram.v,1626882242,verilog,,/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new/fir_poly.v,,bram,,,,,,,,
+/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new/fir_poly.v,1629482722,verilog,,/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new/macc_sum.v,,fir_poly,,,,,,,,
+/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_filter.srcs/sources_1/new/macc_sum.v,1629401418,verilog,,/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_tb.v,,macc_sum,,,,,,,,
+/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_tb.v,1629496671,verilog,,,,tb,,,,,,,,
+/home/koko/git/DSP/cores/axis/Poly_filter/fir_poly_v1_0_project/fir_poly_v1_0_project.sim/sim_1/behav/xsim/glbl.v,1573089660,verilog,,,,glbl,,,,,,,,

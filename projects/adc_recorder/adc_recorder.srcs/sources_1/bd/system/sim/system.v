@@ -1,7 +1,7 @@
 //Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2019.2.1 (lin64) Build 2729669 Thu Dec  5 04:48:12 MST 2019
-//Date        : Fri Aug 13 15:26:36 2021
+//Date        : Thu Aug 19 14:40:45 2021
 //Host        : chromatic running 64-bit Ubuntu 20.04.2 LTS
 //Command     : generate_target system.bd
 //Design      : system
@@ -506,8 +506,7 @@ module system
   wire ps_0_axi_periph_M00_AXI_WVALID;
   wire [0:0]pulse_gen_0_pulse;
   wire [0:0]rst_0_peripheral_aresetn;
-  wire [31:0]sig_exp_decay_0_M_AXIS_TDATA;
-  wire sig_exp_decay_0_M_AXIS_TVALID;
+  wire [31:0]sig_exp_decay_0_m_axis_tdata;
   wire [0:0]slice_2_dout;
   wire [0:0]slice_3_dout;
   wire [1023:0]system_configuration_dout2;
@@ -586,7 +585,7 @@ module system
         .aresetn(slice_2_dout),
         .m_axis_tdata({axis_broadcaster_0_M02_AXIS_TDATA,axis_broadcaster_0_M01_AXIS_TDATA,axis_broadcaster_0_M00_AXIS_TDATA}),
         .m_axis_tvalid({axis_broadcaster_0_M02_AXIS_TVALID,axis_broadcaster_0_M01_AXIS_TVALID,axis_broadcaster_0_M00_AXIS_TVALID}),
-        .s_axis_tdata({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,pulse_gen_0_pulse}),
+        .s_axis_tdata(sig_exp_decay_0_m_axis_tdata),
         .s_axis_tvalid(adc_0_M_AXIS_TVALID));
   system_axis_broadcaster_1_0 axis_broadcaster_1
        (.aclk(pll_0_clk_out1),
@@ -632,8 +631,8 @@ module system
         .dac_wrt(axis_red_pitaya_dac_0_dac_wrt),
         .ddr_clk(pll_0_clk_out2),
         .locked(pll_0_locked),
-        .s_axis_tdata(sig_exp_decay_0_M_AXIS_TDATA),
-        .s_axis_tvalid(sig_exp_decay_0_M_AXIS_TVALID));
+        .s_axis_tdata({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .s_axis_tvalid(1'b0));
   system_c_counter_binary_0_0 c_counter_binary_0
        (.CLK(pll_0_clk_out1),
         .Q(c_counter_binary_0_Q));
@@ -646,8 +645,8 @@ module system
   system_fir_poly_0_0 fir_poly_0
        (.aclk(pll_0_clk_out1),
         .aresetn(slice_2_dout),
-        .coef_flat(system_configuration_dout2[191:0]),
-        .delay_flat(system_configuration_dout3[15:0]),
+        .coef_flat(system_configuration_dout2[383:0]),
+        .delay_flat(system_configuration_dout3[31:0]),
         .m_axis_tdata(fir_poly_0_m_axis_TDATA),
         .m_axis_tvalid(fir_poly_0_m_axis_TVALID),
         .s_axis_tdata(axis_broadcaster_0_M01_AXIS_TDATA),
@@ -879,8 +878,7 @@ module system
         .slowest_sync_clk(pll_0_clk_out1));
   system_sig_exp_decay_0_0 sig_exp_decay_0
        (.clk(pll_0_clk_out1),
-        .m_axis_tdata(sig_exp_decay_0_M_AXIS_TDATA),
-        .m_axis_tvalid(sig_exp_decay_0_M_AXIS_TVALID),
+        .m_axis_tdata(sig_exp_decay_0_m_axis_tdata),
         .rst(slice_2_dout),
         .trigger(pulse_gen_0_pulse));
   system_configuration_imp_1T0V4NT system_configuration

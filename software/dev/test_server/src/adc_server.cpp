@@ -5,11 +5,16 @@
 int main(){
     pwp_fpga rp = pwp_fpga();
     server s = server();
-    int32_t coef[6] = {0, 0, 1, 0, -4, -1};
+    uint16_t delay[2] = {16,84};
+    float coef[12] = 
+    {0, 1, 0, 0, 
+    0, -1, 0, 0, 
+    0, 0, 0, 0};
     //{0, 1, 0, 2, -1, 0};
-    uint16_t delay[1] = {4};
-    rp.set_coef(coef, sizeof(coef));
+    int32_t mat[1] = {1};
+    rp.set_coef(coef);
     rp.set_delay(delay, sizeof(delay));
+    rp.set_design_mat(mat, sizeof(mat));
     rp.reset();
     request req;
     s.attach(INADDR_ANY, 42069);

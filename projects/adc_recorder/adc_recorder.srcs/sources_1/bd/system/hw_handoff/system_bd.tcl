@@ -378,8 +378,11 @@ proc create_root_design { parentCell } {
   # Create instance: fir_poly_0, and set properties
   set fir_poly_0 [ create_bd_cell -type ip -vlnv user.org:user:fir_poly:1.0 fir_poly_0 ]
   set_property -dict [ list \
-   CONFIG.ORDER {2} \
+   CONFIG.BUFFER_LENGTH {10} \
+   CONFIG.COEF_WIDTH {32} \
+   CONFIG.ORDER {3} \
    CONFIG.OUTPUT_WIDTH {32} \
+   CONFIG.PIECES {3} \
  ] $fir_poly_0
 
   # Create instance: not_0, and set properties
@@ -1314,7 +1317,6 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net ps_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins ps_0/FIXED_IO]
   connect_bd_intf_net -intf_net ps_0_M_AXI_GP0 [get_bd_intf_pins ps_0/M_AXI_GP0] [get_bd_intf_pins ps_0_axi_periph/S00_AXI]
   connect_bd_intf_net -intf_net ps_0_axi_periph_M00_AXI [get_bd_intf_pins ps_0_axi_periph/M00_AXI] [get_bd_intf_pins system_configuration/S_AXI]
-  connect_bd_intf_net -intf_net sig_exp_decay_0_M_AXIS [get_bd_intf_pins axis_red_pitaya_dac_0/S_AXIS] [get_bd_intf_pins sig_exp_decay_0/m_axis]
   connect_bd_intf_net -intf_net writer_0_M_AXI [get_bd_intf_pins ps_0/S_AXI_HP0] [get_bd_intf_pins writer_0/M_AXI]
   connect_bd_intf_net -intf_net writer_1_M_AXI [get_bd_intf_pins ps_0/S_AXI_HP1] [get_bd_intf_pins writer_1/M_AXI]
 
@@ -1343,8 +1345,9 @@ proc create_root_design { parentCell } {
   connect_bd_net -net port_slicer_0_dout [get_bd_pins port_slicer_0/dout] [get_bd_pins xlconcat_0/In0]
   connect_bd_net -net port_slicer_1_dout [get_bd_ports led_o] [get_bd_pins port_slicer_1/dout]
   connect_bd_net -net port_slicer_4_dout [get_bd_pins port_slicer_4/dout] [get_bd_pins pulse_gen_0/trigger]
-  connect_bd_net -net pulse_gen_0_pulse [get_bd_pins axis_broadcaster_0/s_axis_tdata] [get_bd_pins pulse_gen_0/pulse] [get_bd_pins sig_exp_decay_0/trigger] [get_bd_pins util_vector_logic_0/Op1]
+  connect_bd_net -net pulse_gen_0_pulse [get_bd_pins pulse_gen_0/pulse] [get_bd_pins sig_exp_decay_0/trigger] [get_bd_pins util_vector_logic_0/Op1]
   connect_bd_net -net rst_0_peripheral_aresetn [get_bd_pins ps_0_axi_periph/ARESETN] [get_bd_pins ps_0_axi_periph/M00_ARESETN] [get_bd_pins ps_0_axi_periph/S00_ARESETN] [get_bd_pins rst_0/peripheral_aresetn] [get_bd_pins system_configuration/aresetn]
+  connect_bd_net -net sig_exp_decay_0_m_axis_tdata [get_bd_pins axis_broadcaster_0/s_axis_tdata] [get_bd_pins sig_exp_decay_0/m_axis_tdata]
   connect_bd_net -net slice_2_dout [get_bd_pins MSE_0/aresetn] [get_bd_pins axis_broadcaster_0/aresetn] [get_bd_pins axis_broadcaster_1/aresetn] [get_bd_pins axis_clock_converter_0/s_axis_aresetn] [get_bd_pins axis_combiner_0/aresetn] [get_bd_pins axis_combiner_1/aresetn] [get_bd_pins fir_poly_0/aresetn] [get_bd_pins not_0/Op1] [get_bd_pins sig_exp_decay_0/rst] [get_bd_pins system_configuration/dout1] [get_bd_pins util_vector_logic_0/Op2] [get_bd_pins xlconcat_2/In1]
   connect_bd_net -net slice_3_dout [get_bd_pins axis_clock_converter_0/m_axis_aresetn] [get_bd_pins system_configuration/dout] [get_bd_pins writer_0/aresetn] [get_bd_pins writer_1/aresetn] [get_bd_pins xlconcat_2/In2]
   connect_bd_net -net system_configuration_dout2 [get_bd_pins fir_poly_0/coef_flat] [get_bd_pins system_configuration/dout2]

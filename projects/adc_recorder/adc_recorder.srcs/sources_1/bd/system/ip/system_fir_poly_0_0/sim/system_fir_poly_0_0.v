@@ -48,7 +48,7 @@
 
 
 // IP VLNV: user.org:user:fir_poly:1.0
-// IP Revision: 19
+// IP Revision: 21
 
 `timescale 1ns/1ps
 
@@ -76,8 +76,8 @@ input wire [15 : 0] s_axis_tdata;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME s_axis, TDATA_NUM_BYTES 2, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 0, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 0, FREQ_HZ 125000000, PHASE 0.0, CLK_DOMAIN system_pll_0_0_clk_out1, LAYERED_METADATA undef, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 s_axis TVALID" *)
 input wire s_axis_tvalid;
-input wire [191 : 0] coef_flat;
-input wire [15 : 0] delay_flat;
+input wire [383 : 0] coef_flat;
+input wire [31 : 0] delay_flat;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TVALID" *)
 output wire m_axis_tvalid;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m_axis, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 0, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 0, FREQ_HZ 125000000, PHASE 0.0, CLK_DOMAIN system_pll_0_0_clk_out1, LAYERED_METADATA undef, INSERT_VIP 0" *)
@@ -86,10 +86,10 @@ output wire [31 : 0] m_axis_tdata;
 
   fir_poly #(
     .AXIS_TDATA_WIDTH(16),
-    .BUFFER_LENGTH(4),
-    .COEF_WIDTH(16),
-    .ORDER(2),
-    .PIECES(2),
+    .BUFFER_LENGTH(10),
+    .COEF_WIDTH(32),
+    .ORDER(3),
+    .PIECES(3),
     .OUTPUT_WIDTH(32)
   ) inst (
     .aclk(aclk),

@@ -30,6 +30,7 @@ module fir_poly #
     
     genvar i;
     genvar j;
+    genvar k;
 
     //Reformatting to arrays
     generate
@@ -57,7 +58,7 @@ module fir_poly #
                     .enb    (1'b1), 
                     .wea    (1'b1), 
                     .addra  (wptr), 
-                    .addrb  (wptr - delay[i] + 1'b1), 
+                    .addrb  (wptr - delay[i]), 
                   	.dia    (delay_out[i - 1]), 
                     .dob    (delay_out[i])
                 );
@@ -68,8 +69,8 @@ module fir_poly #
     generate
         for (i = 0; i < PIECES; i = i + 1) begin : piece
             for (j = 0; j < ORDER + 1; j = j + 1) begin : order
-                wire [OUTPUT_WIDTH - 1 : 0] acc_out;
                 wire [OUTPUT_WIDTH - 1 : 0] macc_out;
+                wire [OUTPUT_WIDTH + (j + 1) * BUFFER_LENGTH - 1 : 0] acc_out;
                 if (j == 0) begin
                   	reg  [OUTPUT_WIDTH - 1 : 0] r_macc_out_A;
                  	reg  [OUTPUT_WIDTH - 1 : 0] r_macc_out_B;
@@ -89,7 +90,7 @@ module fir_poly #
                   			r_macc_out_C <= r_macc_out_B;
                   			r_macc_out_D <= r_macc_out_C;
                         end
-                end
+                end 
             end
         end
     endgenerate
@@ -98,10 +99,11 @@ module fir_poly #
         for (i = 0; i < PIECES; i = i + 1) begin : macc_piece
             for (j = 1; j < ORDER + 1; j = j + 1) begin : macc_order
                 macc_sum # (
-                    .I_ACC_WIDTH    (OUTPUT_WIDTH),
-                    .O_ACC_WIDTH    (OUTPUT_WIDTH),
+                    .I_ACC_WIDTH    (OUTPUT_WIDTH + j * BUFFER_LENGTH),
+                    .O_ACC_WIDTH    (OUTPUT_WIDTH + (j + 1) * BUFFER_LENGTH),
                     .I_MACC_WIDTH   (OUTPUT_WIDTH),
-                    .COEF_WIDTH     (COEF_WIDTH)
+                    .COEF_WIDTH     (COEF_WIDTH),
+                    .SHIFT          (j * BUFFER_LENGTH)
                 )   mac (
                         .clk        (aclk),
                         .aresetn    (aresetn),

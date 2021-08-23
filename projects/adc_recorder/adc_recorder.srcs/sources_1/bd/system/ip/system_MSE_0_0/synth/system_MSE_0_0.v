@@ -48,9 +48,9 @@
 
 
 // IP VLNV: user.org:user:MSE:1.0
-// IP Revision: 5
+// IP Revision: 8
 
-(* X_CORE_INFO = "MSE,Vivado 2019.2.1" *)
+(* X_CORE_INFO = "MSE,Vivado 2019.2" *)
 (* CHECK_LICENSE_TYPE = "system_MSE_0_0,MSE,{}" *)
 (* IP_DEFINITION_SOURCE = "package_project" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)

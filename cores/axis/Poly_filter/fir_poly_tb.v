@@ -3,12 +3,12 @@ module tb();
   reg clk;
   reg rst;
   reg [16 - 1 : 0] data;
-  reg [32 * (3 + 1) * 2 - 1 : 0] coef;
+  reg [32 * (4 + 1) * 2 - 1 : 0] coef;
   reg [16 * (2 - 1) - 1 : 0] delay;
-  wire [16 - 1 : 0] out;
+  wire signed [32 - 1 : 0] out;
   wire valid;
   integer cnt = 0;
-  fir_poly //# (16, 4, 16, 3, 2, 16)
+  fir_poly #(16, 4, 16, 4, 2, 32)
   fir (
     .aclk(clk),
     .aresetn(rst),
@@ -32,16 +32,16 @@ module tb();
     #1
     rst = 0;
     data = 0;
-    coef = {-32'd0,-32'd0,-32'd0,-32'd0,
-             32'h100, 32'd16, 32'd1, 32'd0};
-    delay = 4'd5;
+    coef = {-32'd0,-32'd768,-32'd100,-32'd10, -32'd0,
+             32'd0, 32'd768, 32'd0, 32'd0, 32'd0};
+    delay = 4'd10;
     #40
     rst = 1;
     #4
-    data = 1;
+    data = 1<<14;
     #2
     data = 0;
-  	#90 $finish;
+  	#100 $finish;
   end
     
 endmodule

@@ -48,7 +48,7 @@
 
 
 // IP VLNV: user.org:user:MSE:1.0
-// IP Revision: 5
+// IP Revision: 8
 
 `timescale 1ns/1ps
 

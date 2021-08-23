@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Aug 13 15:26:37 2021" VIVADOVERSION="2019.2.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Aug 19 14:40:46 2021" VIVADOVERSION="2019.2.1">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z010" NAME="system" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -238,7 +238,7 @@
   </EXTERNALINTERFACES>
 
   <MODULES>
-    <MODULE COREREVISION="5" FULLNAME="/MSE_0" HWVERSION="1.0" INSTANCE="MSE_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="MSE" VLNV="user.org:user:MSE:1.0">
+    <MODULE COREREVISION="8" FULLNAME="/MSE_0" HWVERSION="1.0" INSTANCE="MSE_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="MSE" VLNV="user.org:user:MSE:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="AXIS_TDATA_WIDTH" VALUE="16"/>
@@ -539,10 +539,10 @@
             <CONNECTION INSTANCE="adc_0" PORT="m_axis_tvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="s_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="pulse_gen_0_pulse">
+        <PORT DIR="I" LEFT="31" NAME="s_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="sig_exp_decay_0_m_axis_tdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="adc_0" PORT="m_axis_tdata"/>
-            <CONNECTION INSTANCE="pulse_gen_0" PORT="pulse"/>
+            <CONNECTION INSTANCE="sig_exp_decay_0" PORT="m_axis_tdata"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="2" NAME="m_axis_tvalid" RIGHT="0" SIGIS="undef" SIGNAME="axis_broadcaster_0_m_axis_tvalid">
@@ -1260,19 +1260,11 @@
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="s_axis_tready" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="31" NAME="s_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="axis_red_pitaya_dac_0_s_axis_tdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="sig_exp_decay_0" PORT="m_axis_tdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="s_axis_tvalid" SIGIS="undef" SIGNAME="axis_red_pitaya_dac_0_s_axis_tvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="sig_exp_decay_0" PORT="m_axis_tvalid"/>
-          </CONNECTIONS>
-        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="s_axis_tdata" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" NAME="s_axis_tvalid" SIGIS="undef"/>
       </PORTS>
       <BUSINTERFACES>
-        <BUSINTERFACE BUSNAME="sig_exp_decay_0_m_axis" NAME="S_AXIS" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+        <BUSINTERFACE BUSNAME="__NOC__" NAME="S_AXIS" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
           <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
           <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
           <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
@@ -1433,14 +1425,14 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="19" FULLNAME="/fir_poly_0" HWVERSION="1.0" INSTANCE="fir_poly_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="fir_poly" VLNV="user.org:user:fir_poly:1.0">
+    <MODULE COREREVISION="21" FULLNAME="/fir_poly_0" HWVERSION="1.0" INSTANCE="fir_poly_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="fir_poly" VLNV="user.org:user:fir_poly:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="AXIS_TDATA_WIDTH" VALUE="16"/>
-        <PARAMETER NAME="BUFFER_LENGTH" VALUE="4"/>
-        <PARAMETER NAME="COEF_WIDTH" VALUE="16"/>
-        <PARAMETER NAME="ORDER" VALUE="2"/>
-        <PARAMETER NAME="PIECES" VALUE="2"/>
+        <PARAMETER NAME="BUFFER_LENGTH" VALUE="10"/>
+        <PARAMETER NAME="COEF_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="ORDER" VALUE="3"/>
+        <PARAMETER NAME="PIECES" VALUE="3"/>
         <PARAMETER NAME="OUTPUT_WIDTH" VALUE="32"/>
         <PARAMETER NAME="Component_Name" VALUE="system_fir_poly_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
@@ -1466,12 +1458,12 @@
             <CONNECTION INSTANCE="axis_broadcaster_0" PORT="m_axis_tvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="191" NAME="coef_flat" RIGHT="0" SIGIS="undef" SIGNAME="system_configuration_port_slicer_0_dout">
+        <PORT DIR="I" LEFT="383" NAME="coef_flat" RIGHT="0" SIGIS="undef" SIGNAME="system_configuration_port_slicer_0_dout">
           <CONNECTIONS>
             <CONNECTION INSTANCE="system_configuration_port_slicer_0" PORT="dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="15" NAME="delay_flat" RIGHT="0" SIGIS="undef" SIGNAME="system_configuration_port_slicer_1_dout">
+        <PORT DIR="I" LEFT="31" NAME="delay_flat" RIGHT="0" SIGIS="undef" SIGNAME="system_configuration_port_slicer_1_dout">
           <CONNECTIONS>
             <CONNECTION INSTANCE="system_configuration_port_slicer_1" PORT="dout"/>
           </CONNECTIONS>
@@ -2157,8 +2149,8 @@
             <CONNECTION INSTANCE="sig_exp_decay_0" PORT="clk"/>
             <CONNECTION INSTANCE="axis_combiner_1" PORT="aclk"/>
             <CONNECTION INSTANCE="axis_broadcaster_1" PORT="aclk"/>
-            <CONNECTION INSTANCE="fir_poly_0" PORT="aclk"/>
             <CONNECTION INSTANCE="MSE_0" PORT="aclk"/>
+            <CONNECTION INSTANCE="fir_poly_0" PORT="aclk"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="250000000" DIR="O" NAME="clk_out2" SIGIS="clk" SIGNAME="pll_0_clk_out2">
@@ -4804,9 +4796,8 @@
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="pulse" RIGHT="0" SIGIS="undef" SIGNAME="pulse_gen_0_pulse">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="util_vector_logic_0" PORT="Op1"/>
             <CONNECTION INSTANCE="sig_exp_decay_0" PORT="trigger"/>
-            <CONNECTION INSTANCE="axis_broadcaster_0" PORT="s_axis_tdata"/>
+            <CONNECTION INSTANCE="util_vector_logic_0" PORT="Op1"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -4889,19 +4880,15 @@
             <CONNECTION INSTANCE="pulse_gen_0" PORT="pulse"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="m_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="axis_red_pitaya_dac_0_s_axis_tdata">
+        <PORT DIR="O" LEFT="31" NAME="m_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="sig_exp_decay_0_m_axis_tdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axis_red_pitaya_dac_0" PORT="s_axis_tdata"/>
+            <CONNECTION INSTANCE="axis_broadcaster_0" PORT="s_axis_tdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="m_axis_tvalid" SIGIS="undef" SIGNAME="axis_red_pitaya_dac_0_s_axis_tvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axis_red_pitaya_dac_0" PORT="s_axis_tvalid"/>
-          </CONNECTIONS>
-        </PORT>
+        <PORT DIR="O" NAME="m_axis_tvalid" SIGIS="undef"/>
       </PORTS>
       <BUSINTERFACES>
-        <BUSINTERFACE BUSNAME="sig_exp_decay_0_m_axis" NAME="m_axis" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+        <BUSINTERFACE BUSNAME="__NOC__" NAME="m_axis" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
           <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
           <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
           <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
@@ -5123,8 +5110,8 @@
             <CONNECTION INSTANCE="sig_exp_decay_0" PORT="rst"/>
             <CONNECTION INSTANCE="axis_combiner_1" PORT="aresetn"/>
             <CONNECTION INSTANCE="axis_broadcaster_1" PORT="aresetn"/>
-            <CONNECTION INSTANCE="fir_poly_0" PORT="aresetn"/>
             <CONNECTION INSTANCE="MSE_0" PORT="aresetn"/>
+            <CONNECTION INSTANCE="fir_poly_0" PORT="aresetn"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -5171,8 +5158,8 @@
         <PORT DIR="O" LEFT="511" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="system_configuration_port_slicer_1_dout">
           <CONNECTIONS>
             <CONNECTION INSTANCE="port_slicer_1" PORT="din"/>
-            <CONNECTION INSTANCE="fir_poly_0" PORT="delay_flat"/>
             <CONNECTION INSTANCE="MSE_0" PORT="delay_flat"/>
+            <CONNECTION INSTANCE="fir_poly_0" PORT="delay_flat"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

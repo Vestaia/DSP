@@ -3,7 +3,8 @@ module macc_sum #
         parameter integer I_ACC_WIDTH = 32,
         parameter integer O_ACC_WIDTH = 32,
         parameter integer I_MACC_WIDTH = 32,
-        parameter integer COEF_WIDTH = 32
+        parameter integer COEF_WIDTH = 32,
+        parameter integer SHIFT = 0
     )
     (   
         input                                            clk,
@@ -39,7 +40,7 @@ module macc_sum #
             acc_out       <= accu;
             accu          <= $signed(accu) + $signed(acc_in);
             macc_del      <= macc_in;
-          	macc_mult_A   <= $signed(accu) * $signed(coef);
+          	macc_mult_A   <= $signed($signed(accu) >> SHIFT) * $signed(coef);
           	macc_mult_B   <= macc_mult_A;
           	macc_mult_C   <= macc_mult_B;
           	macc_mult_D   <= macc_mult_C;

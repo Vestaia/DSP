@@ -15,15 +15,35 @@ pwp_fpga::~pwp_fpga(){
     munmap((void*)ring_wptr, 4);
 }
 
-int pwp_fpga::set_coef(int32_t *coef, size_t size){
-    for (unsigned long i = 0; i < size/sizeof(*coef); i++){
+int pwp_fpga::set_coef_raw(int32_t *coef, size_t size){
+    for (uint i = 0; i < size/sizeof(*coef); i++){
         printf("Coef %d set to %d\n", i, coef[i]);    
         cfg->coef[i] = coef[i];
     }
     return 0;
 }
+int pwp_fpga::set_coef(float *coef){
+    int32_t scaled_coef[MAX_PIECE][MAX_ORDER];
+    for (uint i = 0; i < MAX_PIECE; i++)
+        for (uint j = 0; j < MAX_ORDER; j++)
+            scaled_coef[i][j] = (int)(coef[i*MAX_ORDER + j] * pow(2 , MAX_DELAY * j));
+            //printf("Piece %d order %d coefficient set to %d\n", i, j, scaled_coef[i][j]);
+    for (uint i = MAX_PIECE; i > 1; i--)
+        for (uint k = 0; k < MAX_ORDER; k++)
+            for (uint j = 1; j < MAX_ORDER - k; j++)
+                scaled_coef[i-1][j] -= scaled_coef[i-2][j+k] * (j + k - 1);
 
-int pwp_fpga::set_delay(uint16_t *delay, size_t size){;
+    for (uint i = 0; i < MAX_PIECE; i++){
+        for (uint j = 0; j < MAX_ORDER; j++){
+            coef[i*MAX_ORDER + j] = scaled_coef[i][j];
+            printf("Piece %d order %d coefficient set to %d\n", i, j, scaled_coef[i][j]);
+        }
+    }
+    return 0;
+
+}
+
+int pwp_fpga::set_delay(uint16_t *delay, size_t size){
     for (unsigned long i = 0; i < size/sizeof(*delay); i++){
         printf("Delay %d set to %d\n", i, delay[i]);
         cfg->delay[i] = delay[i];
@@ -31,6 +51,12 @@ int pwp_fpga::set_delay(uint16_t *delay, size_t size){;
     return 0;
 }
 
+int pwp_fpga::set_design_mat(int32_t *mat, size_t size){
+    for (unsigned long i = 0; i < size/sizeof(*mat); i++){
+        printf("Design matrix coef %d set to: %d\n", i, mat[i]);
+        cfg->mat[i] = mat[i];
+    }
+}
 int pwp_fpga::reset(){
     cfg->reset &= ~RESET_DAQ;
     usleep(1000); 
